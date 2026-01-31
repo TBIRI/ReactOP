@@ -1,0 +1,17 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  .border-beam-wrapper {
+    position: relative;
+    display: inline-flex;
+    padding: 1px;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.3), rgba(96, 165, 250, 0.3));
+  }
+
+  .border-beam-wrapper > * {
+    position: relative;
+    z-index: 1;
+  }
+}
