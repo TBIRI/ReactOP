@@ -150,26 +150,66 @@ function App() {
       </section>
 
       <section id="contact" className="py-40 px-6">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-5xl font-semibold mb-6 bg-gradient-to-r from-white to-blue-400 bg-clip-text text-transparent">
-            Prêt à optimiser votre conversion ?
-          </h2>
-          <p className="text-xl mb-12 bg-gradient-to-r from-gray-300 to-blue-300 bg-clip-text text-transparent">
-            Discutons de vos objectifs et de comment nous pouvons vous aider
-          </p>
-          <div className="border-beam-wrapper group" style={{ borderRadius: '0.75rem' }}>
-            <a
-              href="https://calendar.app.google/jScJ2XUgZ22C1RRr5"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="relative px-10 py-5 bg-gray-950 font-semibold text-xl transition-all duration-300 flex items-center gap-3"
-              style={{ borderRadius: '0.75rem' }}
-            >
-              <span className="bg-gradient-to-r from-white to-blue-400 bg-clip-text text-transparent">
-                Réservez un appel gratuit
-              </span>
-              <ArrowRight className="w-6 h-6 text-blue-400 group-hover:translate-x-1 transition-transform" />
-            </a>
+        <div className="max-w-7xl mx-auto">
+          <div className="grid md:grid-cols-2 gap-16 items-center">
+            <div>
+              <h2 className="text-7xl font-bold mb-12">
+                <span className="text-white">Let's </span>
+                <span className="bg-gradient-to-r from-white to-blue-400 bg-clip-text text-transparent">talk!</span>
+              </h2>
+              <div className="border-t border-gray-800 pt-8">
+                <p className="text-gray-400 text-lg mb-2">Email:</p>
+                <a href="mailto:theo@reactop.com" className="text-3xl font-light text-white hover:text-blue-400 transition-colors">
+                  theo@reactop.com
+                </a>
+              </div>
+            </div>
+
+            <div className="space-y-6">
+              <div>
+                <label htmlFor="name" className="block text-white text-lg mb-3">Name</label>
+                <input
+                  type="text"
+                  id="name"
+                  placeholder="John Doe"
+                  className="w-full px-6 py-4 bg-transparent border border-gray-800 rounded-xl text-white placeholder-gray-600 focus:outline-none focus:border-blue-500 transition-colors"
+                />
+              </div>
+
+              <div>
+                <label htmlFor="email" className="block text-white text-lg mb-3">Email</label>
+                <input
+                  type="email"
+                  id="email"
+                  placeholder="john@example.com"
+                  className="w-full px-6 py-4 bg-transparent border border-gray-800 rounded-xl text-white placeholder-gray-600 focus:outline-none focus:border-blue-500 transition-colors"
+                />
+              </div>
+
+              <div>
+                <label htmlFor="website" className="block text-white text-lg mb-3">Company Website</label>
+                <input
+                  type="text"
+                  id="website"
+                  placeholder="www.exemple.com"
+                  className="w-full px-6 py-4 bg-transparent border border-gray-800 rounded-xl text-white placeholder-gray-600 focus:outline-none focus:border-blue-500 transition-colors"
+                />
+              </div>
+
+              <div>
+                <label htmlFor="message" className="block text-white text-lg mb-3">Message</label>
+                <textarea
+                  id="message"
+                  rows={4}
+                  placeholder="Parlez-nous de votre projet..."
+                  className="w-full px-6 py-4 bg-transparent border border-gray-800 rounded-xl text-white placeholder-gray-600 focus:outline-none focus:border-blue-500 transition-colors resize-none"
+                ></textarea>
+              </div>
+
+              <button className="w-full px-8 py-4 bg-gray-900 hover:bg-gray-800 border border-gray-800 hover:border-blue-500 text-white text-lg font-medium rounded-xl transition-all duration-200">
+                Submit
+              </button>
+            </div>
           </div>
         </div>
       </section>
