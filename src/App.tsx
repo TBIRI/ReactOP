@@ -154,8 +154,8 @@ function App() {
           <div className="grid md:grid-cols-2 gap-16 items-center">
             <div>
               <h2 className="text-7xl font-bold mb-12">
-                <span className="text-white">Let's </span>
-                <span className="bg-gradient-to-r from-white to-blue-400 bg-clip-text text-transparent">talk!</span>
+                <span className="text-white">Parlons-</span>
+                <span className="bg-gradient-to-r from-white to-blue-400 bg-clip-text text-transparent">en!</span>
               </h2>
               <div className="border-t border-gray-800 pt-8">
                 <p className="text-gray-400 text-lg mb-2">Email:</p>
@@ -182,16 +182,6 @@ function App() {
                   type="email"
                   id="email"
                   placeholder="john@example.com"
-                  className="w-full px-6 py-4 bg-transparent border border-gray-800 rounded-xl text-white placeholder-gray-600 focus:outline-none focus:border-blue-500 transition-colors"
-                />
-              </div>
-
-              <div>
-                <label htmlFor="website" className="block text-white text-lg mb-3">Company Website</label>
-                <input
-                  type="text"
-                  id="website"
-                  placeholder="www.exemple.com"
                   className="w-full px-6 py-4 bg-transparent border border-gray-800 rounded-xl text-white placeholder-gray-600 focus:outline-none focus:border-blue-500 transition-colors"
                 />
               </div>
