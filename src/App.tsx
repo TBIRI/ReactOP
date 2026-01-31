@@ -36,14 +36,16 @@ function App() {
           </button>
 
           <div className="border-beam-wrapper" style={{ borderRadius: '9999px' }}>
-            <button
-              onClick={() => scrollToSection('contact')}
-              className="px-6 py-2 bg-gray-950 font-medium text-sm rounded-full transition-all duration-200 whitespace-nowrap"
+            <a
+              href="https://calendar.app.google/jScJ2XUgZ22C1RRr5"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-6 py-2 bg-gray-950 font-medium text-sm rounded-full transition-all duration-200 whitespace-nowrap inline-block"
             >
               <span className="bg-gradient-to-r from-white to-blue-400 bg-clip-text text-transparent">
                 Réservez un appel
               </span>
-            </button>
+            </a>
           </div>
         </div>
       </nav>
@@ -81,12 +83,18 @@ function App() {
             Des leads mieux traités. Des résultats mesurés.
           </p>
           <div className="border-beam-wrapper group inline-block" style={{ borderRadius: '0.75rem' }}>
-            <button className="relative px-8 py-4 bg-gray-950 font-semibold text-lg transition-all duration-300 flex items-center gap-2" style={{ borderRadius: '0.75rem' }}>
+            <a
+              href="https://calendar.app.google/jScJ2XUgZ22C1RRr5"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="relative px-8 py-4 bg-gray-950 font-semibold text-lg transition-all duration-300 flex items-center gap-2"
+              style={{ borderRadius: '0.75rem' }}
+            >
               <span className="bg-gradient-to-r from-white to-blue-400 bg-clip-text text-transparent">
                 Réservez un appel
               </span>
               <ArrowRight className="w-5 h-5 text-blue-400 group-hover:translate-x-1 transition-transform" />
-            </button>
+            </a>
           </div>
         </div>
       </section>
@@ -150,12 +158,18 @@ function App() {
             Discutons de vos objectifs et de comment nous pouvons vous aider
           </p>
           <div className="border-beam-wrapper group" style={{ borderRadius: '0.75rem' }}>
-            <button className="relative px-10 py-5 bg-gray-950 font-semibold text-xl transition-all duration-300 flex items-center gap-3" style={{ borderRadius: '0.75rem' }}>
+            <a
+              href="https://calendar.app.google/jScJ2XUgZ22C1RRr5"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="relative px-10 py-5 bg-gray-950 font-semibold text-xl transition-all duration-300 flex items-center gap-3"
+              style={{ borderRadius: '0.75rem' }}
+            >
               <span className="bg-gradient-to-r from-white to-blue-400 bg-clip-text text-transparent">
                 Réservez un appel gratuit
               </span>
               <ArrowRight className="w-6 h-6 text-blue-400 group-hover:translate-x-1 transition-transform" />
-            </button>
+            </a>
           </div>
         </div>
       </section>
