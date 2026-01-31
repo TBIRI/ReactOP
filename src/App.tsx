@@ -166,40 +166,17 @@ function App() {
               </div>
             </div>
 
-            <div className="space-y-6">
-              <div>
-                <label htmlFor="name" className="block text-white text-lg mb-3">Name</label>
-                <input
-                  type="text"
-                  id="name"
-                  placeholder="John Doe"
-                  className="w-full px-6 py-4 bg-transparent border border-gray-800 rounded-xl text-white placeholder-gray-600 focus:outline-none focus:border-blue-500 transition-colors"
-                />
-              </div>
-
-              <div>
-                <label htmlFor="email" className="block text-white text-lg mb-3">Email</label>
-                <input
-                  type="email"
-                  id="email"
-                  placeholder="john@example.com"
-                  className="w-full px-6 py-4 bg-transparent border border-gray-800 rounded-xl text-white placeholder-gray-600 focus:outline-none focus:border-blue-500 transition-colors"
-                />
-              </div>
-
-              <div>
-                <label htmlFor="message" className="block text-white text-lg mb-3">Message</label>
-                <textarea
-                  id="message"
-                  rows={4}
-                  placeholder="Parlez-nous de votre projet..."
-                  className="w-full px-6 py-4 bg-transparent border border-gray-800 rounded-xl text-white placeholder-gray-600 focus:outline-none focus:border-blue-500 transition-colors resize-none"
-                ></textarea>
-              </div>
-
-              <button className="w-full px-8 py-4 bg-gray-900 hover:bg-gray-800 border border-gray-800 hover:border-blue-500 text-white text-lg font-medium rounded-xl transition-all duration-200">
-                Submit
-              </button>
+            <div className="w-full">
+              <iframe
+                src="https://tally.so/embed/WOzN2J?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1"
+                width="100%"
+                height="600"
+                frameBorder="0"
+                marginHeight={0}
+                marginWidth={0}
+                title="Contact Form"
+                className="rounded-xl"
+              />
             </div>
           </div>
         </div>
