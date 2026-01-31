@@ -90,7 +90,7 @@ function App() {
           <div className="grid md:grid-cols-2 gap-8">
             {[
               { icon: TrendingUp, title: "Audit CRO", desc: "Identification des fuites de conversion et des opportunités d'amélioration de vos tunnels de vente." },
-              { icon: Target, title: "Implémentation de workflows correctifs", desc: "Mise en place d'un système IA qui sécurise les opportunités et rend le pipeline plus prévisible." }
+              { icon: Target, title: "Implémentation de workflows correctifs", desc: "Mise en place de systèmes IA qui sécurisent les opportunités et rendent le pipeline plus prévisible." }
             ].map((service, idx) => (
               <div key={idx} className="group p-8 bg-gray-900/50 border border-gray-800 rounded-2xl hover:border-blue-500/50 transition-all duration-300 hover:shadow-xl hover:shadow-blue-500/10">
                 <service.icon className="w-12 h-12 text-blue-400 mb-4 group-hover:scale-110 transition-transform" />
