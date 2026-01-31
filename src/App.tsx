@@ -57,7 +57,7 @@ function App() {
             backgroundSize: 'contain',
             backgroundPosition: 'center',
             backgroundRepeat: 'no-repeat',
-            filter: 'blur(80px)',
+            filter: 'blur(50px)',
             opacity: 0.3
           }}
         ></div>
@@ -91,7 +91,7 @@ function App() {
         </div>
       </section>
 
-      <section id="services" className="pt-60 pb-40 px-6 bg-gradient-to-b from-transparent to-gray-900/30">
+      <section id="services" className="pt-20 pb-40 px-6 bg-gradient-to-b from-transparent to-gray-900/30">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-5xl font-semibold text-center mb-4 bg-gradient-to-r from-white to-blue-400 bg-clip-text text-transparent">
             Ce que nous faisons
