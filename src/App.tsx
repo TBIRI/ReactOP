@@ -1,4 +1,5 @@
 import { ArrowRight, TrendingUp, Target } from 'lucide-react';
+import { useEffect } from 'react';
 
 function App() {
   const scrollToSection = (id: string) => {
@@ -7,6 +8,24 @@ function App() {
       element.scrollIntoView({ behavior: 'smooth' });
     }
   };
+
+  useEffect(() => {
+    const script = document.createElement('script');
+    script.src = 'https://tally.so/widgets/embed.js';
+    script.async = true;
+    script.onload = () => {
+      if (typeof (window as any).Tally !== 'undefined') {
+        (window as any).Tally.loadEmbeds();
+      }
+    };
+    document.body.appendChild(script);
+
+    return () => {
+      if (document.body.contains(script)) {
+        document.body.removeChild(script);
+      }
+    };
+  }, []);
 
   return (
     <div className="min-h-screen bg-black text-white">
@@ -168,13 +187,14 @@ function App() {
 
             <div className="w-full">
               <iframe
-                src="https://tally.so/embed/WOzN2J?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1"
+                data-tally-src="https://tally.so/embed/WOzN2J?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1"
+                loading="lazy"
                 width="100%"
-                height="600"
+                height="639"
                 frameBorder="0"
                 marginHeight={0}
                 marginWidth={0}
-                title="Contact Form"
+                title="Parlons-en!"
                 className="rounded-xl"
               />
             </div>
