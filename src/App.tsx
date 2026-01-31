@@ -49,6 +49,19 @@ function App() {
       </nav>
 
       <section className="min-h-screen flex flex-col items-center justify-center px-6 relative overflow-hidden">
+        {/* Mobius logo - very blurred background */}
+        <div
+          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] pointer-events-none z-0"
+          style={{
+            backgroundImage: "url('/public_assets/mobius_det.png')",
+            backgroundSize: 'contain',
+            backgroundPosition: 'center',
+            backgroundRepeat: 'no-repeat',
+            filter: 'blur(80px)',
+            opacity: 0.3
+          }}
+        ></div>
+
         {/* Planet horizon background image */}
         <div
           className="absolute bottom-0 left-0 right-0 h-full w-full pointer-events-none bg-cover bg-bottom bg-no-repeat"
