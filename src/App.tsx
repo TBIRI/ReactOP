@@ -50,19 +50,20 @@ function App() {
         </div>
       </nav>
 
+      {/* Mobius logo - very blurred background that follows scroll */}
+      <div
+        className="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] pointer-events-none z-0"
+        style={{
+          backgroundImage: "url('/public_assets/mobius_det.png')",
+          backgroundSize: 'contain',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat',
+          filter: 'blur(50px)',
+          opacity: 0.3
+        }}
+      ></div>
+
       <section className="min-h-screen flex flex-col items-center justify-center px-6 relative overflow-hidden">
-        {/* Mobius logo - very blurred background */}
-        <div
-          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] pointer-events-none z-0"
-          style={{
-            backgroundImage: "url('/public_assets/mobius_det.png')",
-            backgroundSize: 'contain',
-            backgroundPosition: 'center',
-            backgroundRepeat: 'no-repeat',
-            filter: 'blur(50px)',
-            opacity: 0.3
-          }}
-        ></div>
 
         {/* Planet horizon background image */}
         <div
