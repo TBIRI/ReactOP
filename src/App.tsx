@@ -214,7 +214,7 @@ function App() {
               </div>
 
               <div className="p-8 lg:p-10 bg-gray-900/50 border border-orange-500/30 rounded-xl sm:col-span-2 lg:col-span-1">
-                <div className="font-semibold mb-4 text-xl lg:text-2xl text-white">Pas de visibilité</div>
+                <div className="font-semibold mb-4 text-xl lg:text-2xl text-white">Pas de visibilité sur le suivi des leads</div>
                 <div className="flex items-center gap-3">
                   <ArrowRight className="w-6 h-6 text-gray-400 flex-shrink-0" />
                   <p className="text-lg lg:text-xl text-gray-300">impossible d'optimiser</p>
