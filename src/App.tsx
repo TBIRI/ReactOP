@@ -1,4 +1,4 @@
-import { ArrowRight, TrendingUp, Target, Building2, Clock, Phone, BarChart3, CheckCircle2 } from 'lucide-react';
+import { ArrowRight, TrendingUp, Target } from 'lucide-react';
 import { useState } from 'react';
 
 function App() {
@@ -175,44 +175,41 @@ function App() {
           <h2 className="text-5xl font-semibold text-center mb-4 bg-gradient-to-r from-white to-blue-400 bg-clip-text text-transparent">
             Pour qui
           </h2>
-          <p className="text-center mb-12 text-lg bg-gradient-to-r from-gray-300 to-blue-300 bg-clip-text text-transparent max-w-3xl mx-auto">
-            Nous aidons les équipes qui dépendent de leads à répondre plus vite, relancer automatiquement et mesurer ce qui génère des rendez-vous.
+          <p className="text-center mb-16 text-xl bg-gradient-to-r from-gray-300 to-blue-300 bg-clip-text text-transparent max-w-3xl mx-auto">
+            Agences immobilières qui veulent transformer plus de leads en RDV — puis en mandats.
           </p>
 
-          <div className="max-w-3xl mx-auto mb-16">
-            <div className="p-8 bg-gradient-to-br from-blue-500/10 to-blue-600/5 border border-blue-500/30 rounded-2xl">
-              <div className="flex items-center gap-3 mb-6">
-                <Building2 className="w-8 h-8 text-blue-400" />
-                <h3 className="text-2xl font-semibold bg-gradient-to-r from-white to-blue-300 bg-clip-text text-transparent">
-                  Focus : agences immobilières
-                </h3>
-              </div>
-
-              <div className="space-y-4 mb-6">
-                <div className="flex items-start gap-3">
-                  <Clock className="w-6 h-6 text-blue-400 flex-shrink-0 mt-1" />
-                  <p className="text-gray-300">Réponse en quelques minutes après une demande</p>
-                </div>
-
-                <div className="flex items-start gap-3">
-                  <Phone className="w-6 h-6 text-blue-400 flex-shrink-0 mt-1" />
-                  <p className="text-gray-300">Relances (appel / SMS / email) jusqu'au RDV</p>
-                </div>
-
-                <div className="flex items-start gap-3">
-                  <BarChart3 className="w-6 h-6 text-blue-400 flex-shrink-0 mt-1" />
-                  <p className="text-gray-300">Suivi des KPI : contact, RDV, no-show, mandat</p>
+          <div className="max-w-4xl mx-auto">
+            <div className="grid md:grid-cols-3 gap-6 mb-12">
+              <div className="p-6 bg-gray-900/50 border border-red-500/30 rounded-xl">
+                <div className="text-red-400 font-semibold mb-3 text-lg">Leads traités trop tard</div>
+                <div className="flex items-center gap-2">
+                  <ArrowRight className="w-5 h-5 text-red-400" />
+                  <p className="text-gray-300">opportunités perdues</p>
                 </div>
               </div>
 
-              <div className="pt-6 border-t border-blue-500/20">
-                <div className="flex items-start gap-3">
-                  <CheckCircle2 className="w-6 h-6 text-blue-400 flex-shrink-0 mt-1" />
-                  <p className="text-lg bg-gradient-to-r from-gray-200 to-blue-200 bg-clip-text text-transparent font-medium">
-                    Plus de RDV qualifiés et moins de leads perdus — ce qui se traduit (souvent) par plus de mandats.
-                  </p>
+              <div className="p-6 bg-gray-900/50 border border-red-500/30 rounded-xl">
+                <div className="text-red-400 font-semibold mb-3 text-lg">Suivi irrégulier</div>
+                <div className="flex items-center gap-2">
+                  <ArrowRight className="w-5 h-5 text-red-400" />
+                  <p className="text-gray-300">no-show / ghosting</p>
                 </div>
               </div>
+
+              <div className="p-6 bg-gray-900/50 border border-red-500/30 rounded-xl">
+                <div className="text-red-400 font-semibold mb-3 text-lg">Pas de visibilité</div>
+                <div className="flex items-center gap-2">
+                  <ArrowRight className="w-5 h-5 text-red-400" />
+                  <p className="text-gray-300">impossible d'optimiser</p>
+                </div>
+              </div>
+            </div>
+
+            <div className="p-8 bg-gradient-to-br from-blue-500/10 to-blue-600/5 border border-blue-500/30 rounded-2xl text-center">
+              <p className="text-xl bg-gradient-to-r from-gray-200 to-blue-200 bg-clip-text text-transparent font-medium">
+                Nous identifions les fuites et mettons en place un système mesurable pour les corriger.
+              </p>
             </div>
           </div>
         </div>
