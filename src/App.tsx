@@ -153,7 +153,7 @@ function App() {
             </a>
           </div>
           <p className="text-sm bg-gradient-to-r from-gray-400 to-blue-200 bg-clip-text text-transparent" data-offer="free-audit">
-            Audit gratuit, ~15min
+            Audit gratuit de 15min
           </p>
         </div>
       </section>
@@ -222,19 +222,15 @@ function App() {
               </div>
             </div>
 
-            <div className="p-6 sm:p-8 bg-gradient-to-br from-blue-500/10 to-blue-600/5 border border-green-500/30 rounded-2xl text-center" data-value-proposition="main">
-              <p className="text-lg sm:text-xl bg-gradient-to-r from-gray-200 to-blue-200 bg-clip-text text-transparent font-medium">
+            <div className="p-6 sm:p-8 bg-gradient-to-br from-blue-500/10 to-blue-600/5 border border-blue-500/30 rounded-2xl text-center" data-value-proposition="main">
+              <p className="text-lg sm:text-xl bg-gradient-to-r from-gray-200 to-blue-200 bg-clip-text text-transparent font-medium mb-4">
                 Nous identifions les fuites propres à chaque agence et mettons en place un système mesurable pour les corriger.
               </p>
-            </div>
-
-            <div className="mt-8 p-6 sm:p-8 bg-gradient-to-br from-green-500/10 to-emerald-600/5 border border-green-500/40 rounded-2xl text-center" data-guarantee="results">
-              <h3 className="text-xl sm:text-2xl font-semibold bg-gradient-to-r from-white to-green-300 bg-clip-text text-transparent mb-2">
-                Garantie de résultats
-              </h3>
-              <p className="text-base sm:text-lg bg-gradient-to-r from-gray-300 to-green-300 bg-clip-text text-transparent">
-                pas de résultat = vous ne payez pas
-              </p>
+              <div className="pt-4 border-t border-blue-500/20" data-guarantee="results">
+                <p className="text-sm bg-gradient-to-r from-gray-400 to-blue-300 bg-clip-text text-transparent font-medium">
+                  Garantie de résultats · pas de résultat = vous ne payez pas
+                </p>
+              </div>
             </div>
           </div>
         </div>
