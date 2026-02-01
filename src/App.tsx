@@ -104,7 +104,7 @@ function App() {
       <div
         className="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] pointer-events-none z-0"
         style={{
-          backgroundImage: "url('/public_assets/mobius_det.png')",
+          backgroundImage: "url('/mobius_det.png')",
           backgroundSize: 'contain',
           backgroundPosition: 'center',
           backgroundRepeat: 'no-repeat',
@@ -357,7 +357,7 @@ function App() {
           <div className="flex flex-col md:flex-row justify-between items-center gap-8">
             <div className="text-center md:text-left" itemScope itemType="https://schema.org/Organization">
               <div className="flex items-center justify-center md:justify-start gap-3 mb-2">
-                <img src="/public_assets/mobius_det.png" alt="ReactOP Logo - Agence CRO Immobilier" className="h-8 w-8" itemProp="logo" />
+                <img src="/mobius_det.png" alt="ReactOP Logo - Agence CRO Immobilier" className="h-8 w-8" itemProp="logo" />
                 <div className="text-2xl font-semibold bg-gradient-to-r from-white to-blue-400 bg-clip-text text-transparent" itemProp="name">
                   ReactOP
                 </div>
