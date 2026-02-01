@@ -176,8 +176,8 @@ function App() {
             {[
               { num: "01", title: "Analyse", desc: "Audit complet de vos funnels de vente" },
               { num: "02", title: "Stratégie", desc: "Plan d'action personnalisé basé sur vos objectifs" },
-              { num: "03", title: "Test", desc: "Expérimentations et itérations rapides" },
-              { num: "04", title: "Scale", desc: "Déploiement des gagnants à grande échelle" }
+              { num: "03", title: "Implémentation", desc: "Mise en place des systèmes" },
+              { num: "04", title: "Maintenance et amélioration", desc: "Après le déploiement des solutions, notre équipe continuera à surveiller et à améliorer vos systèmes" }
             ].map((step, idx) => (
               <div key={idx} className="relative p-8 bg-gradient-to-br from-gray-900 to-gray-900/50 border border-gray-800 rounded-2xl">
                 <div className="text-6xl font-semibold text-blue-500/20 mb-4">{step.num}</div>
