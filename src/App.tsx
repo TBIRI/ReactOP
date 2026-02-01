@@ -49,34 +49,34 @@ function App() {
 
   return (
     <div className="min-h-screen bg-black text-white">
-      <nav className="fixed top-6 left-1/2 -translate-x-1/2 z-50 w-full max-w-4xl px-6">
-        <div className="flex items-center justify-between px-3 sm:px-6 py-2 bg-gray-900/80 backdrop-blur-xl rounded-full border border-gray-800/50 shadow-2xl">
-          <img src="/mobius_det.png" alt="ReactOP" className="w-8 h-8 sm:w-10 sm:h-10" />
+      <nav className="fixed top-6 left-1/2 -translate-x-1/2 z-50 w-[95%] sm:w-[90%] max-w-4xl px-2 sm:px-4">
+        <div className="flex items-center justify-between px-2 sm:px-4 lg:px-6 py-2 bg-gray-900/80 backdrop-blur-xl rounded-full border border-gray-800/50 shadow-2xl">
+          <img src="/mobius_det.png" alt="ReactOP" className="w-7 h-7 sm:w-8 sm:h-8 lg:w-10 lg:h-10" />
 
           <button
             onClick={() => scrollToSection('services')}
-            className="px-3 sm:px-6 py-2 rounded-full text-xs sm:text-sm font-medium text-gray-300 hover:text-white hover:bg-gray-800/50 transition-all duration-200"
+            className="px-2 sm:px-3 lg:px-6 py-1.5 sm:py-2 rounded-full text-[10px] sm:text-xs lg:text-sm font-medium text-gray-300 hover:text-white hover:bg-gray-800/50 transition-all duration-200"
           >
             services
           </button>
 
           <button
             onClick={() => scrollToSection('pour-qui')}
-            className="px-3 sm:px-6 py-2 rounded-full text-xs sm:text-sm font-medium text-gray-300 hover:text-white hover:bg-gray-800/50 transition-all duration-200 whitespace-nowrap"
+            className="px-2 sm:px-3 lg:px-6 py-1.5 sm:py-2 rounded-full text-[10px] sm:text-xs lg:text-sm font-medium text-gray-300 hover:text-white hover:bg-gray-800/50 transition-all duration-200 whitespace-nowrap"
           >
             pour qui
           </button>
 
           <button
             onClick={() => scrollToSection('processus')}
-            className="px-3 sm:px-6 py-2 rounded-full text-xs sm:text-sm font-medium text-gray-300 hover:text-white hover:bg-gray-800/50 transition-all duration-200"
+            className="px-2 sm:px-3 lg:px-6 py-1.5 sm:py-2 rounded-full text-[10px] sm:text-xs lg:text-sm font-medium text-gray-300 hover:text-white hover:bg-gray-800/50 transition-all duration-200"
           >
             processus
           </button>
 
           <button
             onClick={() => scrollToSection('contact')}
-            className="px-3 sm:px-6 py-2 rounded-full text-xs sm:text-sm font-medium text-gray-300 hover:text-white hover:bg-gray-800/50 transition-all duration-200"
+            className="px-2 sm:px-3 lg:px-6 py-1.5 sm:py-2 rounded-full text-[10px] sm:text-xs lg:text-sm font-medium text-gray-300 hover:text-white hover:bg-gray-800/50 transition-all duration-200"
           >
             contact
           </button>
@@ -86,7 +86,7 @@ function App() {
               href="https://calendar.app.google/jScJ2XUgZ22C1RRr5"
               target="_blank"
               rel="noopener noreferrer"
-              className="px-3 sm:px-6 py-2 bg-gray-950 font-medium text-xs sm:text-sm rounded-full transition-all duration-200 whitespace-nowrap inline-block"
+              className="px-2 sm:px-3 lg:px-6 py-1.5 sm:py-2 bg-gray-950 font-medium text-[10px] sm:text-xs lg:text-sm rounded-full transition-all duration-200 whitespace-nowrap inline-block"
             >
               <span className="bg-gradient-to-r from-white to-blue-400 bg-clip-text text-transparent">
                 Réservez un appel
