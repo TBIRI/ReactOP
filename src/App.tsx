@@ -227,8 +227,11 @@ function App() {
                 Nous identifions les fuites propres à chaque agence et mettons en place un système mesurable pour les corriger.
               </p>
               <div className="pt-4 border-t border-blue-500/20" data-guarantee="results">
-                <p className="text-sm bg-gradient-to-r from-gray-400 to-blue-300 bg-clip-text text-transparent font-medium">
-                  Garantie de résultats · pas de résultat = vous ne payez pas
+                <p className="text-sm bg-gradient-to-r from-gray-400 to-blue-300 bg-clip-text text-transparent font-medium mb-1">
+                  Garantie de résultats
+                </p>
+                <p className="text-xs bg-gradient-to-r from-gray-500 to-blue-400 bg-clip-text text-transparent">
+                  pas de résultat = vous ne payez pas
                 </p>
               </div>
             </div>
@@ -247,7 +250,7 @@ function App() {
 
           <div className="flex flex-col gap-4" role="list">
             {[
-              { num: "01", title: "Analyse", desc: "Audit complet de vos funnels de vente (gratuit, ~15min)" },
+              { num: "01", title: "Analyse", desc: "Audit de vos funnels de vente (gratuit, ~15min)" },
               { num: "02", title: "Stratégie", desc: "Plan d'action personnalisé basé sur vos objectifs" },
               { num: "03", title: "Implémentation", desc: "Mise en place des systèmes" },
               { num: "04", title: "Maintenance et amélioration", desc: "Après le déploiement des solutions, notre équipe continuera à surveiller et à améliorer vos systèmes" }
@@ -312,7 +315,7 @@ function App() {
                     id="message"
                     name="message"
                     rows={6}
-                    placeholder=""
+                    placeholder="Décrivez votre demande"
                     maxLength={1000}
                     required
                     className="w-full px-6 py-4 bg-black border border-gray-800 rounded-lg text-gray-300 placeholder-gray-600 focus:outline-none focus:border-blue-500 transition-colors resize-none"
