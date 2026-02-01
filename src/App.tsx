@@ -121,39 +121,39 @@ function App() {
           <div className="flex-1 flex flex-col justify-center space-y-1">
             <button
               onClick={() => scrollToSection('services')}
-              className="text-4xl font-medium text-white py-4 text-left hover:text-blue-400 transition-colors"
+              className="text-4xl font-medium text-white py-4 text-left hover:text-blue-400 transition-colors pl-2"
             >
               Services
             </button>
 
             <button
               onClick={() => scrollToSection('pour-qui')}
-              className="text-4xl font-medium text-white py-4 text-left hover:text-blue-400 transition-colors"
+              className="text-4xl font-medium text-white py-4 text-left hover:text-blue-400 transition-colors pl-2"
             >
               Clients
             </button>
 
             <button
               onClick={() => scrollToSection('processus')}
-              className="text-4xl font-medium text-white py-4 text-left hover:text-blue-400 transition-colors"
+              className="text-4xl font-medium text-white py-4 text-left hover:text-blue-400 transition-colors pl-2"
             >
               Processus
             </button>
 
             <button
               onClick={() => scrollToSection('contact')}
-              className="text-4xl font-medium text-white py-4 text-left hover:text-blue-400 transition-colors"
+              className="text-4xl font-medium text-white py-4 text-left hover:text-blue-400 transition-colors pl-2"
             >
               Contact
             </button>
 
-            <div className="py-4">
+            <div className="py-4 -ml-1.5">
               <div className="border-beam-wrapper inline-flex" style={{ borderRadius: '9999px' }}>
                 <a
                   href="https://calendar.app.google/jScJ2XUgZ22C1RRr5"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="px-8 py-3 bg-gray-950 font-medium text-xl rounded-full transition-all duration-200 whitespace-nowrap inline-block"
+                  className="pl-8 pr-8 py-3 bg-gray-950 font-medium text-xl rounded-full transition-all duration-200 whitespace-nowrap inline-block"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   <span className="bg-gradient-to-r from-white to-blue-400 bg-clip-text text-transparent">
