@@ -176,43 +176,43 @@ function App() {
             Pour qui
           </h2>
           <p className="text-center mb-16 text-lg sm:text-xl bg-gradient-to-r from-gray-300 to-blue-300 bg-clip-text text-transparent max-w-3xl mx-auto px-4">
-            Agences immobilières voulant transformer plus de leads en RDV — puis en mandats.
+            Agences immobilières souhaitant transformer plus de leads en RDV — puis en mandats.
           </p>
 
           <div className="max-w-4xl mx-auto">
+            <p className="text-center text-gray-400 text-sm mb-6 px-4">
+              Exemples de fuites fréquentes
+            </p>
+
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
-              <div className="p-6 bg-gray-900/50 border border-red-500/30 rounded-xl">
-                <div className="text-red-400 font-semibold mb-3 text-lg">Leads traités trop tard</div>
+              <div className="p-6 bg-gray-900/50 border border-orange-500/30 rounded-xl">
+                <div className="text-orange-400 font-semibold mb-3 text-lg">Leads traités trop tard</div>
                 <div className="flex items-center gap-2">
-                  <ArrowRight className="w-5 h-5 text-red-400 flex-shrink-0" />
+                  <ArrowRight className="w-5 h-5 text-orange-400 flex-shrink-0" />
                   <p className="text-gray-300">opportunités perdues</p>
                 </div>
               </div>
 
-              <div className="p-6 bg-gray-900/50 border border-red-500/30 rounded-xl">
-                <div className="text-red-400 font-semibold mb-3 text-lg">Suivi irrégulier</div>
+              <div className="p-6 bg-gray-900/50 border border-orange-500/30 rounded-xl">
+                <div className="text-orange-400 font-semibold mb-3 text-lg">Suivi irrégulier</div>
                 <div className="flex items-center gap-2">
-                  <ArrowRight className="w-5 h-5 text-red-400 flex-shrink-0" />
+                  <ArrowRight className="w-5 h-5 text-orange-400 flex-shrink-0" />
                   <p className="text-gray-300">no-show / ghosting</p>
                 </div>
               </div>
 
-              <div className="p-6 bg-gray-900/50 border border-red-500/30 rounded-xl sm:col-span-2 lg:col-span-1">
-                <div className="text-red-400 font-semibold mb-3 text-lg">Pas de visibilité</div>
+              <div className="p-6 bg-gray-900/50 border border-orange-500/30 rounded-xl sm:col-span-2 lg:col-span-1">
+                <div className="text-orange-400 font-semibold mb-3 text-lg">Pas de visibilité</div>
                 <div className="flex items-center gap-2">
-                  <ArrowRight className="w-5 h-5 text-red-400 flex-shrink-0" />
+                  <ArrowRight className="w-5 h-5 text-orange-400 flex-shrink-0" />
                   <p className="text-gray-300">impossible d'optimiser</p>
                 </div>
               </div>
             </div>
 
-            <p className="text-center text-gray-400 text-sm mb-6 italic px-4">
-              Ces points sont des exemples fréquents. L'audit identifie les fuites prioritaires propres à chaque agence.
-            </p>
-
             <div className="p-6 sm:p-8 bg-gradient-to-br from-blue-500/10 to-blue-600/5 border border-blue-500/30 rounded-2xl text-center">
               <p className="text-lg sm:text-xl bg-gradient-to-r from-gray-200 to-blue-200 bg-clip-text text-transparent font-medium">
-                Nous identifions les fuites et mettons en place un système mesurable pour les corriger.
+                Nous identifions les fuites propres à chaque agence et mettons en place un système mesurable pour les <span className="text-green-400">corriger</span>.
               </p>
             </div>
           </div>
