@@ -186,7 +186,7 @@ function App() {
 
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
               <div className="p-6 bg-gray-900/50 border border-orange-500/30 rounded-xl">
-                <div className="font-semibold mb-3 text-lg bg-gradient-to-r from-white to-blue-300 bg-clip-text text-transparent">Leads traités trop tard</div>
+                <div className="font-semibold mb-3 text-lg text-white">Leads traités trop tard</div>
                 <div className="flex items-center gap-2">
                   <ArrowRight className="w-5 h-5 text-gray-400 flex-shrink-0" />
                   <p className="text-gray-300">opportunités perdues</p>
@@ -194,7 +194,7 @@ function App() {
               </div>
 
               <div className="p-6 bg-gray-900/50 border border-orange-500/30 rounded-xl">
-                <div className="font-semibold mb-3 text-lg bg-gradient-to-r from-white to-blue-300 bg-clip-text text-transparent">Suivi irrégulier</div>
+                <div className="font-semibold mb-3 text-lg text-white">Suivi irrégulier</div>
                 <div className="flex items-center gap-2">
                   <ArrowRight className="w-5 h-5 text-gray-400 flex-shrink-0" />
                   <p className="text-gray-300">no-show / ghosting</p>
@@ -202,7 +202,7 @@ function App() {
               </div>
 
               <div className="p-6 bg-gray-900/50 border border-orange-500/30 rounded-xl sm:col-span-2 lg:col-span-1">
-                <div className="font-semibold mb-3 text-lg bg-gradient-to-r from-white to-blue-300 bg-clip-text text-transparent">Pas de visibilité</div>
+                <div className="font-semibold mb-3 text-lg text-white">Pas de visibilité</div>
                 <div className="flex items-center gap-2">
                   <ArrowRight className="w-5 h-5 text-gray-400 flex-shrink-0" />
                   <p className="text-gray-300">impossible d'optimiser</p>
