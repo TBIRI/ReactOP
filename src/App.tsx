@@ -10,21 +10,27 @@ function App() {
   };
 
   useEffect(() => {
-    const script = document.createElement('script');
-    script.src = 'https://tally.so/widgets/embed.js';
-    script.async = true;
-    script.onload = () => {
-      if (typeof (window as any).Tally !== 'undefined') {
+    const d = document;
+    const w = "https://tally.so/widgets/embed.js";
+    const v = function() {
+      if (typeof (window as any).Tally !== "undefined") {
         (window as any).Tally.loadEmbeds();
+      } else {
+        d.querySelectorAll("iframe[data-tally-src]:not([src])").forEach((e: any) => {
+          e.src = e.dataset.tallySrc;
+        });
       }
     };
-    document.body.appendChild(script);
 
-    return () => {
-      if (document.body.contains(script)) {
-        document.body.removeChild(script);
-      }
-    };
+    if (typeof (window as any).Tally !== "undefined") {
+      v();
+    } else if (d.querySelector('script[src="' + w + '"]') == null) {
+      const s = d.createElement("script");
+      s.src = w;
+      s.onload = v;
+      s.onerror = v;
+      d.body.appendChild(s);
+    }
   }, []);
 
   return (
