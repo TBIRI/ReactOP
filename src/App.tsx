@@ -1,5 +1,4 @@
 import { ArrowRight, TrendingUp, Target } from 'lucide-react';
-import { useEffect } from 'react';
 
 function App() {
   const scrollToSection = (id: string) => {
@@ -9,29 +8,6 @@ function App() {
     }
   };
 
-  useEffect(() => {
-    const d = document;
-    const w = "https://tally.so/widgets/embed.js";
-    const v = function() {
-      if (typeof (window as any).Tally !== "undefined") {
-        (window as any).Tally.loadEmbeds();
-      } else {
-        d.querySelectorAll("iframe[data-tally-src]:not([src])").forEach((e: any) => {
-          e.src = e.dataset.tallySrc;
-        });
-      }
-    };
-
-    if (typeof (window as any).Tally !== "undefined") {
-      v();
-    } else if (d.querySelector('script[src="' + w + '"]') == null) {
-      const s = d.createElement("script");
-      s.src = w;
-      s.onload = v;
-      s.onerror = v;
-      d.body.appendChild(s);
-    }
-  }, []);
 
   return (
     <div className="min-h-screen bg-black text-white">
@@ -192,17 +168,58 @@ function App() {
             </div>
 
             <div className="w-full">
-              <iframe
-                data-tally-src="https://tally.so/embed/WOzN2J?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1"
-                loading="lazy"
-                width="100%"
-                height="639"
-                frameBorder="0"
-                marginHeight={0}
-                marginWidth={0}
-                title="Parlons-en!"
-                className="rounded-xl"
-              />
+              <form className="space-y-6">
+                <div>
+                  <label htmlFor="name" className="block text-lg mb-3 text-white">Name</label>
+                  <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    placeholder="John Doe"
+                    className="w-full px-6 py-4 bg-black border border-gray-800 rounded-lg text-gray-300 placeholder-gray-600 focus:outline-none focus:border-blue-500 transition-colors"
+                  />
+                </div>
+
+                <div>
+                  <label htmlFor="email" className="block text-lg mb-3 text-white">Email</label>
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    placeholder="john@example.com"
+                    className="w-full px-6 py-4 bg-black border border-gray-800 rounded-lg text-gray-300 placeholder-gray-600 focus:outline-none focus:border-blue-500 transition-colors"
+                  />
+                </div>
+
+                <div>
+                  <label htmlFor="website" className="block text-lg mb-3 text-white">Company Website</label>
+                  <input
+                    type="text"
+                    id="website"
+                    name="website"
+                    placeholder="www.agent-n.ai"
+                    className="w-full px-6 py-4 bg-black border border-gray-800 rounded-lg text-gray-300 placeholder-gray-600 focus:outline-none focus:border-blue-500 transition-colors"
+                  />
+                </div>
+
+                <div>
+                  <label htmlFor="message" className="block text-lg mb-3 text-white">Message</label>
+                  <textarea
+                    id="message"
+                    name="message"
+                    rows={6}
+                    placeholder="Would like to automate my lead gen processes...."
+                    className="w-full px-6 py-4 bg-black border border-gray-800 rounded-lg text-gray-300 placeholder-gray-600 focus:outline-none focus:border-blue-500 transition-colors resize-none"
+                  />
+                </div>
+
+                <button
+                  type="submit"
+                  className="px-8 py-4 bg-blue-500 hover:bg-blue-600 text-white font-medium rounded-lg transition-colors"
+                >
+                  Submit
+                </button>
+              </form>
             </div>
           </div>
         </div>
