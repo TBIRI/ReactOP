@@ -140,17 +140,15 @@ function App() {
             >
               Contact
             </button>
-          </div>
 
-          <div className="mt-auto pt-8 border-t border-gray-800">
             <a
               href="https://calendar.app.google/jScJ2XUgZ22C1RRr5"
               target="_blank"
               rel="noopener noreferrer"
-              className="block w-full px-8 py-5 bg-gray-900 border border-blue-500/30 font-semibold text-xl rounded-xl text-center transition-all duration-200"
+              className="py-4 text-left transition-colors inline-block"
               onClick={() => setIsMobileMenuOpen(false)}
             >
-              <span className="bg-gradient-to-r from-white to-blue-400 bg-clip-text text-transparent">
+              <span className="text-4xl font-medium bg-gradient-to-r from-white to-blue-400 bg-clip-text text-transparent hover:opacity-80 transition-opacity">
                 Réservez un appel
               </span>
             </a>
