@@ -213,7 +213,7 @@ function App() {
                     type="text"
                     id="name"
                     name="name"
-                    placeholder="John Doe"
+                    placeholder=""
                     required
                     className="w-full px-6 py-4 bg-black border border-gray-800 rounded-lg text-gray-300 placeholder-gray-600 focus:outline-none focus:border-blue-500 transition-colors"
                   />
@@ -239,7 +239,8 @@ function App() {
                     id="message"
                     name="message"
                     rows={6}
-                    placeholder="Would like to automate my lead gen processes...."
+                    placeholder=""
+                    maxLength={1000}
                     required
                     className="w-full px-6 py-4 bg-black border border-gray-800 rounded-lg text-gray-300 placeholder-gray-600 focus:outline-none focus:border-blue-500 transition-colors resize-none"
                   />
@@ -257,13 +258,18 @@ function App() {
                   </div>
                 )}
 
-                <button
-                  type="submit"
-                  disabled={isSubmitting}
-                  className="px-8 py-4 bg-blue-500 hover:bg-blue-600 text-white font-medium rounded-lg transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
-                >
-                  {isSubmitting ? 'Envoi en cours...' : 'Submit'}
-                </button>
+                <div className="border-beam-wrapper" style={{ borderRadius: '0.75rem' }}>
+                  <button
+                    type="submit"
+                    disabled={isSubmitting}
+                    className="px-8 py-4 bg-gray-950 font-semibold text-lg transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed w-full"
+                    style={{ borderRadius: '0.75rem' }}
+                  >
+                    <span className="bg-gradient-to-r from-white to-blue-400 bg-clip-text text-transparent">
+                      {isSubmitting ? 'Envoi en cours...' : 'Envoyer'}
+                    </span>
+                  </button>
+                </div>
               </form>
             </div>
           </div>
