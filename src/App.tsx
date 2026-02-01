@@ -222,7 +222,7 @@ function App() {
               </div>
             </div>
 
-            <div className="p-6 sm:p-8 bg-gradient-to-br from-green-500/5 to-green-600/5 border border-green-500/20 rounded-2xl text-center" data-value-proposition="main">
+            <div className="p-6 sm:p-8 bg-gray-900/50 border border-green-500/20 rounded-2xl text-center" data-value-proposition="main">
               <p className="text-lg sm:text-xl bg-gradient-to-r from-gray-200 to-blue-200 bg-clip-text text-transparent font-medium mb-4">
                 Nous identifions les fuites propres à chaque agence et mettons en place un système mesurable pour les corriger.
               </p>
