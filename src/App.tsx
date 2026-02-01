@@ -118,7 +118,7 @@ function App() {
         {/* Planet horizon background image */}
         <div
           className="absolute bottom-0 left-0 right-0 h-full w-full pointer-events-none bg-cover bg-bottom bg-no-repeat"
-          style={{ backgroundImage: "url(/public_assets/capture_d'écran_2026-01-31_à_09.57.02.png)" }}
+          style={{ backgroundImage: "url(/planet-horizon.png)" }}
         ></div>
 
         {/* ReactOP title - above the curve */}
