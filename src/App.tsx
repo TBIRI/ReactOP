@@ -51,7 +51,7 @@ function App() {
     <div className="min-h-screen bg-black text-white">
       <nav className="fixed top-6 left-1/2 -translate-x-1/2 z-50 w-[95%] sm:w-[90%] max-w-4xl px-2 sm:px-4">
         <div className="flex items-center justify-between px-2 sm:px-4 lg:px-6 py-2 bg-gray-900/80 backdrop-blur-xl rounded-full border border-gray-800/50 shadow-2xl">
-          <img src="/mobius_det.png" alt="ReactOP - Optimisation CRO pour Agences Immobilières" className="w-7 h-7 sm:w-8 sm:h-8 lg:w-10 lg:h-10" />
+          <img src="/mobius_det.png" alt="ReactOP" className="w-7 h-7 sm:w-8 sm:h-8 lg:w-10 lg:h-10" />
 
           <button
             onClick={() => scrollToSection('services')}
@@ -126,11 +126,8 @@ function App() {
 
         {/* Content below the curve */}
         <div className="absolute bottom-[44%] left-1/2 -translate-x-1/2 w-full max-w-4xl text-center z-10 px-6">
-          <p className="text-xl sm:text-2xl md:text-3xl mb-4 bg-gradient-to-r from-gray-300 to-blue-300 bg-clip-text text-transparent">
-            Transformez plus de leads immobiliers en mandats
-          </p>
-          <p className="text-base sm:text-lg mb-8 text-gray-400 max-w-2xl mx-auto">
-            Audit CRO + Workflows IA pour agences immobilières qui veulent arrêter de perdre des opportunités
+          <p className="text-xl sm:text-2xl md:text-3xl mb-12 bg-gradient-to-r from-gray-300 to-blue-300 bg-clip-text text-transparent">
+            Des leads mieux traités. Des résultats mesurés.
           </p>
           <div className="border-beam-wrapper group inline-block" style={{ borderRadius: '0.75rem' }}>
             <a
@@ -139,74 +136,34 @@ function App() {
               rel="noopener noreferrer"
               className="relative px-8 py-4 bg-gray-950 font-semibold text-lg transition-all duration-300 flex items-center gap-2"
               style={{ borderRadius: '0.75rem' }}
-              aria-label="Réserver un appel de consultation gratuit avec ReactOP"
             >
               <span className="bg-gradient-to-r from-white to-blue-400 bg-clip-text text-transparent">
-                Audit gratuit de 30 min
+                Réservez un appel
               </span>
               <ArrowRight className="w-5 h-5 text-blue-400 group-hover:translate-x-1 transition-transform" />
             </a>
           </div>
-          <p className="text-xs text-gray-500 mt-3">Places limitées - 5 audits par mois</p>
         </div>
       </section>
 
       <section id="services" className="pt-20 pb-40 px-6 bg-gradient-to-b from-transparent to-gray-900/30">
         <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-12">
-            <div className="inline-block px-4 py-2 bg-blue-500/10 border border-blue-500/30 rounded-full mb-4">
-              <p className="text-sm text-blue-400">Résultats moyens constatés</p>
-            </div>
-            <div className="flex flex-wrap justify-center gap-8 mb-8">
-              <div className="text-center">
-                <div className="text-4xl font-bold bg-gradient-to-r from-white to-blue-400 bg-clip-text text-transparent">+35%</div>
-                <p className="text-sm text-gray-400 mt-1">Taux de conversion leads → RDV</p>
-              </div>
-              <div className="text-center">
-                <div className="text-4xl font-bold bg-gradient-to-r from-white to-blue-400 bg-clip-text text-transparent">-60%</div>
-                <p className="text-sm text-gray-400 mt-1">No-shows évités</p>
-              </div>
-              <div className="text-center">
-                <div className="text-4xl font-bold bg-gradient-to-r from-white to-blue-400 bg-clip-text text-transparent">2x</div>
-                <p className="text-sm text-gray-400 mt-1">Mandats signés</p>
-              </div>
-            </div>
-          </div>
-
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-semibold text-center mb-4 bg-gradient-to-r from-white to-blue-400 bg-clip-text text-transparent">
-            Comment nous aidons les agences immobilières
+            Ce que nous faisons
           </h2>
           <p className="text-center mb-16 text-base sm:text-lg bg-gradient-to-r from-gray-300 to-blue-300 bg-clip-text text-transparent">
-            Solutions CRO et IA pour maximiser chaque lead immobilier
+            Optimisation de la conversion basée sur les données
           </p>
 
           <div className="grid md:grid-cols-2 gap-8">
             {[
-              {
-                icon: TrendingUp,
-                title: "Audit CRO Immobilier Complet",
-                desc: "Analyse approfondie de votre tunnel de vente immobilier : landing pages, formulaires, temps de réponse, process de qualification, taux de transformation lead→RDV→mandat.",
-                points: ["Analyse des fuites de conversion", "Benchmark vs concurrence", "Recommandations actionnables"]
-              },
-              {
-                icon: Target,
-                title: "Workflows IA & Automation",
-                desc: "Systèmes automatisés qui répondent instantanément aux leads, qualifient les prospects, rappellent les no-shows et libèrent votre équipe pour les tâches à haute valeur.",
-                points: ["Réponse instantanée 24/7", "Qualification automatique", "Suivi intelligent des prospects"]
-              }
+              { icon: TrendingUp, title: "Audit CRO", desc: "Identification des fuites de conversion et des opportunités d'amélioration de vos tunnels de vente." },
+              { icon: Target, title: "Implémentation de workflows correctifs", desc: "Mise en place de systèmes IA qui sécurisent les opportunités et rendent le pipeline plus prévisible." }
             ].map((service, idx) => (
               <div key={idx} className="group p-8 bg-gray-900/50 border border-gray-800 rounded-2xl hover:border-blue-500/50 transition-all duration-300 hover:shadow-xl hover:shadow-blue-500/10">
-                <service.icon className="w-12 h-12 text-blue-400 mb-4 group-hover:scale-110 transition-transform" aria-hidden="true" />
+                <service.icon className="w-12 h-12 text-blue-400 mb-4 group-hover:scale-110 transition-transform" />
                 <h3 className="text-xl font-semibold mb-3 bg-gradient-to-r from-white to-blue-300 bg-clip-text text-transparent">{service.title}</h3>
-                <p className="bg-gradient-to-r from-gray-500 to-gray-400 bg-clip-text text-transparent mb-4">{service.desc}</p>
-                <ul className="space-y-2">
-                  {service.points.map((point, i) => (
-                    <li key={i} className="flex items-start gap-2 text-sm text-gray-400">
-                      <span className="text-blue-400 mt-1">✓</span>
-                      <span>{point}</span>
-                    </li>
-                  ))}
-                </ul>
+                <p className="bg-gradient-to-r from-gray-500 to-gray-400 bg-clip-text text-transparent">{service.desc}</p>
               </div>
             ))}
           </div>
@@ -216,70 +173,47 @@ function App() {
       <section id="pour-qui" className="py-40 px-6 bg-gradient-to-b from-gray-900/30 to-transparent">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-semibold text-center mb-4 bg-gradient-to-r from-white to-blue-400 bg-clip-text text-transparent">
-            Pour les agences immobilières ambitieuses
+            Clients
           </h2>
           <p className="text-center mb-16 text-lg sm:text-xl bg-gradient-to-r from-gray-300 to-blue-300 bg-clip-text text-transparent max-w-3xl mx-auto px-4">
-            Vous générez des leads mais perdez trop d'opportunités en cours de route ? Vous n'êtes pas seul.
+            Agences immobilières souhaitant transformer plus de leads en RDV — puis en mandats
           </p>
 
           <div className="max-w-4xl mx-auto">
             <p className="text-center text-gray-400 text-sm mb-6 px-4">
-              Les 3 fuites les plus coûteuses dans l'immobilier
+              Exemples de fuites fréquentes
             </p>
 
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
-              <div className="p-6 bg-gray-900/50 border border-orange-500/30 rounded-xl hover:border-orange-500/50 transition-colors">
+              <div className="p-6 bg-gray-900/50 border border-orange-500/30 rounded-xl">
                 <div className="font-semibold mb-3 text-lg text-white">Leads traités trop tard</div>
-                <div className="flex items-center gap-2 mb-2">
-                  <ArrowRight className="w-5 h-5 text-gray-400 flex-shrink-0" aria-hidden="true" />
-                  <p className="text-gray-300">Le prospect a déjà contacté 3 autres agences</p>
+                <div className="flex items-center gap-2">
+                  <ArrowRight className="w-5 h-5 text-gray-400 flex-shrink-0" />
+                  <p className="text-gray-300">opportunités perdues</p>
                 </div>
-                <p className="text-xs text-orange-400">Coût estimé : 40% des leads perdus</p>
               </div>
 
-              <div className="p-6 bg-gray-900/50 border border-orange-500/30 rounded-xl hover:border-orange-500/50 transition-colors">
+              <div className="p-6 bg-gray-900/50 border border-orange-500/30 rounded-xl">
                 <div className="font-semibold mb-3 text-lg text-white">Suivi irrégulier</div>
-                <div className="flex items-center gap-2 mb-2">
-                  <ArrowRight className="w-5 h-5 text-gray-400 flex-shrink-0" aria-hidden="true" />
-                  <p className="text-gray-300">No-shows, ghosting, prospects qui disparaissent</p>
+                <div className="flex items-center gap-2">
+                  <ArrowRight className="w-5 h-5 text-gray-400 flex-shrink-0" />
+                  <p className="text-gray-300">no-show / ghosting</p>
                 </div>
-                <p className="text-xs text-orange-400">Coût estimé : 35% des RDV perdus</p>
               </div>
 
-              <div className="p-6 bg-gray-900/50 border border-orange-500/30 rounded-xl sm:col-span-2 lg:col-span-1 hover:border-orange-500/50 transition-colors">
-                <div className="font-semibold mb-3 text-lg text-white">Aucune visibilité</div>
-                <div className="flex items-center gap-2 mb-2">
-                  <ArrowRight className="w-5 h-5 text-gray-400 flex-shrink-0" aria-hidden="true" />
-                  <p className="text-gray-300">Impossible de savoir ce qui fonctionne vraiment</p>
+              <div className="p-6 bg-gray-900/50 border border-orange-500/30 rounded-xl sm:col-span-2 lg:col-span-1">
+                <div className="font-semibold mb-3 text-lg text-white">Pas de visibilité</div>
+                <div className="flex items-center gap-2">
+                  <ArrowRight className="w-5 h-5 text-gray-400 flex-shrink-0" />
+                  <p className="text-gray-300">impossible d'optimiser</p>
                 </div>
-                <p className="text-xs text-orange-400">Impact : Décisions basées sur l'intuition</p>
               </div>
             </div>
 
-            <div className="p-6 sm:p-8 bg-gradient-to-br from-blue-500/10 to-blue-600/5 border border-green-500/30 rounded-2xl text-center mb-8">
-              <p className="text-lg sm:text-xl bg-gradient-to-r from-gray-200 to-blue-200 bg-clip-text text-transparent font-medium mb-4">
-                Nous identifions les fuites propres à votre agence et mettons en place un système mesurable pour les corriger.
+            <div className="p-6 sm:p-8 bg-gradient-to-br from-blue-500/10 to-blue-600/5 border border-green-500/30 rounded-2xl text-center">
+              <p className="text-lg sm:text-xl bg-gradient-to-r from-gray-200 to-blue-200 bg-clip-text text-transparent font-medium">
+                Nous identifions les fuites propres à chaque agence et mettons en place un système mesurable pour les corriger.
               </p>
-              <p className="text-sm text-gray-400">Approche data-driven • Résultats mesurables • ROI garanti</p>
-            </div>
-
-            <div className="text-center">
-              <div className="border-beam-wrapper group inline-block" style={{ borderRadius: '0.75rem' }}>
-                <a
-                  href="https://calendar.app.google/jScJ2XUgZ22C1RRr5"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="relative px-8 py-4 bg-gray-950 font-semibold text-lg transition-all duration-300 flex items-center gap-2"
-                  style={{ borderRadius: '0.75rem' }}
-                  aria-label="Obtenir un audit CRO gratuit pour votre agence immobilière"
-                >
-                  <span className="bg-gradient-to-r from-white to-blue-400 bg-clip-text text-transparent">
-                    Obtenir mon audit gratuit
-                  </span>
-                  <ArrowRight className="w-5 h-5 text-blue-400 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
-                </a>
-              </div>
-              <p className="text-xs text-gray-500 mt-3">30 minutes d'analyse offerte • Sans engagement</p>
             </div>
           </div>
         </div>
@@ -288,54 +222,25 @@ function App() {
       <section id="processus" className="py-40 px-6">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-semibold text-center mb-4 bg-gradient-to-r from-white to-blue-400 bg-clip-text text-transparent">
-            Comment nous procédons
+            Notre processus
           </h2>
           <p className="text-center mb-16 text-base sm:text-lg bg-gradient-to-r from-gray-300 to-blue-300 bg-clip-text text-transparent">
-            Méthodologie CRO éprouvée pour agences immobilières
+            Une méthodologie éprouvée en 4 étapes
           </p>
 
           <div className="flex flex-col gap-4">
             {[
-              {
-                num: "01",
-                title: "Audit CRO Approfondi",
-                desc: "Analyse complète de votre tunnel de vente immobilier : taux de conversion à chaque étape (lead→contact→RDV→visite→mandat), points de friction, temps de réponse moyen, qualité de la qualification.",
-                duration: "Semaine 1"
-              },
-              {
-                num: "02",
-                title: "Plan d'Action Personnalisé",
-                desc: "Stratégie sur-mesure pour votre agence : priorisation des quick wins, roadmap d'optimisation, projections de ROI, workflows d'automation à déployer.",
-                duration: "Semaine 2"
-              },
-              {
-                num: "03",
-                title: "Implémentation & Automation",
-                desc: "Mise en place des systèmes d'optimisation : workflows IA, automatisation du suivi, systèmes de rappel no-shows, tableaux de bord de performance.",
-                duration: "Semaines 3-4"
-              },
-              {
-                num: "04",
-                title: "Optimisation Continue",
-                desc: "Monitoring des performances, A/B testing, ajustements basés sur les données, rapports mensuels détaillés avec recommandations d'amélioration.",
-                duration: "Ongoing"
-              }
+              { num: "01", title: "Analyse", desc: "Audit complet de vos funnels de vente" },
+              { num: "02", title: "Stratégie", desc: "Plan d'action personnalisé basé sur vos objectifs" },
+              { num: "03", title: "Implémentation", desc: "Mise en place des systèmes" },
+              { num: "04", title: "Maintenance et amélioration", desc: "Après le déploiement des solutions, notre équipe continuera à surveiller et à améliorer vos systèmes" }
             ].map((step, idx) => (
-              <div key={idx} className="relative p-6 bg-gradient-to-br from-gray-900 to-gray-900/50 border border-gray-800 rounded-2xl hover:border-blue-500/30 transition-colors group">
-                <div className="flex items-start justify-between mb-3">
-                  <div className="text-5xl font-semibold text-blue-500/20 group-hover:text-blue-500/30 transition-colors">{step.num}</div>
-                  <span className="text-xs text-gray-500 bg-gray-800/50 px-3 py-1 rounded-full">{step.duration}</span>
-                </div>
+              <div key={idx} className="relative p-6 bg-gradient-to-br from-gray-900 to-gray-900/50 border border-gray-800 rounded-2xl">
+                <div className="text-5xl font-semibold text-blue-500/20 mb-3">{step.num}</div>
                 <h3 className="text-xl font-semibold mb-2 bg-gradient-to-r from-white to-blue-300 bg-clip-text text-transparent">{step.title}</h3>
                 <p className="bg-gradient-to-r from-gray-500 to-gray-400 bg-clip-text text-transparent text-sm">{step.desc}</p>
               </div>
             ))}
-          </div>
-
-          <div className="mt-12 p-6 bg-blue-500/5 border border-blue-500/20 rounded-xl">
-            <p className="text-center text-gray-300">
-              <span className="font-semibold text-white">Garantie résultats :</span> Si nous n'identifions pas au moins 3 fuites de conversion majeures lors de l'audit, vous ne payez rien.
-            </p>
           </div>
         </div>
       </section>
@@ -432,7 +337,7 @@ function App() {
           <div className="flex flex-col md:flex-row justify-between items-center gap-8">
             <div className="text-center md:text-left">
               <div className="flex items-center justify-center md:justify-start gap-3 mb-2">
-                <img src="/public_assets/mobius_det.png" alt="ReactOP - Agence CRO spécialisée immobilier" className="h-8 w-8" />
+                <img src="/public_assets/mobius_det.png" alt="ReactOP Logo" className="h-8 w-8" />
                 <div className="text-2xl font-semibold bg-gradient-to-r from-white to-blue-400 bg-clip-text text-transparent">
                   ReactOP
                 </div>
