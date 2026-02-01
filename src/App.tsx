@@ -280,8 +280,11 @@ function App() {
         <div className="max-w-6xl mx-auto">
           <div className="flex flex-col md:flex-row justify-between items-center gap-8">
             <div className="text-center md:text-left">
-              <div className="text-2xl font-semibold mb-2 bg-gradient-to-r from-white to-blue-400 bg-clip-text text-transparent">
-                ReactOP
+              <div className="flex items-center justify-center md:justify-start gap-3 mb-2">
+                <img src="/public_assets/mobius_det.png" alt="ReactOP Logo" className="h-8 w-8" />
+                <div className="text-2xl font-semibold bg-gradient-to-r from-white to-blue-400 bg-clip-text text-transparent">
+                  ReactOP
+                </div>
               </div>
               <p className="bg-gradient-to-r from-gray-400 to-blue-300 bg-clip-text text-transparent">© 2026 ReactOP. Tous droits réservés.</p>
             </div>
