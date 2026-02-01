@@ -64,7 +64,7 @@ function App() {
             onClick={() => scrollToSection('pour-qui')}
             className="px-2 sm:px-3 lg:px-6 py-1.5 sm:py-2 rounded-full text-[10px] sm:text-xs lg:text-sm font-medium text-gray-300 hover:text-white hover:bg-gray-800/50 transition-all duration-200 whitespace-nowrap"
           >
-            pour qui
+            clients
           </button>
 
           <button
@@ -173,7 +173,7 @@ function App() {
       <section id="pour-qui" className="py-40 px-6 bg-gradient-to-b from-gray-900/30 to-transparent">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-semibold text-center mb-4 bg-gradient-to-r from-white to-blue-400 bg-clip-text text-transparent">
-            Pour qui
+            Clients
           </h2>
           <p className="text-center mb-16 text-lg sm:text-xl bg-gradient-to-r from-gray-300 to-blue-300 bg-clip-text text-transparent max-w-3xl mx-auto px-4">
             Agences immobilières souhaitant transformer plus de leads en RDV — puis en mandats.
