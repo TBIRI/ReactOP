@@ -141,17 +141,21 @@ function App() {
               Contact
             </button>
 
-            <a
-              href="https://calendar.app.google/jScJ2XUgZ22C1RRr5"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="py-4 text-left transition-colors inline-block"
-              onClick={() => setIsMobileMenuOpen(false)}
-            >
-              <span className="text-4xl font-medium bg-gradient-to-r from-white to-blue-400 bg-clip-text text-transparent hover:opacity-80 transition-opacity">
-                Réservez un appel
-              </span>
-            </a>
+            <div className="py-4">
+              <div className="border-beam-wrapper inline-block" style={{ borderRadius: '9999px' }}>
+                <a
+                  href="https://calendar.app.google/jScJ2XUgZ22C1RRr5"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="px-8 py-3 bg-gray-950 font-medium text-xl rounded-full transition-all duration-200 whitespace-nowrap inline-block"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  <span className="bg-gradient-to-r from-white to-blue-400 bg-clip-text text-transparent">
+                    Réservez un appel
+                  </span>
+                </a>
+              </div>
+            </div>
           </div>
         </div>
       </div>
