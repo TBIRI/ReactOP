@@ -115,21 +115,11 @@ function App() {
 
       <section className="min-h-screen flex flex-col items-center justify-center px-6 relative overflow-hidden" role="banner" aria-label="Section hero" data-section="hero"  itemScope itemType="https://schema.org/WPHeader">
 
-        {/* Planet horizon background image */}
-        <div
-          className="absolute bottom-0 left-0 right-0 h-full w-full pointer-events-none bg-cover bg-bottom bg-no-repeat"
-          style={{ backgroundImage: "url(/planet-horizon.png)" }}
-        ></div>
-
-        {/* ReactOP title - above the curve */}
-        <div className="absolute top-[26%] lg:top-[28%] left-1/2 -translate-x-1/2 text-center z-20 px-4">
-          <h1 className="text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-semibold bg-gradient-to-r from-white to-blue-400 bg-clip-text text-transparent" itemProp="name headline">
+        {/* Hero content - centered vertically */}
+        <div className="relative z-10 text-center w-full max-w-7xl px-4 -mt-12 sm:-mt-16">
+          <h1 className="text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-semibold bg-gradient-to-r from-white to-blue-400 bg-clip-text text-transparent mb-6 sm:mb-8 lg:mb-10" itemProp="name headline">
             ReactOP
           </h1>
-        </div>
-
-        {/* Content below the curve */}
-        <div className="absolute bottom-[35%] lg:bottom-[37%] left-1/2 -translate-x-1/2 w-full max-w-7xl text-center z-10 px-6">
           <p className="text-xl sm:text-2xl md:text-3xl lg:text-4xl mb-10 lg:mb-12 bg-gradient-to-r from-gray-300 to-blue-300 bg-clip-text text-transparent" itemProp="description">
             Des leads mieux traités. Des résultats mesurés.
           </p>
