@@ -122,14 +122,14 @@ function App() {
         ></div>
 
         {/* ReactOP title - above the curve */}
-        <div className="absolute top-[30%] left-1/2 -translate-x-1/2 text-center z-20 px-4">
+        <div className="absolute top-[22%] lg:top-[24%] left-1/2 -translate-x-1/2 text-center z-20 px-4">
           <h1 className="text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-semibold bg-gradient-to-r from-white to-blue-400 bg-clip-text text-transparent" itemProp="name headline">
             ReactOP
           </h1>
         </div>
 
         {/* Content below the curve */}
-        <div className="absolute bottom-[44%] left-1/2 -translate-x-1/2 w-full max-w-7xl text-center z-10 px-6">
+        <div className="absolute bottom-[40%] lg:bottom-[42%] left-1/2 -translate-x-1/2 w-full max-w-7xl text-center z-10 px-6">
           <p className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl mb-10 lg:mb-12 bg-gradient-to-r from-gray-300 to-blue-300 bg-clip-text text-transparent" itemProp="description">
             Des leads mieux traités. Des résultats mesurés.
           </p>
