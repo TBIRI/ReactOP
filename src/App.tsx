@@ -296,24 +296,6 @@ function App() {
           </div>
         </div>
       </footer>
-
-      {/* Fixed bottom-right call button */}
-      <div className="fixed bottom-8 right-8 z-50">
-        <div className="border-beam-wrapper" style={{ borderRadius: '0.75rem' }}>
-          <a
-            href="https://calendar.app.google/jScJ2XUgZ22C1RRr5"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="px-6 py-3 bg-gray-950 font-semibold text-sm transition-all duration-300 flex items-center gap-2 whitespace-nowrap"
-            style={{ borderRadius: '0.75rem' }}
-          >
-            <span className="bg-gradient-to-r from-white to-blue-400 bg-clip-text text-transparent">
-              Réservez un appel
-            </span>
-            <ArrowRight className="w-4 h-4 text-blue-400" />
-          </a>
-        </div>
-      </div>
     </div>
   );
 }
