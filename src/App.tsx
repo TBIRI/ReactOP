@@ -228,17 +228,17 @@ function App() {
             Une méthodologie éprouvée en 4 étapes
           </p>
 
-          <div className="flex flex-col gap-6">
+          <div className="flex flex-col gap-4">
             {[
               { num: "01", title: "Analyse", desc: "Audit complet de vos funnels de vente" },
               { num: "02", title: "Stratégie", desc: "Plan d'action personnalisé basé sur vos objectifs" },
               { num: "03", title: "Implémentation", desc: "Mise en place des systèmes" },
               { num: "04", title: "Maintenance et amélioration", desc: "Après le déploiement des solutions, notre équipe continuera à surveiller et à améliorer vos systèmes" }
             ].map((step, idx) => (
-              <div key={idx} className="relative p-8 bg-gradient-to-br from-gray-900 to-gray-900/50 border border-gray-800 rounded-2xl">
-                <div className="text-6xl font-semibold text-blue-500/20 mb-4">{step.num}</div>
-                <h3 className="text-2xl font-semibold mb-3 bg-gradient-to-r from-white to-blue-300 bg-clip-text text-transparent">{step.title}</h3>
-                <p className="bg-gradient-to-r from-gray-500 to-gray-400 bg-clip-text text-transparent">{step.desc}</p>
+              <div key={idx} className="relative p-6 bg-gradient-to-br from-gray-900 to-gray-900/50 border border-gray-800 rounded-2xl">
+                <div className="text-5xl font-semibold text-blue-500/20 mb-3">{step.num}</div>
+                <h3 className="text-xl font-semibold mb-2 bg-gradient-to-r from-white to-blue-300 bg-clip-text text-transparent">{step.title}</h3>
+                <p className="bg-gradient-to-r from-gray-500 to-gray-400 bg-clip-text text-transparent text-sm">{step.desc}</p>
               </div>
             ))}
           </div>
