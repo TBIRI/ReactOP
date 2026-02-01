@@ -51,13 +51,13 @@ function App() {
 
   return (
     <div className="min-h-screen bg-black text-white" itemScope itemType="https://schema.org/WebPage">
-      <nav className="fixed top-6 lg:top-8 left-1/2 -translate-x-1/2 z-50 w-[95%] sm:w-[90%] max-w-7xl px-2 sm:px-4" role="navigation" aria-label="Navigation principale">
-        <div className="flex items-center justify-between px-2 sm:px-4 lg:px-8 py-2 lg:py-3 bg-gray-900/80 backdrop-blur-xl rounded-full border border-gray-800/50 shadow-2xl">
-          <img src="/mobius_det.png" alt="ReactOP Logo - Agence CRO Immobilier" className="w-7 h-7 sm:w-8 sm:h-8 lg:w-12 lg:h-12" itemProp="logo" />
+      <nav className="fixed top-6 md:top-8 left-1/2 -translate-x-1/2 z-50 w-[95%] sm:w-[90%] max-w-7xl px-2 sm:px-4" role="navigation" aria-label="Navigation principale">
+        <div className="flex items-center justify-between px-2 sm:px-4 md:px-8 py-2 md:py-3 bg-gray-900/80 backdrop-blur-xl rounded-full border border-gray-800/50 shadow-2xl">
+          <img src="/mobius_det.png" alt="ReactOP Logo - Agence CRO Immobilier" className="w-7 h-7 sm:w-8 sm:h-8 md:w-12 md:h-12" itemProp="logo" />
 
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="lg:hidden p-2 text-gray-300 hover:text-white transition-colors"
+            className="md:hidden p-2 text-gray-300 hover:text-white transition-colors"
             aria-label="Menu"
           >
             {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -65,7 +65,7 @@ function App() {
 
           <button
             onClick={() => scrollToSection('services')}
-            className="hidden lg:block px-2 sm:px-3 lg:px-8 py-1.5 sm:py-2 lg:py-2.5 rounded-full text-[10px] sm:text-xs lg:text-base font-medium text-gray-300 hover:text-white hover:bg-gray-800/50 transition-all duration-200"
+            className="hidden md:block px-2 sm:px-3 md:px-8 py-1.5 sm:py-2 md:py-2.5 rounded-full text-[10px] sm:text-xs md:text-base font-medium text-gray-300 hover:text-white hover:bg-gray-800/50 transition-all duration-200"
             aria-label="Naviguer vers la section services"
           >
             services
@@ -73,7 +73,7 @@ function App() {
 
           <button
             onClick={() => scrollToSection('pour-qui')}
-            className="hidden lg:block px-2 sm:px-3 lg:px-8 py-1.5 sm:py-2 lg:py-2.5 rounded-full text-[10px] sm:text-xs lg:text-base font-medium text-gray-300 hover:text-white hover:bg-gray-800/50 transition-all duration-200 whitespace-nowrap"
+            className="hidden md:block px-2 sm:px-3 md:px-8 py-1.5 sm:py-2 md:py-2.5 rounded-full text-[10px] sm:text-xs md:text-base font-medium text-gray-300 hover:text-white hover:bg-gray-800/50 transition-all duration-200 whitespace-nowrap"
             aria-label="Naviguer vers la section clients"
           >
             clients
@@ -81,7 +81,7 @@ function App() {
 
           <button
             onClick={() => scrollToSection('processus')}
-            className="hidden lg:block px-2 sm:px-3 lg:px-8 py-1.5 sm:py-2 lg:py-2.5 rounded-full text-[10px] sm:text-xs lg:text-base font-medium text-gray-300 hover:text-white hover:bg-gray-800/50 transition-all duration-200"
+            className="hidden md:block px-2 sm:px-3 md:px-8 py-1.5 sm:py-2 md:py-2.5 rounded-full text-[10px] sm:text-xs md:text-base font-medium text-gray-300 hover:text-white hover:bg-gray-800/50 transition-all duration-200"
             aria-label="Naviguer vers la section processus"
           >
             processus
@@ -89,18 +89,18 @@ function App() {
 
           <button
             onClick={() => scrollToSection('contact')}
-            className="hidden lg:block px-2 sm:px-3 lg:px-8 py-1.5 sm:py-2 lg:py-2.5 rounded-full text-[10px] sm:text-xs lg:text-base font-medium text-gray-300 hover:text-white hover:bg-gray-800/50 transition-all duration-200"
+            className="hidden md:block px-2 sm:px-3 md:px-8 py-1.5 sm:py-2 md:py-2.5 rounded-full text-[10px] sm:text-xs md:text-base font-medium text-gray-300 hover:text-white hover:bg-gray-800/50 transition-all duration-200"
             aria-label="Naviguer vers la section contact"
           >
             contact
           </button>
 
-          <div className="border-beam-wrapper hidden lg:block" style={{ borderRadius: '9999px' }}>
+          <div className="border-beam-wrapper hidden md:block" style={{ borderRadius: '9999px' }}>
             <a
               href="https://calendar.app.google/jScJ2XUgZ22C1RRr5"
               target="_blank"
               rel="noopener noreferrer"
-              className="px-2 sm:px-3 lg:px-8 py-1.5 sm:py-2 lg:py-2.5 bg-gray-950 font-medium text-[10px] sm:text-xs lg:text-base rounded-full transition-all duration-200 whitespace-nowrap inline-block"
+              className="px-2 sm:px-3 md:px-8 py-1.5 sm:py-2 md:py-2.5 bg-gray-950 font-medium text-[10px] sm:text-xs md:text-base rounded-full transition-all duration-200 whitespace-nowrap inline-block"
             >
               <span className="bg-gradient-to-r from-white to-blue-400 bg-clip-text text-transparent">
                 Réservez un appel
@@ -110,7 +110,7 @@ function App() {
         </div>
       </nav>
 
-      <div className={`fixed inset-0 bg-black z-40 lg:hidden transition-all duration-300 ${isMobileMenuOpen ? 'opacity-100 visible' : 'opacity-0 invisible'}`}>
+      <div className={`fixed inset-0 bg-black z-40 md:hidden transition-all duration-300 ${isMobileMenuOpen ? 'opacity-100 visible' : 'opacity-0 invisible'}`}>
         <div className="flex flex-col h-full pt-28 pb-8 px-8">
           <div className="flex-1 flex flex-col justify-center space-y-1">
             <button
