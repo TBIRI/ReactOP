@@ -156,7 +156,7 @@ function App() {
               <div key={idx} className="group p-8 bg-gray-900/50 border border-gray-800 rounded-2xl hover:border-blue-500/50 transition-all duration-300 hover:shadow-xl hover:shadow-blue-500/10">
                 <service.icon className="w-12 h-12 text-blue-400 mb-4 group-hover:scale-110 transition-transform" />
                 <h3 className="text-xl font-semibold mb-3 bg-gradient-to-r from-white to-blue-300 bg-clip-text text-transparent">{service.title}</h3>
-                <p className="bg-gradient-to-r from-gray-300 to-blue-200 bg-clip-text text-transparent">{service.desc}</p>
+                <p className="bg-gradient-to-r from-gray-500 to-gray-400 bg-clip-text text-transparent">{service.desc}</p>
               </div>
             ))}
           </div>
@@ -182,7 +182,7 @@ function App() {
               <div key={idx} className="relative p-8 bg-gradient-to-br from-gray-900 to-gray-900/50 border border-gray-800 rounded-2xl">
                 <div className="text-6xl font-semibold text-blue-500/20 mb-4">{step.num}</div>
                 <h3 className="text-2xl font-semibold mb-3 bg-gradient-to-r from-white to-blue-300 bg-clip-text text-transparent">{step.title}</h3>
-                <p className="bg-gradient-to-r from-gray-300 to-blue-200 bg-clip-text text-transparent">{step.desc}</p>
+                <p className="bg-gradient-to-r from-gray-500 to-gray-400 bg-clip-text text-transparent">{step.desc}</p>
               </div>
             ))}
           </div>
