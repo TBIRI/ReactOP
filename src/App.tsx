@@ -52,8 +52,14 @@ function App() {
   return (
     <div className="min-h-screen bg-black text-white" itemScope itemType="https://schema.org/WebPage">
       <nav className="fixed top-6 md:top-8 left-1/2 -translate-x-1/2 z-50 w-[95%] sm:w-[90%] max-w-7xl px-2 sm:px-4" role="navigation" aria-label="Navigation principale">
-        <div className="flex items-center justify-between px-4 sm:px-6 md:px-8 py-2 md:py-3 bg-gray-900/80 backdrop-blur-xl rounded-full border border-gray-800/50 shadow-2xl">
-          <img src="/mobius_det.png" alt="ReactOP Logo - Agence CRO Immobilier" className="w-7 h-7 sm:w-8 sm:h-8 md:w-12 md:h-12" itemProp="logo" />
+        <div className="flex items-center justify-between px-0 md:px-8 py-2 md:py-3 md:bg-gray-900/80 md:backdrop-blur-xl md:rounded-full md:border md:border-gray-800/50 md:shadow-2xl">
+          <button
+            onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+            className="md:ml-0"
+            aria-label="Retour en haut"
+          >
+            <img src="/mobius_det.png" alt="ReactOP Logo - Agence CRO Immobilier" className="w-10 h-10 md:w-12 md:h-12 cursor-pointer hover:opacity-80 transition-opacity" itemProp="logo" />
+          </button>
 
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
