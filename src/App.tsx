@@ -133,10 +133,7 @@ function App() {
           <p className="text-xl sm:text-2xl md:text-3xl mb-8 bg-gradient-to-r from-gray-300 to-blue-300 bg-clip-text text-transparent" itemProp="description">
             Des leads mieux traités. Des résultats mesurés.
           </p>
-          <p className="text-sm sm:text-base mb-8 bg-gradient-to-r from-gray-400 to-blue-200 bg-clip-text text-transparent" data-offer="free-audit">
-            Audit gratuit de 15 minutes
-          </p>
-          <div className="border-beam-wrapper group inline-block" style={{ borderRadius: '0.75rem' }}>
+          <div className="border-beam-wrapper group inline-block mb-4" style={{ borderRadius: '0.75rem' }}>
             <a
               href="https://calendar.app.google/jScJ2XUgZ22C1RRr5"
               target="_blank"
@@ -155,6 +152,9 @@ function App() {
               <ArrowRight className="w-5 h-5 text-blue-400 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
             </a>
           </div>
+          <p className="text-sm bg-gradient-to-r from-gray-400 to-blue-200 bg-clip-text text-transparent" data-offer="free-audit">
+            Audit gratuit, ~15min
+          </p>
         </div>
       </section>
 
@@ -169,7 +169,7 @@ function App() {
 
           <div className="grid md:grid-cols-2 gap-8" role="list">
             {[
-              { icon: TrendingUp, title: "Audit CRO", desc: "Identification des fuites de conversion et des opportunités d'amélioration de vos tunnels de vente. Audit gratuit de 15 minutes disponible.", keywords: "audit CRO, conversion immobilier, funnel vente" },
+              { icon: TrendingUp, title: "Audit CRO", desc: "Identification des fuites de conversion et des opportunités d'amélioration de vos tunnels de vente.", keywords: "audit CRO, conversion immobilier, funnel vente" },
               { icon: Target, title: "Implémentation de workflows correctifs", desc: "Mise en place de systèmes IA qui sécurisent les opportunités et rendent le pipeline plus prévisible.", keywords: "workflows IA, automatisation, pipeline vente" }
             ].map((service, idx) => (
               <div key={idx} className="group p-8 bg-gray-900/50 border border-gray-800 rounded-2xl hover:border-blue-500/50 transition-all duration-300 hover:shadow-xl hover:shadow-blue-500/10" role="listitem" data-service-type={service.keywords} itemScope itemType="https://schema.org/Service">
@@ -223,11 +223,17 @@ function App() {
             </div>
 
             <div className="p-6 sm:p-8 bg-gradient-to-br from-blue-500/10 to-blue-600/5 border border-green-500/30 rounded-2xl text-center" data-value-proposition="main">
-              <p className="text-lg sm:text-xl bg-gradient-to-r from-gray-200 to-blue-200 bg-clip-text text-transparent font-medium mb-3">
+              <p className="text-lg sm:text-xl bg-gradient-to-r from-gray-200 to-blue-200 bg-clip-text text-transparent font-medium">
                 Nous identifions les fuites propres à chaque agence et mettons en place un système mesurable pour les corriger.
               </p>
-              <p className="text-sm bg-gradient-to-r from-gray-300 to-blue-300 bg-clip-text text-transparent" data-guarantee="results">
-                Garantie de résultats mesurables
+            </div>
+
+            <div className="mt-8 p-6 sm:p-8 bg-gradient-to-br from-green-500/10 to-emerald-600/5 border border-green-500/40 rounded-2xl text-center" data-guarantee="results">
+              <h3 className="text-xl sm:text-2xl font-semibold bg-gradient-to-r from-white to-green-300 bg-clip-text text-transparent mb-2">
+                Garantie de résultats
+              </h3>
+              <p className="text-base sm:text-lg bg-gradient-to-r from-gray-300 to-green-300 bg-clip-text text-transparent">
+                pas de résultat = vous ne payez pas
               </p>
             </div>
           </div>
@@ -245,7 +251,7 @@ function App() {
 
           <div className="flex flex-col gap-4" role="list">
             {[
-              { num: "01", title: "Analyse", desc: "Audit complet de vos funnels de vente (audit gratuit de 15 minutes disponible)" },
+              { num: "01", title: "Analyse", desc: "Audit complet de vos funnels de vente (gratuit, ~15min)" },
               { num: "02", title: "Stratégie", desc: "Plan d'action personnalisé basé sur vos objectifs" },
               { num: "03", title: "Implémentation", desc: "Mise en place des systèmes" },
               { num: "04", title: "Maintenance et amélioration", desc: "Après le déploiement des solutions, notre équipe continuera à surveiller et à améliorer vos systèmes" }
