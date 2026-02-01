@@ -49,46 +49,44 @@ function App() {
 
   return (
     <div className="min-h-screen bg-black text-white">
-      <nav className="fixed top-6 left-1/2 -translate-x-1/2 z-50 w-full max-w-5xl px-4 sm:px-6">
-        <div className="flex items-center justify-between gap-2 sm:gap-3 px-3 sm:px-6 py-2 bg-gray-900/80 backdrop-blur-xl rounded-full border border-gray-800/50 shadow-2xl">
-          <img src="/mobius_det.png" alt="ReactOP" className="w-8 h-8 sm:w-10 sm:h-10 flex-shrink-0" />
+      <nav className="fixed top-6 left-1/2 -translate-x-1/2 z-50 w-full max-w-4xl px-6">
+        <div className="flex items-center justify-between px-3 sm:px-6 py-2 bg-gray-900/80 backdrop-blur-xl rounded-full border border-gray-800/50 shadow-2xl">
+          <img src="/mobius_det.png" alt="ReactOP" className="w-8 h-8 sm:w-10 sm:h-10" />
 
-          <div className="hidden lg:flex items-center gap-1">
-            <button
-              onClick={() => scrollToSection('services')}
-              className="px-4 py-2 rounded-full text-sm font-medium text-gray-300 hover:text-white hover:bg-gray-800/50 transition-all duration-200 whitespace-nowrap"
-            >
-              services
-            </button>
+          <button
+            onClick={() => scrollToSection('services')}
+            className="px-3 sm:px-6 py-2 rounded-full text-xs sm:text-sm font-medium text-gray-300 hover:text-white hover:bg-gray-800/50 transition-all duration-200"
+          >
+            services
+          </button>
 
-            <button
-              onClick={() => scrollToSection('pour-qui')}
-              className="px-4 py-2 rounded-full text-sm font-medium text-gray-300 hover:text-white hover:bg-gray-800/50 transition-all duration-200 whitespace-nowrap"
-            >
-              pour qui
-            </button>
+          <button
+            onClick={() => scrollToSection('pour-qui')}
+            className="px-3 sm:px-6 py-2 rounded-full text-xs sm:text-sm font-medium text-gray-300 hover:text-white hover:bg-gray-800/50 transition-all duration-200 whitespace-nowrap"
+          >
+            pour qui
+          </button>
 
-            <button
-              onClick={() => scrollToSection('processus')}
-              className="px-4 py-2 rounded-full text-sm font-medium text-gray-300 hover:text-white hover:bg-gray-800/50 transition-all duration-200 whitespace-nowrap"
-            >
-              processus
-            </button>
+          <button
+            onClick={() => scrollToSection('processus')}
+            className="px-3 sm:px-6 py-2 rounded-full text-xs sm:text-sm font-medium text-gray-300 hover:text-white hover:bg-gray-800/50 transition-all duration-200"
+          >
+            processus
+          </button>
 
-            <button
-              onClick={() => scrollToSection('contact')}
-              className="px-4 py-2 rounded-full text-sm font-medium text-gray-300 hover:text-white hover:bg-gray-800/50 transition-all duration-200 whitespace-nowrap"
-            >
-              contact
-            </button>
-          </div>
+          <button
+            onClick={() => scrollToSection('contact')}
+            className="px-3 sm:px-6 py-2 rounded-full text-xs sm:text-sm font-medium text-gray-300 hover:text-white hover:bg-gray-800/50 transition-all duration-200"
+          >
+            contact
+          </button>
 
-          <div className="border-beam-wrapper flex-shrink-0" style={{ borderRadius: '9999px' }}>
+          <div className="border-beam-wrapper" style={{ borderRadius: '9999px' }}>
             <a
               href="https://calendar.app.google/jScJ2XUgZ22C1RRr5"
               target="_blank"
               rel="noopener noreferrer"
-              className="px-4 sm:px-6 py-2 bg-gray-950 font-medium text-xs sm:text-sm rounded-full transition-all duration-200 whitespace-nowrap inline-block"
+              className="px-3 sm:px-6 py-2 bg-gray-950 font-medium text-xs sm:text-sm rounded-full transition-all duration-200 whitespace-nowrap inline-block"
             >
               <span className="bg-gradient-to-r from-white to-blue-400 bg-clip-text text-transparent">
                 Réservez un appel
@@ -178,7 +176,7 @@ function App() {
             Pour qui
           </h2>
           <p className="text-center mb-16 text-lg sm:text-xl bg-gradient-to-r from-gray-300 to-blue-300 bg-clip-text text-transparent max-w-3xl mx-auto px-4">
-            Agences immobilières qui veulent transformer plus de leads en RDV — puis en mandats.
+            Agences immobilières voulant transformer plus de leads en RDV — puis en mandats.
           </p>
 
           <div className="max-w-4xl mx-auto">
