@@ -226,6 +226,8 @@ function App() {
                     id="email"
                     name="email"
                     placeholder="john@example.com"
+                    pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}"
+                    title="Veuillez entrer une adresse email valide"
                     required
                     className="w-full px-6 py-4 bg-black border border-gray-800 rounded-lg text-gray-300 placeholder-gray-600 focus:outline-none focus:border-blue-500 transition-colors"
                   />
