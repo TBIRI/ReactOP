@@ -1,10 +1,48 @@
 import { ArrowRight, TrendingUp, Target } from 'lucide-react';
+import { useState } from 'react';
 
 function App() {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
+
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    setSubmitStatus('idle');
+
+    const formData = new FormData(e.currentTarget);
+    const data = {
+      name: formData.get('name'),
+      email: formData.get('email'),
+      message: formData.get('message')
+    };
+
+    try {
+      const response = await fetch('https://hook.eu2.make.com/f4u45tf7ael86ndagh8831p2hhr6i9ox', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data)
+      });
+
+      if (response.ok) {
+        setSubmitStatus('success');
+        (e.target as HTMLFormElement).reset();
+      } else {
+        setSubmitStatus('error');
+      }
+    } catch (error) {
+      setSubmitStatus('error');
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
@@ -168,7 +206,7 @@ function App() {
             </div>
 
             <div className="w-full">
-              <form className="space-y-6">
+              <form onSubmit={handleSubmit} className="space-y-6">
                 <div>
                   <label htmlFor="name" className="block text-lg mb-3 text-white">Name</label>
                   <input
@@ -176,6 +214,7 @@ function App() {
                     id="name"
                     name="name"
                     placeholder="John Doe"
+                    required
                     className="w-full px-6 py-4 bg-black border border-gray-800 rounded-lg text-gray-300 placeholder-gray-600 focus:outline-none focus:border-blue-500 transition-colors"
                   />
                 </div>
@@ -187,17 +226,7 @@ function App() {
                     id="email"
                     name="email"
                     placeholder="john@example.com"
-                    className="w-full px-6 py-4 bg-black border border-gray-800 rounded-lg text-gray-300 placeholder-gray-600 focus:outline-none focus:border-blue-500 transition-colors"
-                  />
-                </div>
-
-                <div>
-                  <label htmlFor="website" className="block text-lg mb-3 text-white">Company Website</label>
-                  <input
-                    type="text"
-                    id="website"
-                    name="website"
-                    placeholder="www.agent-n.ai"
+                    required
                     className="w-full px-6 py-4 bg-black border border-gray-800 rounded-lg text-gray-300 placeholder-gray-600 focus:outline-none focus:border-blue-500 transition-colors"
                   />
                 </div>
@@ -209,15 +238,29 @@ function App() {
                     name="message"
                     rows={6}
                     placeholder="Would like to automate my lead gen processes...."
+                    required
                     className="w-full px-6 py-4 bg-black border border-gray-800 rounded-lg text-gray-300 placeholder-gray-600 focus:outline-none focus:border-blue-500 transition-colors resize-none"
                   />
                 </div>
 
+                {submitStatus === 'success' && (
+                  <div className="p-4 bg-green-500/10 border border-green-500/50 rounded-lg text-green-400">
+                    Message envoyé avec succès!
+                  </div>
+                )}
+
+                {submitStatus === 'error' && (
+                  <div className="p-4 bg-red-500/10 border border-red-500/50 rounded-lg text-red-400">
+                    Erreur lors de l'envoi. Veuillez réessayer.
+                  </div>
+                )}
+
                 <button
                   type="submit"
-                  className="px-8 py-4 bg-blue-500 hover:bg-blue-600 text-white font-medium rounded-lg transition-colors"
+                  disabled={isSubmitting}
+                  className="px-8 py-4 bg-blue-500 hover:bg-blue-600 text-white font-medium rounded-lg transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
                 >
-                  Submit
+                  {isSubmitting ? 'Envoi en cours...' : 'Submit'}
                 </button>
               </form>
             </div>
