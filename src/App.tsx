@@ -176,7 +176,7 @@ function App() {
             Clients
           </h2>
           <p className="text-center mb-16 text-lg sm:text-xl bg-gradient-to-r from-gray-300 to-blue-300 bg-clip-text text-transparent max-w-3xl mx-auto px-4">
-            Agences immobilières souhaitant transformer plus de leads en RDV — puis en mandats.
+            Agences immobilières souhaitant transformer plus de leads en RDV — puis en mandats
           </p>
 
           <div className="max-w-4xl mx-auto">
@@ -220,7 +220,7 @@ function App() {
       </section>
 
       <section id="processus" className="py-40 px-6">
-        <div className="max-w-6xl mx-auto">
+        <div className="max-w-4xl mx-auto">
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-semibold text-center mb-4 bg-gradient-to-r from-white to-blue-400 bg-clip-text text-transparent">
             Notre processus
           </h2>
@@ -228,7 +228,7 @@ function App() {
             Une méthodologie éprouvée en 4 étapes
           </p>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="flex flex-col gap-6">
             {[
               { num: "01", title: "Analyse", desc: "Audit complet de vos funnels de vente" },
               { num: "02", title: "Stratégie", desc: "Plan d'action personnalisé basé sur vos objectifs" },
