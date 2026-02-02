@@ -284,7 +284,7 @@ function App() {
               </p>
               <div className="pt-6 border-t border-green-500/20" data-guarantee="results">
                 <p className="text-lg lg:text-xl bg-gradient-to-r from-gray-400 to-blue-300 bg-clip-text text-transparent font-medium mb-2">
-                  Garantie de résultats
+                  Garantie de résultat
                 </p>
                 <p className="text-base lg:text-lg bg-gradient-to-r from-gray-500 to-blue-400 bg-clip-text text-transparent">
                   pas de résultat = vous ne payez pas
