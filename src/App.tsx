@@ -184,8 +184,8 @@ function App() {
 
         {/* Hero content - centered vertically */}
         <div className="relative z-10 text-center w-full max-w-7xl px-4 -mt-12 sm:-mt-16">
-          <h1 className="text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-semibold bg-gradient-to-r from-white to-blue-400 bg-clip-text text-transparent mb-6 sm:mb-8 lg:mb-10 leading-tight" itemProp="name headline">
-            Votre partenaire<br />acquisition<br />de choix
+          <h1 className="text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-semibold bg-gradient-to-r from-white to-blue-400 bg-clip-text text-transparent mb-6 sm:mb-8 lg:mb-10" itemProp="name headline">
+            Votre partenaire acquisition de choix
           </h1>
           <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl mb-10 lg:mb-12 text-gray-400 max-w-4xl mx-auto" itemProp="description">
             Nous optimisons vos campagnes <span className="bg-gradient-to-r from-gray-300 to-blue-300 bg-clip-text text-transparent">Google Ads</span> et <span className="bg-gradient-to-r from-gray-300 to-blue-300 bg-clip-text text-transparent">pages de destination</span> afin d'augmenter votre volume de leads qualifiés
