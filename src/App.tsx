@@ -109,37 +109,44 @@ function App() {
         </div>
       </nav>
 
-      <div className={`fixed inset-0 bg-black z-40 md:hidden transition-all duration-300 ${isMobileMenuOpen ? 'opacity-100 visible' : 'opacity-0 invisible'}`}>
-        <div className="flex flex-col h-full pt-28 pb-8 px-8">
-          <div className="flex-1 flex flex-col justify-center space-y-1">
+      {/* Backdrop overlay */}
+      <div
+        className={`fixed inset-0 bg-black/60 backdrop-blur-sm z-40 md:hidden transition-all duration-300 ${isMobileMenuOpen ? 'opacity-100 visible' : 'opacity-0 invisible pointer-events-none'}`}
+        onClick={() => setIsMobileMenuOpen(false)}
+      ></div>
+
+      {/* Dropdown menu */}
+      <div className={`fixed top-[88px] left-1/2 -translate-x-1/2 w-[95%] sm:w-[90%] z-50 md:hidden transition-all duration-300 ${isMobileMenuOpen ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-4 pointer-events-none'}`}>
+        <div className="bg-gray-900/95 backdrop-blur-xl rounded-3xl border border-gray-800/50 shadow-2xl p-6">
+          <div className="flex flex-col space-y-2">
             <button
               onClick={() => scrollToSection('services')}
-              className="text-4xl font-medium text-white py-4 text-left hover:text-blue-400 transition-colors pl-2"
+              className="text-2xl font-medium text-white py-3 text-left hover:text-blue-400 transition-colors px-4 rounded-xl hover:bg-gray-800/50"
             >
               Services
             </button>
 
             <button
               onClick={() => scrollToSection('processus')}
-              className="text-4xl font-medium text-white py-4 text-left hover:text-blue-400 transition-colors pl-2"
+              className="text-2xl font-medium text-white py-3 text-left hover:text-blue-400 transition-colors px-4 rounded-xl hover:bg-gray-800/50"
             >
               Processus
             </button>
 
             <button
               onClick={() => scrollToSection('contact')}
-              className="text-4xl font-medium text-white py-4 text-left hover:text-blue-400 transition-colors pl-2"
+              className="text-2xl font-medium text-white py-3 text-left hover:text-blue-400 transition-colors px-4 rounded-xl hover:bg-gray-800/50"
             >
               Contact
             </button>
 
-            <div className="py-4 -ml-1.5">
-              <div className="border-beam-wrapper inline-flex" style={{ borderRadius: '9999px' }}>
+            <div className="pt-4">
+              <div className="border-beam-wrapper inline-flex w-full" style={{ borderRadius: '9999px' }}>
                 <a
                   href="https://calendar.app.google/jScJ2XUgZ22C1RRr5"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="pl-8 pr-8 py-3 bg-gray-950 font-medium text-xl rounded-full transition-all duration-200 whitespace-nowrap inline-block"
+                  className="w-full text-center px-8 py-3 bg-gray-950 font-medium text-lg rounded-full transition-all duration-200"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   <span className="bg-gradient-to-r from-white to-blue-400 bg-clip-text text-transparent">
