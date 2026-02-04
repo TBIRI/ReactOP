@@ -299,10 +299,10 @@ function App() {
 
           <div className="flex flex-col gap-6 lg:gap-8" role="list">
             {[
-              { num: "01", title: "Analyse", desc: "Audit de vos funnels de vente (gratuit, ~15min)" },
-              { num: "02", title: "Stratégie", desc: "Plan d'action personnalisé basé sur vos objectifs" },
-              { num: "03", title: "Implémentation", desc: "Mise en place des systèmes" },
-              { num: "04", title: "Maintenance et amélioration", desc: "Après le déploiement des solutions, notre équipe continuera à surveiller et à améliorer vos systèmes" }
+              { num: "01", title: "Analyse", desc: "Audit du parcours d'acquisition (de la recherche au lead qualifié) et des pages de destination" },
+              { num: "02", title: "Stratégie", desc: "Priorisation des leviers à plus fort impact et définition des objectifs et indicateurs." },
+              { num: "03", title: "Déploiement", desc: "Conception des campagnes et amélioration des pages de destination." },
+              { num: "04", title: "Optimisation continue", desc: "Améliorations régulières et suivi des résultats sur le volume et la qualité des demandes." }
             ].map((step, idx) => (
               <div key={idx} className="relative p-8 lg:p-10 bg-gradient-to-br from-gray-900 to-gray-900/50 border border-gray-800 rounded-2xl" role="listitem" itemScope itemType="https://schema.org/HowToStep">
                 <div className="text-6xl lg:text-7xl font-semibold text-blue-500/20 mb-4" aria-hidden="true">{step.num}</div>
