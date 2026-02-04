@@ -244,8 +244,8 @@ function App() {
           <h2 id="clients-title" className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-semibold text-center mb-6 lg:mb-8 bg-gradient-to-r from-white to-blue-400 bg-clip-text text-transparent" itemProp="audienceType">
             Clients
           </h2>
-          <p className="text-center mb-20 lg:mb-24 text-xl sm:text-2xl lg:text-3xl bg-gradient-to-r from-gray-300 to-blue-300 bg-clip-text text-transparent max-w-4xl mx-auto px-4" data-target-audience="agences-immobilieres">
-            Agences immobilières souhaitant transformer plus de leads en RDV — puis en mandats
+          <p className="text-center mb-20 lg:mb-24 text-xl sm:text-2xl lg:text-3xl bg-gradient-to-r from-gray-300 to-blue-300 bg-clip-text text-transparent max-w-4xl mx-auto px-4" data-target-audience="b2b-providers">
+            Cabinets et prestataires B2B souhaitant générer davantage de demandes qualifiées
           </p>
 
           <div className="max-w-6xl mx-auto">
