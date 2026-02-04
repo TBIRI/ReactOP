@@ -187,8 +187,8 @@ function App() {
           <h1 className="text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-semibold bg-gradient-to-r from-white to-blue-400 bg-clip-text text-transparent mb-6 sm:mb-8 lg:mb-10" itemProp="name headline">
             Votre partenaire acquisition de choix
           </h1>
-          <p className="text-xl sm:text-2xl md:text-3xl lg:text-4xl mb-10 lg:mb-12 bg-gradient-to-r from-gray-300 to-blue-300 bg-clip-text text-transparent" itemProp="description">
-            Nous optimisons vos campagnes Google Ads et pages de destination afin d'augmenter votre volume de leads qualifiés
+          <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl mb-10 lg:mb-12 text-gray-500" itemProp="description">
+            Nous optimisons vos campagnes <span className="bg-gradient-to-r from-gray-300 to-blue-300 bg-clip-text text-transparent">Google Ads</span> et <span className="bg-gradient-to-r from-gray-300 to-blue-300 bg-clip-text text-transparent">pages de destination</span> afin d'augmenter votre volume de leads qualifiés
           </p>
           <div className="border-beam-wrapper group inline-flex mb-5 lg:mb-6" style={{ borderRadius: '0.75rem' }}>
             <a
