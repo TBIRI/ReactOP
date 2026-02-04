@@ -95,18 +95,17 @@ function App() {
             contact
           </button>
 
-          <div className="border-beam-wrapper hidden md:inline-flex" style={{ borderRadius: '9999px' }}>
-            <a
-              href="https://calendar.app.google/jScJ2XUgZ22C1RRr5"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="px-2 sm:px-3 md:px-8 py-1.5 sm:py-2 md:py-2.5 bg-gray-950 font-medium text-[10px] sm:text-xs md:text-base rounded-full transition-all duration-200 whitespace-nowrap inline-block"
-            >
-              <span className="bg-gradient-to-r from-white to-blue-400 bg-clip-text text-transparent">
-                Réservez un appel
-              </span>
-            </a>
-          </div>
+          <a
+            href="https://calendar.app.google/jScJ2XUgZ22C1RRr5"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group hidden md:inline-flex items-center px-2 sm:px-3 md:px-6 py-1.5 sm:py-2 md:py-2.5 bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-400 hover:to-blue-500 font-medium text-[10px] sm:text-xs md:text-base rounded-full transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/50 hover:scale-105 active:scale-95 whitespace-nowrap relative overflow-hidden"
+          >
+            <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent translate-x-[-200%] group-hover:translate-x-[200%] transition-transform duration-700"></div>
+            <span className="relative text-white">
+              Réservez un appel
+            </span>
+          </a>
         </div>
       </nav>
 
@@ -142,19 +141,18 @@ function App() {
             </button>
 
             <div className="pt-4">
-              <div className="border-beam-wrapper inline-flex w-full" style={{ borderRadius: '9999px' }}>
-                <a
-                  href="https://calendar.app.google/jScJ2XUgZ22C1RRr5"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-full text-center px-8 py-3 bg-gray-950 font-medium text-lg rounded-full transition-all duration-200"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
-                  <span className="bg-gradient-to-r from-white to-blue-400 bg-clip-text text-transparent">
-                    Réservez un appel
-                  </span>
-                </a>
-              </div>
+              <a
+                href="https://calendar.app.google/jScJ2XUgZ22C1RRr5"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group relative w-full flex items-center justify-center px-8 py-3 bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-400 hover:to-blue-500 font-medium text-lg rounded-full transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/50 hover:scale-105 active:scale-95 overflow-hidden"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent translate-x-[-200%] group-hover:translate-x-[200%] transition-transform duration-700"></div>
+                <span className="relative text-white">
+                  Réservez un appel
+                </span>
+              </a>
             </div>
           </div>
         </div>
@@ -183,25 +181,23 @@ function App() {
           <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl mb-6 sm:mb-7 lg:mb-9 text-gray-400 max-w-4xl mx-auto" itemProp="description">
             <span className="font-semibold bg-gradient-to-r from-gray-200 to-blue-300 bg-clip-text text-transparent">Google Ads</span> et <span className="font-semibold bg-gradient-to-r from-gray-200 to-blue-300 bg-clip-text text-transparent">pages de destination</span> optimisées pour plus de demandes qualifiées.
           </p>
-          <div className="border-beam-wrapper group inline-flex mb-5 lg:mb-6" style={{ borderRadius: '0.75rem' }}>
-            <a
-              href="https://calendar.app.google/jScJ2XUgZ22C1RRr5"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="relative px-10 py-5 bg-gray-950 font-semibold text-xl lg:text-2xl transition-all duration-300 flex items-center gap-3"
-              style={{ borderRadius: '0.75rem' }}
-              aria-label="Réserver un appel gratuit de 15 minutes avec ReactOP"
-              data-action="cta-primary"
-              itemProp="potentialAction"
-              itemScope
-              itemType="https://schema.org/ReserveAction"
-            >
-              <span className="bg-gradient-to-r from-white to-blue-400 bg-clip-text text-transparent">
-                Réservez votre audit gratuit
-              </span>
-              <ArrowRight className="w-6 h-6 lg:w-7 lg:h-7 text-blue-400 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
-            </a>
-          </div>
+          <a
+            href="https://calendar.app.google/jScJ2XUgZ22C1RRr5"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group relative inline-flex items-center gap-3 px-10 py-5 mb-5 lg:mb-6 font-semibold text-xl lg:text-2xl overflow-hidden rounded-xl bg-gradient-to-br from-blue-500 to-blue-600 hover:from-blue-400 hover:to-blue-500 transition-all duration-300 hover:shadow-2xl hover:shadow-blue-500/50 hover:scale-[1.02] active:scale-[0.98]"
+            aria-label="Réserver un appel gratuit de 15 minutes avec ReactOP"
+            data-action="cta-primary"
+            itemProp="potentialAction"
+            itemScope
+            itemType="https://schema.org/ReserveAction"
+          >
+            <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent translate-x-[-200%] group-hover:translate-x-[200%] transition-transform duration-700"></div>
+            <span className="relative text-white">
+              Réservez votre audit gratuit
+            </span>
+            <ArrowRight className="relative w-6 h-6 lg:w-7 lg:h-7 text-white group-hover:translate-x-1 transition-transform" aria-hidden="true" />
+          </a>
         </div>
       </section>
 
@@ -378,18 +374,16 @@ function App() {
                   </div>
                 )}
 
-                <div className="border-beam-wrapper inline-flex" style={{ borderRadius: '0.75rem' }}>
-                  <button
-                    type="submit"
-                    disabled={isSubmitting}
-                    className="px-10 py-5 bg-gray-950 font-semibold text-xl lg:text-2xl transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed w-full"
-                    style={{ borderRadius: '0.75rem' }}
-                  >
-                    <span className="bg-gradient-to-r from-white to-blue-400 bg-clip-text text-transparent">
-                      {isSubmitting ? 'Envoi en cours...' : 'Envoyer'}
-                    </span>
-                  </button>
-                </div>
+                <button
+                  type="submit"
+                  disabled={isSubmitting}
+                  className="group relative w-full px-10 py-5 bg-gradient-to-br from-blue-500 to-blue-600 hover:from-blue-400 hover:to-blue-500 font-semibold text-xl lg:text-2xl rounded-xl transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100 hover:shadow-2xl hover:shadow-blue-500/50 hover:scale-[1.02] active:scale-[0.98] overflow-hidden"
+                >
+                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent translate-x-[-200%] group-hover:translate-x-[200%] transition-transform duration-700"></div>
+                  <span className="relative text-white">
+                    {isSubmitting ? 'Envoi en cours...' : 'Envoyer'}
+                  </span>
+                </button>
               </form>
             </div>
           </div>
