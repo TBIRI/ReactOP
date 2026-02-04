@@ -23,6 +23,7 @@ function App() {
     const data = {
       name: formData.get('name'),
       email: formData.get('email'),
+      website: formData.get('website'),
       message: formData.get('message')
     };
 
@@ -337,6 +338,17 @@ function App() {
                     pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}"
                     title="Veuillez entrer une adresse email valide"
                     required
+                    className="w-full px-6 py-5 text-lg lg:text-xl bg-black border border-gray-800 rounded-lg text-gray-300 placeholder-gray-600 focus:outline-none focus:border-blue-500 transition-colors"
+                  />
+                </div>
+
+                <div>
+                  <label htmlFor="website" className="block text-xl lg:text-2xl mb-4 text-white">Site web</label>
+                  <input
+                    type="url"
+                    id="website"
+                    name="website"
+                    placeholder="entreprise.com"
                     className="w-full px-6 py-5 text-lg lg:text-xl bg-black border border-gray-800 rounded-lg text-gray-300 placeholder-gray-600 focus:outline-none focus:border-blue-500 transition-colors"
                   />
                 </div>
