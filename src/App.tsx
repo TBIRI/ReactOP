@@ -221,7 +221,7 @@ function App() {
             Augmentation du volume de leads qualifiés, basée sur les données
           </p>
 
-          <div className="grid md:grid-cols-2 gap-10 lg:gap-12" role="list">
+          <div className="grid grid-cols-1 gap-10 lg:gap-12" role="list">
             {[
               { icon: TrendingUp, title: "Audit du parcours d'acquisition", desc: "Identification des fuites de leads et des leviers correctifs applicables", keywords: "audit CRO, conversion immobilier, funnel vente" },
               { icon: Target, title: "Pilotage de campagnes publicitaires digitales", desc: "Paramétrage, déploiement et optimisation continue de campagnes en ligne", keywords: "workflows IA, automatisation, pipeline vente" },
