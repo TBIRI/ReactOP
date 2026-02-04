@@ -183,12 +183,12 @@ function App() {
       <section className="min-h-screen flex flex-col items-center justify-center px-6 relative overflow-hidden" role="banner" aria-label="Section hero" data-section="hero"  itemScope itemType="https://schema.org/WPHeader">
 
         {/* Hero content - centered vertically */}
-        <div className="relative z-10 text-center w-full max-w-7xl px-4 -mt-12 sm:-mt-16">
-          <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-semibold bg-gradient-to-r from-white to-blue-400 bg-clip-text text-transparent mb-6 sm:mb-8 lg:mb-10" itemProp="name headline">
+        <div className="relative z-10 text-center w-full max-w-7xl px-4 -mt-6 sm:-mt-8">
+          <h1 className="text-5xl sm:text-6xl md:text-[76px] lg:text-[88px] font-semibold bg-gradient-to-r from-white to-blue-400 bg-clip-text text-transparent mb-6 sm:mb-8 lg:mb-10" itemProp="name headline">
             Votre partenaire acquisition de choix
           </h1>
           <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl mb-10 lg:mb-12 text-gray-400 max-w-4xl mx-auto" itemProp="description">
-            Nous optimisons vos campagnes <span className="bg-gradient-to-r from-gray-300 to-blue-300 bg-clip-text text-transparent">Google Ads</span> et <span className="bg-gradient-to-r from-gray-300 to-blue-300 bg-clip-text text-transparent">pages de destination</span> afin d'augmenter votre volume de leads qualifiés
+            Optimisation <span className="bg-gradient-to-r from-white to-blue-400 bg-clip-text text-transparent font-semibold">Google Ads</span> et <span className="bg-gradient-to-r from-white to-blue-400 bg-clip-text text-transparent font-semibold">pages de destination</span> raffinées pour plus de demandes qualifiées.
           </p>
           <div className="border-beam-wrapper group inline-flex mb-5 lg:mb-6" style={{ borderRadius: '0.75rem' }}>
             <a
