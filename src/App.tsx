@@ -308,8 +308,8 @@ function App() {
               </h2>
               <div className="border-t border-gray-800 pt-10 lg:pt-12">
                 <p className="text-gray-400 text-lg sm:text-xl mb-4">Email:</p>
-                <a href="mailto:theo@reactop.com" className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-light text-white hover:text-blue-400 transition-colors break-words" itemProp="email" aria-label="Envoyer un email à ReactOP">
-                  theo@reactop.com
+                <a href="mailto:info@reactop.com" className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-light text-white hover:text-blue-400 transition-colors break-words" itemProp="email" aria-label="Envoyer un email à ReactOP">
+                  info@reactop.com
                 </a>
               </div>
             </div>
@@ -412,7 +412,7 @@ function App() {
             <div className="text-center md:text-right" itemScope itemType="https://schema.org/ContactPoint">
               <h3 className="text-lg lg:text-xl font-semibold mb-5 lg:mb-6 text-gray-400">Contact</h3>
               <div className="space-y-3 lg:space-y-4">
-                <p className="text-base lg:text-lg bg-gradient-to-r from-gray-300 to-blue-200 bg-clip-text text-transparent" itemProp="email">theo@reactop.com</p>
+                <p className="text-base lg:text-lg bg-gradient-to-r from-gray-300 to-blue-200 bg-clip-text text-transparent" itemProp="email">info@reactop.com</p>
                 <p className="text-base lg:text-lg bg-gradient-to-r from-gray-300 to-blue-200 bg-clip-text text-transparent" itemProp="telephone">+41 77 521 19 98</p>
               </div>
             </div>
