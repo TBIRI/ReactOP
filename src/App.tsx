@@ -220,7 +220,7 @@ function App() {
             Ce que nous faisons
           </h2>
           <p className="text-center mb-20 lg:mb-24 text-lg sm:text-xl lg:text-2xl bg-gradient-to-r from-gray-300 to-blue-300 bg-clip-text text-transparent" itemProp="description">
-            Optimisation de la conversion basée sur les données
+            Votre partenaire acquisition préféré
           </p>
 
           <div className="grid md:grid-cols-2 gap-10 lg:gap-12" role="list">
