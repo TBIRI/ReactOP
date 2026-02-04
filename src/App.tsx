@@ -345,7 +345,7 @@ function App() {
                 <div>
                   <label htmlFor="website" className="block text-xl lg:text-2xl mb-4 text-white">Site web</label>
                   <input
-                    type="url"
+                    type="text"
                     id="website"
                     name="website"
                     placeholder="entreprise.com"
