@@ -220,12 +220,12 @@ function App() {
             Ce que nous faisons
           </h2>
           <p className="text-center mb-20 lg:mb-24 text-lg sm:text-xl lg:text-2xl bg-gradient-to-r from-gray-300 to-blue-300 bg-clip-text text-transparent" itemProp="description">
-            Optimisation de la conversion basée sur les données
+            Augmentation du volume de leads qualifiés, basée sur les données
           </p>
 
           <div className="grid md:grid-cols-2 gap-10 lg:gap-12" role="list">
             {[
-              { icon: TrendingUp, title: "Audit CRO", desc: "Identification des fuites de conversion et des opportunités d'amélioration de vos tunnels de vente.", keywords: "audit CRO, conversion immobilier, funnel vente" },
+              { icon: TrendingUp, title: "Audit du parcours d'acquisition", desc: "Identification des fuites de leads et des leviers correctifs applicables", keywords: "audit CRO, conversion immobilier, funnel vente" },
               { icon: Target, title: "Implémentation de workflows correctifs", desc: "Mise en place de systèmes IA qui sécurisent les opportunités et rendent le pipeline plus prévisible.", keywords: "workflows IA, automatisation, pipeline vente" }
             ].map((service, idx) => (
               <div key={idx} className="group p-10 lg:p-12 bg-gray-900/50 border border-gray-800 rounded-2xl hover:border-blue-500/50 transition-all duration-300 hover:shadow-xl hover:shadow-blue-500/10" role="listitem" data-service-type={service.keywords} itemScope itemType="https://schema.org/Service">
