@@ -177,10 +177,10 @@ function App() {
 
         {/* Hero content - centered vertically */}
         <div className="relative z-10 text-center w-full max-w-7xl px-4 -mt-6 sm:-mt-8">
-          <h1 className="text-6xl sm:text-7xl md:text-[76px] lg:text-[88px] font-semibold bg-gradient-to-r from-white to-blue-400 bg-clip-text text-transparent mb-8 sm:mb-10 lg:mb-14 leading-tight pb-4" itemProp="name headline">
+          <h1 className="text-6xl sm:text-7xl md:text-[76px] lg:text-[88px] font-semibold bg-gradient-to-r from-white to-blue-400 bg-clip-text text-transparent mb-6 sm:mb-7 lg:mb-9 leading-tight pb-4" itemProp="name headline">
             Votre partenaire acquisition next-gen
           </h1>
-          <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl mb-10 lg:mb-12 text-gray-400 max-w-4xl mx-auto" itemProp="description">
+          <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl mb-6 sm:mb-7 lg:mb-9 text-gray-400 max-w-4xl mx-auto" itemProp="description">
             <span className="font-semibold bg-gradient-to-r from-gray-200 to-blue-300 bg-clip-text text-transparent">Google Ads</span> et <span className="font-semibold bg-gradient-to-r from-gray-200 to-blue-300 bg-clip-text text-transparent">pages de destination</span> optimisées pour plus de demandes qualifiées.
           </p>
           <div className="border-beam-wrapper group inline-flex mb-5 lg:mb-6" style={{ borderRadius: '0.75rem' }}>
