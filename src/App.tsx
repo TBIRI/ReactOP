@@ -253,28 +253,28 @@ function App() {
               Exemples de fuites fréquentes
             </p>
 
-            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10 mb-10 lg:mb-12">
-              <div className="p-8 lg:p-10 bg-gray-900/50 border border-orange-500/30 rounded-xl">
-                <div className="font-semibold mb-4 text-xl lg:text-2xl text-white">Leads traités trop tard</div>
-                <div className="flex items-center gap-3">
-                  <ArrowRight className="w-6 h-6 text-gray-400 flex-shrink-0" />
-                  <p className="text-lg lg:text-xl text-gray-300">opportunités perdues</p>
+            <div className="grid md:grid-cols-3 gap-6 lg:gap-8 mb-10 lg:mb-12">
+              <div className="p-6 lg:p-8 bg-gray-900/50 border border-orange-500/30 rounded-xl flex flex-col">
+                <div className="font-semibold mb-3 text-lg lg:text-xl text-white leading-tight">Campagnes mal paramétrées</div>
+                <div className="flex items-start gap-3 mt-auto">
+                  <ArrowRight className="w-5 h-5 text-gray-400 flex-shrink-0 mt-1" />
+                  <p className="text-base lg:text-lg text-gray-300 leading-snug">demande inexistante ou non qualifiée</p>
                 </div>
               </div>
 
-              <div className="p-8 lg:p-10 bg-gray-900/50 border border-orange-500/30 rounded-xl">
-                <div className="font-semibold mb-4 text-xl lg:text-2xl text-white">Suivi irrégulier</div>
-                <div className="flex items-center gap-3">
-                  <ArrowRight className="w-6 h-6 text-gray-400 flex-shrink-0" />
-                  <p className="text-lg lg:text-xl text-gray-300">no-show / ghosting</p>
+              <div className="p-6 lg:p-8 bg-gray-900/50 border border-orange-500/30 rounded-xl flex flex-col">
+                <div className="font-semibold mb-3 text-lg lg:text-xl text-white leading-tight">Page de destination peu convaincante</div>
+                <div className="flex items-start gap-3 mt-auto">
+                  <ArrowRight className="w-5 h-5 text-gray-400 flex-shrink-0 mt-1" />
+                  <p className="text-base lg:text-lg text-gray-300 leading-snug">clics ne deviennent pas leads</p>
                 </div>
               </div>
 
-              <div className="p-8 lg:p-10 bg-gray-900/50 border border-orange-500/30 rounded-xl sm:col-span-2 lg:col-span-1">
-                <div className="font-semibold mb-4 text-xl lg:text-2xl text-white">Pas de visibilité sur le suivi des leads</div>
-                <div className="flex items-center gap-3">
-                  <ArrowRight className="w-6 h-6 text-gray-400 flex-shrink-0" />
-                  <p className="text-lg lg:text-xl text-gray-300">impossible d'optimiser</p>
+              <div className="p-6 lg:p-8 bg-gray-900/50 border border-orange-500/30 rounded-xl flex flex-col">
+                <div className="font-semibold mb-3 text-lg lg:text-xl text-white leading-tight">Suivi des conversions incomplet</div>
+                <div className="flex items-start gap-3 mt-auto">
+                  <ArrowRight className="w-5 h-5 text-gray-400 flex-shrink-0 mt-1" />
+                  <p className="text-base lg:text-lg text-gray-300 leading-snug">décisions sans visibilité sur ce qui fonctionne</p>
                 </div>
               </div>
             </div>
