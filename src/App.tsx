@@ -204,7 +204,7 @@ function App() {
               itemType="https://schema.org/ReserveAction"
             >
               <span className="bg-gradient-to-r from-white to-blue-400 bg-clip-text text-transparent">
-                Réservez un appel
+                Réservez votre audit gratuit
               </span>
               <ArrowRight className="w-6 h-6 lg:w-7 lg:h-7 text-blue-400 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
             </a>
