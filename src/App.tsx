@@ -1,4 +1,4 @@
-import { ArrowRight, TrendingUp, Target, Menu, X } from 'lucide-react';
+import { ArrowRight, TrendingUp, Target, Menu, X, MousePointerClick } from 'lucide-react';
 import { useState } from 'react';
 
 function App() {
@@ -226,7 +226,8 @@ function App() {
           <div className="grid md:grid-cols-2 gap-10 lg:gap-12" role="list">
             {[
               { icon: TrendingUp, title: "Audit du parcours d'acquisition", desc: "Identification des fuites de leads et des leviers correctifs applicables", keywords: "audit CRO, conversion immobilier, funnel vente" },
-              { icon: Target, title: "Pilotage de campagnes publicitaires digitales", desc: "Paramétrage, déploiement et optimisation continue de campagnes en ligne", keywords: "workflows IA, automatisation, pipeline vente" }
+              { icon: Target, title: "Pilotage de campagnes publicitaires digitales", desc: "Paramétrage, déploiement et optimisation continue de campagnes en ligne", keywords: "workflows IA, automatisation, pipeline vente" },
+              { icon: MousePointerClick, title: "Optimisation des pages de destination", desc: "Amélioration continue des pages de destination afin d'augmenter la conversion des visiteurs en lead", keywords: "landing page, conversion, optimisation CRO" }
             ].map((service, idx) => (
               <div key={idx} className="group p-10 lg:p-12 bg-gray-900/50 border border-gray-800 rounded-2xl hover:border-blue-500/50 transition-all duration-300 hover:shadow-xl hover:shadow-blue-500/10" role="listitem" data-service-type={service.keywords} itemScope itemType="https://schema.org/Service">
                 <service.icon className="w-14 h-14 lg:w-16 lg:h-16 text-blue-400 mb-6 group-hover:scale-110 transition-transform" aria-hidden="true" />
