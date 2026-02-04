@@ -79,14 +79,6 @@ function App() {
           </button>
 
           <button
-            onClick={() => scrollToSection('pour-qui')}
-            className="hidden md:block px-2 sm:px-3 md:px-8 py-1.5 sm:py-2 md:py-2.5 rounded-full text-[10px] sm:text-xs md:text-base font-medium text-gray-300 hover:text-white hover:bg-gray-800/50 transition-all duration-200 whitespace-nowrap"
-            aria-label="Naviguer vers la section clients"
-          >
-            clients
-          </button>
-
-          <button
             onClick={() => scrollToSection('processus')}
             className="hidden md:block px-2 sm:px-3 md:px-8 py-1.5 sm:py-2 md:py-2.5 rounded-full text-[10px] sm:text-xs md:text-base font-medium text-gray-300 hover:text-white hover:bg-gray-800/50 transition-all duration-200"
             aria-label="Naviguer vers la section processus"
@@ -125,13 +117,6 @@ function App() {
               className="text-4xl font-medium text-white py-4 text-left hover:text-blue-400 transition-colors pl-2"
             >
               Services
-            </button>
-
-            <button
-              onClick={() => scrollToSection('pour-qui')}
-              className="text-4xl font-medium text-white py-4 text-left hover:text-blue-400 transition-colors pl-2"
-            >
-              Clients
             </button>
 
             <button
@@ -237,17 +222,10 @@ function App() {
         </div>
       </section>
 
-      <section id="pour-qui" className="py-48 lg:py-56 px-6 bg-gradient-to-b from-gray-900/30 to-transparent" aria-labelledby="clients-title" data-section="clients" itemScope itemType="https://schema.org/Audience">
+      <section id="pour-qui" className="py-24 lg:py-32 px-6 bg-gradient-to-b from-gray-900/30 to-transparent" data-section="clients" itemScope itemType="https://schema.org/Audience">
         <div className="max-w-7xl mx-auto">
-          <h2 id="clients-title" className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-semibold text-center mb-6 lg:mb-8 bg-gradient-to-r from-white to-blue-400 bg-clip-text text-transparent" itemProp="audienceType">
-            Clients
-          </h2>
-          <p className="text-center mb-20 lg:mb-24 text-xl sm:text-2xl lg:text-3xl bg-gradient-to-r from-gray-300 to-blue-300 bg-clip-text text-transparent max-w-4xl mx-auto px-4" data-target-audience="b2b-providers">
-            Cabinets et prestataires B2B souhaitant générer davantage de demandes qualifiées
-          </p>
-
           <div className="max-w-6xl mx-auto">
-            <p className="text-center text-gray-400 text-base lg:text-lg mb-8 lg:mb-10 px-4">
+            <p className="text-center mb-12 lg:mb-16 text-xl sm:text-2xl lg:text-3xl bg-gradient-to-r from-gray-300 to-blue-300 bg-clip-text text-transparent max-w-4xl mx-auto px-4">
               Exemples de fuites fréquentes
             </p>
 
