@@ -55,10 +55,11 @@ function App() {
         <div className="flex items-center justify-between px-0 md:px-8 py-2 md:py-3 md:bg-gray-900/80 md:backdrop-blur-xl md:rounded-full md:border md:border-gray-800/50 md:shadow-2xl">
           <button
             onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-            className="md:ml-0"
+            className="flex items-center gap-2 md:ml-0"
             aria-label="Retour en haut"
           >
             <img src="/mobius_det.png" alt="ReactOP Logo - Agence CRO Immobilier" className="w-10 h-10 md:w-12 md:h-12 cursor-pointer hover:opacity-80 transition-opacity" itemProp="logo" />
+            <span className="text-lg md:text-xl font-semibold bg-gradient-to-r from-white to-blue-400 bg-clip-text text-transparent">ReactOP</span>
           </button>
 
           <button
@@ -184,7 +185,7 @@ function App() {
         {/* Hero content - centered vertically */}
         <div className="relative z-10 text-center w-full max-w-7xl px-4 -mt-12 sm:-mt-16">
           <h1 className="text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-semibold bg-gradient-to-r from-white to-blue-400 bg-clip-text text-transparent mb-6 sm:mb-8 lg:mb-10" itemProp="name headline">
-            votre partenaire acquisition de choix
+            Votre partenaire acquisition de choix
           </h1>
           <p className="text-xl sm:text-2xl md:text-3xl lg:text-4xl mb-10 lg:mb-12 bg-gradient-to-r from-gray-300 to-blue-300 bg-clip-text text-transparent" itemProp="description">
             Nous optimisons vos campagnes Google Ads et pages de destination afin d'augmenter votre volume de leads qualifiés
