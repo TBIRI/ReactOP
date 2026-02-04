@@ -280,17 +280,9 @@ function App() {
             </div>
 
             <div className="p-8 sm:p-10 lg:p-12 bg-gray-900/50 border border-green-500/20 rounded-2xl text-center" data-value-proposition="main">
-              <p className="text-xl sm:text-2xl lg:text-3xl bg-gradient-to-r from-gray-200 to-blue-200 bg-clip-text text-transparent font-medium mb-6">
-                Nous identifions les fuites propres à chaque agence et mettons en place un système mesurable pour les corriger.
+              <p className="text-xl sm:text-2xl lg:text-3xl bg-gradient-to-r from-gray-200 to-blue-200 bg-clip-text text-transparent font-medium">
+                Nous identifions les axes d'amélioration du parcours et activons les leviers clés pour augmenter le volume de demandes qualifiées
               </p>
-              <div className="pt-6 border-t border-green-500/20" data-guarantee="results">
-                <p className="text-lg lg:text-xl bg-gradient-to-r from-gray-400 to-blue-300 bg-clip-text text-transparent font-medium mb-2">
-                  Garantie de résultat
-                </p>
-                <p className="text-base lg:text-lg bg-gradient-to-r from-gray-500 to-blue-400 bg-clip-text text-transparent">
-                  pas de résultat = vous ne payez pas
-                </p>
-              </div>
             </div>
           </div>
         </div>
