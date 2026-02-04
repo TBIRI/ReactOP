@@ -209,9 +209,6 @@ function App() {
               <ArrowRight className="w-6 h-6 lg:w-7 lg:h-7 text-blue-400 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
             </a>
           </div>
-          <p className="text-base lg:text-lg bg-gradient-to-r from-gray-400 to-blue-200 bg-clip-text text-transparent" data-offer="free-audit">
-            Audit gratuit de 15min
-          </p>
         </div>
       </section>
 
