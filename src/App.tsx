@@ -95,17 +95,15 @@ function App() {
             contact
           </button>
 
-          <a
-            href="https://calendar.app.google/jScJ2XUgZ22C1RRr5"
-            target="_blank"
-            rel="noopener noreferrer"
+          <button
+            onClick={() => scrollToSection('contact')}
             className="group hidden md:inline-flex items-center px-2 sm:px-3 md:px-6 py-1.5 sm:py-2 md:py-2.5 bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-400 hover:to-blue-500 font-medium text-[10px] sm:text-xs md:text-base rounded-full transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/50 hover:scale-105 active:scale-95 whitespace-nowrap relative overflow-hidden"
           >
             <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent translate-x-[-200%] group-hover:translate-x-[200%] transition-transform duration-700"></div>
             <span className="relative text-white">
-              Réservez un appel
+              Audit gratuit
             </span>
-          </a>
+          </button>
         </div>
       </nav>
 
@@ -141,18 +139,18 @@ function App() {
             </button>
 
             <div className="pt-4">
-              <a
-                href="https://calendar.app.google/jScJ2XUgZ22C1RRr5"
-                target="_blank"
-                rel="noopener noreferrer"
+              <button
+                onClick={() => {
+                  scrollToSection('contact');
+                  setIsMobileMenuOpen(false);
+                }}
                 className="group relative w-full flex items-center justify-center px-8 py-3 bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-400 hover:to-blue-500 font-medium text-lg rounded-full transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/50 hover:scale-105 active:scale-95 overflow-hidden"
-                onClick={() => setIsMobileMenuOpen(false)}
               >
                 <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent translate-x-[-200%] group-hover:translate-x-[200%] transition-transform duration-700"></div>
                 <span className="relative text-white">
-                  Réservez un appel
+                  Audit gratuit
                 </span>
-              </a>
+              </button>
             </div>
           </div>
         </div>
@@ -181,23 +179,18 @@ function App() {
           <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl mb-6 sm:mb-7 lg:mb-9 text-gray-400 max-w-4xl mx-auto" itemProp="description">
             <span className="font-semibold bg-gradient-to-r from-gray-200 to-blue-300 bg-clip-text text-transparent">Google Ads</span> et <span className="font-semibold bg-gradient-to-r from-gray-200 to-blue-300 bg-clip-text text-transparent">pages de destination</span> optimisées pour plus de demandes qualifiées.
           </p>
-          <a
-            href="https://calendar.app.google/jScJ2XUgZ22C1RRr5"
-            target="_blank"
-            rel="noopener noreferrer"
+          <button
+            onClick={() => scrollToSection('contact')}
             className="group relative inline-flex items-center gap-3 px-10 py-5 mb-5 lg:mb-6 font-semibold text-xl lg:text-2xl overflow-hidden rounded-xl bg-gradient-to-br from-blue-500 to-blue-600 hover:from-blue-400 hover:to-blue-500 transition-all duration-300 hover:shadow-2xl hover:shadow-blue-500/50 hover:scale-[1.02] active:scale-[0.98]"
-            aria-label="Réserver un appel gratuit de 15 minutes avec ReactOP"
+            aria-label="Recevoir un audit gratuit avec ReactOP"
             data-action="cta-primary"
-            itemProp="potentialAction"
-            itemScope
-            itemType="https://schema.org/ReserveAction"
           >
             <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent translate-x-[-200%] group-hover:translate-x-[200%] transition-transform duration-700"></div>
             <span className="relative text-white">
-              Réservez votre audit gratuit
+              Recevez votre audit gratuit
             </span>
             <ArrowRight className="relative w-6 h-6 lg:w-7 lg:h-7 text-white group-hover:translate-x-1 transition-transform" aria-hidden="true" />
-          </a>
+          </button>
         </div>
       </section>
 
