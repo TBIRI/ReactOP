@@ -274,7 +274,7 @@ function Home() {
 
           <div className="flex flex-col gap-6 lg:gap-8" role="list">
             {[
-              { num: "01", title: "Analyse", desc: "Audit du parcours d'acquisition d'un lead et des pages de destination" },
+              { num: "01", title: "Analyse", desc: "Audit du parcours d'acquisition d'un lead et des Landing Pages" },
               { num: "02", title: "Stratégie", desc: "Priorisation des leviers à plus fort impact et définition de vos objectifs et indicateurs de succès." },
               { num: "03", title: "Déploiement", desc: "Conception des campagnes et amélioration des Landing Pages." },
               { num: "04", title: "Optimisation continue", desc: "Améliorations régulières et suivi des résultats basés sur le volume et la qualité des demandes." }
