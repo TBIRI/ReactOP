@@ -202,14 +202,14 @@ function Home() {
             Ce que nous faisons
           </h2>
           <p className="text-center mb-20 lg:mb-24 text-lg sm:text-xl lg:text-2xl bg-gradient-to-r from-gray-300 to-blue-300 bg-clip-text text-transparent" itemProp="description">
-            Augmentation du volume de leads qualifiés, basée sur les données
+            Augmentation du volume de leads qualifiés basée sur les données
           </p>
 
           <div className="grid grid-cols-1 gap-10 lg:gap-12" role="list">
             {[
-              { icon: TrendingUp, title: "Audit du parcours d'acquisition", desc: "Identification des fuites de leads et des leviers correctifs applicables", keywords: "audit CRO, conversion immobilier, funnel vente" },
-              { icon: Target, title: "Pilotage de campagnes publicitaires digitales", desc: "Paramétrage, déploiement et optimisation continue de campagnes en ligne", keywords: "workflows IA, automatisation, pipeline vente" },
-              { icon: MousePointerClick, title: "Optimisation des pages de destination", desc: "Amélioration continue des pages de destination afin d'augmenter la conversion des visiteurs en lead", keywords: "landing page, conversion, optimisation CRO" }
+              { icon: TrendingUp, title: "Audit du parcours d'acquisition lead", desc: "Identification des fuites de leads et des leviers correctifs applicables", keywords: "audit CRO, conversion immobilier, funnel vente" },
+              { icon: Target, title: "Pilotage de vos campagnes Google Ads", desc: "Paramétrage, déploiement et optimisation continue de campagnes en ligne", keywords: "workflows IA, automatisation, pipeline vente" },
+              { icon: MousePointerClick, title: "Optimisation des Landing Pages", desc: "Amélioration continue des Landing Pages afin d'augmenter la conversion des clics en lead", keywords: "landing page, conversion, optimisation CRO" }
             ].map((service, idx) => (
               <div key={idx} className="group p-10 lg:p-12 bg-gray-900/50 border border-gray-800 rounded-2xl hover:border-blue-500/50 transition-all duration-300 hover:shadow-xl hover:shadow-blue-500/10" role="listitem" data-service-type={service.keywords} itemScope itemType="https://schema.org/Service">
                 <service.icon className="w-14 h-14 lg:w-16 lg:h-16 text-blue-400 mb-6 group-hover:scale-110 transition-transform" aria-hidden="true" />
@@ -238,7 +238,7 @@ function Home() {
               </div>
 
               <div className="p-6 lg:p-8 bg-gray-900/50 border border-orange-500/30 rounded-xl flex flex-col">
-                <div className="font-semibold mb-3 text-lg lg:text-xl text-white leading-tight">Page de destination peu convaincante</div>
+                <div className="font-semibold mb-3 text-lg lg:text-xl text-white leading-tight">Pages de destination peu convaincantes</div>
                 <div className="flex items-start gap-3 mt-auto">
                   <ArrowRight className="w-5 h-5 text-gray-400 flex-shrink-0 mt-1" />
                   <p className="text-base lg:text-lg text-gray-300 leading-snug">clics ne deviennent pas leads</p>
@@ -246,7 +246,7 @@ function Home() {
               </div>
 
               <div className="p-6 lg:p-8 bg-gray-900/50 border border-orange-500/30 rounded-xl flex flex-col">
-                <div className="font-semibold mb-3 text-lg lg:text-xl text-white leading-tight">Suivi des conversions incomplet</div>
+                <div className="font-semibold mb-3 text-lg lg:text-xl text-white leading-tight">Tracking des conversions incomplet</div>
                 <div className="flex items-start gap-3 mt-auto">
                   <ArrowRight className="w-5 h-5 text-gray-400 flex-shrink-0 mt-1" />
                   <p className="text-base lg:text-lg text-gray-300 leading-snug">décisions sans visibilité sur ce qui fonctionne</p>
@@ -274,10 +274,10 @@ function Home() {
 
           <div className="flex flex-col gap-6 lg:gap-8" role="list">
             {[
-              { num: "01", title: "Analyse", desc: "Audit du parcours d'acquisition (de la recherche au lead qualifié) et des pages de destination" },
-              { num: "02", title: "Stratégie", desc: "Priorisation des leviers à plus fort impact et définition des objectifs et indicateurs." },
-              { num: "03", title: "Déploiement", desc: "Conception des campagnes et amélioration des pages de destination." },
-              { num: "04", title: "Optimisation continue", desc: "Améliorations régulières et suivi des résultats sur le volume et la qualité des demandes." }
+              { num: "01", title: "Analyse", desc: "Audit du parcours d'acquisition d'un lead et des pages de destination" },
+              { num: "02", title: "Stratégie", desc: "Priorisation des leviers à plus fort impact et définition de vos objectifs et indicateurs de succès." },
+              { num: "03", title: "Déploiement", desc: "Conception des campagnes et amélioration des Landing Pages." },
+              { num: "04", title: "Optimisation continue", desc: "Améliorations régulières et suivi des résultats basés sur le volume et la qualité des demandes." }
             ].map((step, idx) => (
               <div key={idx} className="relative p-8 lg:p-10 bg-gradient-to-br from-gray-900 to-gray-900/50 border border-gray-800 rounded-2xl" role="listitem" itemScope itemType="https://schema.org/HowToStep">
                 <div className="text-6xl lg:text-7xl font-semibold text-blue-500/20 mb-4" aria-hidden="true">{step.num}</div>
