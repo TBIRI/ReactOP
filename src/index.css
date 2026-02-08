@@ -4,7 +4,8 @@
 
 @layer base {
   html, body {
-    overscroll-behavior-y: none;
+    background-color: #000000;
+    min-height: 100vh;
   }
 }
 
