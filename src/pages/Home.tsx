@@ -179,7 +179,7 @@ function Home() {
             Votre partenaire acquisition next-gen
           </h1>
           <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl mb-6 sm:mb-7 lg:mb-9 text-gray-400 max-w-4xl mx-auto" itemProp="description">
-            Nous gérons vos <span className="font-semibold bg-gradient-to-r from-gray-200 to-blue-300 bg-clip-text text-transparent">Google Ads</span> de bout en bout et optimisons <span className="font-semibold bg-gradient-to-r from-gray-200 to-blue-300 bg-clip-text text-transparent">votre taux de conversion</span> pour générer plus de demandes qualifiées.
+            Nous gérons vos <span className="font-semibold bg-gradient-to-r from-gray-200 to-blue-300 bg-clip-text text-transparent">Google Ads</span> de bout en bout et optimisons votre <span className="font-semibold bg-gradient-to-r from-gray-200 to-blue-300 bg-clip-text text-transparent">taux de conversion</span> pour générer plus de demandes qualifiées.
           </p>
           <button
             onClick={() => navigate('/audit')}
