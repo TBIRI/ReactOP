@@ -171,10 +171,10 @@ function Home() {
         }}
       ></div>
 
-      <section className="min-h-screen flex flex-col items-center justify-center px-6 relative overflow-hidden" role="banner" aria-label="Section hero" data-section="hero"  itemScope itemType="https://schema.org/WPHeader">
+      <section className="min-h-[100dvh] flex flex-col items-center justify-center px-6 relative overflow-hidden py-32" role="banner" aria-label="Section hero" data-section="hero"  itemScope itemType="https://schema.org/WPHeader">
 
         {/* Hero content - centered vertically */}
-        <div className="relative z-10 text-center w-full max-w-7xl px-4 -mt-6 sm:-mt-8">
+        <div className="relative z-10 text-center w-full max-w-7xl px-4">
           <h1 className="text-6xl sm:text-7xl md:text-[76px] lg:text-[88px] font-semibold bg-gradient-to-r from-white to-blue-400 bg-clip-text text-transparent mb-6 sm:mb-7 lg:mb-9 leading-tight pb-4" itemProp="name headline">
             Votre partenaire acquisition next-gen
           </h1>
