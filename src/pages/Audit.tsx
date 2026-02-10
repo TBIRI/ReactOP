@@ -16,7 +16,7 @@ function Audit() {
   }, []);
 
   return (
-    <div className="bg-black" style={{ margin: 0, minHeight: '100vh' }}>
+    <div className="bg-black" style={{ margin: 0, height: '100vh', overflow: 'hidden' }}>
       {/* Mobius logo - very blurred background */}
       <div
         className="fixed top-[50%] left-[50%] pointer-events-none z-0 mobile-bg-fix"
@@ -47,12 +47,12 @@ function Audit() {
       <iframe
         data-tally-src="https://tally.so/r/Pd5RD1?transparentBackground=1"
         width="100%"
-        height="100vh"
+        height="100%"
         frameBorder="0"
         marginHeight={0}
         marginWidth={0}
         title="Audit acquisition"
-        style={{ display: 'block', border: 0 }}
+        style={{ position: 'absolute', top: 0, right: 0, bottom: 0, left: 0, border: 0 }}
       />
     </div>
   );
