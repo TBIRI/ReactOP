@@ -171,7 +171,7 @@ function Home() {
         }}
       ></div>
 
-      <section className="min-h-[100dvh] flex flex-col items-center justify-center px-6 relative overflow-hidden pt-40 pb-48" role="banner" aria-label="Section hero" data-section="hero"  itemScope itemType="https://schema.org/WPHeader">
+      <section className="h-[100dvh] flex flex-col items-center justify-center px-6 relative overflow-hidden" role="banner" aria-label="Section hero" data-section="hero"  itemScope itemType="https://schema.org/WPHeader">
 
         {/* Hero content - centered vertically */}
         <div className="relative z-10 text-center w-full max-w-6xl px-4">
