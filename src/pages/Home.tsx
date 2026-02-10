@@ -175,15 +175,15 @@ function Home() {
 
         {/* Hero content - centered vertically */}
         <div className="relative z-10 text-center w-full max-w-6xl px-4">
-          <h1 className="text-5xl sm:text-6xl md:text-[64px] lg:text-[72px] font-semibold bg-gradient-to-r from-white to-blue-400 bg-clip-text text-transparent mb-10 sm:mb-11 lg:mb-12 leading-[1.15] pb-2" itemProp="name headline">
-            Votre partenaire acquisition next-gen
+          <h1 className="text-6xl sm:text-7xl md:text-[80px] lg:text-[96px] font-semibold bg-gradient-to-r from-white to-blue-400 bg-clip-text text-transparent mb-8 sm:mb-9 lg:mb-10 leading-[1.1] pb-2" itemProp="name headline">
+            Votre partenaire acquisition <span className="whitespace-nowrap">next-gen</span>
           </h1>
-          <p className="text-base sm:text-lg md:text-xl lg:text-[22px] mb-10 sm:mb-11 lg:mb-12 text-gray-400 max-w-3xl mx-auto leading-relaxed" itemProp="description">
+          <p className="text-lg sm:text-xl md:text-[22px] lg:text-[26px] mb-8 sm:mb-9 lg:mb-10 text-gray-400 max-w-4xl mx-auto leading-relaxed" itemProp="description">
             Nous gérons vos <span className="font-semibold bg-gradient-to-r from-gray-200 to-blue-300 bg-clip-text text-transparent">Google Ads</span> de bout en bout et optimisons votre <span className="font-semibold bg-gradient-to-r from-gray-200 to-blue-300 bg-clip-text text-transparent">taux de conversion</span> pour générer plus de demandes qualifiées.
           </p>
           <button
             onClick={() => navigate('/audit')}
-            className="group relative inline-flex items-center gap-2.5 px-8 py-4 font-semibold text-lg lg:text-xl overflow-hidden rounded-xl bg-gradient-to-br from-blue-500 to-blue-600 hover:from-blue-400 hover:to-blue-500 transition-all duration-300 hover:shadow-2xl hover:shadow-blue-500/50 hover:scale-[1.02] active:scale-[0.98]"
+            className="group relative inline-flex items-center gap-3 px-9 py-5 font-semibold text-xl lg:text-2xl overflow-hidden rounded-xl bg-gradient-to-br from-blue-500 to-blue-600 hover:from-blue-400 hover:to-blue-500 transition-all duration-300 hover:shadow-2xl hover:shadow-blue-500/50 hover:scale-[1.02] active:scale-[0.98]"
             aria-label="Recevoir un audit gratuit avec ReactOP"
             data-action="cta-primary"
           >
@@ -191,7 +191,7 @@ function Home() {
             <span className="relative text-white">
               Recevez votre audit gratuit
             </span>
-            <ArrowRight className="relative w-5 h-5 lg:w-6 lg:h-6 text-white group-hover:translate-x-1 transition-transform" aria-hidden="true" />
+            <ArrowRight className="relative w-6 h-6 lg:w-7 lg:h-7 text-white group-hover:translate-x-1 transition-transform" aria-hidden="true" />
           </button>
         </div>
       </section>
