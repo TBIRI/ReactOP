@@ -1,6 +1,9 @@
 import { useEffect } from 'react';
+import { ArrowLeft } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 
 function Audit() {
+  const navigate = useNavigate();
   useEffect(() => {
     const script = document.createElement('script');
     script.src = 'https://tally.so/widgets/embed.js';
@@ -26,6 +29,17 @@ function Audit() {
           opacity: 0.3
         }}
       ></div>
+
+      {/* Back button */}
+      <button
+        onClick={() => navigate('/')}
+        className="fixed top-6 left-6 md:top-8 md:left-8 z-50 flex items-center gap-2 px-4 md:px-6 py-2 md:py-3 bg-gray-900/80 backdrop-blur-xl rounded-full border border-gray-800/50 shadow-2xl hover:bg-gray-800/90 transition-all duration-300 hover:scale-105 active:scale-95"
+        aria-label="Retour à l'accueil"
+      >
+        <ArrowLeft className="w-5 h-5 text-white" />
+        <img src="/mobius_det.png" alt="ReactOP Logo" className="w-8 h-8" />
+        <span className="text-base md:text-lg font-semibold bg-gradient-to-r from-white to-blue-400 bg-clip-text text-transparent">ReactOP</span>
+      </button>
 
       <iframe
         data-tally-src="https://tally.so/r/Pd5RD1?transparentBackground=1"
