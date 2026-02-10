@@ -4,19 +4,42 @@ import { useNavigate } from 'react-router-dom';
 
 function Audit() {
   const navigate = useNavigate();
+
   useEffect(() => {
     const script = document.createElement('script');
     script.src = 'https://tally.so/widgets/embed.js';
     script.async = true;
     document.body.appendChild(script);
 
+    document.body.style.overflow = 'hidden';
+    document.body.style.position = 'fixed';
+    document.body.style.width = '100%';
+    document.body.style.height = '100%';
+    document.documentElement.style.overflow = 'hidden';
+
     return () => {
       document.body.removeChild(script);
+      document.body.style.overflow = '';
+      document.body.style.position = '';
+      document.body.style.width = '';
+      document.body.style.height = '';
+      document.documentElement.style.overflow = '';
     };
   }, []);
 
   return (
-    <div className="bg-black" style={{ margin: 0, height: '100vh', overflow: 'hidden' }}>
+    <div className="bg-black" style={{
+      position: 'fixed',
+      top: 0,
+      left: 0,
+      right: 0,
+      bottom: 0,
+      margin: 0,
+      padding: 0,
+      overflow: 'hidden',
+      width: '100%',
+      height: '100%'
+    }}>
       {/* Mobius logo - very blurred background */}
       <div
         className="fixed top-[50%] left-[50%] pointer-events-none z-0 mobile-bg-fix"
@@ -52,7 +75,16 @@ function Audit() {
         marginHeight={0}
         marginWidth={0}
         title="Audit acquisition"
-        style={{ position: 'absolute', top: 0, right: 0, bottom: 0, left: 0, border: 0 }}
+        style={{
+          position: 'absolute',
+          top: 0,
+          right: 0,
+          bottom: 0,
+          left: 0,
+          border: 0,
+          margin: 0,
+          padding: 0
+        }}
       />
     </div>
   );
