@@ -1,8 +1,30 @@
+import { useEffect, useState } from 'react';
 import { ArrowLeft } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 
 function Audit() {
   const navigate = useNavigate();
+  const [scriptLoaded, setScriptLoaded] = useState(false);
+
+  useEffect(() => {
+    const existingScript = document.querySelector('script[src="https://tally.so/widgets/embed.js"]');
+
+    if (existingScript) {
+      setScriptLoaded(true);
+      return;
+    }
+
+    const script = document.createElement('script');
+    script.src = 'https://tally.so/widgets/embed.js';
+    script.onload = () => setScriptLoaded(true);
+    document.body.appendChild(script);
+
+    return () => {
+      if (document.body.contains(script)) {
+        document.body.removeChild(script);
+      }
+    };
+  }, []);
 
   return (
     <div className="bg-black" style={{ margin: 0, height: '100vh', overflow: 'hidden' }}>
