@@ -160,7 +160,7 @@ function Home() {
 
       {/* Mobius logo - very blurred background that follows scroll */}
       <div
-        className="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[100vw] h-[100vh] min-w-[1200px] min-h-[1200px] lg:min-w-[1600px] lg:min-h-[1600px] pointer-events-none z-0"
+        className="fixed top-[50%] left-[50%] pointer-events-none z-0 mobile-bg-fix"
         style={{
           backgroundImage: "url('/mobius_det.png')",
           backgroundSize: 'contain',
@@ -168,12 +168,15 @@ function Home() {
           backgroundRepeat: 'no-repeat',
           filter: 'blur(50px)',
           opacity: 0.3,
-          willChange: 'transform',
-          transform: 'translateZ(0)'
+          transform: 'translate(-50%, -50%)',
+          width: '100vw',
+          height: '100vh',
+          minWidth: '1200px',
+          minHeight: '1200px'
         }}
       ></div>
 
-      <section className="h-[100dvh] flex flex-col items-center justify-center px-4 sm:px-6 relative overflow-hidden gpu-accelerated" role="banner" aria-label="Section hero" data-section="hero"  itemScope itemType="https://schema.org/WPHeader">
+      <section className="h-[100svh] sm:h-[100vh] flex flex-col items-center justify-center px-4 sm:px-6 relative overflow-hidden gpu-accelerated" role="banner" aria-label="Section hero" data-section="hero"  itemScope itemType="https://schema.org/WPHeader">
 
         {/* Hero content - centered vertically */}
         <div className="relative z-10 text-center w-full max-w-6xl px-2 sm:px-4">
