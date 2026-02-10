@@ -33,7 +33,7 @@ function Audit() {
       {/* Back button */}
       <button
         onClick={() => navigate('/')}
-        className="fixed top-4 left-4 z-50 w-10 h-10 flex items-center justify-center bg-white/10 backdrop-blur-sm rounded-full border border-white/20 hover:bg-white/20 hover:border-white/30 transition-all duration-200 group"
+        className="fixed top-4 left-4 md:top-8 md:left-8 lg:top-10 lg:left-10 z-50 w-10 h-10 flex items-center justify-center bg-white/10 backdrop-blur-sm rounded-full border border-white/20 hover:bg-white/20 hover:border-white/30 transition-all duration-200 group"
         aria-label="Retour à l'accueil"
       >
         <ArrowLeft className="w-5 h-5 text-white" />
