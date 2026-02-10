@@ -3,9 +3,39 @@
 @tailwind utilities;
 
 @layer base {
-  html, body {
+  html {
+    background-color: #000000;
+    overflow-x: hidden;
+    overscroll-behavior: none;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  body {
     background-color: #000000;
     min-height: 100vh;
+    overflow-x: hidden;
+    overscroll-behavior-y: none;
+    position: relative;
+  }
+
+  * {
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  @media (max-width: 768px) {
+    * {
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    [class*="transition"],
+    [class*="hover:"] {
+      transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    [class*="group"] {
+      contain: layout style paint;
+    }
   }
 }
 
@@ -19,5 +49,38 @@
   .border-beam-wrapper > * {
     position: relative;
     z-index: 1;
+  }
+
+  @supports (backdrop-filter: blur(40px)) {
+    .backdrop-blur-xl {
+      -webkit-backdrop-filter: blur(40px);
+      backdrop-filter: blur(40px);
+      transform: translateZ(0);
+      will-change: transform;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .backdrop-blur-xl {
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+    }
+
+    .backdrop-blur-sm {
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+    }
+
+    button[class*="hover:scale"],
+    a[class*="hover:scale"],
+    div[class*="hover:scale"] {
+      transform: translateZ(0);
+      will-change: transform;
+    }
+
+    [class*="bg-gradient"] {
+      backface-visibility: hidden;
+      perspective: 1000px;
+    }
   }
 }

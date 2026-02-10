@@ -54,7 +54,7 @@ function Home() {
 
   return (
     <div className="min-h-screen bg-black text-white" itemScope itemType="https://schema.org/WebPage">
-      <nav className="fixed top-6 md:top-8 left-1/2 -translate-x-1/2 z-50 w-[95%] sm:w-[90%] max-w-7xl px-2 sm:px-4" role="navigation" aria-label="Navigation principale">
+      <nav className="fixed top-6 md:top-8 left-1/2 -translate-x-1/2 z-50 w-[95%] sm:w-[90%] max-w-7xl px-2 sm:px-4 will-change-transform" style={{ transform: 'translateZ(0)' }} role="navigation" aria-label="Navigation principale">
         <div className="flex items-center justify-between px-0 md:px-8 py-2 md:py-3 md:bg-gray-900/80 md:backdrop-blur-xl md:rounded-full md:border md:border-gray-800/50 md:shadow-2xl">
           <button
             onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
@@ -112,12 +112,13 @@ function Home() {
       {/* Backdrop overlay */}
       <div
         className={`fixed inset-0 bg-black/60 backdrop-blur-sm z-40 md:hidden transition-all duration-300 ${isMobileMenuOpen ? 'opacity-100 visible' : 'opacity-0 invisible pointer-events-none'}`}
+        style={{ transform: 'translateZ(0)' }}
         onClick={() => setIsMobileMenuOpen(false)}
       ></div>
 
       {/* Dropdown menu */}
-      <div className={`fixed top-[88px] left-1/2 -translate-x-1/2 w-[95%] sm:w-[90%] z-50 md:hidden transition-all duration-300 ${isMobileMenuOpen ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-4 pointer-events-none'}`}>
-        <div className="bg-gray-900/95 backdrop-blur-xl rounded-3xl border border-gray-800/50 shadow-2xl p-6">
+      <div className={`fixed top-[88px] left-1/2 -translate-x-1/2 w-[95%] sm:w-[90%] z-50 md:hidden transition-all duration-300 ${isMobileMenuOpen ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-4 pointer-events-none'}`} style={{ transform: 'translateZ(0)' }}>
+        <div className="bg-gray-900/95 backdrop-blur-xl rounded-3xl border border-gray-800/50 shadow-2xl p-6" style={{ transform: 'translateZ(0)' }}>
           <div className="flex flex-col space-y-2">
             <button
               onClick={() => scrollToSection('services')}
