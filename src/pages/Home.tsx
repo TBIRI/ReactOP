@@ -401,8 +401,8 @@ function Home() {
             <div className="text-center md:text-right" itemScope itemType="https://schema.org/ContactPoint">
               <h3 className="text-lg lg:text-xl font-semibold mb-5 lg:mb-6 text-gray-400">Contact</h3>
               <div className="space-y-3 lg:space-y-4">
-                <p className="text-base lg:text-lg bg-gradient-to-r from-gray-300 to-blue-200 bg-clip-text text-transparent" itemProp="email">info@reactop.com</p>
-                <p className="text-base lg:text-lg bg-gradient-to-r from-gray-300 to-blue-200 bg-clip-text text-transparent" itemProp="telephone">+41 77 521 19 98</p>
+                <a href="mailto:info@reactop.com" className="block text-base lg:text-lg bg-gradient-to-r from-gray-300 to-blue-200 bg-clip-text text-transparent hover:from-blue-400 hover:to-blue-300 transition-all duration-300" itemProp="email">info@reactop.com</a>
+                <a href="tel:+41775211998" className="block text-base lg:text-lg bg-gradient-to-r from-gray-300 to-blue-200 bg-clip-text text-transparent hover:from-blue-400 hover:to-blue-300 transition-all duration-300" itemProp="telephone">+41 77 521 19 98</a>
               </div>
             </div>
           </div>
