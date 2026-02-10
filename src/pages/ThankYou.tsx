@@ -7,14 +7,19 @@ function ThankYou() {
   return (
     <div className="min-h-screen bg-black text-white flex items-center justify-center px-6 relative overflow-hidden">
       <div
-        className="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[100vw] h-[100vh] min-w-[1200px] min-h-[1200px] lg:min-w-[1600px] lg:min-h-[1600px] pointer-events-none z-0"
+        className="fixed top-[50%] left-[50%] pointer-events-none z-0 mobile-bg-fix"
         style={{
           backgroundImage: "url('/mobius_det.png')",
           backgroundSize: 'contain',
           backgroundPosition: 'center',
           backgroundRepeat: 'no-repeat',
           filter: 'blur(50px)',
-          opacity: 0.3
+          opacity: 0.3,
+          transform: 'translate(-50%, -50%)',
+          width: '100vw',
+          height: '100vh',
+          minWidth: '1224px',
+          minHeight: '1224px'
         }}
       ></div>
 

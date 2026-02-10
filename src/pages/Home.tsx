@@ -171,8 +171,8 @@ function Home() {
           transform: 'translate(-50%, -50%)',
           width: '100vw',
           height: '100vh',
-          minWidth: '1200px',
-          minHeight: '1200px'
+          minWidth: '1224px',
+          minHeight: '1224px'
         }}
       ></div>
 
