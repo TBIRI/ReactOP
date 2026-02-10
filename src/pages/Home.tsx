@@ -160,18 +160,20 @@ function Home() {
 
       {/* Mobius logo - very blurred background that follows scroll */}
       <div
-        className="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[100vw] h-[100vh] min-w-[1200px] min-h-[1200px] lg:min-w-[1600px] lg:min-h-[1600px] pointer-events-none z-0"
+        className="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[100vw] h-[100vh] min-w-[800px] min-h-[800px] sm:min-w-[1200px] sm:min-h-[1200px] lg:min-w-[1600px] lg:min-h-[1600px] pointer-events-none z-0"
         style={{
           backgroundImage: "url('/mobius_det.png')",
           backgroundSize: 'contain',
           backgroundPosition: 'center',
           backgroundRepeat: 'no-repeat',
-          filter: 'blur(50px)',
-          opacity: 0.3
+          filter: 'blur(30px)',
+          opacity: 0.25,
+          willChange: 'transform',
+          transform: 'translateZ(0)'
         }}
       ></div>
 
-      <section className="h-[100dvh] flex flex-col items-center justify-center px-4 sm:px-6 relative overflow-hidden" role="banner" aria-label="Section hero" data-section="hero"  itemScope itemType="https://schema.org/WPHeader">
+      <section className="h-[100dvh] flex flex-col items-center justify-center px-4 sm:px-6 relative overflow-hidden gpu-accelerated" role="banner" aria-label="Section hero" data-section="hero"  itemScope itemType="https://schema.org/WPHeader">
 
         {/* Hero content - centered vertically */}
         <div className="relative z-10 text-center w-full max-w-6xl px-2 sm:px-4">
@@ -196,7 +198,7 @@ function Home() {
         </div>
       </section>
 
-      <section id="services" className="pt-20 pb-32 sm:pt-32 sm:pb-48 lg:pt-40 lg:pb-56 px-4 sm:px-6 bg-gradient-to-b from-transparent to-gray-900/30" aria-labelledby="services-title" data-section="services" itemScope itemType="https://schema.org/Service">
+      <section id="services" className="pt-20 pb-32 sm:pt-32 sm:pb-48 lg:pt-40 lg:pb-56 px-4 sm:px-6 bg-gradient-to-b from-transparent to-gray-900/30 gpu-accelerated" aria-labelledby="services-title" data-section="services" itemScope itemType="https://schema.org/Service">
         <div className="max-w-7xl mx-auto">
           <h2 id="services-title" className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-semibold text-center mb-4 sm:mb-6 lg:mb-8 bg-gradient-to-r from-white to-blue-400 bg-clip-text text-transparent" itemProp="name">
             Ce que nous faisons
@@ -221,7 +223,7 @@ function Home() {
         </div>
       </section>
 
-      <section id="pour-qui" className="py-16 sm:py-24 lg:py-32 px-4 sm:px-6 bg-gradient-to-b from-gray-900/30 to-transparent" data-section="clients" itemScope itemType="https://schema.org/Audience">
+      <section id="pour-qui" className="py-16 sm:py-24 lg:py-32 px-4 sm:px-6 bg-gradient-to-b from-gray-900/30 to-transparent gpu-accelerated" data-section="clients" itemScope itemType="https://schema.org/Audience">
         <div className="max-w-7xl mx-auto">
           <div className="max-w-6xl mx-auto">
             <p className="text-center mb-8 sm:mb-12 lg:mb-16 text-lg sm:text-2xl lg:text-3xl bg-gradient-to-r from-gray-300 to-blue-300 bg-clip-text text-transparent max-w-4xl mx-auto px-2 sm:px-4">
@@ -263,7 +265,7 @@ function Home() {
         </div>
       </section>
 
-      <section id="processus" className="py-24 sm:py-48 lg:py-56 px-4 sm:px-6" aria-labelledby="processus-title" data-section="process" itemScope itemType="https://schema.org/HowTo">
+      <section id="processus" className="py-24 sm:py-48 lg:py-56 px-4 sm:px-6 gpu-accelerated" aria-labelledby="processus-title" data-section="process" itemScope itemType="https://schema.org/HowTo">
         <div className="max-w-6xl mx-auto">
           <h2 id="processus-title" className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-semibold text-center mb-4 sm:mb-6 lg:mb-8 bg-gradient-to-r from-white to-blue-400 bg-clip-text text-transparent" itemProp="name">
             Notre processus
@@ -289,7 +291,7 @@ function Home() {
         </div>
       </section>
 
-      <section id="contact" className="py-24 sm:py-48 lg:py-56 px-4 sm:px-6" aria-labelledby="contact-title" data-section="contact" itemScope itemType="https://schema.org/ContactPage">
+      <section id="contact" className="py-24 sm:py-48 lg:py-56 px-4 sm:px-6 gpu-accelerated" aria-labelledby="contact-title" data-section="contact" itemScope itemType="https://schema.org/ContactPage">
         <div className="max-w-7xl mx-auto">
           <div className="grid md:grid-cols-2 gap-12 sm:gap-20 lg:gap-24 items-center">
             <div itemScope itemType="https://schema.org/Organization">
