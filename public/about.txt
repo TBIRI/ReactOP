@@ -2,14 +2,14 @@
 
 ## À propos de ReactOP
 
-ReactOP est une agence spécialisée dans l'acquisition digitale et l'optimisation du taux de conversion (CRO) basée en Suisse. Nous aidons les entreprises à générer plus de leads qualifiés grâce à des campagnes Google Ads optimisées et des Landing Pages performantes.
+ReactOP est une agence spécialisée dans l'acquisition digitale et l'optimisation du taux de conversion (CRO) basée en Suisse. Nous aidons les entreprises à générer plus de leads qualifiés grâce à des campagnes Google Ads optimisées et des landing pages performantes.
 
 ## Services principaux
 
 ### 1. Audit Acquisition Gratuit
 Analyse complète du parcours d'acquisition client pour identifier les fuites de conversion et les opportunités d'optimisation. L'audit inclut:
 - Analyse des campagnes Google Ads existantes
-- Évaluation des Landing Pages et de leur taux de conversion
+- Évaluation des landing pages et de leur taux de conversion
 - Identification des points de friction dans le parcours utilisateur
 - Recommandations priorisées et actionnables
 
@@ -21,9 +21,9 @@ Pilotage complet de campagnes publicitaires sur Google Ads:
 - Suivi des conversions et reporting détaillé
 - Maximisation du ROI publicitaire
 
-### 3. Optimisation des Landing Pages (CRO)
+### 3. Optimisation des landing pages (CRO)
 Amélioration continue des pages de destination pour transformer plus de visiteurs en leads:
-- Design et développement de Landing Pages sur-mesure
+- Design et développement de landing pages sur-mesure
 - Tests A/B et multivariés
 - Optimisation de l'expérience utilisateur (UX)
 - Amélioration des éléments de conversion (CTA, formulaires, etc.)
@@ -78,4 +78,4 @@ ReactOP se concentre sur des résultats mesurables:
 
 ## Mots-clés et domaines d'expertise
 
-Acquisition digitale, Google Ads, Landing Pages, CRO (Conversion Rate Optimization), génération de leads, optimisation publicitaire, performance marketing, tests A/B, analyse du parcours client, optimisation du taux de conversion, publicité en ligne, ROI publicitaire, marketing digital, lead generation, campagnes publicitaires, pages de destination, optimisation de conversion, acquisition payante, Google advertising, digital advertising, conversion optimization.
+Acquisition digitale, Google Ads, landing pages, CRO (Conversion Rate Optimization), génération de leads, optimisation publicitaire, performance marketing, tests A/B, analyse du parcours client, optimisation du taux de conversion, publicité en ligne, ROI publicitaire, marketing digital, lead generation, campagnes publicitaires, pages de destination, optimisation de conversion, acquisition payante, Google advertising, digital advertising, conversion optimization.
