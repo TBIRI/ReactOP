@@ -160,14 +160,14 @@ function Home() {
 
       {/* Mobius logo - very blurred background that follows scroll */}
       <div
-        className="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[100vw] h-[100vh] min-w-[800px] min-h-[800px] sm:min-w-[1200px] sm:min-h-[1200px] lg:min-w-[1600px] lg:min-h-[1600px] pointer-events-none z-0"
+        className="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[100vw] h-[100vh] min-w-[1200px] min-h-[1200px] lg:min-w-[1600px] lg:min-h-[1600px] pointer-events-none z-0"
         style={{
           backgroundImage: "url('/mobius_det.png')",
           backgroundSize: 'contain',
           backgroundPosition: 'center',
           backgroundRepeat: 'no-repeat',
-          filter: 'blur(30px)',
-          opacity: 0.25,
+          filter: 'blur(50px)',
+          opacity: 0.3,
           willChange: 'transform',
           transform: 'translateZ(0)'
         }}
