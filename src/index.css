@@ -55,10 +55,10 @@
     }
 
     .mobile-bg-fix {
-      width: 153vw !important;
-      height: 153vh !important;
-      min-width: 612px !important;
-      min-height: 612px !important;
+      width: 200vw !important;
+      height: 200vh !important;
+      min-width: 800px !important;
+      min-height: 800px !important;
     }
   }
 }
