@@ -8,6 +8,15 @@ function Home() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const navigate = useNavigate();
 
+  const preloadTallyScript = () => {
+    if (!document.querySelector('script[src="https://tally.so/widgets/embed.js"]')) {
+      const script = document.createElement('script');
+      script.src = 'https://tally.so/widgets/embed.js';
+      script.async = true;
+      document.body.appendChild(script);
+    }
+  };
+
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
     if (element) {
@@ -99,6 +108,7 @@ function Home() {
 
           <button
             onClick={() => navigate('/audit')}
+            onMouseEnter={preloadTallyScript}
             className="group hidden md:inline-flex items-center px-2 sm:px-3 md:px-6 py-1.5 sm:py-2 md:py-2.5 bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-400 hover:to-blue-500 font-medium text-[10px] sm:text-xs md:text-base rounded-full transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/50 hover:scale-105 active:scale-95 whitespace-nowrap relative overflow-hidden"
           >
             <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent translate-x-[-200%] group-hover:translate-x-[200%] transition-transform duration-700"></div>
@@ -146,6 +156,7 @@ function Home() {
                   navigate('/audit');
                   setIsMobileMenuOpen(false);
                 }}
+                onTouchStart={preloadTallyScript}
                 className="group relative w-full flex items-center justify-center px-8 py-3 bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-400 hover:to-blue-500 font-medium text-lg rounded-full transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/50 hover:scale-105 active:scale-95 overflow-hidden"
               >
                 <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent translate-x-[-200%] group-hover:translate-x-[200%] transition-transform duration-700"></div>
@@ -188,6 +199,8 @@ function Home() {
           </p>
           <button
             onClick={() => navigate('/audit')}
+            onMouseEnter={preloadTallyScript}
+            onTouchStart={preloadTallyScript}
             className="group relative inline-flex items-center gap-2 sm:gap-3 px-6 py-3.5 sm:px-9 sm:py-5 font-semibold text-base sm:text-xl lg:text-2xl overflow-hidden rounded-xl bg-gradient-to-br from-blue-500 to-blue-600 hover:from-blue-400 hover:to-blue-500 transition-all duration-300 hover:shadow-2xl hover:shadow-blue-500/50 hover:scale-[1.02] active:scale-[0.98]"
             aria-label="Recevoir un audit gratuit avec ReactOP"
             data-action="cta-primary"
