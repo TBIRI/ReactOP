@@ -387,7 +387,7 @@ function Home() {
 
       <footer className="border-t border-gray-800 py-16 lg:py-20 px-6" role="contentinfo" aria-label="Pied de page" itemScope itemType="https://schema.org/WPFooter">
         <div className="max-w-7xl mx-auto">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-10 lg:gap-12">
+          <div className="flex flex-col-reverse md:flex-row justify-between items-center gap-10 lg:gap-12">
             <div className="text-center md:text-left" itemScope itemType="https://schema.org/Organization">
               <div className="flex items-center justify-center md:justify-start gap-3 lg:gap-4 mb-3">
                 <img src="/mobius_det.png" alt="ReactOP Logo - Agence CRO Immobilier" className="h-10 w-10 lg:h-12 lg:w-12" itemProp="logo" />
