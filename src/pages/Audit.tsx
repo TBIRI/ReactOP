@@ -1,30 +1,8 @@
-import { useEffect, useState } from 'react';
 import { ArrowLeft } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 
 function Audit() {
   const navigate = useNavigate();
-  const [scriptLoaded, setScriptLoaded] = useState(false);
-
-  useEffect(() => {
-    const existingScript = document.querySelector('script[src="https://tally.so/widgets/embed.js"]');
-
-    if (existingScript) {
-      setScriptLoaded(true);
-      return;
-    }
-
-    const script = document.createElement('script');
-    script.src = 'https://tally.so/widgets/embed.js';
-    script.onload = () => setScriptLoaded(true);
-    document.body.appendChild(script);
-
-    return () => {
-      if (document.body.contains(script)) {
-        document.body.removeChild(script);
-      }
-    };
-  }, []);
 
   return (
     <div className="bg-black" style={{ margin: 0, height: '100vh', overflow: 'hidden' }}>
@@ -54,15 +32,6 @@ function Audit() {
       >
         <ArrowLeft className="w-5 h-5 text-white" />
       </button>
-
-      {!scriptLoaded && (
-        <div className="fixed inset-0 flex items-center justify-center z-40">
-          <div className="flex flex-col items-center gap-4">
-            <div className="w-12 h-12 border-4 border-blue-500/30 border-t-blue-500 rounded-full animate-spin"></div>
-            <p className="text-white/70 text-lg">Chargement du formulaire...</p>
-          </div>
-        </div>
-      )}
 
       <iframe
         data-tally-src="https://tally.so/r/Pd5RD1?transparentBackground=1"
