@@ -1,19 +1,8 @@
-import { useEffect } from 'react';
 import { ArrowLeft } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 
 function Audit() {
   const navigate = useNavigate();
-  useEffect(() => {
-    const script = document.createElement('script');
-    script.src = 'https://tally.so/widgets/embed.js';
-    script.async = true;
-    document.body.appendChild(script);
-
-    return () => {
-      document.body.removeChild(script);
-    };
-  }, []);
 
   return (
     <div className="bg-black" style={{ margin: 0, height: '100vh', overflow: 'hidden' }}>
