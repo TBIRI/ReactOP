@@ -261,7 +261,7 @@ function Home() {
 
             <div className="p-6 sm:p-10 lg:p-12 bg-gray-900/50 border border-green-500/20 rounded-2xl text-center" data-value-proposition="main">
               <p className="text-base sm:text-2xl lg:text-3xl bg-gradient-to-r from-gray-200 to-blue-200 bg-clip-text text-transparent font-medium leading-relaxed">
-                Nous identifions les axes d'amélioration du parcours d'acquisition lead et activons les leviers clés afin d'augmenter le volume de demandes qualifiées
+                Nous priorisons les améliorations à plus fort impact afin d'augmenter votre volume de demandes qualifiées.
               </p>
             </div>
           </div>
