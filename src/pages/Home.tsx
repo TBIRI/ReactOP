@@ -280,9 +280,9 @@ function Home() {
           <div className="flex flex-col gap-4 sm:gap-6 lg:gap-8" role="list">
             {[
               { num: "01", title: "Analyse", desc: "Audit marketing & identification des points de friction sur le tunnel de conversion" },
-              { num: "02", title: "Stratégie", desc: "Priorisation des leviers à plus fort impact et définition de vos objectifs et indicateurs de succès." },
-              { num: "03", title: "Déploiement", desc: "Conception des campagnes et amélioration des landing pages." },
-              { num: "04", title: "Optimisation continue", desc: "Améliorations régulières et suivi des résultats basés sur le volume et la qualité des demandes." }
+              { num: "02", title: "Stratégie", desc: "Priorisation des leviers à plus fort impact et définition de vos objectifs et indicateurs de succès" },
+              { num: "03", title: "Déploiement", desc: "Conception des campagnes et optimisation de la conversion" },
+              { num: "04", title: "Optimisation continue", desc: "Améliorations régulières et suivi des résultats basés sur le volume et la qualité des demandes" }
             ].map((step, idx) => (
               <div key={idx} className="relative p-6 sm:p-8 lg:p-10 bg-gradient-to-br from-gray-900 to-gray-900/50 border border-gray-800 rounded-2xl" role="listitem" itemScope itemType="https://schema.org/HowToStep">
                 <div className="text-4xl sm:text-6xl lg:text-7xl font-semibold text-blue-500/20 mb-3 sm:mb-4" aria-hidden="true">{step.num}</div>
