@@ -39,8 +39,7 @@ function Home() {
       });
 
       if (response.ok) {
-        setSubmitStatus('success');
-        (e.target as HTMLFormElement).reset();
+        navigate('/merci-contact');
       } else {
         setSubmitStatus('error');
       }
@@ -361,12 +360,6 @@ function Home() {
                     className="w-full px-4 py-3 sm:px-6 sm:py-5 text-base sm:text-lg lg:text-xl bg-black border border-gray-800 rounded-lg text-gray-300 placeholder-gray-600 focus:outline-none focus:border-blue-500 transition-colors resize-none"
                   />
                 </div>
-
-                {submitStatus === 'success' && (
-                  <div className="p-4 sm:p-5 text-base sm:text-lg lg:text-xl bg-green-500/10 border border-green-500/50 rounded-lg text-green-400">
-                    Message envoyé avec succès!
-                  </div>
-                )}
 
                 {submitStatus === 'error' && (
                   <div className="p-4 sm:p-5 text-base sm:text-lg lg:text-xl bg-red-500/10 border border-red-500/50 rounded-lg text-red-400">
