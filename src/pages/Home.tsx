@@ -1,5 +1,5 @@
 import { ArrowRight, TrendingUp, Target, Menu, X, MousePointerClick } from 'lucide-react';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 function Home() {
@@ -13,25 +13,6 @@ function Home() {
       setIsMobileMenuOpen(false);
     }
   };
-
-  useEffect(() => {
-    const script = document.createElement('script');
-    script.src = 'https://tally.so/widgets/embed.js';
-    script.async = true;
-    script.onload = () => {
-      if (typeof (window as any).Tally !== 'undefined') {
-        (window as any).Tally.loadEmbeds();
-      }
-    };
-    document.body.appendChild(script);
-
-    return () => {
-      const existingScript = document.querySelector('script[src="https://tally.so/widgets/embed.js"]');
-      if (existingScript) {
-        document.body.removeChild(existingScript);
-      }
-    };
-  }, []);
 
 
   return (
@@ -292,19 +273,15 @@ function Home() {
               </div>
             </div>
 
-            <div className="w-full">
-              <iframe
-                data-tally-src="https://tally.so/embed/A7LaDW?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1"
-                loading="lazy"
-                width="100%"
-                height="690"
-                frameBorder="0"
-                marginHeight={0}
-                marginWidth={0}
-                title="Contact"
-                className="w-full"
-              ></iframe>
-            </div>
+            <div
+              className="w-full"
+              dangerouslySetInnerHTML={{
+                __html: `
+                  <iframe data-tally-src="https://tally.so/embed/A7LaDW?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1" loading="lazy" width="100%" height="690" frameborder="0" marginheight="0" marginwidth="0" title="Contact"></iframe>
+                  <script>var d=document,w="https://tally.so/widgets/embed.js",v=function(){"undefined"!=typeof Tally?Tally.loadEmbeds():d.querySelectorAll("iframe[data-tally-src]:not([src])").forEach((function(e){e.src=e.dataset.tallySrc}))};if("undefined"!=typeof Tally)v();else if(d.querySelector('script[src="'+w+'"]')==null){var s=d.createElement("script");s.src=w,s.onload=v,s.onerror=v,d.body.appendChild(s);}</script>
+                `
+              }}
+            />
           </div>
         </div>
       </section>
