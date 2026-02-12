@@ -3,8 +3,6 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 function Home() {
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const navigate = useNavigate();
 
@@ -13,40 +11,6 @@ function Home() {
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
       setIsMobileMenuOpen(false);
-    }
-  };
-
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-    setSubmitStatus('idle');
-
-    const formData = new FormData(e.currentTarget);
-    const data = {
-      name: formData.get('name'),
-      email: formData.get('email'),
-      website: formData.get('website'),
-      message: formData.get('message')
-    };
-
-    try {
-      const response = await fetch('https://hook.eu2.make.com/f4u45tf7ael86ndagh8831p2hhr6i9ox', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(data)
-      });
-
-      if (response.ok) {
-        navigate('/merci-contact');
-      } else {
-        setSubmitStatus('error');
-      }
-    } catch (error) {
-      setSubmitStatus('error');
-    } finally {
-      setIsSubmitting(false);
     }
   };
 
@@ -310,74 +274,21 @@ function Home() {
             </div>
 
             <div className="w-full">
-              <form onSubmit={handleSubmit} className="space-y-5 sm:space-y-8 lg:space-y-10" aria-label="Formulaire de contact"  itemScope itemType="https://schema.org/ContactForm">
-                <div>
-                  <label htmlFor="name" className="block text-base sm:text-xl lg:text-2xl mb-2 sm:mb-4 text-white">Name</label>
-                  <input
-                    type="text"
-                    id="name"
-                    name="name"
-                    placeholder="John Smith"
-                    required
-                    className="w-full px-4 py-3 sm:px-6 sm:py-5 text-base sm:text-lg lg:text-xl bg-black border border-gray-800 rounded-lg text-gray-300 placeholder-gray-600 focus:outline-none focus:border-blue-500 transition-colors"
-                  />
-                </div>
-
-                <div>
-                  <label htmlFor="email" className="block text-base sm:text-xl lg:text-2xl mb-2 sm:mb-4 text-white">Email</label>
-                  <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    placeholder="john@example.com"
-                    pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}"
-                    title="Veuillez entrer une adresse email valide"
-                    required
-                    className="w-full px-4 py-3 sm:px-6 sm:py-5 text-base sm:text-lg lg:text-xl bg-black border border-gray-800 rounded-lg text-gray-300 placeholder-gray-600 focus:outline-none focus:border-blue-500 transition-colors"
-                  />
-                </div>
-
-                <div>
-                  <label htmlFor="website" className="block text-base sm:text-xl lg:text-2xl mb-2 sm:mb-4 text-white">Site web</label>
-                  <input
-                    type="text"
-                    id="website"
-                    name="website"
-                    placeholder="entreprise.com"
-                    className="w-full px-4 py-3 sm:px-6 sm:py-5 text-base sm:text-lg lg:text-xl bg-black border border-gray-800 rounded-lg text-gray-300 placeholder-gray-600 focus:outline-none focus:border-blue-500 transition-colors"
-                  />
-                </div>
-
-                <div>
-                  <label htmlFor="message" className="block text-base sm:text-xl lg:text-2xl mb-2 sm:mb-4 text-white">Message</label>
-                  <textarea
-                    id="message"
-                    name="message"
-                    rows={5}
-                    placeholder="Décrivez votre demande"
-                    maxLength={1000}
-                    required
-                    className="w-full px-4 py-3 sm:px-6 sm:py-5 text-base sm:text-lg lg:text-xl bg-black border border-gray-800 rounded-lg text-gray-300 placeholder-gray-600 focus:outline-none focus:border-blue-500 transition-colors resize-none"
-                  />
-                </div>
-
-                {submitStatus === 'error' && (
-                  <div className="p-4 sm:p-5 text-base sm:text-lg lg:text-xl bg-red-500/10 border border-red-500/50 rounded-lg text-red-400">
-                    Erreur lors de l'envoi. Veuillez réessayer.
-                  </div>
-                )}
-
-                <button
-                  type="submit"
-                  disabled={isSubmitting}
-                  className="group relative w-full px-6 py-4 sm:px-10 sm:py-5 bg-gradient-to-br from-blue-500 to-blue-600 hover:from-blue-400 hover:to-blue-500 font-semibold text-base sm:text-xl lg:text-2xl rounded-xl transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100 hover:shadow-2xl hover:shadow-blue-500/50 hover:scale-[1.02] active:scale-[0.98] overflow-hidden"
-                >
-                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent translate-x-[-200%] group-hover:translate-x-[200%] transition-transform duration-700"></div>
-                  <span className="relative text-white">
-                    {isSubmitting ? 'Envoi en cours...' : 'Envoyer'}
-                  </span>
-                </button>
-              </form>
+              <iframe
+                data-tally-src="https://tally.so/embed/A7LaDW?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1"
+                loading="lazy"
+                width="100%"
+                height="690"
+                frameBorder="0"
+                marginHeight={0}
+                marginWidth={0}
+                title="Contact"
+              ></iframe>
+              <script dangerouslySetInnerHTML={{
+                __html: `
+                  var d=document,w="https://tally.so/widgets/embed.js",v=function(){"undefined"!=typeof Tally?Tally.loadEmbeds():d.querySelectorAll("iframe[data-tally-src]:not([src])").forEach((function(e){e.src=e.dataset.tallySrc}))};if("undefined"!=typeof Tally)v();else if(d.querySelector('script[src="'+w+'"]')==null){var s=d.createElement("script");s.src=w,s.onload=v,s.onerror=v,d.body.appendChild(s);}
+                `
+              }} />
             </div>
           </div>
         </div>
