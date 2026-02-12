@@ -1,5 +1,5 @@
 import { ArrowRight, TrendingUp, Target, Menu, X, MousePointerClick } from 'lucide-react';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 function Home() {
@@ -13,6 +13,12 @@ function Home() {
       setIsMobileMenuOpen(false);
     }
   };
+
+  useEffect(() => {
+    if (typeof window !== 'undefined' && (window as any).Tally) {
+      (window as any).Tally.loadEmbeds();
+    }
+  }, []);
 
 
   return (
@@ -284,11 +290,6 @@ function Home() {
                 marginWidth={0}
                 title="Contact"
               ></iframe>
-              <script dangerouslySetInnerHTML={{
-                __html: `
-                  var d=document,w="https://tally.so/widgets/embed.js",v=function(){"undefined"!=typeof Tally?Tally.loadEmbeds():d.querySelectorAll("iframe[data-tally-src]:not([src])").forEach((function(e){e.src=e.dataset.tallySrc}))};if("undefined"!=typeof Tally)v();else if(d.querySelector('script[src="'+w+'"]')==null){var s=d.createElement("script");s.src=w,s.onload=v,s.onerror=v,d.body.appendChild(s);}
-                `
-              }} />
             </div>
           </div>
         </div>
