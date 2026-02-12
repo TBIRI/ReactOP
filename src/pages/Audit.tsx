@@ -68,7 +68,7 @@ function Audit() {
       </button>
 
       <iframe
-        data-tally-src="https://tally.so/r/Pd5RD1?transparentBackground=1"
+        data-tally-src="https://tally.so/r/Pd5RD1?transparentBackground=1&redirectUrl=/merci-audit"
         width="100%"
         height="100%"
         frameBorder="0"

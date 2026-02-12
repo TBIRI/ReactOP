@@ -31,7 +31,7 @@ function ContactThankYou() {
           </div>
         </div>
 
-        <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-semibold bg-gradient-to-r from-white to-blue-400 bg-clip-text text-transparent mb-8 lg:mb-10 leading-tight">
+        <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-semibold bg-gradient-to-r from-white to-blue-400 bg-clip-text text-transparent mb-8 lg:mb-10 leading-tight py-4">
           Message reçu !
         </h1>
 
