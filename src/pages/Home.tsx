@@ -30,7 +30,7 @@ function Home() {
             className="flex items-center gap-2 md:ml-0"
             aria-label="Retour en haut"
           >
-            <img src="/mobius_det.png" alt="ReactOP Logo - Agence CRO Immobilier" className="w-10 h-10 md:w-12 md:h-12 cursor-pointer hover:opacity-80 transition-opacity" itemProp="logo" />
+            <img src="/mobius_det.png" alt="ReactOP Logo - Agence Acquisition Digitale & CRO" className="w-10 h-10 md:w-12 md:h-12 cursor-pointer hover:opacity-80 transition-opacity" itemProp="logo" />
             <span className="text-lg md:text-xl font-semibold bg-gradient-to-r from-white to-blue-400 bg-clip-text text-transparent">ReactOP</span>
           </button>
 
@@ -181,7 +181,7 @@ function Home() {
 
           <div className="grid grid-cols-1 gap-6 sm:gap-10 lg:gap-12" role="list">
             {[
-              { icon: TrendingUp, title: "Audit du parcours d'acquisition lead", desc: "Identification des fuites de leads et des leviers correctifs applicables", keywords: "audit CRO, conversion immobilier, funnel vente" },
+              { icon: TrendingUp, title: "Audit du parcours d'acquisition lead", desc: "Identification des fuites de leads et des leviers correctifs applicables", keywords: "audit CRO, optimisation conversion, funnel vente" },
               { icon: Target, title: "Pilotage de vos campagnes Google Ads", desc: "Paramétrage, déploiement et optimisation continue de campagnes en ligne", keywords: "workflows IA, automatisation, pipeline vente" },
               { icon: MousePointerClick, title: "Optimisation du parcours de conversion", desc: "Réduction continue des points de friction de votre tunnel de conversion, du clic au lead", keywords: "landing page, conversion, optimisation CRO" }
             ].map((service, idx) => (
@@ -300,7 +300,7 @@ function Home() {
           <div className="flex flex-col-reverse md:flex-row justify-between items-center gap-8 sm:gap-10 lg:gap-12">
             <div className="text-center md:text-left" itemScope itemType="https://schema.org/Organization">
               <div className="flex items-center justify-center md:justify-start gap-2 sm:gap-3 lg:gap-4 mb-2 sm:mb-3">
-                <img src="/mobius_det.png" alt="ReactOP Logo - Agence CRO Immobilier" className="h-8 w-8 sm:h-10 sm:w-10 lg:h-12 lg:w-12" itemProp="logo" />
+                <img src="/mobius_det.png" alt="ReactOP Logo - Agence Acquisition Digitale & CRO" className="h-8 w-8 sm:h-10 sm:w-10 lg:h-12 lg:w-12" itemProp="logo" />
                 <div className="text-xl sm:text-2xl lg:text-3xl font-semibold bg-gradient-to-r from-white to-blue-400 bg-clip-text text-transparent" itemProp="name">
                   ReactOP
                 </div>
