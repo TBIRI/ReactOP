@@ -20,6 +20,18 @@ function Home() {
     }
   }, []);
 
+  useEffect(() => {
+    const hash = window.location.hash.replace('#', '');
+    if (hash) {
+      setTimeout(() => {
+        const element = document.getElementById(hash);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
+      }, 100);
+    }
+  }, []);
+
 
   return (
     <div className="min-h-screen bg-black text-white" itemScope itemType="https://schema.org/WebPage">
