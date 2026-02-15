@@ -161,7 +161,7 @@ function Home() {
 
         {/* Hero content - centered vertically */}
         <div className="relative z-10 text-center w-full max-w-6xl px-2 sm:px-4">
-          <h1 className="text-[2.5rem] leading-[1.15] sm:text-7xl md:text-[80px] lg:text-[96px] font-semibold bg-gradient-to-r from-white to-blue-400 bg-clip-text text-transparent mb-5 sm:mb-9 lg:mb-10 md:leading-[1.1] pb-2" itemProp="name headline">
+          <h1 className="text-[3.25rem] leading-[1.12] sm:text-[5rem] md:text-[88px] lg:text-[104px] font-semibold bg-gradient-to-r from-white to-blue-400 bg-clip-text text-transparent mb-5 sm:mb-9 lg:mb-10 md:leading-[1.08] pb-2" itemProp="name headline">
             Votre partenaire acquisition <span className="whitespace-nowrap">next-gen</span>
           </h1>
           <p className="text-base leading-relaxed sm:text-xl md:text-[22px] lg:text-[26px] mb-6 sm:mb-9 lg:mb-10 text-gray-400 max-w-4xl mx-auto" itemProp="description">
