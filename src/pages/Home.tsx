@@ -185,11 +185,11 @@ function Home() {
             <div className="hidden lg:block lg:col-span-4 lg:col-start-9 animate-float-delayed">
               <div className="glass-card rounded-3xl p-8 aspect-square flex items-center justify-center">
                 <div className="text-center space-y-4">
-                  <div className="font-display text-7xl font-bold bg-gradient-to-br from-blue-400 to-blue-600 bg-clip-text text-transparent">
-                    +240%
+                  <div className="font-display text-5xl font-bold bg-gradient-to-br from-blue-400 to-blue-600 bg-clip-text text-transparent leading-tight">
+                    Tirez profit de l'IA
                   </div>
                   <div className="font-sans text-sm text-gray-400 uppercase tracking-wider">
-                    Croissance moyenne
+                    Avant vos concurrents
                   </div>
                 </div>
               </div>
