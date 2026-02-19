@@ -80,9 +80,8 @@ function Home() {
 
           <button
             onClick={() => navigate('/audit')}
-            className="group hidden md:inline-flex items-center px-2 sm:px-3 md:px-6 py-1.5 sm:py-2 md:py-2.5 glass-card glass-card-hover border border-blue-500/30 font-sans font-medium text-[10px] sm:text-xs md:text-base rounded-full whitespace-nowrap relative overflow-hidden"
+            className="group hidden md:inline-flex items-center px-2 sm:px-3 md:px-6 py-1.5 sm:py-2 md:py-2.5 blob-button font-sans font-bold text-[10px] sm:text-xs md:text-base whitespace-nowrap relative overflow-hidden"
           >
-            <div className="absolute inset-0 bg-gradient-to-r from-blue-500/20 via-blue-400/20 to-transparent"></div>
             <span className="relative text-white">
               Audit gratuit
             </span>
@@ -127,10 +126,9 @@ function Home() {
                   navigate('/audit');
                   setIsMobileMenuOpen(false);
                 }}
-                className="group relative w-full flex items-center justify-center px-8 py-3 glass-card glass-card-hover border-2 border-blue-500/30 font-sans font-medium text-lg rounded-2xl overflow-hidden"
+                className="group relative w-full flex items-center justify-center px-8 py-3 blob-button font-sans font-bold text-lg overflow-hidden"
               >
-                <div className="absolute inset-0 bg-gradient-to-r from-blue-500/20 via-blue-400/20 to-transparent"></div>
-                <span className="relative text-white">
+                <span className="relative text-white drop-shadow-lg">
                   Audit gratuit
                 </span>
               </button>
@@ -164,7 +162,7 @@ function Home() {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
             {/* Left column - main content */}
             <div className="lg:col-span-7 lg:col-start-1">
-              <h1 className="font-display text-[3.5rem] leading-[1.05] sm:text-[5.5rem] md:text-[100px] lg:text-[120px] font-bold bg-gradient-to-br from-white via-blue-100 to-blue-400 bg-clip-text text-transparent mb-6 sm:mb-8 lg:mb-10 md:leading-[1.02] pb-2 animate-slide-in-stagger-1" itemProp="name headline">
+              <h1 className="font-display text-[3.5rem] leading-[1.15] sm:text-[5.5rem] md:text-[100px] lg:text-[120px] font-bold bg-gradient-to-br from-white via-blue-100 to-blue-400 bg-clip-text text-transparent mb-6 sm:mb-8 lg:mb-10 md:leading-[1.12] pb-3 animate-slide-in-stagger-1" itemProp="name headline">
                 Votre partenaire acquisition <span className="font-display italic whitespace-nowrap">next-gen</span>
               </h1>
               <p className="font-sans text-base leading-relaxed sm:text-xl md:text-[22px] lg:text-[28px] mb-8 sm:mb-10 lg:mb-12 text-gray-300 max-w-2xl animate-slide-in-stagger-2" itemProp="description">
@@ -172,15 +170,14 @@ function Home() {
               </p>
               <button
                 onClick={() => navigate('/audit')}
-                className="group relative inline-flex items-center gap-2 sm:gap-3 px-8 py-4 sm:px-10 sm:py-6 font-sans font-semibold text-base sm:text-xl lg:text-2xl overflow-hidden rounded-2xl glass-card glass-card-hover border-2 border-blue-500/30 animate-slide-in-stagger-3"
+                className="group relative inline-flex items-center gap-2 sm:gap-3 px-8 py-4 sm:px-10 sm:py-6 font-sans font-bold text-base sm:text-xl lg:text-2xl overflow-hidden blob-button animate-slide-in-stagger-3"
                 aria-label="Recevoir un audit gratuit avec ReactOP"
                 data-action="cta-primary"
               >
-                <div className="absolute inset-0 bg-gradient-to-r from-blue-500/20 via-blue-400/20 to-transparent"></div>
-                <span className="relative text-white">
+                <span className="relative text-white drop-shadow-lg">
                   Recevez votre audit gratuit
                 </span>
-                <ArrowRight className="relative w-5 h-5 sm:w-6 sm:h-6 lg:w-7 lg:h-7 text-blue-400 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
+                <ArrowRight className="relative w-5 h-5 sm:w-6 sm:h-6 lg:w-7 lg:h-7 text-white group-hover:translate-x-2 transition-transform duration-300" aria-hidden="true" />
               </button>
             </div>
 
@@ -203,7 +200,7 @@ function Home() {
 
       <section id="services" className="pt-20 pb-32 sm:pt-32 sm:pb-48 lg:pt-40 lg:pb-56 px-4 sm:px-6 bg-gradient-to-b from-transparent to-gray-900/30 gpu-accelerated" aria-labelledby="services-title" data-section="services" itemScope itemType="https://schema.org/Service">
         <div className="max-w-7xl mx-auto">
-          <h2 id="services-title" className="font-display text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-center mb-4 sm:mb-6 lg:mb-8 bg-gradient-to-r from-white to-blue-400 bg-clip-text text-transparent" itemProp="name">
+          <h2 id="services-title" className="font-display text-4xl leading-[1.15] sm:text-6xl md:text-7xl lg:text-8xl font-bold text-center mb-4 sm:mb-6 lg:mb-8 bg-gradient-to-r from-white to-blue-400 bg-clip-text text-transparent pb-2" itemProp="name">
             Ce que nous faisons
           </h2>
           <p className="font-sans text-center mb-12 sm:mb-20 lg:mb-24 text-base sm:text-xl lg:text-2xl bg-gradient-to-r from-gray-300 to-blue-300 bg-clip-text text-transparent" itemProp="description">
@@ -270,7 +267,7 @@ function Home() {
 
       <section id="processus" className="py-24 sm:py-48 lg:py-56 px-4 sm:px-6 gpu-accelerated" aria-labelledby="processus-title" data-section="process" itemScope itemType="https://schema.org/HowTo">
         <div className="max-w-6xl mx-auto">
-          <h2 id="processus-title" className="font-display text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-center mb-4 sm:mb-6 lg:mb-8 bg-gradient-to-r from-white to-blue-400 bg-clip-text text-transparent" itemProp="name">
+          <h2 id="processus-title" className="font-display text-4xl leading-[1.15] sm:text-6xl md:text-7xl lg:text-8xl font-bold text-center mb-4 sm:mb-6 lg:mb-8 bg-gradient-to-r from-white to-blue-400 bg-clip-text text-transparent pb-2" itemProp="name">
             Notre processus
           </h2>
           <p className="font-sans text-center mb-12 sm:mb-20 lg:mb-24 text-base sm:text-xl lg:text-2xl bg-gradient-to-r from-gray-300 to-blue-300 bg-clip-text text-transparent" itemProp="description">
@@ -298,7 +295,7 @@ function Home() {
         <div className="max-w-7xl mx-auto">
           <div className="grid md:grid-cols-2 gap-12 sm:gap-20 lg:gap-24 items-center">
             <div itemScope itemType="https://schema.org/Organization">
-              <h2 id="contact-title" className="font-display text-[3rem] leading-[1.1] sm:text-7xl md:text-8xl lg:text-9xl font-bold mb-8 sm:mb-16 lg:mb-20">
+              <h2 id="contact-title" className="font-display text-[3rem] leading-[1.15] sm:text-7xl md:text-8xl lg:text-9xl font-bold mb-8 sm:mb-16 lg:mb-20 pb-2">
                 <span className="text-white">Parlons-</span>
                 <span className="bg-gradient-to-r from-white to-blue-400 bg-clip-text text-transparent italic">en!</span>
               </h2>
