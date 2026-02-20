@@ -185,7 +185,7 @@ function Home() {
             <div className="hidden lg:block lg:col-span-4 lg:col-start-9 animate-float-delayed">
               <div className="glass-card rounded-3xl p-10 aspect-square flex items-center justify-center">
                 <div className="text-center">
-                  <div className="font-display text-6xl font-bold bg-gradient-to-br from-blue-400 to-blue-600 bg-clip-text text-transparent leading-tight">
+                  <div className="font-display text-4xl xl:text-5xl 2xl:text-6xl font-bold bg-gradient-to-br from-blue-400 to-blue-600 bg-clip-text text-transparent leading-tight">
                     Boosté par l'IA
                   </div>
                 </div>
