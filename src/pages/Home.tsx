@@ -158,26 +158,26 @@ function Home() {
       <section className="h-[100svh] sm:h-[100vh] flex flex-col items-center justify-center px-4 sm:px-6 relative overflow-hidden gpu-accelerated" role="banner" aria-label="Section hero" data-section="hero"  itemScope itemType="https://schema.org/WPHeader">
 
         {/* Hero content - asymmetric layout */}
-        <div className="relative z-10 w-full max-w-7xl px-2 sm:px-4">
+        <div className="relative z-10 w-full max-w-7xl px-2 sm:px-4 mt-20 md:mt-24 lg:mt-16">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
             {/* Left column - main content */}
             <div className="lg:col-span-7 lg:col-start-1">
-              <h1 className="font-display text-[2.75rem] leading-[1.2] sm:text-[5.5rem] md:text-[100px] lg:text-[120px] font-bold bg-gradient-to-br from-white via-blue-100 to-blue-400 bg-clip-text text-transparent mb-6 sm:mb-8 lg:mb-10 md:leading-[1.12] pb-4 animate-slide-in-stagger-1" itemProp="name headline">
+              <h1 className="font-display text-[2.75rem] leading-[1.2] sm:text-[3.5rem] md:text-[4rem] lg:text-[4.5rem] xl:text-[5rem] 2xl:text-[5.5rem] font-bold bg-gradient-to-br from-white via-blue-100 to-blue-400 bg-clip-text text-transparent mb-4 sm:mb-6 md:mb-8 sm:leading-[1.15] md:leading-[1.12] pb-4 animate-slide-in-stagger-1" itemProp="name headline">
                 Votre partenaire acquisition <span className="font-display italic whitespace-nowrap">next-gen</span>
               </h1>
-              <p className="font-sans text-base leading-relaxed sm:text-xl md:text-[22px] lg:text-[28px] mb-8 sm:mb-10 lg:mb-12 text-gray-300 max-w-2xl animate-slide-in-stagger-2" itemProp="description">
+              <p className="font-sans text-base leading-relaxed sm:text-lg md:text-xl lg:text-[22px] xl:text-[24px] mb-6 sm:mb-8 md:mb-10 text-gray-300 max-w-2xl animate-slide-in-stagger-2" itemProp="description">
                 Nous gérons vos <span className="font-semibold bg-gradient-to-r from-gray-200 to-blue-300 bg-clip-text text-transparent">Google Ads</span> de bout en bout et optimisons votre <span className="font-semibold bg-gradient-to-r from-gray-200 to-blue-300 bg-clip-text text-transparent">taux de conversion</span> pour générer plus de leads
               </p>
               <button
                 onClick={() => navigate('/audit')}
-                className="group relative inline-flex items-center gap-2 sm:gap-3 px-8 py-4 sm:px-10 sm:py-6 font-sans font-bold text-base sm:text-xl lg:text-2xl overflow-hidden rounded-2xl bg-blue-600 hover:bg-blue-500 border-2 border-blue-400 shadow-xl shadow-blue-500/40 hover:shadow-blue-400/60 transition-all animate-slide-in-stagger-3"
+                className="group relative inline-flex items-center gap-2 px-6 py-3 sm:px-8 sm:py-4 md:px-10 md:py-5 font-sans font-bold text-sm sm:text-base md:text-lg lg:text-xl overflow-hidden rounded-2xl bg-blue-600 hover:bg-blue-500 border-2 border-blue-400 shadow-xl shadow-blue-500/40 hover:shadow-blue-400/60 transition-all animate-slide-in-stagger-3"
                 aria-label="Recevoir un audit gratuit avec ReactOP"
                 data-action="cta-primary"
               >
                 <span className="relative text-white">
                   Recevez votre audit gratuit
                 </span>
-                <ArrowRight className="relative w-5 h-5 sm:w-6 sm:h-6 lg:w-7 lg:h-7 text-white group-hover:translate-x-1 transition-transform" aria-hidden="true" />
+                <ArrowRight className="relative w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 text-white group-hover:translate-x-1 transition-transform" aria-hidden="true" />
               </button>
             </div>
 
