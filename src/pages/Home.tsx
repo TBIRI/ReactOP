@@ -31,50 +31,86 @@ function Home() {
       }, 100);
     }
 
-    const observerOptions = {
-      threshold: 0.15,
-      rootMargin: '0px 0px -100px 0px'
+    const individualObserverOptions = {
+      threshold: 0.2,
+      rootMargin: '0px 0px -50px 0px'
     };
 
-    const observer = new IntersectionObserver((entries) => {
+    const individualObserver = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
-          const target = entry.target as HTMLElement;
+          const element = entry.target as HTMLElement;
+          const animationType = element.dataset.animationType || 'fade';
 
-          const children = target.querySelectorAll('.scroll-reveal-target');
-          children.forEach((child, index) => {
-            const element = child as HTMLElement;
-            const animationType = element.dataset.animationType || 'fade';
-            const delayMultiplier = element.dataset.delayMultiplier ? parseInt(element.dataset.delayMultiplier) : 150;
-            const baseDelay = element.dataset.baseDelay ? parseInt(element.dataset.baseDelay) : 0;
+          if (!element.classList.contains('animated')) {
+            element.classList.add('animated');
 
-            setTimeout(() => {
-              switch(animationType) {
-                case 'slide-left':
-                  element.classList.add('animate-slide-from-left');
-                  break;
-                case 'slide-right':
-                  element.classList.add('animate-slide-from-right');
-                  break;
-                case 'zoom':
-                  element.classList.add('animate-zoom-in');
-                  break;
-                case 'fade-up':
-                  element.classList.add('animate-fade-up');
-                  break;
-                default:
-                  element.classList.add('animate-section-fade-in');
-              }
-            }, baseDelay + (index * delayMultiplier));
-          });
+            switch(animationType) {
+              case 'slide-left':
+                element.classList.add('animate-slide-from-left');
+                break;
+              case 'slide-right':
+                element.classList.add('animate-slide-from-right');
+                break;
+              case 'zoom':
+                element.classList.add('animate-zoom-in');
+                break;
+              case 'fade-up':
+                element.classList.add('animate-fade-up');
+                break;
+              default:
+                element.classList.add('animate-section-fade-in');
+            }
+          }
         }
       });
-    }, observerOptions);
+    }, individualObserverOptions);
 
-    const sections = document.querySelectorAll('.scroll-reveal');
-    sections.forEach((section) => observer.observe(section));
+    setTimeout(() => {
+      const animatedElements = document.querySelectorAll('.scroll-reveal-target');
+      animatedElements.forEach((element) => {
+        individualObserver.observe(element);
+      });
+    }, 100);
 
-    return () => observer.disconnect();
+    const handleScroll = () => {
+      const scrolled = window.scrollY;
+      const parallaxElements = document.querySelectorAll('.glass-card-hover');
+
+      parallaxElements.forEach((element) => {
+        const rect = element.getBoundingClientRect();
+        const elementTop = rect.top + scrolled;
+        const elementHeight = rect.height;
+        const windowHeight = window.innerHeight;
+
+        if (rect.top < windowHeight && rect.bottom > 0) {
+          const scrollProgress = (scrolled - elementTop + windowHeight) / (windowHeight + elementHeight);
+          const translateY = Math.min(Math.max(scrollProgress * 20 - 10, -10), 10);
+
+          if (!(element as HTMLElement).matches(':hover')) {
+            (element as HTMLElement).style.transform = `translateY(${translateY}px)`;
+          }
+        }
+      });
+    };
+
+    let ticking = false;
+    const onScroll = () => {
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          handleScroll();
+          ticking = false;
+        });
+        ticking = true;
+      }
+    };
+
+    window.addEventListener('scroll', onScroll, { passive: true });
+
+    return () => {
+      individualObserver.disconnect();
+      window.removeEventListener('scroll', onScroll);
+    };
   }, []);
 
 
@@ -228,7 +264,7 @@ function Home() {
 
             {/* Right column - decorative glass panel */}
             <div className="hidden xl:block lg:col-span-4 lg:col-start-9 opacity-0 animate-slide-in-stagger-3">
-              <div className="glass-card rounded-3xl p-6 lg:p-8 xl:p-10 aspect-square flex items-center justify-center animate-float-delayed">
+              <div className="glass-card rounded-3xl p-6 lg:p-8 xl:p-10 aspect-square flex items-center justify-center animate-float-delayed animate-pulse-glow">
                 <div className="text-center">
                   <div className="font-display text-2xl lg:text-3xl xl:text-4xl 2xl:text-6xl font-bold bg-gradient-to-br from-blue-400 to-blue-600 bg-clip-text text-transparent leading-tight">
                     Boosté par l'IA
@@ -242,10 +278,10 @@ function Home() {
 
       <section id="services" className="pt-20 pb-32 sm:pt-32 sm:pb-48 lg:pt-40 lg:pb-56 px-4 sm:px-6 gpu-accelerated scroll-reveal" aria-labelledby="services-title" data-section="services" itemScope itemType="https://schema.org/Service">
         <div className="max-w-7xl mx-auto">
-          <h2 id="services-title" className="font-display text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-center mb-4 sm:mb-6 lg:mb-8 bg-gradient-to-r from-white to-blue-400 bg-clip-text text-transparent pb-3 opacity-0 scroll-reveal-target" data-animation-type="zoom" data-delay-multiplier="0" itemProp="name">
+          <h2 id="services-title" className="font-display text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-center mb-4 sm:mb-6 lg:mb-8 bg-gradient-to-r from-white to-blue-400 bg-clip-text text-transparent pb-3 opacity-0 scroll-reveal-target" data-animation-type="zoom" itemProp="name">
             Ce que nous faisons
           </h2>
-          <p className="font-sans text-center mb-12 sm:mb-20 lg:mb-24 text-base sm:text-xl lg:text-2xl bg-gradient-to-r from-gray-300 to-blue-300 bg-clip-text text-transparent opacity-0 scroll-reveal-target" data-animation-type="fade-up" data-delay-multiplier="0" data-base-delay="200" itemProp="description">
+          <p className="font-sans text-center mb-12 sm:mb-20 lg:mb-24 text-base sm:text-xl lg:text-2xl bg-gradient-to-r from-gray-300 to-blue-300 bg-clip-text text-transparent opacity-0 scroll-reveal-target" data-animation-type="fade-up" itemProp="description">
             Augmentation du volume de leads qualifiés basée sur les données
           </p>
 
@@ -255,7 +291,7 @@ function Home() {
               { icon: Target, title: "Pilotage de vos campagnes Google Ads", desc: "Paramétrage, déploiement et optimisation continue de campagnes en ligne", keywords: "workflows IA, automatisation, pipeline vente" },
               { icon: MousePointerClick, title: "Optimisation du parcours de conversion", desc: "Réduction continue des points de friction de votre tunnel de conversion, du clic au lead", keywords: "landing page, conversion, optimisation CRO" }
             ].map((service, idx) => (
-              <div key={idx} className="group p-6 sm:p-10 lg:p-12 glass-card glass-card-hover rounded-3xl opacity-0 scroll-reveal-target" data-animation-type={idx % 2 === 0 ? 'slide-left' : 'slide-right'} data-base-delay="600" data-delay-multiplier="250" role="listitem" data-service-type={service.keywords} itemScope itemType="https://schema.org/Service">
+              <div key={idx} className="group p-6 sm:p-10 lg:p-12 glass-card glass-card-hover rounded-3xl opacity-0 scroll-reveal-target" data-animation-type={idx % 2 === 0 ? 'slide-left' : 'slide-right'} role="listitem" data-service-type={service.keywords} itemScope itemType="https://schema.org/Service">
                 <service.icon className="w-10 h-10 sm:w-14 sm:h-14 lg:w-16 lg:h-16 text-blue-400 mb-4 sm:mb-6 group-hover:scale-110 transition-transform duration-500" aria-hidden="true" />
                 <h3 className="font-display text-2xl sm:text-3xl lg:text-4xl font-semibold mb-3 sm:mb-4 bg-gradient-to-r from-white to-blue-300 bg-clip-text text-transparent" itemProp="name">{service.title}</h3>
                 <p className="font-sans text-base sm:text-lg lg:text-xl bg-gradient-to-r from-gray-400 to-gray-300 bg-clip-text text-transparent" itemProp="description">{service.desc}</p>
@@ -268,12 +304,12 @@ function Home() {
       <section id="pour-qui" className="py-16 sm:py-24 lg:py-32 px-4 sm:px-6 gpu-accelerated scroll-reveal" data-section="clients" itemScope itemType="https://schema.org/Audience">
         <div className="max-w-7xl mx-auto">
           <div className="max-w-6xl mx-auto">
-            <p className="font-display text-center mb-8 sm:mb-12 lg:mb-16 text-2xl sm:text-3xl lg:text-4xl bg-gradient-to-r from-gray-300 to-blue-300 bg-clip-text text-transparent max-w-4xl mx-auto px-2 sm:px-4 opacity-0 scroll-reveal-target" data-animation-type="zoom" data-delay-multiplier="0">
+            <p className="font-display text-center mb-8 sm:mb-12 lg:mb-16 text-2xl sm:text-3xl lg:text-4xl bg-gradient-to-r from-gray-300 to-blue-300 bg-clip-text text-transparent max-w-4xl mx-auto px-2 sm:px-4 opacity-0 scroll-reveal-target" data-animation-type="zoom">
               Exemples de fuites fréquentes
             </p>
 
             <div className="grid md:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 mb-6 sm:mb-10 lg:mb-12">
-              <div className="p-5 sm:p-6 lg:p-8 glass-card rounded-2xl flex flex-col border border-orange-500/20 opacity-0 scroll-reveal-target" data-animation-type="fade-up" data-base-delay="400" data-delay-multiplier="200">
+              <div className="p-5 sm:p-6 lg:p-8 glass-card rounded-2xl flex flex-col border border-orange-500/20 opacity-0 scroll-reveal-target" data-animation-type="fade-up">
                 <div className="font-display font-semibold mb-2 sm:mb-3 text-base sm:text-lg lg:text-xl text-white leading-tight">Campagnes mal paramétrées</div>
                 <div className="flex items-start gap-2 sm:gap-3 mt-auto">
                   <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 text-gray-400 flex-shrink-0 mt-1" />
@@ -281,7 +317,7 @@ function Home() {
                 </div>
               </div>
 
-              <div className="p-5 sm:p-6 lg:p-8 glass-card rounded-2xl flex flex-col border border-orange-500/20 opacity-0 scroll-reveal-target" data-animation-type="fade-up" data-base-delay="400" data-delay-multiplier="200">
+              <div className="p-5 sm:p-6 lg:p-8 glass-card rounded-2xl flex flex-col border border-orange-500/20 opacity-0 scroll-reveal-target" data-animation-type="fade-up">
                 <div className="font-display font-semibold mb-2 sm:mb-3 text-base sm:text-lg lg:text-xl text-white leading-tight">Landing pages peu convaincantes</div>
                 <div className="flex items-start gap-2 sm:gap-3 mt-auto">
                   <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 text-gray-400 flex-shrink-0 mt-1" />
@@ -289,7 +325,7 @@ function Home() {
                 </div>
               </div>
 
-              <div className="p-5 sm:p-6 lg:p-8 glass-card rounded-2xl flex flex-col border border-orange-500/20 opacity-0 scroll-reveal-target" data-animation-type="fade-up" data-base-delay="400" data-delay-multiplier="200">
+              <div className="p-5 sm:p-6 lg:p-8 glass-card rounded-2xl flex flex-col border border-orange-500/20 opacity-0 scroll-reveal-target" data-animation-type="fade-up">
                 <div className="font-display font-semibold mb-2 sm:mb-3 text-base sm:text-lg lg:text-xl text-white leading-tight">Tracking des conversions incomplet</div>
                 <div className="flex items-start gap-2 sm:gap-3 mt-auto">
                   <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 text-gray-400 flex-shrink-0 mt-1" />
@@ -298,7 +334,7 @@ function Home() {
               </div>
             </div>
 
-            <div className="p-6 sm:p-10 lg:p-12 glass-card rounded-3xl text-center border border-green-500/20 opacity-0 scroll-reveal-target" data-animation-type="zoom" data-base-delay="1000" data-delay-multiplier="0" data-value-proposition="main">
+            <div className="p-6 sm:p-10 lg:p-12 glass-card rounded-3xl text-center border border-green-500/20 opacity-0 scroll-reveal-target" data-animation-type="zoom" data-value-proposition="main">
               <p className="font-sans text-base sm:text-2xl lg:text-3xl bg-gradient-to-r from-gray-200 to-blue-200 bg-clip-text text-transparent font-medium leading-relaxed">
                 Nous priorisons les améliorations à plus fort impact afin d'augmenter votre volume de demandes qualifiées.
               </p>
@@ -309,10 +345,10 @@ function Home() {
 
       <section id="processus" className="py-24 sm:py-48 lg:py-56 px-4 sm:px-6 gpu-accelerated scroll-reveal" aria-labelledby="processus-title" data-section="process" itemScope itemType="https://schema.org/HowTo">
         <div className="max-w-6xl mx-auto">
-          <h2 id="processus-title" className="font-display text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-center mb-4 sm:mb-6 lg:mb-8 bg-gradient-to-r from-white to-blue-400 bg-clip-text text-transparent pb-3 opacity-0 scroll-reveal-target" data-animation-type="zoom" data-delay-multiplier="0" itemProp="name">
+          <h2 id="processus-title" className="font-display text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-center mb-4 sm:mb-6 lg:mb-8 bg-gradient-to-r from-white to-blue-400 bg-clip-text text-transparent pb-3 opacity-0 scroll-reveal-target" data-animation-type="zoom" itemProp="name">
             Notre processus
           </h2>
-          <p className="font-sans text-center mb-12 sm:mb-20 lg:mb-24 text-base sm:text-xl lg:text-2xl bg-gradient-to-r from-gray-300 to-blue-300 bg-clip-text text-transparent opacity-0 scroll-reveal-target" data-animation-type="fade-up" data-delay-multiplier="0" data-base-delay="200" itemProp="description">
+          <p className="font-sans text-center mb-12 sm:mb-20 lg:mb-24 text-base sm:text-xl lg:text-2xl bg-gradient-to-r from-gray-300 to-blue-300 bg-clip-text text-transparent opacity-0 scroll-reveal-target" data-animation-type="fade-up" itemProp="description">
             Une méthodologie éprouvée en 4 étapes
           </p>
 
@@ -323,7 +359,7 @@ function Home() {
               { num: "03", title: "Déploiement", desc: "Conception des campagnes et optimisation de la conversion" },
               { num: "04", title: "Optimisation continue", desc: "Améliorations régulières et suivi des résultats basés sur le volume et la qualité des demandes" }
             ].map((step, idx) => (
-              <div key={idx} className="relative p-6 sm:p-8 lg:p-10 glass-card rounded-3xl opacity-0 scroll-reveal-target" data-animation-type={idx % 2 === 0 ? 'slide-left' : 'slide-right'} data-base-delay="600" data-delay-multiplier="220" role="listitem" itemScope itemType="https://schema.org/HowToStep">
+              <div key={idx} className="relative p-6 sm:p-8 lg:p-10 glass-card rounded-3xl opacity-0 scroll-reveal-target" data-animation-type={idx % 2 === 0 ? 'slide-left' : 'slide-right'} role="listitem" itemScope itemType="https://schema.org/HowToStep">
                 <div className="font-display text-5xl sm:text-7xl lg:text-8xl font-bold text-blue-500/30 mb-3 sm:mb-4" aria-hidden="true">{step.num}</div>
                 <h3 className="font-display text-2xl sm:text-3xl lg:text-4xl font-semibold mb-2 sm:mb-3 bg-gradient-to-r from-white to-blue-300 bg-clip-text text-transparent" itemProp="name">{step.title}</h3>
                 <p className="font-sans bg-gradient-to-r from-gray-400 to-gray-300 bg-clip-text text-transparent text-base sm:text-lg lg:text-xl" itemProp="text">{step.desc}</p>
