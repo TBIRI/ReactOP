@@ -246,15 +246,15 @@ function Home() {
         </div>
       </section>
 
-      <section id="pour-qui" className="py-16 sm:py-24 lg:py-32 px-4 sm:px-6 bg-gradient-to-b from-gray-900/30 to-transparent gpu-accelerated" data-section="clients" itemScope itemType="https://schema.org/Audience">
+      <section id="pour-qui" className="py-16 sm:py-24 lg:py-32 px-4 sm:px-6 bg-gradient-to-b from-gray-900/30 to-transparent gpu-accelerated scroll-reveal" data-section="clients" itemScope itemType="https://schema.org/Audience">
         <div className="max-w-7xl mx-auto">
           <div className="max-w-6xl mx-auto">
-            <p className="font-display text-center mb-8 sm:mb-12 lg:mb-16 text-2xl sm:text-3xl lg:text-4xl bg-gradient-to-r from-gray-300 to-blue-300 bg-clip-text text-transparent max-w-4xl mx-auto px-2 sm:px-4">
+            <p className="font-display text-center mb-8 sm:mb-12 lg:mb-16 text-2xl sm:text-3xl lg:text-4xl bg-gradient-to-r from-gray-300 to-blue-300 bg-clip-text text-transparent max-w-4xl mx-auto px-2 sm:px-4 opacity-0 scroll-reveal-target">
               Exemples de fuites fréquentes
             </p>
 
             <div className="grid md:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 mb-6 sm:mb-10 lg:mb-12">
-              <div className="p-5 sm:p-6 lg:p-8 glass-card rounded-2xl flex flex-col border border-orange-500/20">
+              <div className="p-5 sm:p-6 lg:p-8 glass-card rounded-2xl flex flex-col border border-orange-500/20 opacity-0 scroll-reveal-target" style={{ animationDelay: '0.1s' }}>
                 <div className="font-display font-semibold mb-2 sm:mb-3 text-base sm:text-lg lg:text-xl text-white leading-tight">Campagnes mal paramétrées</div>
                 <div className="flex items-start gap-2 sm:gap-3 mt-auto">
                   <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 text-gray-400 flex-shrink-0 mt-1" />
@@ -262,7 +262,7 @@ function Home() {
                 </div>
               </div>
 
-              <div className="p-5 sm:p-6 lg:p-8 glass-card rounded-2xl flex flex-col border border-orange-500/20">
+              <div className="p-5 sm:p-6 lg:p-8 glass-card rounded-2xl flex flex-col border border-orange-500/20 opacity-0 scroll-reveal-target" style={{ animationDelay: '0.2s' }}>
                 <div className="font-display font-semibold mb-2 sm:mb-3 text-base sm:text-lg lg:text-xl text-white leading-tight">Landing pages peu convaincantes</div>
                 <div className="flex items-start gap-2 sm:gap-3 mt-auto">
                   <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 text-gray-400 flex-shrink-0 mt-1" />
@@ -270,7 +270,7 @@ function Home() {
                 </div>
               </div>
 
-              <div className="p-5 sm:p-6 lg:p-8 glass-card rounded-2xl flex flex-col border border-orange-500/20">
+              <div className="p-5 sm:p-6 lg:p-8 glass-card rounded-2xl flex flex-col border border-orange-500/20 opacity-0 scroll-reveal-target" style={{ animationDelay: '0.3s' }}>
                 <div className="font-display font-semibold mb-2 sm:mb-3 text-base sm:text-lg lg:text-xl text-white leading-tight">Tracking des conversions incomplet</div>
                 <div className="flex items-start gap-2 sm:gap-3 mt-auto">
                   <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 text-gray-400 flex-shrink-0 mt-1" />
@@ -279,7 +279,7 @@ function Home() {
               </div>
             </div>
 
-            <div className="p-6 sm:p-10 lg:p-12 glass-card rounded-3xl text-center border border-green-500/20" data-value-proposition="main">
+            <div className="p-6 sm:p-10 lg:p-12 glass-card rounded-3xl text-center border border-green-500/20 opacity-0 scroll-reveal-target" data-value-proposition="main" style={{ animationDelay: '0.4s' }}>
               <p className="font-sans text-base sm:text-2xl lg:text-3xl bg-gradient-to-r from-gray-200 to-blue-200 bg-clip-text text-transparent font-medium leading-relaxed">
                 Nous priorisons les améliorations à plus fort impact afin d'augmenter votre volume de demandes qualifiées.
               </p>
@@ -314,10 +314,10 @@ function Home() {
         </div>
       </section>
 
-      <section id="contact" className="py-24 sm:py-48 lg:py-56 px-4 sm:px-6 gpu-accelerated" aria-labelledby="contact-title" data-section="contact" itemScope itemType="https://schema.org/ContactPage">
+      <section id="contact" className="py-24 sm:py-48 lg:py-56 px-4 sm:px-6 gpu-accelerated scroll-reveal" aria-labelledby="contact-title" data-section="contact" itemScope itemType="https://schema.org/ContactPage">
         <div className="max-w-7xl mx-auto">
           <div className="grid md:grid-cols-2 gap-12 sm:gap-20 lg:gap-24 items-center">
-            <div itemScope itemType="https://schema.org/Organization">
+            <div itemScope itemType="https://schema.org/Organization" className="opacity-0 scroll-reveal-target">
               <h2 id="contact-title" className="font-display text-[3rem] leading-[1.2] sm:text-7xl md:text-8xl lg:text-9xl font-bold mb-8 sm:mb-16 lg:mb-20 pb-3">
                 <span className="text-white">Parlons-</span>
                 <span className="bg-gradient-to-r from-white to-blue-400 bg-clip-text text-transparent italic">en!</span>
@@ -330,7 +330,7 @@ function Home() {
               </div>
             </div>
 
-            <div className="w-full glass-card rounded-3xl p-4 sm:p-6">
+            <div className="w-full glass-card rounded-3xl p-4 sm:p-6 opacity-0 scroll-reveal-target" style={{ animationDelay: '0.2s' }}>
               <iframe
                 data-tally-src="https://tally.so/embed/A7LaDW?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1"
                 loading="lazy"
