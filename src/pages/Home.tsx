@@ -317,10 +317,10 @@ function Home() {
       <section id="contact" className="py-24 sm:py-48 lg:py-56 px-4 sm:px-6 gpu-accelerated scroll-reveal" aria-labelledby="contact-title" data-section="contact" itemScope itemType="https://schema.org/ContactPage">
         <div className="max-w-7xl mx-auto">
           <div className="grid md:grid-cols-2 gap-12 sm:gap-20 lg:gap-24 items-center">
-            <div itemScope itemType="https://schema.org/Organization" className="opacity-0 scroll-reveal-target overflow-visible pb-8">
-              <h2 id="contact-title" className="font-display text-[3rem] leading-[1.6] sm:text-7xl md:text-8xl lg:text-9xl font-bold mb-12 sm:mb-20 lg:mb-24 overflow-visible pb-4">
+            <div itemScope itemType="https://schema.org/Organization" className="opacity-0 scroll-reveal-target">
+              <h2 id="contact-title" className="font-display text-[3rem] leading-[2] sm:text-7xl md:text-8xl lg:text-9xl font-bold mb-16 sm:mb-24 lg:mb-32 pb-8">
                 <span className="text-white">Parlons-</span>
-                <span className="bg-gradient-to-r from-white to-blue-400 bg-clip-text text-transparent italic">en!</span>
+                <span className="bg-gradient-to-r from-white to-blue-400 bg-clip-text text-transparent italic inline-block pb-2">en!</span>
               </h2>
               <div className="border-t border-gray-800/50 pt-6 sm:pt-10 lg:pt-12">
                 <p className="font-sans text-gray-400 text-base sm:text-lg sm:text-xl mb-3 sm:mb-4">Email:</p>
