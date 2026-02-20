@@ -161,7 +161,7 @@ function Home() {
         <div className="relative z-10 w-full max-w-7xl px-2 sm:px-4">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-center">
             {/* Left column - main content */}
-            <div className="lg:col-span-7 lg:col-start-1">
+            <div className="lg:col-span-7 xl:col-span-7 lg:col-start-1">
               <h1 className="font-display text-[2.75rem] leading-[1.15] sm:text-[5.5rem] md:text-[80px] lg:text-[60px] xl:text-[75px] 2xl:text-[120px] font-bold bg-gradient-to-br from-white via-blue-100 to-blue-400 bg-clip-text text-transparent mb-4 sm:mb-8 md:mb-10 lg:mb-6 xl:mb-8 md:leading-[1.12] lg:leading-[1.15] pb-2 sm:pb-4 animate-slide-in-stagger-1" itemProp="name headline">
                 Votre partenaire acquisition <span className="font-display italic whitespace-nowrap">next-gen</span>
               </h1>
@@ -182,7 +182,7 @@ function Home() {
             </div>
 
             {/* Right column - decorative glass panel */}
-            <div className="hidden lg:block lg:col-span-4 lg:col-start-9 animate-float-delayed">
+            <div className="hidden xl:block lg:col-span-4 lg:col-start-9 animate-float-delayed">
               <div className="glass-card rounded-3xl p-6 lg:p-8 xl:p-10 aspect-square flex items-center justify-center">
                 <div className="text-center">
                   <div className="font-display text-2xl lg:text-3xl xl:text-4xl 2xl:text-6xl font-bold bg-gradient-to-br from-blue-400 to-blue-600 bg-clip-text text-transparent leading-tight">
