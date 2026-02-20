@@ -318,7 +318,7 @@ function Home() {
         <div className="max-w-7xl mx-auto">
           <div className="grid md:grid-cols-2 gap-12 sm:gap-20 lg:gap-24 items-center">
             <div itemScope itemType="https://schema.org/Organization" className="opacity-0 scroll-reveal-target">
-              <h2 id="contact-title" className="font-display text-[3rem] leading-[1.2] sm:text-7xl md:text-8xl lg:text-9xl font-bold mb-8 sm:mb-16 lg:mb-20 pb-3">
+              <h2 id="contact-title" className="font-display text-[3rem] leading-[1.3] sm:text-7xl md:text-8xl lg:text-9xl font-bold mb-8 sm:mb-16 lg:mb-20">
                 <span className="text-white">Parlons-</span>
                 <span className="bg-gradient-to-r from-white to-blue-400 bg-clip-text text-transparent italic">en!</span>
               </h2>
