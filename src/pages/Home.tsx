@@ -60,7 +60,7 @@ function Home() {
 
 
   return (
-    <div className="min-h-screen bg-black text-white" itemScope itemType="https://schema.org/WebPage">
+    <div className="min-h-screen bg-black text-white overflow-x-hidden" itemScope itemType="https://schema.org/WebPage">
       <nav className="fixed top-6 md:top-8 left-1/2 -translate-x-1/2 z-50 w-[95%] sm:w-[90%] max-w-7xl px-2 sm:px-4" role="navigation" aria-label="Navigation principale">
         <div className="flex items-center justify-between px-0 md:px-8 py-2 md:py-3 md:glass-nav md:rounded-full md:shadow-2xl">
           <button
@@ -317,8 +317,8 @@ function Home() {
       <section id="contact" className="py-24 sm:py-48 lg:py-56 px-4 sm:px-6 gpu-accelerated scroll-reveal" aria-labelledby="contact-title" data-section="contact" itemScope itemType="https://schema.org/ContactPage">
         <div className="max-w-7xl mx-auto">
           <div className="grid md:grid-cols-2 gap-12 sm:gap-20 lg:gap-24 items-center">
-            <div itemScope itemType="https://schema.org/Organization" className="opacity-0 scroll-reveal-target overflow-visible">
-              <h2 id="contact-title" className="font-display text-[3rem] leading-[1.5] sm:text-7xl md:text-8xl lg:text-9xl font-bold mb-12 sm:mb-20 lg:mb-24 overflow-visible">
+            <div itemScope itemType="https://schema.org/Organization" className="opacity-0 scroll-reveal-target overflow-visible pb-8">
+              <h2 id="contact-title" className="font-display text-[3rem] leading-[1.6] sm:text-7xl md:text-8xl lg:text-9xl font-bold mb-12 sm:mb-20 lg:mb-24 overflow-visible pb-4">
                 <span className="text-white">Parlons-</span>
                 <span className="bg-gradient-to-r from-white to-blue-400 bg-clip-text text-transparent italic">en!</span>
               </h2>
