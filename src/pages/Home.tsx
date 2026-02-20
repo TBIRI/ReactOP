@@ -162,7 +162,7 @@ function Home() {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
             {/* Left column - main content */}
             <div className="lg:col-span-7 lg:col-start-1">
-              <h1 className="font-display text-[3.5rem] leading-[1.15] sm:text-[5.5rem] md:text-[100px] lg:text-[120px] font-bold bg-gradient-to-br from-white via-blue-100 to-blue-400 bg-clip-text text-transparent mb-6 sm:mb-8 lg:mb-10 md:leading-[1.12] pb-4 animate-slide-in-stagger-1" itemProp="name headline">
+              <h1 className="font-display text-[2.75rem] leading-[1.2] sm:text-[5.5rem] md:text-[100px] lg:text-[120px] font-bold bg-gradient-to-br from-white via-blue-100 to-blue-400 bg-clip-text text-transparent mb-6 sm:mb-8 lg:mb-10 md:leading-[1.12] pb-4 animate-slide-in-stagger-1" itemProp="name headline">
                 Votre partenaire acquisition <span className="font-display italic whitespace-nowrap">next-gen</span>
               </h1>
               <p className="font-sans text-base leading-relaxed sm:text-xl md:text-[22px] lg:text-[28px] mb-8 sm:mb-10 lg:mb-12 text-gray-300 max-w-2xl animate-slide-in-stagger-2" itemProp="description">
