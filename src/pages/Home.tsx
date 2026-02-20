@@ -317,8 +317,8 @@ function Home() {
       <section id="contact" className="py-24 sm:py-48 lg:py-56 px-4 sm:px-6 gpu-accelerated scroll-reveal" aria-labelledby="contact-title" data-section="contact" itemScope itemType="https://schema.org/ContactPage">
         <div className="max-w-7xl mx-auto">
           <div className="grid md:grid-cols-2 gap-12 sm:gap-20 lg:gap-24 items-center">
-            <div itemScope itemType="https://schema.org/Organization" className="opacity-0 scroll-reveal-target">
-              <h2 id="contact-title" className="font-display text-[3rem] leading-[1.3] sm:text-7xl md:text-8xl lg:text-9xl font-bold mb-8 sm:mb-16 lg:mb-20">
+            <div itemScope itemType="https://schema.org/Organization" className="opacity-0 scroll-reveal-target overflow-visible">
+              <h2 id="contact-title" className="font-display text-[3rem] leading-[1.5] sm:text-7xl md:text-8xl lg:text-9xl font-bold mb-12 sm:mb-20 lg:mb-24 overflow-visible">
                 <span className="text-white">Parlons-</span>
                 <span className="bg-gradient-to-r from-white to-blue-400 bg-clip-text text-transparent italic">en!</span>
               </h2>
