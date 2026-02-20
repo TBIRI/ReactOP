@@ -155,37 +155,37 @@ function Home() {
         }}
       ></div>
 
-      <section className="h-[100svh] sm:h-[100vh] flex flex-col items-center justify-center px-4 sm:px-6 relative overflow-hidden gpu-accelerated pt-32 md:pt-40" role="banner" aria-label="Section hero" data-section="hero"  itemScope itemType="https://schema.org/WPHeader">
+      <section className="min-h-[100svh] sm:min-h-[100vh] flex flex-col items-center justify-center px-4 sm:px-6 relative overflow-hidden gpu-accelerated py-32 md:py-40 lg:py-32" role="banner" aria-label="Section hero" data-section="hero"  itemScope itemType="https://schema.org/WPHeader">
 
         {/* Hero content - asymmetric layout */}
         <div className="relative z-10 w-full max-w-7xl px-2 sm:px-4">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-center">
             {/* Left column - main content */}
             <div className="lg:col-span-7 lg:col-start-1">
-              <h1 className="font-display text-[2.75rem] leading-[1.2] sm:text-[5.5rem] md:text-[100px] lg:text-[70px] xl:text-[90px] 2xl:text-[120px] font-bold bg-gradient-to-br from-white via-blue-100 to-blue-400 bg-clip-text text-transparent mb-6 sm:mb-8 lg:mb-10 md:leading-[1.12] pb-4 animate-slide-in-stagger-1" itemProp="name headline">
+              <h1 className="font-display text-[2.75rem] leading-[1.15] sm:text-[5.5rem] md:text-[100px] lg:text-[60px] xl:text-[75px] 2xl:text-[120px] font-bold bg-gradient-to-br from-white via-blue-100 to-blue-400 bg-clip-text text-transparent mb-4 sm:mb-8 lg:mb-6 xl:mb-8 md:leading-[1.12] lg:leading-[1.15] pb-2 sm:pb-4 animate-slide-in-stagger-1" itemProp="name headline">
                 Votre partenaire acquisition <span className="font-display italic whitespace-nowrap">next-gen</span>
               </h1>
-              <p className="font-sans text-base leading-relaxed sm:text-xl md:text-[22px] lg:text-[18px] xl:text-[20px] 2xl:text-[28px] mb-8 sm:mb-10 lg:mb-12 text-gray-300 max-w-2xl animate-slide-in-stagger-2" itemProp="description">
+              <p className="font-sans text-base leading-relaxed sm:text-xl md:text-[22px] lg:text-[16px] xl:text-[18px] 2xl:text-[28px] mb-6 sm:mb-10 lg:mb-8 xl:mb-10 text-gray-300 max-w-2xl animate-slide-in-stagger-2" itemProp="description">
                 Nous gérons vos <span className="font-semibold bg-gradient-to-r from-gray-200 to-blue-300 bg-clip-text text-transparent">Google Ads</span> de bout en bout et optimisons votre <span className="font-semibold bg-gradient-to-r from-gray-200 to-blue-300 bg-clip-text text-transparent">taux de conversion</span> pour générer plus de leads
               </p>
               <button
                 onClick={() => navigate('/audit')}
-                className="group relative inline-flex items-center gap-2 sm:gap-3 px-8 py-4 sm:px-10 sm:py-6 font-sans font-bold text-base sm:text-xl md:text-xl lg:text-lg xl:text-xl 2xl:text-2xl overflow-hidden rounded-2xl bg-blue-600 hover:bg-blue-500 border-2 border-blue-400 shadow-xl shadow-blue-500/40 hover:shadow-blue-400/60 transition-all animate-slide-in-stagger-3"
+                className="group relative inline-flex items-center gap-2 sm:gap-3 px-6 py-3 sm:px-10 sm:py-6 lg:px-7 lg:py-4 xl:px-9 xl:py-5 font-sans font-bold text-base sm:text-xl md:text-xl lg:text-base xl:text-lg 2xl:text-2xl overflow-hidden rounded-2xl bg-blue-600 hover:bg-blue-500 border-2 border-blue-400 shadow-xl shadow-blue-500/40 hover:shadow-blue-400/60 transition-all animate-slide-in-stagger-3"
                 aria-label="Recevoir un audit gratuit avec ReactOP"
                 data-action="cta-primary"
               >
-                <span className="relative text-white">
+                <span className="relative text-white whitespace-nowrap">
                   Recevez votre audit gratuit
                 </span>
-                <ArrowRight className="relative w-5 h-5 sm:w-6 sm:h-6 lg:w-5 lg:h-5 xl:w-6 xl:h-6 2xl:w-7 2xl:h-7 text-white group-hover:translate-x-1 transition-transform" aria-hidden="true" />
+                <ArrowRight className="relative w-4 h-4 sm:w-6 sm:h-6 lg:w-5 lg:h-5 xl:w-5 xl:h-5 2xl:w-7 2xl:h-7 text-white group-hover:translate-x-1 transition-transform" aria-hidden="true" />
               </button>
             </div>
 
             {/* Right column - decorative glass panel */}
             <div className="hidden lg:block lg:col-span-4 lg:col-start-9 animate-float-delayed">
-              <div className="glass-card rounded-3xl p-10 aspect-square flex items-center justify-center">
+              <div className="glass-card rounded-3xl p-6 lg:p-8 xl:p-10 aspect-square flex items-center justify-center">
                 <div className="text-center">
-                  <div className="font-display text-3xl lg:text-3xl xl:text-4xl 2xl:text-6xl font-bold bg-gradient-to-br from-blue-400 to-blue-600 bg-clip-text text-transparent leading-tight">
+                  <div className="font-display text-2xl lg:text-3xl xl:text-4xl 2xl:text-6xl font-bold bg-gradient-to-br from-blue-400 to-blue-600 bg-clip-text text-transparent leading-tight">
                     Boosté par l'IA
                   </div>
                 </div>
