@@ -117,19 +117,19 @@
   }
 
   .animate-slide-from-left {
-    animation: slideFromLeft 1s cubic-bezier(0.16, 1, 0.3, 1) both;
+    animation: slideFromLeft 1.2s cubic-bezier(0.16, 1, 0.3, 1) both;
   }
 
   .animate-slide-from-right {
-    animation: slideFromRight 1s cubic-bezier(0.16, 1, 0.3, 1) both;
+    animation: slideFromRight 1.2s cubic-bezier(0.16, 1, 0.3, 1) both;
   }
 
   .animate-zoom-in {
-    animation: zoomIn 1s cubic-bezier(0.16, 1, 0.3, 1) both;
+    animation: zoomIn 0.9s cubic-bezier(0.16, 1, 0.3, 1) both;
   }
 
   .animate-fade-up {
-    animation: fadeUp 1s cubic-bezier(0.16, 1, 0.3, 1) both;
+    animation: fadeUp 0.9s cubic-bezier(0.16, 1, 0.3, 1) both;
   }
 
   @keyframes slideInUp {
