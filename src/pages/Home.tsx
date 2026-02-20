@@ -155,7 +155,7 @@ function Home() {
         }}
       ></div>
 
-      <section className="min-h-[100svh] sm:min-h-[100vh] flex flex-col items-center justify-center px-4 sm:px-6 relative overflow-hidden gpu-accelerated py-32 md:py-40 lg:py-32" role="banner" aria-label="Section hero" data-section="hero"  itemScope itemType="https://schema.org/WPHeader">
+      <section className="min-h-[100svh] sm:min-h-[100vh] flex flex-col items-center justify-center px-4 sm:px-6 relative overflow-hidden gpu-accelerated py-24 sm:py-28 md:py-32 lg:py-20 xl:py-24" role="banner" aria-label="Section hero" data-section="hero"  itemScope itemType="https://schema.org/WPHeader">
 
         {/* Hero content - asymmetric layout */}
         <div className="relative z-10 w-full max-w-7xl px-2 sm:px-4">
