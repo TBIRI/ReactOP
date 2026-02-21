@@ -374,15 +374,15 @@ function Home() {
 
       <section id="contact" className="py-24 sm:py-48 lg:py-56 px-4 sm:px-6 gpu-accelerated scroll-reveal" aria-labelledby="contact-title" data-section="contact" itemScope itemType="https://schema.org/ContactPage">
         <div className="max-w-7xl mx-auto">
-          <div className="grid md:grid-cols-2 gap-12 sm:gap-20 lg:gap-24 items-center">
-            <div itemScope itemType="https://schema.org/Organization" className="opacity-0 scroll-reveal-target">
-              <h2 id="contact-title" className="font-display text-[3rem] leading-[1.4] sm:text-7xl md:text-8xl lg:text-9xl font-bold mb-16 sm:mb-24 lg:mb-32 pb-12 pr-8">
+          <div className="grid md:grid-cols-2 gap-8 sm:gap-12 lg:gap-16 items-start">
+            <div itemScope itemType="https://schema.org/Organization" className="opacity-0 scroll-reveal-target flex flex-col justify-between h-full">
+              <h2 id="contact-title" className="font-display text-5xl leading-[1.2] sm:text-7xl md:text-8xl lg:text-9xl font-bold mb-8 sm:mb-12 lg:mb-16">
                 <span className="text-white">Parlons-</span>
-                <span className="bg-gradient-to-r from-white to-blue-400 bg-clip-text text-transparent italic pr-6">en!</span>
+                <span className="bg-gradient-to-r from-white to-blue-400 bg-clip-text text-transparent italic">en!</span>
               </h2>
-              <div className="border-t border-gray-800/50 pt-6 sm:pt-10 lg:pt-12">
-                <p className="font-sans text-gray-400 text-base sm:text-lg sm:text-xl mb-3 sm:mb-4">Email:</p>
-                <a href="mailto:info@reactop.com" className="font-sans text-xl sm:text-3xl md:text-4xl lg:text-5xl font-light text-white hover:text-blue-400 transition-colors break-words" itemProp="email" aria-label="Envoyer un email à ReactOP">
+              <div className="border-t border-gray-800/50 pt-6 sm:pt-8 lg:pt-10 mt-auto">
+                <p className="font-sans text-gray-400 text-base sm:text-lg mb-3 sm:mb-4">Email:</p>
+                <a href="mailto:info@reactop.com" className="font-sans text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-light text-white hover:text-blue-400 transition-colors break-words" itemProp="email" aria-label="Envoyer un email à ReactOP">
                   info@reactop.com
                 </a>
               </div>
