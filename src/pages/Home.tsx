@@ -294,10 +294,10 @@ function Home() {
               { icon: Target, title: "Pilotage de vos campagnes Google Ads", desc: "Paramétrage, déploiement et optimisation continue de campagnes en ligne", keywords: "workflows IA, automatisation, pipeline vente" },
               { icon: MousePointerClick, title: "Optimisation du parcours de conversion", desc: "Réduction continue des points de friction de votre tunnel de conversion, du clic au lead", keywords: "landing page, conversion, optimisation CRO" }
             ].map((service, idx) => (
-              <div key={idx} className="group p-6 sm:p-10 lg:p-12 glass-card glass-card-hover rounded-3xl opacity-0 scroll-reveal-target" data-animation-type={idx % 2 === 0 ? 'slide-left' : 'slide-right'} role="listitem" data-service-type={service.keywords} itemScope itemType="https://schema.org/Service">
+              <div key={idx} className="group p-6 sm:p-10 lg:p-12 glass-card glass-card-hover rounded-3xl opacity-0 scroll-reveal-target overflow-visible" data-animation-type={idx % 2 === 0 ? 'slide-left' : 'slide-right'} role="listitem" data-service-type={service.keywords} itemScope itemType="https://schema.org/Service">
                 <service.icon className="w-10 h-10 sm:w-14 sm:h-14 lg:w-16 lg:h-16 text-blue-400 mb-4 sm:mb-6 group-hover:scale-110 transition-transform duration-500" aria-hidden="true" />
-                <h3 className="font-display text-2xl sm:text-3xl lg:text-4xl font-semibold mb-3 sm:mb-4 bg-gradient-to-r from-white to-blue-300 bg-clip-text text-transparent leading-tight" itemProp="name">{service.title}</h3>
-                <p className="font-sans text-base sm:text-lg lg:text-xl bg-gradient-to-r from-gray-400 to-gray-300 bg-clip-text text-transparent leading-relaxed pb-1" itemProp="description">{service.desc}</p>
+                <h3 className="font-display text-2xl sm:text-3xl lg:text-4xl font-semibold mb-3 sm:mb-4 bg-gradient-to-r from-white to-blue-300 bg-clip-text text-transparent leading-[1.3] pb-2" itemProp="name">{service.title}</h3>
+                <p className="font-sans text-base sm:text-lg lg:text-xl bg-gradient-to-r from-gray-400 to-gray-300 bg-clip-text text-transparent leading-[1.6] pb-2" itemProp="description">{service.desc}</p>
               </div>
             ))}
           </div>
