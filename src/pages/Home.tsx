@@ -239,11 +239,11 @@ function Home() {
         }}
       ></div>
 
-      <section className="min-h-[100svh] sm:min-h-[100vh] flex flex-col items-center justify-center px-4 sm:px-6 relative overflow-hidden gpu-accelerated py-24 sm:py-28 md:py-32 lg:py-20 xl:py-24" role="banner" aria-label="Section hero" data-section="hero"  itemScope itemType="https://schema.org/WPHeader">
+      <section className="min-h-[100svh] sm:min-h-[100vh] flex flex-col items-center justify-center px-4 sm:px-6 lg:px-10 xl:px-6 relative overflow-hidden gpu-accelerated py-24 sm:py-28 md:py-32 lg:py-20 xl:py-24" role="banner" aria-label="Section hero" data-section="hero"  itemScope itemType="https://schema.org/WPHeader">
 
         {/* Hero content - asymmetric layout */}
-        <div className="relative z-10 w-full max-w-7xl px-2 sm:px-4">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center">
+        <div className="relative z-10 w-full max-w-7xl lg:max-w-none xl:max-w-7xl px-2 sm:px-4 lg:px-0">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-6 items-center">
             {/* Left column - main content */}
             <div className="lg:col-span-8 xl:col-span-7 lg:col-start-1">
               <h1 className="font-display text-[2.75rem] leading-[1.12] sm:text-[5rem] md:text-[6.5rem] lg:text-[5rem] lg:leading-[1.08] xl:text-[5.5rem] 2xl:text-[7.5rem] font-bold bg-gradient-to-br from-white via-blue-100 to-blue-400 bg-clip-text text-transparent mb-4 sm:mb-6 md:mb-8 lg:mb-5 xl:mb-8 pb-2 sm:pb-3 animate-slide-in-stagger-1" itemProp="name headline">
