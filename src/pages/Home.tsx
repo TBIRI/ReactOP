@@ -243,7 +243,7 @@ function Home() {
 
         {/* Hero content - asymmetric layout */}
         <div className="relative z-10 w-full px-6 sm:px-10">
-          <div className="max-w-6xl mx-auto">
+          <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center">
             {/* Left column - main content */}
             <div className="lg:col-span-7 lg:col-start-1">
@@ -267,10 +267,10 @@ function Home() {
             </div>
 
             {/* Right column - decorative glass panel */}
-            <div className="hidden lg:block lg:col-span-4 lg:col-start-9 opacity-0 animate-slide-in-stagger-3">
-              <div className="glass-card rounded-3xl p-6 lg:p-8 xl:p-10 aspect-square flex items-center justify-center animate-float-delayed animate-pulse-glow">
+            <div className="hidden lg:block lg:col-span-5 lg:col-start-8 opacity-0 animate-slide-in-stagger-3">
+              <div className="glass-card rounded-3xl p-10 lg:p-14 xl:p-16 aspect-square flex items-center justify-center animate-float-delayed animate-pulse-glow">
                 <div className="text-center">
-                  <div className="font-display text-2xl lg:text-3xl xl:text-4xl 2xl:text-6xl font-bold bg-gradient-to-br from-blue-400 to-blue-600 bg-clip-text text-transparent leading-tight">
+                  <div className="font-display text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl font-bold bg-gradient-to-br from-blue-400 to-blue-600 bg-clip-text text-transparent leading-tight">
                     Boosté par l'IA
                   </div>
                 </div>
@@ -282,7 +282,7 @@ function Home() {
       </section>
 
       <section id="services" className="pt-20 pb-40 sm:pt-32 sm:pb-56 lg:pt-40 lg:pb-64 px-6 sm:px-10 gpu-accelerated scroll-reveal" aria-labelledby="services-title" data-section="services" itemScope itemType="https://schema.org/Service">
-        <div className="max-w-5xl mx-auto">
+        <div className="max-w-6xl mx-auto">
           <h2 id="services-title" className="font-display text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-center mb-4 sm:mb-6 lg:mb-8 bg-gradient-to-r from-white to-blue-400 bg-clip-text text-transparent pb-3 opacity-0 scroll-reveal-target" data-animation-type="zoom" data-delay="0" itemProp="name">
             Ce que nous faisons
           </h2>
@@ -307,7 +307,7 @@ function Home() {
       </section>
 
       <section id="pour-qui" className="py-16 sm:py-24 lg:py-32 px-6 sm:px-10 gpu-accelerated scroll-reveal" data-section="clients" itemScope itemType="https://schema.org/Audience">
-        <div className="max-w-5xl mx-auto">
+        <div className="max-w-6xl mx-auto">
             <p className="font-display text-center mb-8 sm:mb-12 lg:mb-16 text-2xl sm:text-3xl lg:text-4xl bg-gradient-to-r from-gray-300 to-blue-300 bg-clip-text text-transparent opacity-0 scroll-reveal-target" data-animation-type="zoom" data-delay="0">
               Exemples de fuites fréquentes
             </p>
@@ -353,7 +353,7 @@ function Home() {
       </section>
 
       <section id="processus" className="py-24 sm:py-48 lg:py-56 px-6 sm:px-10 gpu-accelerated scroll-reveal" aria-labelledby="processus-title" data-section="process" itemScope itemType="https://schema.org/HowTo">
-        <div className="max-w-4xl mx-auto">
+        <div className="max-w-5xl mx-auto">
           <h2 id="processus-title" className="font-display text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-center mb-4 sm:mb-6 lg:mb-8 bg-gradient-to-r from-white to-blue-400 bg-clip-text text-transparent pb-3 opacity-0 scroll-reveal-target" data-animation-type="zoom" data-delay="0" itemProp="name">
             Notre processus
           </h2>
