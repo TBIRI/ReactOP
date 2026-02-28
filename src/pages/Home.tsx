@@ -243,13 +243,13 @@ function Home() {
 
         {/* Hero content - asymmetric layout */}
         <div className="relative z-10 w-full max-w-7xl px-2 sm:px-4">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center">
             {/* Left column - main content */}
-            <div className="lg:col-span-7 xl:col-span-7 lg:col-start-1">
-              <h1 className="font-display text-[2.75rem] leading-[1.12] sm:text-[5rem] md:text-[6.5rem] lg:text-[60px] xl:text-[75px] 2xl:text-[120px] font-bold bg-gradient-to-br from-white via-blue-100 to-blue-400 bg-clip-text text-transparent mb-4 sm:mb-6 md:mb-8 lg:mb-6 xl:mb-8 pb-2 sm:pb-3 animate-slide-in-stagger-1" itemProp="name headline">
+            <div className="lg:col-span-6 xl:col-span-7 lg:col-start-1">
+              <h1 className="font-display text-[2.75rem] leading-[1.12] sm:text-[5rem] md:text-[6.5rem] lg:text-[4.5rem] xl:text-[5.5rem] 2xl:text-[7.5rem] font-bold bg-gradient-to-br from-white via-blue-100 to-blue-400 bg-clip-text text-transparent mb-4 sm:mb-6 md:mb-8 lg:mb-5 xl:mb-8 pb-2 sm:pb-3 animate-slide-in-stagger-1" itemProp="name headline">
                 Votre partenaire acquisition <span className="font-display italic whitespace-nowrap">next-gen</span>
               </h1>
-              <p className="font-sans text-base leading-relaxed sm:text-xl md:text-2xl lg:text-[20px] xl:text-[22px] 2xl:text-[30px] mb-8 sm:mb-10 md:mb-12 lg:mb-10 xl:mb-12 text-gray-300 max-w-2xl animate-slide-in-stagger-2" itemProp="description">
+              <p className="font-sans text-base leading-relaxed sm:text-xl md:text-2xl lg:text-lg xl:text-xl 2xl:text-[30px] mb-8 sm:mb-10 md:mb-12 lg:mb-8 xl:mb-12 text-gray-300 max-w-xl animate-slide-in-stagger-2" itemProp="description">
                 Nous aidons les entreprises à transformer la <span className="font-semibold bg-gradient-to-r from-gray-200 to-blue-300 bg-clip-text text-transparent">demande Google</span> en <span className="font-semibold bg-gradient-to-r from-gray-200 to-blue-300 bg-clip-text text-transparent">leads qualifiés</span>
               </p>
               <button
@@ -266,13 +266,28 @@ function Home() {
             </div>
 
             {/* Right column - decorative glass panel */}
-            <div className="hidden xl:block lg:col-span-4 lg:col-start-9 opacity-0 animate-slide-in-stagger-3">
-              <div className="glass-card rounded-3xl p-6 lg:p-8 xl:p-10 aspect-square flex items-center justify-center animate-float-delayed animate-pulse-glow">
-                <div className="text-center">
-                  <div className="font-display text-2xl lg:text-3xl xl:text-4xl 2xl:text-6xl font-bold bg-gradient-to-br from-blue-400 to-blue-600 bg-clip-text text-transparent leading-tight">
-                    Boosté par l'IA
-                  </div>
+            <div className="hidden lg:block lg:col-span-5 xl:col-span-4 lg:col-start-8 xl:col-start-9 opacity-0 animate-slide-in-stagger-3">
+              <div className="glass-card rounded-3xl p-6 lg:p-8 xl:p-10 flex flex-col gap-5 animate-float-delayed animate-pulse-glow">
+                <div className="font-display text-xl lg:text-2xl xl:text-3xl 2xl:text-4xl font-bold bg-gradient-to-br from-blue-300 to-blue-500 bg-clip-text text-transparent leading-tight">
+                  Boosté par l'IA
                 </div>
+                <div className="h-px bg-gradient-to-r from-blue-500/40 to-transparent" />
+                <div className="flex flex-col gap-3">
+                  {[
+                    { label: 'Leads qualifiés', value: '+340%' },
+                    { label: 'Coût par lead', value: '−52%' },
+                    { label: 'ROI moyen', value: '×4.8' },
+                  ].map(({ label, value }) => (
+                    <div key={label} className="flex items-center justify-between">
+                      <span className="font-sans text-sm xl:text-base text-gray-400">{label}</span>
+                      <span className="font-display text-lg xl:text-xl font-bold text-white">{value}</span>
+                    </div>
+                  ))}
+                </div>
+                <div className="h-px bg-gradient-to-r from-blue-500/40 to-transparent" />
+                <p className="font-sans text-xs xl:text-sm text-gray-500 leading-relaxed">
+                  Résultats moyens constatés sur nos clients après 90 jours.
+                </p>
               </div>
             </div>
           </div>
