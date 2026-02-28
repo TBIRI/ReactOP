@@ -354,17 +354,19 @@ function Home() {
             Une méthodologie éprouvée en 4 étapes
           </p>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6 lg:gap-8" role="list">
+          <div className="flex flex-col gap-4 sm:gap-6 lg:gap-8" role="list">
             {[
               { num: "01", title: "Analyse", desc: "Audit marketing & identification des points de friction sur le tunnel de conversion" },
               { num: "02", title: "Stratégie", desc: "Priorisation des leviers à plus fort impact et définition de vos objectifs et indicateurs de succès" },
               { num: "03", title: "Déploiement", desc: "Conception des campagnes et optimisation de la conversion" },
               { num: "04", title: "Optimisation continue", desc: "Améliorations régulières et suivi des résultats basés sur le volume et la qualité des demandes" }
             ].map((step, idx) => (
-              <div key={idx} className="relative p-6 sm:p-8 lg:p-10 glass-card rounded-3xl opacity-0 scroll-reveal-target" data-animation-type={idx % 2 === 0 ? 'slide-left' : 'slide-right'} role="listitem" itemScope itemType="https://schema.org/HowToStep">
-                <div className="font-display text-5xl sm:text-7xl lg:text-8xl font-bold text-blue-500/30 mb-3 sm:mb-4" aria-hidden="true">{step.num}</div>
-                <h3 className="font-display text-2xl sm:text-3xl lg:text-4xl font-semibold mb-2 sm:mb-3 bg-gradient-to-r from-white to-blue-300 bg-clip-text text-transparent" itemProp="name">{step.title}</h3>
-                <p className="font-sans bg-gradient-to-r from-gray-400 to-gray-300 bg-clip-text text-transparent text-base sm:text-lg lg:text-xl" itemProp="text">{step.desc}</p>
+              <div key={idx} className="relative flex items-center gap-6 sm:gap-10 lg:gap-14 p-6 sm:p-8 lg:p-10 glass-card rounded-3xl opacity-0 scroll-reveal-target" data-animation-type={idx % 2 === 0 ? 'slide-left' : 'slide-right'} role="listitem" itemScope itemType="https://schema.org/HowToStep">
+                <div className="font-display text-5xl sm:text-7xl lg:text-8xl font-bold text-blue-500/20 flex-shrink-0 w-16 sm:w-24 lg:w-32 text-right leading-none" aria-hidden="true">{step.num}</div>
+                <div className="flex-1 min-w-0">
+                  <h3 className="font-display text-2xl sm:text-3xl lg:text-4xl font-semibold mb-2 sm:mb-3 bg-gradient-to-r from-white to-blue-300 bg-clip-text text-transparent" itemProp="name">{step.title}</h3>
+                  <p className="font-sans bg-gradient-to-r from-gray-400 to-gray-300 bg-clip-text text-transparent text-base sm:text-lg lg:text-xl leading-relaxed" itemProp="text">{step.desc}</p>
+                </div>
               </div>
             ))}
           </div>
