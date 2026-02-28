@@ -267,27 +267,12 @@ function Home() {
 
             {/* Right column - decorative glass panel */}
             <div className="hidden lg:block lg:col-span-5 xl:col-span-4 lg:col-start-8 xl:col-start-9 opacity-0 animate-slide-in-stagger-3">
-              <div className="glass-card rounded-3xl p-6 lg:p-8 xl:p-10 flex flex-col gap-5 animate-float-delayed animate-pulse-glow">
-                <div className="font-display text-xl lg:text-2xl xl:text-3xl 2xl:text-4xl font-bold bg-gradient-to-br from-blue-300 to-blue-500 bg-clip-text text-transparent leading-tight">
-                  Boosté par l'IA
+              <div className="glass-card rounded-3xl p-6 lg:p-8 xl:p-10 aspect-square flex items-center justify-center animate-float-delayed animate-pulse-glow">
+                <div className="text-center">
+                  <div className="font-display text-2xl lg:text-3xl xl:text-4xl 2xl:text-6xl font-bold bg-gradient-to-br from-blue-400 to-blue-600 bg-clip-text text-transparent leading-tight">
+                    Boosté par l'IA
+                  </div>
                 </div>
-                <div className="h-px bg-gradient-to-r from-blue-500/40 to-transparent" />
-                <div className="flex flex-col gap-3">
-                  {[
-                    { label: 'Leads qualifiés', value: '+340%' },
-                    { label: 'Coût par lead', value: '−52%' },
-                    { label: 'ROI moyen', value: '×4.8' },
-                  ].map(({ label, value }) => (
-                    <div key={label} className="flex items-center justify-between">
-                      <span className="font-sans text-sm xl:text-base text-gray-400">{label}</span>
-                      <span className="font-display text-lg xl:text-xl font-bold text-white">{value}</span>
-                    </div>
-                  ))}
-                </div>
-                <div className="h-px bg-gradient-to-r from-blue-500/40 to-transparent" />
-                <p className="font-sans text-xs xl:text-sm text-gray-500 leading-relaxed">
-                  Résultats moyens constatés sur nos clients après 90 jours.
-                </p>
               </div>
             </div>
           </div>
