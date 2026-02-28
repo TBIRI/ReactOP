@@ -314,7 +314,7 @@ function Home() {
 
             <div className="grid md:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 mb-6 sm:mb-10 lg:mb-12">
               <div className="p-5 sm:p-6 lg:p-8 glass-card rounded-2xl flex flex-col border border-orange-500/20 opacity-0 scroll-reveal-target" data-animation-type="fade-up" data-delay="400">
-                <div className="md:h-[5rem] mb-3 sm:mb-4">
+                <div className="mb-3 sm:mb-4">
                   <div className="font-display font-semibold text-xl sm:text-2xl lg:text-3xl text-white leading-tight">Campagnes mal paramétrées</div>
                 </div>
                 <div className="flex items-start gap-2 sm:gap-3">
@@ -324,7 +324,7 @@ function Home() {
               </div>
 
               <div className="p-5 sm:p-6 lg:p-8 glass-card rounded-2xl flex flex-col border border-orange-500/20 opacity-0 scroll-reveal-target" data-animation-type="fade-up" data-delay="600">
-                <div className="md:h-[5rem] mb-3 sm:mb-4">
+                <div className="mb-3 sm:mb-4">
                   <div className="font-display font-semibold text-xl sm:text-2xl lg:text-3xl text-white leading-tight">Landing pages peu convaincantes</div>
                 </div>
                 <div className="flex items-start gap-2 sm:gap-3">
@@ -334,7 +334,7 @@ function Home() {
               </div>
 
               <div className="p-5 sm:p-6 lg:p-8 glass-card rounded-2xl flex flex-col border border-orange-500/20 opacity-0 scroll-reveal-target" data-animation-type="fade-up" data-delay="800">
-                <div className="md:h-[5rem] mb-3 sm:mb-4">
+                <div className="mb-3 sm:mb-4">
                   <div className="font-display font-semibold text-xl sm:text-2xl lg:text-3xl text-white leading-tight">Tracking des conversions incomplet</div>
                 </div>
                 <div className="flex items-start gap-2 sm:gap-3">
