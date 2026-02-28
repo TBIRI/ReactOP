@@ -354,25 +354,18 @@ function Home() {
             Une méthodologie éprouvée en 4 étapes
           </p>
 
-          <div className="max-w-2xl mx-auto" role="list">
+          <div className="flex flex-col gap-4 sm:gap-6 lg:gap-8" role="list">
             {[
               { num: "01", title: "Analyse", desc: "Audit marketing & identification des points de friction sur le tunnel de conversion" },
               { num: "02", title: "Stratégie", desc: "Priorisation des leviers à plus fort impact et définition de vos objectifs et indicateurs de succès" },
               { num: "03", title: "Déploiement", desc: "Conception des campagnes et optimisation de la conversion" },
               { num: "04", title: "Optimisation continue", desc: "Améliorations régulières et suivi des résultats basés sur le volume et la qualité des demandes" }
-            ].map((step, idx, arr) => (
-              <div key={idx} className="relative flex gap-6 sm:gap-8 opacity-0 scroll-reveal-target" data-animation-type="fade-up" data-delay={`${idx * 150}`} role="listitem" itemScope itemType="https://schema.org/HowToStep">
-                <div className="flex flex-col items-center flex-shrink-0">
-                  <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full border border-blue-500/40 bg-blue-500/10 flex items-center justify-center flex-shrink-0">
-                    <span className="font-sans text-xs sm:text-sm font-semibold text-blue-400">{step.num}</span>
-                  </div>
-                  {idx < arr.length - 1 && (
-                    <div className="w-px flex-1 bg-gradient-to-b from-blue-500/30 to-transparent mt-2 mb-0 min-h-[2.5rem]" aria-hidden="true" />
-                  )}
-                </div>
-                <div className={`pb-10 sm:pb-12 ${idx === arr.length - 1 ? 'pb-0' : ''}`}>
-                  <h3 className="font-display text-xl sm:text-2xl lg:text-3xl font-semibold mb-2 bg-gradient-to-r from-white to-blue-300 bg-clip-text text-transparent leading-tight" itemProp="name">{step.title}</h3>
-                  <p className="font-sans text-gray-400 text-base sm:text-lg leading-relaxed" itemProp="text">{step.desc}</p>
+            ].map((step, idx) => (
+              <div key={idx} className="relative flex items-center gap-6 sm:gap-10 lg:gap-14 p-6 sm:p-8 lg:p-10 glass-card rounded-3xl opacity-0 scroll-reveal-target" data-animation-type={idx % 2 === 0 ? 'slide-left' : 'slide-right'} role="listitem" itemScope itemType="https://schema.org/HowToStep">
+                <div className="font-display text-5xl sm:text-7xl lg:text-8xl font-bold text-blue-500/20 flex-shrink-0 w-16 sm:w-24 lg:w-32 text-right leading-none" aria-hidden="true">{step.num}</div>
+                <div className="flex-1 min-w-0">
+                  <h3 className="font-display text-2xl sm:text-3xl lg:text-4xl font-semibold mb-2 sm:mb-3 bg-gradient-to-r from-white to-blue-300 bg-clip-text text-transparent" itemProp="name">{step.title}</h3>
+                  <p className="font-sans bg-gradient-to-r from-gray-400 to-gray-300 bg-clip-text text-transparent text-base sm:text-lg lg:text-xl leading-relaxed" itemProp="text">{step.desc}</p>
                 </div>
               </div>
             ))}
