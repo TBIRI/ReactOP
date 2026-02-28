@@ -119,7 +119,7 @@ function Home() {
 
   return (
     <div className="min-h-screen bg-black text-white overflow-x-hidden" itemScope itemType="https://schema.org/WebPage">
-      <nav className="fixed top-6 md:top-8 left-1/2 -translate-x-1/2 z-50 w-[95%] sm:w-[90%] max-w-7xl px-2 sm:px-4" role="navigation" aria-label="Navigation principale">
+      <nav className="fixed top-6 md:top-8 left-1/2 -translate-x-1/2 z-50 w-[95%] sm:w-[90%] max-w-5xl px-2 sm:px-4" role="navigation" aria-label="Navigation principale">
         <div className="flex items-center justify-between px-0 md:px-8 py-2 md:py-3 md:glass-nav md:rounded-full md:shadow-2xl">
           <button
             onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
@@ -242,7 +242,8 @@ function Home() {
       <section className="min-h-[100svh] sm:min-h-[100vh] flex flex-col items-center justify-center relative overflow-hidden gpu-accelerated py-24 sm:py-28 md:py-32 lg:py-20 xl:py-24" role="banner" aria-label="Section hero" data-section="hero" itemScope itemType="https://schema.org/WPHeader">
 
         {/* Hero content - asymmetric layout */}
-        <div className="relative z-10 w-full px-6 sm:px-10 lg:px-16 xl:px-20 2xl:px-28">
+        <div className="relative z-10 w-full px-6 sm:px-10">
+          <div className="max-w-5xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center">
             {/* Left column - main content */}
             <div className="lg:col-span-7 lg:col-start-1">
@@ -276,10 +277,12 @@ function Home() {
               </div>
             </div>
           </div>
+          </div>
         </div>
       </section>
 
-      <section id="services" className="pt-20 pb-40 sm:pt-32 sm:pb-56 lg:pt-40 lg:pb-64 px-6 sm:px-10 lg:px-16 xl:px-20 2xl:px-28 gpu-accelerated scroll-reveal" aria-labelledby="services-title" data-section="services" itemScope itemType="https://schema.org/Service">
+      <section id="services" className="pt-20 pb-40 sm:pt-32 sm:pb-56 lg:pt-40 lg:pb-64 px-6 sm:px-10 gpu-accelerated scroll-reveal" aria-labelledby="services-title" data-section="services" itemScope itemType="https://schema.org/Service">
+        <div className="max-w-4xl mx-auto">
           <h2 id="services-title" className="font-display text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-center mb-4 sm:mb-6 lg:mb-8 bg-gradient-to-r from-white to-blue-400 bg-clip-text text-transparent pb-3 opacity-0 scroll-reveal-target" data-animation-type="zoom" data-delay="0" itemProp="name">
             Ce que nous faisons
           </h2>
@@ -300,10 +303,12 @@ function Home() {
               </div>
             ))}
           </div>
+        </div>
       </section>
 
-      <section id="pour-qui" className="py-16 sm:py-24 lg:py-32 px-6 sm:px-10 lg:px-16 xl:px-20 2xl:px-28 gpu-accelerated scroll-reveal" data-section="clients" itemScope itemType="https://schema.org/Audience">
-            <p className="font-display text-center mb-8 sm:mb-12 lg:mb-16 text-2xl sm:text-3xl lg:text-4xl bg-gradient-to-r from-gray-300 to-blue-300 bg-clip-text text-transparent max-w-4xl mx-auto opacity-0 scroll-reveal-target" data-animation-type="zoom" data-delay="0">
+      <section id="pour-qui" className="py-16 sm:py-24 lg:py-32 px-6 sm:px-10 gpu-accelerated scroll-reveal" data-section="clients" itemScope itemType="https://schema.org/Audience">
+        <div className="max-w-4xl mx-auto">
+            <p className="font-display text-center mb-8 sm:mb-12 lg:mb-16 text-2xl sm:text-3xl lg:text-4xl bg-gradient-to-r from-gray-300 to-blue-300 bg-clip-text text-transparent opacity-0 scroll-reveal-target" data-animation-type="zoom" data-delay="0">
               Exemples de fuites fréquentes
             </p>
 
@@ -340,13 +345,15 @@ function Home() {
             </div>
 
             <div className="p-6 sm:p-10 lg:p-12 glass-card rounded-3xl text-center border border-green-500/20 opacity-0 scroll-reveal-target" data-animation-type="zoom" data-delay="1000" data-value-proposition="main">
-              <p className="font-sans text-base sm:text-2xl lg:text-3xl bg-gradient-to-r from-gray-200 to-blue-200 bg-clip-text text-transparent font-medium leading-relaxed max-w-4xl mx-auto">
+              <p className="font-sans text-base sm:text-2xl lg:text-3xl bg-gradient-to-r from-gray-200 to-blue-200 bg-clip-text text-transparent font-medium leading-relaxed">
                 Nous priorisons les améliorations à plus fort impact afin d'augmenter votre volume de demandes qualifiées.
               </p>
             </div>
+        </div>
       </section>
 
-      <section id="processus" className="py-24 sm:py-48 lg:py-56 px-6 sm:px-10 lg:px-16 xl:px-20 2xl:px-28 gpu-accelerated scroll-reveal" aria-labelledby="processus-title" data-section="process" itemScope itemType="https://schema.org/HowTo">
+      <section id="processus" className="py-24 sm:py-48 lg:py-56 px-6 sm:px-10 gpu-accelerated scroll-reveal" aria-labelledby="processus-title" data-section="process" itemScope itemType="https://schema.org/HowTo">
+        <div className="max-w-3xl mx-auto">
           <h2 id="processus-title" className="font-display text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-center mb-4 sm:mb-6 lg:mb-8 bg-gradient-to-r from-white to-blue-400 bg-clip-text text-transparent pb-3 opacity-0 scroll-reveal-target" data-animation-type="zoom" data-delay="0" itemProp="name">
             Notre processus
           </h2>
@@ -370,9 +377,11 @@ function Home() {
               </div>
             ))}
           </div>
+        </div>
       </section>
 
-      <section id="contact" className="py-24 sm:py-48 lg:py-56 px-6 sm:px-10 lg:px-16 xl:px-20 2xl:px-28 gpu-accelerated scroll-reveal" aria-labelledby="contact-title" data-section="contact" itemScope itemType="https://schema.org/ContactPage">
+      <section id="contact" className="py-24 sm:py-48 lg:py-56 px-6 sm:px-10 gpu-accelerated scroll-reveal" aria-labelledby="contact-title" data-section="contact" itemScope itemType="https://schema.org/ContactPage">
+        <div className="max-w-5xl mx-auto">
           <div className="grid md:grid-cols-2 gap-12 sm:gap-20 lg:gap-24 items-center">
             <div itemScope itemType="https://schema.org/Organization" className="opacity-0 scroll-reveal-target">
               <h2 id="contact-title" className="font-display text-[3.5rem] leading-[1.1] sm:text-7xl md:text-8xl lg:text-9xl font-bold mb-8 sm:mb-12 lg:mb-16 pr-8">
@@ -400,9 +409,11 @@ function Home() {
               ></iframe>
             </div>
           </div>
+        </div>
       </section>
 
-      <footer className="border-t border-gray-800/50 py-12 sm:py-16 lg:py-20 px-6 sm:px-10 lg:px-16 xl:px-20 2xl:px-28" role="contentinfo" aria-label="Pied de page" itemScope itemType="https://schema.org/WPFooter">
+      <footer className="border-t border-gray-800/50 py-12 sm:py-16 lg:py-20 px-6 sm:px-10" role="contentinfo" aria-label="Pied de page" itemScope itemType="https://schema.org/WPFooter">
+        <div className="max-w-5xl mx-auto">
           <div className="flex flex-col-reverse md:flex-row justify-between items-center gap-8 sm:gap-10 lg:gap-12">
             <div className="text-center md:text-left" itemScope itemType="https://schema.org/Organization">
               <div className="flex items-center justify-center md:justify-start gap-2 sm:gap-3 lg:gap-4 mb-2 sm:mb-3">
@@ -422,6 +433,7 @@ function Home() {
               </div>
             </div>
           </div>
+        </div>
       </footer>
     </div>
   );
