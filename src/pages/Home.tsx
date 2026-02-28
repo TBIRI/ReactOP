@@ -313,24 +313,30 @@ function Home() {
 
             <div className="grid md:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 mb-6 sm:mb-10 lg:mb-12">
               <div className="p-5 sm:p-6 lg:p-8 glass-card rounded-2xl flex flex-col border border-orange-500/20 opacity-0 scroll-reveal-target" data-animation-type="fade-up" data-delay="400">
-                <div className="font-display font-semibold mb-2 sm:mb-3 text-base sm:text-lg lg:text-xl text-white leading-tight md:min-h-[3.5rem]">Campagnes mal paramétrées</div>
-                <div className="flex items-start gap-2 sm:gap-3 mt-auto">
+                <div className="md:h-[4rem] mb-2 sm:mb-3">
+                  <div className="font-display font-semibold text-base sm:text-lg lg:text-xl text-white leading-tight">Campagnes mal paramétrées</div>
+                </div>
+                <div className="flex items-start gap-2 sm:gap-3">
                   <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 text-gray-400 flex-shrink-0 mt-1" />
                   <p className="font-sans text-sm sm:text-base lg:text-lg text-gray-300 leading-snug">demande inexistante ou non qualifiée</p>
                 </div>
               </div>
 
               <div className="p-5 sm:p-6 lg:p-8 glass-card rounded-2xl flex flex-col border border-orange-500/20 opacity-0 scroll-reveal-target" data-animation-type="fade-up" data-delay="600">
-                <div className="font-display font-semibold mb-2 sm:mb-3 text-base sm:text-lg lg:text-xl text-white leading-tight md:min-h-[3.5rem]">Landing pages peu convaincantes</div>
-                <div className="flex items-start gap-2 sm:gap-3 mt-auto">
+                <div className="md:h-[4rem] mb-2 sm:mb-3">
+                  <div className="font-display font-semibold text-base sm:text-lg lg:text-xl text-white leading-tight">Landing pages peu convaincantes</div>
+                </div>
+                <div className="flex items-start gap-2 sm:gap-3">
                   <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 text-gray-400 flex-shrink-0 mt-1" />
                   <p className="font-sans text-sm sm:text-base lg:text-lg text-gray-300 leading-snug">clics ne deviennent pas leads</p>
                 </div>
               </div>
 
               <div className="p-5 sm:p-6 lg:p-8 glass-card rounded-2xl flex flex-col border border-orange-500/20 opacity-0 scroll-reveal-target" data-animation-type="fade-up" data-delay="800">
-                <div className="font-display font-semibold mb-2 sm:mb-3 text-base sm:text-lg lg:text-xl text-white leading-tight md:min-h-[3.5rem]">Tracking des conversions incomplet</div>
-                <div className="flex items-start gap-2 sm:gap-3 mt-auto">
+                <div className="md:h-[4rem] mb-2 sm:mb-3">
+                  <div className="font-display font-semibold text-base sm:text-lg lg:text-xl text-white leading-tight">Tracking des conversions incomplet</div>
+                </div>
+                <div className="flex items-start gap-2 sm:gap-3">
                   <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 text-gray-400 flex-shrink-0 mt-1" />
                   <p className="font-sans text-sm sm:text-base lg:text-lg text-gray-300 leading-snug">décisions sans visibilité sur ce qui fonctionne</p>
                 </div>
