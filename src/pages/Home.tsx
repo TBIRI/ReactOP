@@ -279,7 +279,7 @@ function Home() {
         </div>
       </section>
 
-      <section id="services" className="pt-20 pb-32 sm:pt-32 sm:pb-48 lg:pt-40 lg:pb-56 px-4 sm:px-6 gpu-accelerated scroll-reveal" aria-labelledby="services-title" data-section="services" itemScope itemType="https://schema.org/Service">
+      <section id="services" className="pt-20 pb-40 sm:pt-32 sm:pb-56 lg:pt-40 lg:pb-64 px-4 sm:px-6 gpu-accelerated scroll-reveal" aria-labelledby="services-title" data-section="services" itemScope itemType="https://schema.org/Service">
         <div className="max-w-7xl mx-auto">
           <h2 id="services-title" className="font-display text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-center mb-4 sm:mb-6 lg:mb-8 bg-gradient-to-r from-white to-blue-400 bg-clip-text text-transparent pb-3 opacity-0 scroll-reveal-target" data-animation-type="zoom" data-delay="0" itemProp="name">
             Ce que nous faisons
