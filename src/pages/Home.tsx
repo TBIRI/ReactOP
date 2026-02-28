@@ -249,7 +249,7 @@ function Home() {
               <h1 className="font-display text-[2.75rem] leading-[1.15] sm:text-[5.5rem] md:text-[80px] lg:text-[60px] xl:text-[75px] 2xl:text-[120px] font-bold bg-gradient-to-br from-white via-blue-100 to-blue-400 bg-clip-text text-transparent mb-4 sm:mb-8 md:mb-10 lg:mb-6 xl:mb-8 md:leading-[1.12] lg:leading-[1.15] pb-2 sm:pb-4 animate-slide-in-stagger-1" itemProp="name headline">
                 Votre partenaire acquisition <span className="font-display italic whitespace-nowrap">next-gen</span>
               </h1>
-              <p className="font-sans text-base leading-relaxed sm:text-xl md:text-[26px] lg:text-[16px] xl:text-[18px] 2xl:text-[28px] mb-6 sm:mb-10 md:mb-12 lg:mb-8 xl:mb-10 text-gray-300 max-w-2xl animate-slide-in-stagger-2" itemProp="description">
+              <p className="font-sans text-base leading-relaxed sm:text-xl md:text-[22px] lg:text-[20px] xl:text-[22px] 2xl:text-[30px] mb-8 sm:mb-10 md:mb-12 lg:mb-10 xl:mb-12 text-gray-300 max-w-2xl animate-slide-in-stagger-2" itemProp="description">
                 Nous aidons les entreprises à transformer la <span className="font-semibold bg-gradient-to-r from-gray-200 to-blue-300 bg-clip-text text-transparent">demande Google</span> en <span className="font-semibold bg-gradient-to-r from-gray-200 to-blue-300 bg-clip-text text-transparent">leads qualifiés</span>
               </p>
               <button
