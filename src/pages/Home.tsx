@@ -31,9 +31,11 @@ function Home() {
       }, 100);
     }
 
+    const isMobile = window.innerWidth <= 640;
+
     const individualObserverOptions = {
-      threshold: 0.2,
-      rootMargin: '0px 0px -50px 0px'
+      threshold: isMobile ? 0.08 : 0.2,
+      rootMargin: isMobile ? '0px 0px -20px 0px' : '0px 0px -50px 0px'
     };
 
     const individualObserver = new IntersectionObserver((entries) => {
@@ -41,7 +43,8 @@ function Home() {
         if (entry.isIntersecting) {
           const element = entry.target as HTMLElement;
           const animationType = element.dataset.animationType || 'fade';
-          const delay = element.dataset.delay ? parseInt(element.dataset.delay) : 0;
+          const rawDelay = element.dataset.delay ? parseInt(element.dataset.delay) : 0;
+          const delay = isMobile ? Math.min(rawDelay * 0.4, 200) : rawDelay;
 
           if (!element.classList.contains('animated')) {
             setTimeout(() => {
@@ -77,6 +80,8 @@ function Home() {
     }, 100);
 
     const handleScroll = () => {
+      if (isMobile) return;
+
       const scrolled = window.scrollY;
       const parallaxElements = document.querySelectorAll('.glass-card-hover');
 
