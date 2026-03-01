@@ -189,6 +189,7 @@ function Home() {
         </div>
       </div>
 
+      <div className="mobius-bg" aria-hidden="true"></div>
       <div
         className="fixed inset-0 pointer-events-none z-0 bg-blur-overlay"
         aria-hidden="true"
