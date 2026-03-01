@@ -35,17 +35,6 @@
 }
 
 @layer utilities {
-  .border-beam-wrapper {
-    position: relative;
-    padding: 1.5px;
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.3), rgba(96, 165, 250, 0.3));
-  }
-
-  .border-beam-wrapper > * {
-    position: relative;
-    z-index: 1;
-  }
-
   .glass-card {
     background: rgba(255, 255, 255, 0.03);
     backdrop-filter: blur(20px);
@@ -58,8 +47,9 @@
   }
 
   .glass-card-hover {
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    transform-origin: center center;
+    transition: background 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+                border-color 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+                box-shadow 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
   .glass-card-hover:hover {
@@ -68,7 +58,6 @@
     box-shadow:
       0 20px 60px 0 rgba(96, 165, 250, 0.25),
       inset 0 1px 0 0 rgba(255, 255, 255, 0.1);
-    transform: translateY(-8px) scale(1.01);
   }
 
   .glass-nav {
@@ -81,145 +70,47 @@
       inset 0 1px 0 0 rgba(255, 255, 255, 0.05);
   }
 
+  /* ───────────────────────────────────────────
+     Hero stagger animations (play on page load)
+     ─────────────────────────────────────────── */
+  .animate-slide-in-stagger-1 {
+    animation: heroFadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.1s both;
+  }
+
+  .animate-slide-in-stagger-2 {
+    animation: heroFadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.25s both;
+  }
+
+  .animate-slide-in-stagger-3 {
+    animation: heroFadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.4s both;
+  }
+
+  @keyframes heroFadeUp {
+    from {
+      opacity: 0;
+      transform: translateY(32px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Hero glass panel float */
   .animate-float-delayed {
     animation: floatDelayed 4s ease-in-out infinite;
   }
 
   @keyframes floatDelayed {
     0%, 100% { transform: translateY(0px); }
-    50% { transform: translateY(-15px); }
+    50% { transform: translateY(-12px); }
   }
 
-  /* Desktop hero stagger animations */
-  .animate-slide-in-stagger-1 {
-    animation: slideInUp 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.1s both;
+  .animate-pulse-glow {
+    animation: pulseGlow 3s ease-in-out infinite;
   }
 
-  .animate-slide-in-stagger-2 {
-    animation: slideInUp 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.25s both;
-  }
-
-  .animate-slide-in-stagger-3 {
-    animation: slideInUp 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.4s both;
-  }
-
-  .animate-section-fade-in {
-    animation: sectionFadeIn 0.7s cubic-bezier(0.16, 1, 0.3, 1) both;
-  }
-
-  .animate-section-title {
-    animation: titleReveal 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
-  }
-
-  .animate-card-reveal {
-    animation: cardReveal 0.7s cubic-bezier(0.16, 1, 0.3, 1) both;
-  }
-
-  .animate-slide-from-left {
-    animation: slideFromLeft 0.7s cubic-bezier(0.16, 1, 0.3, 1) both;
-  }
-
-  .animate-slide-from-right {
-    animation: slideFromRight 0.7s cubic-bezier(0.16, 1, 0.3, 1) both;
-  }
-
-  .animate-zoom-in {
-    animation: zoomIn 0.7s cubic-bezier(0.16, 1, 0.3, 1) both;
-  }
-
-  .animate-fade-up {
-    animation: fadeUp 0.7s cubic-bezier(0.16, 1, 0.3, 1) both;
-  }
-
-  @keyframes slideInUp {
-    from {
-      opacity: 0;
-      transform: translateY(40px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-
-  @keyframes sectionFadeIn {
-    from {
-      opacity: 0;
-      transform: translateY(30px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-
-  @keyframes titleReveal {
-    from {
-      opacity: 0;
-      transform: translateY(30px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-
-  @keyframes cardReveal {
-    from {
-      opacity: 0;
-      transform: translateY(24px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-
-  @keyframes slideFromLeft {
-    from {
-      opacity: 0;
-      transform: translateX(-48px);
-    }
-    to {
-      opacity: 1;
-      transform: translateX(0);
-    }
-  }
-
-  @keyframes slideFromRight {
-    from {
-      opacity: 0;
-      transform: translateX(48px);
-    }
-    to {
-      opacity: 1;
-      transform: translateX(0);
-    }
-  }
-
-  @keyframes zoomIn {
-    from {
-      opacity: 0;
-      transform: scale(0.92);
-    }
-    to {
-      opacity: 1;
-      transform: scale(1);
-    }
-  }
-
-  @keyframes fadeUp {
-    from {
-      opacity: 0;
-      transform: translateY(28px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-
-  @keyframes pulse-glow {
+  @keyframes pulseGlow {
     0%, 100% {
       box-shadow: 0 0 20px rgba(96, 165, 250, 0.3);
     }
@@ -228,10 +119,41 @@
     }
   }
 
-  .animate-pulse-glow {
-    animation: pulse-glow 3s ease-in-out infinite;
+  /* ───────────────────────────────────────────
+     Scroll-reveal system
+     Elements start hidden, get .is-visible when
+     they enter the viewport.
+     ─────────────────────────────────────────── */
+  .reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition:
+      opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+      transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: opacity, transform;
   }
 
+  .reveal.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .reveal.reveal-scale {
+    transform: scale(0.96);
+  }
+
+  .reveal.reveal-scale.is-visible {
+    transform: scale(1);
+  }
+
+  /* Stagger children with CSS custom property */
+  .reveal[style*="--delay"] {
+    transition-delay: var(--delay);
+  }
+
+  /* ───────────────────────────────────────────
+     Typography
+     ─────────────────────────────────────────── */
   .font-display {
     font-family: 'Playfair Display', serif;
   }
@@ -240,7 +162,9 @@
     font-family: 'Inter', sans-serif;
   }
 
-  /* Mobile: simplify all scroll animations to a single unified fadeUp */
+  /* ───────────────────────────────────────────
+     Mobile overrides
+     ─────────────────────────────────────────── */
   @media (max-width: 640px) {
     .gpu-accelerated {
       -webkit-transform: translate3d(0, 0, 0);
@@ -256,50 +180,31 @@
       min-height: 800px !important;
     }
 
-    .animate-slide-from-left,
-    .animate-slide-from-right,
-    .animate-zoom-in,
-    .animate-section-fade-in,
-    .animate-section-title,
-    .animate-card-reveal {
-      animation: mobileFadeUp 0.55s cubic-bezier(0.16, 1, 0.3, 1) both !important;
+    .reveal {
+      transform: translateY(16px);
+      transition-duration: 0.5s;
     }
 
-    .animate-fade-up {
-      animation: mobileFadeUp 0.55s cubic-bezier(0.16, 1, 0.3, 1) both !important;
+    .reveal.reveal-scale {
+      transform: scale(0.97);
     }
 
-    /* Keep hero stagger on mobile but use lighter version */
     .animate-slide-in-stagger-1 {
-      animation: mobileFadeUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.05s both !important;
+      animation-name: heroFadeUp;
+      animation-duration: 0.6s;
+      animation-delay: 0.05s;
     }
 
     .animate-slide-in-stagger-2 {
-      animation: mobileFadeUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.15s both !important;
+      animation-name: heroFadeUp;
+      animation-duration: 0.6s;
+      animation-delay: 0.15s;
     }
 
     .animate-slide-in-stagger-3 {
-      animation: mobileFadeUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.25s both !important;
-    }
-
-    /* Disable hover parallax interference on mobile */
-    .glass-card-hover {
-      transition: none !important;
-    }
-
-    .glass-card-hover:hover {
-      transform: none !important;
-    }
-  }
-
-  @keyframes mobileFadeUp {
-    from {
-      opacity: 0;
-      transform: translateY(20px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
+      animation-name: heroFadeUp;
+      animation-duration: 0.6s;
+      animation-delay: 0.25s;
     }
   }
 }

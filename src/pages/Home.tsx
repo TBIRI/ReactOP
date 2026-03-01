@@ -1,6 +1,40 @@
 import { ArrowRight, TrendingUp, Target, Menu, X, MousePointerClick } from 'lucide-react';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef, useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
+
+function useScrollReveal() {
+  const observerRef = useRef<IntersectionObserver | null>(null);
+
+  const init = useCallback(() => {
+    if (observerRef.current) return;
+
+    observerRef.current = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            observerRef.current?.unobserve(entry.target);
+          }
+        });
+      },
+      {
+        threshold: 0,
+        rootMargin: '0px 0px -40px 0px',
+      }
+    );
+
+    const targets = document.querySelectorAll('.reveal');
+    targets.forEach((el) => observerRef.current!.observe(el));
+  }, []);
+
+  useEffect(() => {
+    const raf = requestAnimationFrame(() => init());
+    return () => {
+      cancelAnimationFrame(raf);
+      observerRef.current?.disconnect();
+    };
+  }, [init]);
+}
 
 function Home() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -30,97 +64,28 @@ function Home() {
         }
       }, 100);
     }
-
-    const isMobile = window.innerWidth <= 640;
-
-    const individualObserverOptions = {
-      threshold: isMobile ? 0.08 : 0.2,
-      rootMargin: isMobile ? '0px 0px -20px 0px' : '0px 0px -50px 0px'
-    };
-
-    const individualObserver = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          const element = entry.target as HTMLElement;
-          const animationType = element.dataset.animationType || 'fade';
-          const rawDelay = element.dataset.delay ? parseInt(element.dataset.delay) : 0;
-          const delay = isMobile ? Math.min(rawDelay * 0.4, 200) : rawDelay;
-
-          if (!element.classList.contains('animated')) {
-            setTimeout(() => {
-              element.classList.add('animated');
-
-              switch(animationType) {
-                case 'slide-left':
-                  element.classList.add('animate-slide-from-left');
-                  break;
-                case 'slide-right':
-                  element.classList.add('animate-slide-from-right');
-                  break;
-                case 'zoom':
-                  element.classList.add('animate-zoom-in');
-                  break;
-                case 'fade-up':
-                  element.classList.add('animate-fade-up');
-                  break;
-                default:
-                  element.classList.add('animate-section-fade-in');
-              }
-            }, delay);
-          }
-        }
-      });
-    }, individualObserverOptions);
-
-    setTimeout(() => {
-      const animatedElements = document.querySelectorAll('.scroll-reveal-target');
-      animatedElements.forEach((element) => {
-        individualObserver.observe(element);
-      });
-    }, 100);
-
-    const handleScroll = () => {
-      if (isMobile) return;
-
-      const scrolled = window.scrollY;
-      const parallaxElements = document.querySelectorAll('.glass-card-hover');
-
-      parallaxElements.forEach((element) => {
-        const rect = element.getBoundingClientRect();
-        const elementTop = rect.top + scrolled;
-        const elementHeight = rect.height;
-        const windowHeight = window.innerHeight;
-
-        if (rect.top < windowHeight && rect.bottom > 0) {
-          const scrollProgress = (scrolled - elementTop + windowHeight) / (windowHeight + elementHeight);
-          const translateY = Math.min(Math.max(scrollProgress * 20 - 10, -10), 10);
-
-          if (!(element as HTMLElement).matches(':hover')) {
-            (element as HTMLElement).style.transform = `translateY(${translateY}px)`;
-          }
-        }
-      });
-    };
-
-    let ticking = false;
-    const onScroll = () => {
-      if (!ticking) {
-        window.requestAnimationFrame(() => {
-          handleScroll();
-          ticking = false;
-        });
-        ticking = true;
-      }
-    };
-
-    window.addEventListener('scroll', onScroll, { passive: true });
-
-    return () => {
-      individualObserver.disconnect();
-      window.removeEventListener('scroll', onScroll);
-    };
   }, []);
 
+  useScrollReveal();
+
+  const services = [
+    { icon: TrendingUp, title: "Audit du parcours d'acquisition lead", desc: "Identification des fuites de leads et des leviers correctifs applicables", keywords: "audit CRO, optimisation conversion, funnel vente" },
+    { icon: Target, title: "Pilotage de vos campagnes Google Ads", desc: "Paramétrage, déploiement et optimisation continue de campagnes en ligne", keywords: "workflows IA, automatisation, pipeline vente" },
+    { icon: MousePointerClick, title: "Optimisation du parcours de conversion", desc: "Réduction continue des points de friction de votre tunnel de conversion, du clic au lead", keywords: "landing page, conversion, optimisation CRO" }
+  ];
+
+  const steps = [
+    { num: "01", title: "Analyse", desc: "Audit marketing & identification des points de friction sur le tunnel de conversion" },
+    { num: "02", title: "Stratégie", desc: "Priorisation des leviers à plus fort impact et définition de vos objectifs et indicateurs de succès" },
+    { num: "03", title: "Déploiement", desc: "Conception des campagnes et optimisation de la conversion" },
+    { num: "04", title: "Optimisation continue", desc: "Améliorations régulières et suivi des résultats basés sur le volume et la qualité des demandes" }
+  ];
+
+  const leaks = [
+    { title: "Campagnes mal paramétrées", desc: "demande inexistante ou non qualifiée" },
+    { title: "Landing pages peu convaincantes", desc: "clics ne deviennent pas leads" },
+    { title: "Tracking des conversions incomplet", desc: "décisions sans visibilité sur ce qui fonctionne" }
+  ];
 
   return (
     <div className="min-h-screen bg-black text-white overflow-x-hidden" itemScope itemType="https://schema.org/WebPage">
@@ -178,13 +143,11 @@ function Home() {
         </div>
       </nav>
 
-      {/* Backdrop overlay */}
       <div
         className={`fixed inset-0 bg-black/60 backdrop-blur-sm z-40 md:hidden transition-all duration-300 ${isMobileMenuOpen ? 'opacity-100 visible' : 'opacity-0 invisible pointer-events-none'}`}
         onClick={() => setIsMobileMenuOpen(false)}
       ></div>
 
-      {/* Dropdown menu */}
       <div className={`fixed top-[88px] left-1/2 -translate-x-1/2 w-[95%] sm:w-[90%] z-50 md:hidden transition-all duration-300 ${isMobileMenuOpen ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-4 pointer-events-none'}`}>
         <div className="glass-nav rounded-3xl shadow-2xl p-6">
           <div className="flex flex-col space-y-2">
@@ -226,7 +189,6 @@ function Home() {
         </div>
       </div>
 
-      {/* Mobius logo - very blurred background that follows scroll */}
       <div
         className="fixed top-[50%] left-[50%] pointer-events-none z-0 mobile-bg-fix"
         style={{
@@ -244,64 +206,66 @@ function Home() {
         }}
       ></div>
 
+      {/* Hero */}
       <section className="min-h-[100svh] sm:min-h-[100vh] flex flex-col items-center justify-center relative overflow-hidden gpu-accelerated py-24 sm:py-28 md:py-32 lg:py-20 xl:py-24" role="banner" aria-label="Section hero" data-section="hero" itemScope itemType="https://schema.org/WPHeader">
-
-        {/* Hero content - asymmetric layout */}
         <div className="relative z-10 w-full px-6 sm:px-10">
           <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center">
-            {/* Left column - main content */}
-            <div className="lg:col-span-7 lg:col-start-1">
-              <h1 className="font-display text-[2.75rem] leading-[1.12] sm:text-[5rem] md:text-[6.5rem] lg:text-[5rem] lg:leading-[1.08] xl:text-[5.5rem] 2xl:text-[7.5rem] font-bold bg-gradient-to-br from-white via-blue-100 to-blue-400 bg-clip-text text-transparent mb-4 sm:mb-6 md:mb-8 lg:mb-5 xl:mb-8 pb-2 sm:pb-3 animate-slide-in-stagger-1" itemProp="name headline">
-                Votre partenaire acquisition <span className="font-display italic whitespace-nowrap">next-gen</span>
-              </h1>
-              <p className="font-sans text-base leading-relaxed sm:text-xl md:text-2xl lg:text-lg xl:text-xl 2xl:text-[30px] mb-8 sm:mb-10 md:mb-12 lg:mb-8 xl:mb-12 text-gray-300 max-w-xl animate-slide-in-stagger-2" itemProp="description">
-                Nous aidons les entreprises à transformer la <span className="font-semibold bg-gradient-to-r from-gray-200 to-blue-300 bg-clip-text text-transparent">demande Google</span> en <span className="font-semibold bg-gradient-to-r from-gray-200 to-blue-300 bg-clip-text text-transparent">leads qualifiés</span>
-              </p>
-              <button
-                onClick={() => navigate('/audit')}
-                className="group relative inline-flex items-center gap-2 sm:gap-3 px-6 py-3 sm:px-10 sm:py-6 md:px-10 md:py-6 lg:px-7 lg:py-4 xl:px-9 xl:py-5 font-sans font-bold text-base sm:text-xl md:text-2xl lg:text-base xl:text-lg 2xl:text-2xl overflow-hidden rounded-2xl bg-blue-600 hover:bg-blue-500 border-2 border-blue-400 shadow-xl shadow-blue-500/40 hover:shadow-blue-400/60 transition-all animate-slide-in-stagger-3"
-                aria-label="Recevoir un audit gratuit avec ReactOP"
-                data-action="cta-primary"
-              >
-                <span className="relative text-white whitespace-nowrap">
-                  Recevez votre audit gratuit
-                </span>
-                <ArrowRight className="relative w-4 h-4 sm:w-6 sm:h-6 md:w-7 md:h-7 lg:w-5 lg:h-5 xl:w-5 xl:h-5 2xl:w-7 2xl:h-7 text-white group-hover:translate-x-1 transition-transform" aria-hidden="true" />
-              </button>
-            </div>
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center">
+              <div className="lg:col-span-7 lg:col-start-1">
+                <h1 className="font-display text-[2.75rem] leading-[1.12] sm:text-[5rem] md:text-[6.5rem] lg:text-[5rem] lg:leading-[1.08] xl:text-[5.5rem] 2xl:text-[7.5rem] font-bold bg-gradient-to-br from-white via-blue-100 to-blue-400 bg-clip-text text-transparent mb-4 sm:mb-6 md:mb-8 lg:mb-5 xl:mb-8 pb-2 sm:pb-3 animate-slide-in-stagger-1" itemProp="name headline">
+                  Votre partenaire acquisition <span className="font-display italic whitespace-nowrap">next-gen</span>
+                </h1>
+                <p className="font-sans text-base leading-relaxed sm:text-xl md:text-2xl lg:text-lg xl:text-xl 2xl:text-[30px] mb-8 sm:mb-10 md:mb-12 lg:mb-8 xl:mb-12 text-gray-300 max-w-xl animate-slide-in-stagger-2" itemProp="description">
+                  Nous aidons les entreprises à transformer la <span className="font-semibold bg-gradient-to-r from-gray-200 to-blue-300 bg-clip-text text-transparent">demande Google</span> en <span className="font-semibold bg-gradient-to-r from-gray-200 to-blue-300 bg-clip-text text-transparent">leads qualifiés</span>
+                </p>
+                <button
+                  onClick={() => navigate('/audit')}
+                  className="group relative inline-flex items-center gap-2 sm:gap-3 px-6 py-3 sm:px-10 sm:py-6 md:px-10 md:py-6 lg:px-7 lg:py-4 xl:px-9 xl:py-5 font-sans font-bold text-base sm:text-xl md:text-2xl lg:text-base xl:text-lg 2xl:text-2xl overflow-hidden rounded-2xl bg-blue-600 hover:bg-blue-500 border-2 border-blue-400 shadow-xl shadow-blue-500/40 hover:shadow-blue-400/60 transition-all animate-slide-in-stagger-3"
+                  aria-label="Recevoir un audit gratuit avec ReactOP"
+                  data-action="cta-primary"
+                >
+                  <span className="relative text-white whitespace-nowrap">
+                    Recevez votre audit gratuit
+                  </span>
+                  <ArrowRight className="relative w-4 h-4 sm:w-6 sm:h-6 md:w-7 md:h-7 lg:w-5 lg:h-5 xl:w-5 xl:h-5 2xl:w-7 2xl:h-7 text-white group-hover:translate-x-1 transition-transform" aria-hidden="true" />
+                </button>
+              </div>
 
-            {/* Right column - decorative glass panel */}
-            <div className="hidden lg:block lg:col-span-5 lg:col-start-8 opacity-0 animate-slide-in-stagger-3">
-              <div className="glass-card rounded-3xl p-10 lg:p-14 xl:p-16 aspect-square flex items-center justify-center animate-float-delayed animate-pulse-glow">
-                <div className="text-center">
-                  <div className="font-display text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl font-bold bg-gradient-to-br from-blue-400 to-blue-600 bg-clip-text text-transparent leading-tight">
-                    Boosté par l'IA
+              <div className="hidden lg:block lg:col-span-5 lg:col-start-8 opacity-0 animate-slide-in-stagger-3">
+                <div className="glass-card rounded-3xl p-10 lg:p-14 xl:p-16 aspect-square flex items-center justify-center animate-float-delayed animate-pulse-glow">
+                  <div className="text-center">
+                    <div className="font-display text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl font-bold bg-gradient-to-br from-blue-400 to-blue-600 bg-clip-text text-transparent leading-tight">
+                      Boosté par l'IA
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-          </div>
         </div>
       </section>
 
-      <section id="services" className="pt-20 pb-40 sm:pt-32 sm:pb-56 lg:pt-40 lg:pb-64 px-6 sm:px-10 gpu-accelerated scroll-reveal" aria-labelledby="services-title" data-section="services" itemScope itemType="https://schema.org/Service">
+      {/* Services */}
+      <section id="services" className="pt-20 pb-40 sm:pt-32 sm:pb-56 lg:pt-40 lg:pb-64 px-6 sm:px-10 gpu-accelerated" aria-labelledby="services-title" data-section="services" itemScope itemType="https://schema.org/Service">
         <div className="max-w-6xl mx-auto">
-          <h2 id="services-title" className="font-display text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-center mb-4 sm:mb-6 lg:mb-8 bg-gradient-to-r from-white to-blue-400 bg-clip-text text-transparent pb-3 opacity-0 scroll-reveal-target" data-animation-type="zoom" data-delay="0" itemProp="name">
+          <h2 id="services-title" className="reveal reveal-scale font-display text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-center mb-4 sm:mb-6 lg:mb-8 bg-gradient-to-r from-white to-blue-400 bg-clip-text text-transparent pb-3" itemProp="name">
             Ce que nous faisons
           </h2>
-          <p className="font-sans text-center mb-12 sm:mb-20 lg:mb-24 text-base sm:text-xl lg:text-2xl bg-gradient-to-r from-gray-300 to-blue-300 bg-clip-text text-transparent opacity-0 scroll-reveal-target" data-animation-type="fade-up" data-delay="400" itemProp="description">
+          <p className="reveal font-sans text-center mb-12 sm:mb-20 lg:mb-24 text-base sm:text-xl lg:text-2xl bg-gradient-to-r from-gray-300 to-blue-300 bg-clip-text text-transparent" style={{ '--delay': '0.1s' } as React.CSSProperties} itemProp="description">
             Augmentation du volume de leads qualifiés basée sur les données
           </p>
 
           <div className="grid grid-cols-1 gap-6 sm:gap-10 lg:gap-12" role="list">
-            {[
-              { icon: TrendingUp, title: "Audit du parcours d'acquisition lead", desc: "Identification des fuites de leads et des leviers correctifs applicables", keywords: "audit CRO, optimisation conversion, funnel vente" },
-              { icon: Target, title: "Pilotage de vos campagnes Google Ads", desc: "Paramétrage, déploiement et optimisation continue de campagnes en ligne", keywords: "workflows IA, automatisation, pipeline vente" },
-              { icon: MousePointerClick, title: "Optimisation du parcours de conversion", desc: "Réduction continue des points de friction de votre tunnel de conversion, du clic au lead", keywords: "landing page, conversion, optimisation CRO" }
-            ].map((service, idx) => (
-              <div key={idx} className="group p-6 sm:p-10 lg:p-12 glass-card glass-card-hover rounded-3xl opacity-0 scroll-reveal-target overflow-visible" data-animation-type={idx % 2 === 0 ? 'slide-left' : 'slide-right'} role="listitem" data-service-type={service.keywords} itemScope itemType="https://schema.org/Service">
+            {services.map((service, idx) => (
+              <div
+                key={idx}
+                className="reveal group p-6 sm:p-10 lg:p-12 glass-card glass-card-hover rounded-3xl overflow-visible"
+                style={{ '--delay': `${idx * 0.1}s` } as React.CSSProperties}
+                role="listitem"
+                data-service-type={service.keywords}
+                itemScope
+                itemType="https://schema.org/Service"
+              >
                 <service.icon className="w-10 h-10 sm:w-14 sm:h-14 lg:w-16 lg:h-16 text-blue-400 mb-4 sm:mb-6 group-hover:scale-110 transition-transform duration-500" aria-hidden="true" />
                 <h3 className="font-display text-2xl sm:text-3xl lg:text-4xl font-semibold mb-3 sm:mb-4 bg-gradient-to-r from-white to-blue-300 bg-clip-text text-transparent leading-[1.3] pb-2" itemProp="name">{service.title}</h3>
                 <p className="font-sans text-base sm:text-lg lg:text-xl bg-gradient-to-r from-gray-400 to-gray-300 bg-clip-text text-transparent leading-[1.6] pb-2" itemProp="description">{service.desc}</p>
@@ -311,69 +275,59 @@ function Home() {
         </div>
       </section>
 
-      <section id="pour-qui" className="py-16 sm:py-24 lg:py-32 px-6 sm:px-10 gpu-accelerated scroll-reveal" data-section="clients" itemScope itemType="https://schema.org/Audience">
+      {/* Fuites */}
+      <section id="pour-qui" className="py-16 sm:py-24 lg:py-32 px-6 sm:px-10 gpu-accelerated" data-section="clients" itemScope itemType="https://schema.org/Audience">
         <div className="max-w-6xl mx-auto">
-            <p className="font-display text-center mb-8 sm:mb-12 lg:mb-16 text-2xl sm:text-3xl lg:text-4xl bg-gradient-to-r from-gray-300 to-blue-300 bg-clip-text text-transparent opacity-0 scroll-reveal-target" data-animation-type="zoom" data-delay="0">
-              Exemples de fuites fréquentes
+          <p className="reveal reveal-scale font-display text-center mb-8 sm:mb-12 lg:mb-16 text-2xl sm:text-3xl lg:text-4xl bg-gradient-to-r from-gray-300 to-blue-300 bg-clip-text text-transparent">
+            Exemples de fuites fréquentes
+          </p>
+
+          <div className="grid md:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 mb-6 sm:mb-10 lg:mb-12">
+            {leaks.map((leak, idx) => (
+              <div
+                key={idx}
+                className="reveal p-5 sm:p-6 lg:p-8 glass-card rounded-2xl flex flex-col border border-orange-500/20"
+                style={{ '--delay': `${idx * 0.1}s` } as React.CSSProperties}
+              >
+                <div className="md:h-[5rem] mb-4 sm:mb-5">
+                  <div className="font-display font-semibold text-lg sm:text-xl lg:text-2xl text-white leading-tight">{leak.title}</div>
+                </div>
+                <div className="flex items-start gap-2 sm:gap-3">
+                  <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 text-gray-400 flex-shrink-0 mt-1" />
+                  <p className="font-sans text-sm sm:text-base lg:text-lg text-gray-300 leading-snug">{leak.desc}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <div className="reveal reveal-scale p-6 sm:p-10 lg:p-12 glass-card rounded-3xl text-center border border-green-500/20" data-value-proposition="main">
+            <p className="font-sans text-base sm:text-2xl lg:text-3xl bg-gradient-to-r from-gray-200 to-blue-200 bg-clip-text text-transparent font-medium leading-relaxed">
+              Nous priorisons les améliorations à plus fort impact afin d'augmenter votre volume de demandes qualifiées.
             </p>
-
-            <div className="grid md:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 mb-6 sm:mb-10 lg:mb-12">
-              <div className="p-5 sm:p-6 lg:p-8 glass-card rounded-2xl flex flex-col border border-orange-500/20 opacity-0 scroll-reveal-target" data-animation-type="fade-up" data-delay="400">
-                <div className="md:h-[5rem] mb-4 sm:mb-5">
-                  <div className="font-display font-semibold text-lg sm:text-xl lg:text-2xl text-white leading-tight">Campagnes mal paramétrées</div>
-                </div>
-                <div className="flex items-start gap-2 sm:gap-3">
-                  <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 text-gray-400 flex-shrink-0 mt-1" />
-                  <p className="font-sans text-sm sm:text-base lg:text-lg text-gray-300 leading-snug">demande inexistante ou non qualifiée</p>
-                </div>
-              </div>
-
-              <div className="p-5 sm:p-6 lg:p-8 glass-card rounded-2xl flex flex-col border border-orange-500/20 opacity-0 scroll-reveal-target" data-animation-type="fade-up" data-delay="600">
-                <div className="md:h-[5rem] mb-4 sm:mb-5">
-                  <div className="font-display font-semibold text-lg sm:text-xl lg:text-2xl text-white leading-tight">Landing pages peu convaincantes</div>
-                </div>
-                <div className="flex items-start gap-2 sm:gap-3">
-                  <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 text-gray-400 flex-shrink-0 mt-1" />
-                  <p className="font-sans text-sm sm:text-base lg:text-lg text-gray-300 leading-snug">clics ne deviennent pas leads</p>
-                </div>
-              </div>
-
-              <div className="p-5 sm:p-6 lg:p-8 glass-card rounded-2xl flex flex-col border border-orange-500/20 opacity-0 scroll-reveal-target" data-animation-type="fade-up" data-delay="800">
-                <div className="md:h-[5rem] mb-4 sm:mb-5">
-                  <div className="font-display font-semibold text-lg sm:text-xl lg:text-2xl text-white leading-tight">Tracking des conversions incomplet</div>
-                </div>
-                <div className="flex items-start gap-2 sm:gap-3">
-                  <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 text-gray-400 flex-shrink-0 mt-1" />
-                  <p className="font-sans text-sm sm:text-base lg:text-lg text-gray-300 leading-snug">décisions sans visibilité sur ce qui fonctionne</p>
-                </div>
-              </div>
-            </div>
-
-            <div className="p-6 sm:p-10 lg:p-12 glass-card rounded-3xl text-center border border-green-500/20 opacity-0 scroll-reveal-target" data-animation-type="zoom" data-delay="1000" data-value-proposition="main">
-              <p className="font-sans text-base sm:text-2xl lg:text-3xl bg-gradient-to-r from-gray-200 to-blue-200 bg-clip-text text-transparent font-medium leading-relaxed">
-                Nous priorisons les améliorations à plus fort impact afin d'augmenter votre volume de demandes qualifiées.
-              </p>
-            </div>
+          </div>
         </div>
       </section>
 
-      <section id="processus" className="py-24 sm:py-48 lg:py-56 px-6 sm:px-10 gpu-accelerated scroll-reveal" aria-labelledby="processus-title" data-section="process" itemScope itemType="https://schema.org/HowTo">
+      {/* Processus */}
+      <section id="processus" className="py-24 sm:py-48 lg:py-56 px-6 sm:px-10 gpu-accelerated" aria-labelledby="processus-title" data-section="process" itemScope itemType="https://schema.org/HowTo">
         <div className="max-w-5xl mx-auto">
-          <h2 id="processus-title" className="font-display text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-center mb-4 sm:mb-6 lg:mb-8 bg-gradient-to-r from-white to-blue-400 bg-clip-text text-transparent pb-3 opacity-0 scroll-reveal-target" data-animation-type="zoom" data-delay="0" itemProp="name">
+          <h2 id="processus-title" className="reveal reveal-scale font-display text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-center mb-4 sm:mb-6 lg:mb-8 bg-gradient-to-r from-white to-blue-400 bg-clip-text text-transparent pb-3" itemProp="name">
             Notre processus
           </h2>
-          <p className="font-sans text-center mb-12 sm:mb-20 lg:mb-24 text-base sm:text-xl lg:text-2xl bg-gradient-to-r from-gray-300 to-blue-300 bg-clip-text text-transparent opacity-0 scroll-reveal-target" data-animation-type="fade-up" data-delay="400" itemProp="description">
+          <p className="reveal font-sans text-center mb-12 sm:mb-20 lg:mb-24 text-base sm:text-xl lg:text-2xl bg-gradient-to-r from-gray-300 to-blue-300 bg-clip-text text-transparent" style={{ '--delay': '0.1s' } as React.CSSProperties} itemProp="description">
             Une méthodologie éprouvée en 4 étapes
           </p>
 
           <div className="flex flex-col gap-4 sm:gap-6 lg:gap-8" role="list">
-            {[
-              { num: "01", title: "Analyse", desc: "Audit marketing & identification des points de friction sur le tunnel de conversion" },
-              { num: "02", title: "Stratégie", desc: "Priorisation des leviers à plus fort impact et définition de vos objectifs et indicateurs de succès" },
-              { num: "03", title: "Déploiement", desc: "Conception des campagnes et optimisation de la conversion" },
-              { num: "04", title: "Optimisation continue", desc: "Améliorations régulières et suivi des résultats basés sur le volume et la qualité des demandes" }
-            ].map((step, idx) => (
-              <div key={idx} className="relative flex items-center gap-6 sm:gap-10 lg:gap-14 p-6 sm:p-8 lg:p-10 glass-card rounded-3xl opacity-0 scroll-reveal-target" data-animation-type={idx % 2 === 0 ? 'slide-left' : 'slide-right'} role="listitem" itemScope itemType="https://schema.org/HowToStep">
+            {steps.map((step, idx) => (
+              <div
+                key={idx}
+                className="reveal relative flex items-center gap-6 sm:gap-10 lg:gap-14 p-6 sm:p-8 lg:p-10 glass-card rounded-3xl"
+                style={{ '--delay': `${idx * 0.08}s` } as React.CSSProperties}
+                role="listitem"
+                itemScope
+                itemType="https://schema.org/HowToStep"
+              >
                 <div className="font-display text-5xl sm:text-7xl lg:text-8xl font-bold text-blue-500/20 flex-shrink-0 w-16 sm:w-24 lg:w-32 text-right leading-none" aria-hidden="true">{step.num}</div>
                 <div className="flex-1 min-w-0">
                   <h3 className="font-display text-2xl sm:text-3xl lg:text-4xl font-semibold mb-2 sm:mb-3 bg-gradient-to-r from-white to-blue-300 bg-clip-text text-transparent" itemProp="name">{step.title}</h3>
@@ -385,10 +339,11 @@ function Home() {
         </div>
       </section>
 
-      <section id="contact" className="py-24 sm:py-48 lg:py-56 px-6 sm:px-10 gpu-accelerated scroll-reveal" aria-labelledby="contact-title" data-section="contact" itemScope itemType="https://schema.org/ContactPage">
+      {/* Contact */}
+      <section id="contact" className="py-24 sm:py-48 lg:py-56 px-6 sm:px-10 gpu-accelerated" aria-labelledby="contact-title" data-section="contact" itemScope itemType="https://schema.org/ContactPage">
         <div className="max-w-6xl mx-auto">
           <div className="grid md:grid-cols-2 gap-12 sm:gap-20 lg:gap-24 items-center">
-            <div itemScope itemType="https://schema.org/Organization" className="opacity-0 scroll-reveal-target">
+            <div itemScope itemType="https://schema.org/Organization" className="reveal">
               <h2 id="contact-title" className="font-display text-[3.5rem] leading-[1.1] sm:text-7xl md:text-8xl lg:text-9xl font-bold mb-8 sm:mb-12 lg:mb-16 pr-8">
                 <span className="text-white">Parlons-</span>
                 <span className="bg-gradient-to-r from-white to-blue-400 bg-clip-text text-transparent italic pr-6">en!</span>
@@ -401,7 +356,7 @@ function Home() {
               </div>
             </div>
 
-            <div className="w-full glass-card rounded-3xl p-4 sm:p-6 opacity-0 scroll-reveal-target" style={{ animationDelay: '0.2s' }}>
+            <div className="reveal w-full glass-card rounded-3xl p-4 sm:p-6" style={{ '--delay': '0.12s' } as React.CSSProperties}>
               <iframe
                 data-tally-src="https://tally.so/embed/A7LaDW?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1"
                 loading="lazy"
@@ -427,7 +382,7 @@ function Home() {
                   ReactOP
                 </div>
               </div>
-              <p className="font-sans text-sm sm:text-base lg:text-lg bg-gradient-to-r from-gray-400 to-blue-300 bg-clip-text text-transparent" itemProp="copyrightNotice">© 2026 ReactOP. Tous droits réservés.</p>
+              <p className="font-sans text-sm sm:text-base lg:text-lg bg-gradient-to-r from-gray-400 to-blue-300 bg-clip-text text-transparent" itemProp="copyrightNotice">&copy; 2026 ReactOP. Tous droits réservés.</p>
             </div>
 
             <div className="text-center md:text-right" itemScope itemType="https://schema.org/ContactPoint">
