@@ -231,33 +231,35 @@
     contain: strict;
   }
 
-  /* ───────────────────────────────────────────
-     Mobius background - blurred version
-     ─────────────────────────────────────────── */
-  .mobius-bg {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    pointer-events: none;
-    z-index: -1;
-    overflow: hidden;
-  }
+}
 
-  .mobius-bg::before {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 140%;
-    height: 140%;
-    transform: translate(-50%, -50%);
-    background-image: url('/mobius_det.png');
-    background-size: contain;
-    background-position: center;
-    background-repeat: no-repeat;
-    opacity: 0.11;
-    filter: blur(40px);
-  }
+/* ───────────────────────────────────────────
+   Mobius background - blurred version
+   Outside @layer for proper pseudo-element support
+   ─────────────────────────────────────────── */
+.mobius-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.mobius-bg::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 140%;
+  height: 140%;
+  transform: translate(-50%, -50%);
+  background-image: url('/mobius_det.png');
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0.15;
+  filter: blur(35px);
 }
