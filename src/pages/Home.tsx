@@ -232,7 +232,7 @@ function Home() {
               <div className="hidden lg:block lg:col-span-5 lg:col-start-8 opacity-0 animate-slide-in-stagger-3">
                 <div className="glass-card rounded-3xl p-10 lg:p-14 xl:p-16 aspect-square flex items-center justify-center animate-pulse-glow">
                   <div className="text-center">
-                    <div className="font-display text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl font-bold text-blue-400 leading-tight">
+                    <div className="font-display text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl font-bold bg-gradient-to-br from-blue-300 via-blue-400 to-blue-500 bg-clip-text text-transparent leading-tight">
                       Boosté par l'IA
                     </div>
                   </div>

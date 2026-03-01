@@ -236,7 +236,7 @@
      ─────────────────────────────────────────── */
   .mobius-bg {
     position: fixed;
-    top: -100vh;
+    top: 0;
     left: 0;
     right: 0;
     bottom: 0;
@@ -248,7 +248,7 @@
   .mobius-bg::before {
     content: '';
     position: absolute;
-    top: calc(50% + 50vh);
+    top: 50%;
     left: 50%;
     width: 140%;
     height: 140%;
