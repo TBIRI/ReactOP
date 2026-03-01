@@ -204,7 +204,7 @@ function Home() {
                   Votre partenaire acquisition <span className="font-display italic whitespace-nowrap">next-gen</span>
                 </h1>
                 <p className="font-sans text-base leading-relaxed sm:text-xl md:text-2xl lg:text-lg xl:text-xl 2xl:text-[30px] mb-8 sm:mb-10 md:mb-12 lg:mb-8 xl:mb-12 text-gray-300 max-w-xl animate-slide-in-stagger-2" itemProp="description">
-                  Nous aidons les entreprises à transformer la <span className="font-semibold bg-gradient-to-r from-gray-200 to-blue-300 bg-clip-text text-transparent">demande Google</span> en <span className="font-semibold bg-gradient-to-r from-gray-200 to-blue-300 bg-clip-text text-transparent">leads qualifiés</span>
+                  Nous aidons les entreprises à capter la <span className="font-semibold bg-gradient-to-r from-gray-200 to-blue-300 bg-clip-text text-transparent">demande sur Google</span> et la convertir en <span className="font-semibold bg-gradient-to-r from-gray-200 to-blue-300 bg-clip-text text-transparent">leads qualifiés</span>
                 </p>
                 <button
                   onClick={() => navigate('/audit')}
