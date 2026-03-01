@@ -190,19 +190,8 @@ function Home() {
       </div>
 
       <div
-        className="fixed top-1/2 left-1/2 pointer-events-none z-0"
-        style={{
-          backgroundImage: "url('/mobius_det.png')",
-          backgroundSize: 'contain',
-          backgroundPosition: 'center',
-          backgroundRepeat: 'no-repeat',
-          filter: 'blur(50px)',
-          opacity: 0.3,
-          transform: 'translate(-50%, -50%)',
-          width: '160vw',
-          height: '160vh',
-          willChange: 'auto',
-        }}
+        className="fixed inset-0 pointer-events-none z-0 bg-blur-overlay"
+        aria-hidden="true"
       ></div>
 
       {/* Hero */}

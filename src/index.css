@@ -229,4 +229,21 @@
       animation: none !important;
     }
   }
+
+  /* ───────────────────────────────────────────
+     Background blur overlay - GPU optimized
+     Uses a static radial gradient instead of
+     runtime blur filter for better performance
+     ─────────────────────────────────────────── */
+  .bg-blur-overlay {
+    background: radial-gradient(
+      ellipse 80% 60% at 50% 50%,
+      rgba(59, 130, 246, 0.15) 0%,
+      rgba(59, 130, 246, 0.08) 30%,
+      rgba(59, 130, 246, 0.03) 60%,
+      transparent 100%
+    );
+    will-change: transform;
+    transform: translateZ(0);
+  }
 }
