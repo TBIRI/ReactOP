@@ -18,8 +18,8 @@ function useScrollReveal() {
         });
       },
       {
-        threshold: 0,
-        rootMargin: '0px 0px -40px 0px',
+        threshold: 0.15,
+        rootMargin: '0px 0px -10% 0px',
       }
     );
 
@@ -190,19 +190,9 @@ function Home() {
       </div>
 
       <div
-        className="fixed top-[50%] left-[50%] pointer-events-none z-0 mobile-bg-fix"
+        className="fixed inset-0 pointer-events-none z-0"
         style={{
-          backgroundImage: "url('/mobius_det.png')",
-          backgroundSize: 'contain',
-          backgroundPosition: 'center',
-          backgroundRepeat: 'no-repeat',
-          filter: 'blur(50px)',
-          opacity: 0.3,
-          transform: 'translate(-50%, -50%)',
-          width: '100vw',
-          height: '100vh',
-          minWidth: '1600px',
-          minHeight: '1600px'
+          background: 'radial-gradient(ellipse 80% 60% at 50% 40%, rgba(59, 130, 246, 0.08) 0%, rgba(59, 130, 246, 0.03) 40%, transparent 70%)',
         }}
       ></div>
 
@@ -251,7 +241,7 @@ function Home() {
           <h2 id="services-title" className="reveal reveal-scale font-display text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-center mb-4 sm:mb-6 lg:mb-8 bg-gradient-to-r from-white to-blue-400 bg-clip-text text-transparent pb-3" itemProp="name">
             Ce que nous faisons
           </h2>
-          <p className="reveal font-sans text-center mb-12 sm:mb-20 lg:mb-24 text-base sm:text-xl lg:text-2xl bg-gradient-to-r from-gray-300 to-blue-300 bg-clip-text text-transparent" style={{ '--delay': '0.1s' } as React.CSSProperties} itemProp="description">
+          <p className="reveal font-sans text-center mb-12 sm:mb-20 lg:mb-24 text-base sm:text-xl lg:text-2xl bg-gradient-to-r from-gray-300 to-blue-300 bg-clip-text text-transparent" style={{ '--delay': '0.15s' } as React.CSSProperties} itemProp="description">
             Augmentation du volume de leads qualifiés basée sur les données
           </p>
 
@@ -260,7 +250,7 @@ function Home() {
               <div
                 key={idx}
                 className="reveal group p-6 sm:p-10 lg:p-12 glass-card glass-card-hover rounded-3xl overflow-visible"
-                style={{ '--delay': `${idx * 0.1}s` } as React.CSSProperties}
+                style={{ '--delay': `${idx * 0.15}s` } as React.CSSProperties}
                 role="listitem"
                 data-service-type={service.keywords}
                 itemScope
@@ -287,7 +277,7 @@ function Home() {
               <div
                 key={idx}
                 className="reveal p-5 sm:p-6 lg:p-8 glass-card rounded-2xl flex flex-col border border-orange-500/20"
-                style={{ '--delay': `${idx * 0.1}s` } as React.CSSProperties}
+                style={{ '--delay': `${idx * 0.15}s` } as React.CSSProperties}
               >
                 <div className="md:h-[5rem] mb-4 sm:mb-5">
                   <div className="font-display font-semibold text-lg sm:text-xl lg:text-2xl text-white leading-tight">{leak.title}</div>
@@ -314,7 +304,7 @@ function Home() {
           <h2 id="processus-title" className="reveal reveal-scale font-display text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-center mb-4 sm:mb-6 lg:mb-8 bg-gradient-to-r from-white to-blue-400 bg-clip-text text-transparent pb-3" itemProp="name">
             Notre processus
           </h2>
-          <p className="reveal font-sans text-center mb-12 sm:mb-20 lg:mb-24 text-base sm:text-xl lg:text-2xl bg-gradient-to-r from-gray-300 to-blue-300 bg-clip-text text-transparent" style={{ '--delay': '0.1s' } as React.CSSProperties} itemProp="description">
+          <p className="reveal font-sans text-center mb-12 sm:mb-20 lg:mb-24 text-base sm:text-xl lg:text-2xl bg-gradient-to-r from-gray-300 to-blue-300 bg-clip-text text-transparent" style={{ '--delay': '0.15s' } as React.CSSProperties} itemProp="description">
             Une méthodologie éprouvée en 4 étapes
           </p>
 
@@ -323,7 +313,7 @@ function Home() {
               <div
                 key={idx}
                 className="reveal relative flex items-center gap-6 sm:gap-10 lg:gap-14 p-6 sm:p-8 lg:p-10 glass-card rounded-3xl"
-                style={{ '--delay': `${idx * 0.08}s` } as React.CSSProperties}
+                style={{ '--delay': `${idx * 0.12}s` } as React.CSSProperties}
                 role="listitem"
                 itemScope
                 itemType="https://schema.org/HowToStep"
@@ -356,7 +346,7 @@ function Home() {
               </div>
             </div>
 
-            <div className="reveal w-full glass-card rounded-3xl p-4 sm:p-6" style={{ '--delay': '0.12s' } as React.CSSProperties}>
+            <div className="reveal w-full glass-card rounded-3xl p-4 sm:p-6" style={{ '--delay': '0.2s' } as React.CSSProperties}>
               <iframe
                 data-tally-src="https://tally.so/embed/A7LaDW?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1"
                 loading="lazy"

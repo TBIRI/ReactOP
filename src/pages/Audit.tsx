@@ -40,28 +40,17 @@ function Audit() {
       width: '100%',
       height: '100%'
     }}>
-      {/* Mobius logo - very blurred background */}
       <div
-        className="fixed top-[50%] left-[50%] pointer-events-none z-0 mobile-bg-fix"
+        className="fixed inset-0 pointer-events-none z-0"
         style={{
-          backgroundImage: "url('/mobius_det.png')",
-          backgroundSize: 'contain',
-          backgroundPosition: 'center',
-          backgroundRepeat: 'no-repeat',
-          filter: 'blur(50px)',
-          opacity: 0.3,
-          transform: 'translate(-50%, -50%)',
-          width: '100vw',
-          height: '100vh',
-          minWidth: '1600px',
-          minHeight: '1600px'
+          background: 'radial-gradient(ellipse 80% 60% at 50% 40%, rgba(59, 130, 246, 0.08) 0%, rgba(59, 130, 246, 0.03) 40%, transparent 70%)',
         }}
       ></div>
 
       {/* Back button */}
       <button
         onClick={() => navigate('/')}
-        className="fixed top-4 left-4 md:top-8 md:left-8 lg:top-10 lg:left-10 z-50 w-10 h-10 flex items-center justify-center bg-blue-600 hover:bg-blue-500 backdrop-blur-sm rounded-full border-2 border-blue-400 shadow-lg shadow-blue-500/30 transition-all duration-200 group"
+        className="fixed top-4 left-4 md:top-8 md:left-8 lg:top-10 lg:left-10 z-50 w-10 h-10 flex items-center justify-center bg-blue-600 hover:bg-blue-500 rounded-full border-2 border-blue-400 shadow-lg shadow-blue-500/30 transition-all duration-200 group"
         aria-label="Retour à l'accueil"
       >
         <ArrowLeft className="w-5 h-5 text-white" />

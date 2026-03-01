@@ -36,9 +36,7 @@
 
 @layer utilities {
   .glass-card {
-    background: rgba(255, 255, 255, 0.03);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
+    background: rgba(255, 255, 255, 0.04);
     border: 1px solid rgba(255, 255, 255, 0.08);
     box-shadow:
       0 8px 32px 0 rgba(31, 38, 135, 0.15),
@@ -47,113 +45,27 @@
   }
 
   .glass-card-hover {
-    transition: background 0.4s cubic-bezier(0.4, 0, 0.2, 1),
-                border-color 0.4s cubic-bezier(0.4, 0, 0.2, 1),
-                box-shadow 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: background 0.4s ease,
+                border-color 0.4s ease,
+                box-shadow 0.4s ease;
   }
 
   .glass-card-hover:hover {
-    background: rgba(255, 255, 255, 0.05);
+    background: rgba(255, 255, 255, 0.07);
     border-color: rgba(96, 165, 250, 0.3);
     box-shadow:
-      0 20px 60px 0 rgba(96, 165, 250, 0.25),
+      0 20px 60px 0 rgba(96, 165, 250, 0.2),
       inset 0 1px 0 0 rgba(255, 255, 255, 0.1);
   }
 
   .glass-nav {
-    background: rgba(17, 24, 39, 0.6);
-    backdrop-filter: blur(24px) saturate(180%);
-    -webkit-backdrop-filter: blur(24px) saturate(180%);
+    background: rgba(17, 24, 39, 0.85);
     border: 1px solid rgba(255, 255, 255, 0.08);
     box-shadow:
       0 8px 32px 0 rgba(0, 0, 0, 0.37),
       inset 0 1px 0 0 rgba(255, 255, 255, 0.05);
   }
 
-  /* ───────────────────────────────────────────
-     Hero stagger animations (play on page load)
-     ─────────────────────────────────────────── */
-  .animate-slide-in-stagger-1 {
-    animation: heroFadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.1s both;
-  }
-
-  .animate-slide-in-stagger-2 {
-    animation: heroFadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.25s both;
-  }
-
-  .animate-slide-in-stagger-3 {
-    animation: heroFadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.4s both;
-  }
-
-  @keyframes heroFadeUp {
-    from {
-      opacity: 0;
-      transform: translateY(32px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-
-  /* Hero glass panel float */
-  .animate-float-delayed {
-    animation: floatDelayed 4s ease-in-out infinite;
-  }
-
-  @keyframes floatDelayed {
-    0%, 100% { transform: translateY(0px); }
-    50% { transform: translateY(-12px); }
-  }
-
-  .animate-pulse-glow {
-    animation: pulseGlow 3s ease-in-out infinite;
-  }
-
-  @keyframes pulseGlow {
-    0%, 100% {
-      box-shadow: 0 0 20px rgba(96, 165, 250, 0.3);
-    }
-    50% {
-      box-shadow: 0 0 40px rgba(96, 165, 250, 0.5), 0 0 60px rgba(96, 165, 250, 0.2);
-    }
-  }
-
-  /* ───────────────────────────────────────────
-     Scroll-reveal system
-     Elements start hidden, get .is-visible when
-     they enter the viewport.
-     ─────────────────────────────────────────── */
-  .reveal {
-    opacity: 0;
-    transform: translateY(24px);
-    transition:
-      opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1),
-      transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-    will-change: opacity, transform;
-  }
-
-  .reveal.is-visible {
-    opacity: 1;
-    transform: translateY(0);
-  }
-
-  .reveal.reveal-scale {
-    transform: scale(0.96);
-  }
-
-  .reveal.reveal-scale.is-visible {
-    transform: scale(1);
-  }
-
-  /* Stagger children with CSS custom property */
-  .reveal[style*="--delay"] {
-    transition-delay: var(--delay);
-  }
-
-  /* ───────────────────────────────────────────
-     Typography
-     ─────────────────────────────────────────── */
   .font-display {
     font-family: 'Playfair Display', serif;
   }
@@ -163,7 +75,101 @@
   }
 
   /* ───────────────────────────────────────────
-     Mobile overrides
+     Hero entrance (page load only)
+     Duration: 900ms -- slow enough to appreciate
+     Travel: 40px -- noticeable arc
+     Easing: ease-out -- fast start, gentle landing
+     Stagger: 200ms between elements
+     ─────────────────────────────────────────── */
+  .animate-slide-in-stagger-1 {
+    animation: heroFadeUp 0.9s cubic-bezier(0, 0, 0.2, 1) 0.15s both;
+  }
+
+  .animate-slide-in-stagger-2 {
+    animation: heroFadeUp 0.9s cubic-bezier(0, 0, 0.2, 1) 0.35s both;
+  }
+
+  .animate-slide-in-stagger-3 {
+    animation: heroFadeUp 0.9s cubic-bezier(0, 0, 0.2, 1) 0.55s both;
+  }
+
+  @keyframes heroFadeUp {
+    from {
+      opacity: 0;
+      transform: translateY(40px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-float-delayed {
+    animation: floatDelayed 5s ease-in-out infinite;
+  }
+
+  @keyframes floatDelayed {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+  }
+
+  .animate-pulse-glow {
+    animation: pulseGlow 4s ease-in-out infinite;
+  }
+
+  @keyframes pulseGlow {
+    0%, 100% {
+      box-shadow: 0 0 20px rgba(96, 165, 250, 0.2);
+    }
+    50% {
+      box-shadow: 0 0 40px rgba(96, 165, 250, 0.35), 0 0 60px rgba(96, 165, 250, 0.1);
+    }
+  }
+
+  /* ───────────────────────────────────────────
+     Scroll-reveal system
+
+     Design principles (NN/g, Apple, Linear):
+     - Duration 800ms: long enough to SEE the motion,
+       short enough to not feel like a delay
+     - Travel distance 48px: creates visible movement
+       arc that the eye can track
+     - Easing ease-out: element arrives quickly then
+       decelerates -- feels responsive but has a
+       satisfying "landing" the eye can follow
+     - rootMargin triggers 80px BEFORE the element
+       enters the viewport so the animation is already
+       in progress when the user's gaze reaches it
+     ─────────────────────────────────────────── */
+  .reveal {
+    opacity: 0;
+    transform: translateY(48px);
+    transition:
+      opacity 0.8s cubic-bezier(0, 0, 0.2, 1),
+      transform 0.8s cubic-bezier(0, 0, 0.2, 1);
+  }
+
+  .reveal.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .reveal.reveal-scale {
+    opacity: 0;
+    transform: scale(0.92) translateY(24px);
+  }
+
+  .reveal.reveal-scale.is-visible {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+
+  .reveal[style*="--delay"] {
+    transition-delay: var(--delay);
+  }
+
+  /* ───────────────────────────────────────────
+     Mobile: shorter travel, slightly faster
      ─────────────────────────────────────────── */
   @media (max-width: 640px) {
     .gpu-accelerated {
@@ -173,38 +179,54 @@
       backface-visibility: hidden;
     }
 
-    .mobile-bg-fix {
-      width: 200vw !important;
-      height: 200vh !important;
-      min-width: 800px !important;
-      min-height: 800px !important;
-    }
-
     .reveal {
-      transform: translateY(16px);
-      transition-duration: 0.5s;
+      transform: translateY(32px);
+      transition-duration: 0.7s;
     }
 
     .reveal.reveal-scale {
-      transform: scale(0.97);
+      transform: scale(0.95) translateY(16px);
     }
 
     .animate-slide-in-stagger-1 {
-      animation-name: heroFadeUp;
-      animation-duration: 0.6s;
-      animation-delay: 0.05s;
+      animation-duration: 0.7s;
+      animation-delay: 0.1s;
     }
 
     .animate-slide-in-stagger-2 {
-      animation-name: heroFadeUp;
-      animation-duration: 0.6s;
-      animation-delay: 0.15s;
+      animation-duration: 0.7s;
+      animation-delay: 0.25s;
     }
 
     .animate-slide-in-stagger-3 {
-      animation-name: heroFadeUp;
-      animation-duration: 0.6s;
-      animation-delay: 0.25s;
+      animation-duration: 0.7s;
+      animation-delay: 0.4s;
+    }
+  }
+
+  /* ───────────────────────────────────────────
+     Reduced motion: respect user preference
+     ─────────────────────────────────────────── */
+  @media (prefers-reduced-motion: reduce) {
+    .reveal {
+      transition-duration: 0.01s !important;
+      transform: none !important;
+    }
+
+    .reveal.reveal-scale {
+      transform: none !important;
+    }
+
+    .animate-slide-in-stagger-1,
+    .animate-slide-in-stagger-2,
+    .animate-slide-in-stagger-3 {
+      animation-duration: 0.01s !important;
+      animation-delay: 0s !important;
+    }
+
+    .animate-float-delayed,
+    .animate-pulse-glow {
+      animation: none !important;
     }
   }
 }
