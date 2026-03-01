@@ -6,10 +6,9 @@ function Audit() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    const script = document.createElement('script');
-    script.src = 'https://tally.so/widgets/embed.js';
-    script.async = true;
-    document.body.appendChild(script);
+    if (typeof window !== 'undefined' && (window as any).Tally) {
+      (window as any).Tally.loadEmbeds();
+    }
 
     document.body.style.overflow = 'hidden';
     document.body.style.position = 'fixed';
@@ -18,7 +17,6 @@ function Audit() {
     document.documentElement.style.overflow = 'hidden';
 
     return () => {
-      document.body.removeChild(script);
       document.body.style.overflow = '';
       document.body.style.position = '';
       document.body.style.width = '';
@@ -40,21 +38,7 @@ function Audit() {
       width: '100%',
       height: '100%'
     }}>
-      <div
-        className="fixed top-1/2 left-1/2 pointer-events-none z-0"
-        style={{
-          backgroundImage: "url('/mobius_det.png')",
-          backgroundSize: 'contain',
-          backgroundPosition: 'center',
-          backgroundRepeat: 'no-repeat',
-          filter: 'blur(50px)',
-          opacity: 0.3,
-          transform: 'translate(-50%, -50%)',
-          width: '160vw',
-          height: '160vh',
-          willChange: 'auto',
-        }}
-      ></div>
+      <div className="fixed inset-0 pointer-events-none z-0 bg-blur-overlay" aria-hidden="true"></div>
 
       {/* Back button */}
       <button
