@@ -41,24 +41,20 @@ function Audit() {
       height: '100%'
     }}>
       <div
-        aria-hidden="true"
+        className="fixed top-1/2 left-1/2 pointer-events-none z-0"
         style={{
-          position: 'absolute',
-          top: '50%',
-          left: '50%',
-          width: '120vw',
-          height: '120vw',
           backgroundImage: "url('/mobius_det.png')",
           backgroundSize: 'contain',
           backgroundPosition: 'center',
           backgroundRepeat: 'no-repeat',
-          filter: 'blur(60px)',
-          opacity: 0.28,
-          transform: 'translate(-50%, -50%) translateZ(0)',
-          pointerEvents: 'none',
-          zIndex: 0,
+          filter: 'blur(50px)',
+          opacity: 0.3,
+          transform: 'translate(-50%, -50%)',
+          width: '160vw',
+          height: '160vh',
+          willChange: 'auto',
         }}
-      />
+      ></div>
 
       {/* Back button */}
       <button
