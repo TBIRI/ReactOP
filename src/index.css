@@ -8,19 +8,29 @@
     min-height: 100vh;
   }
 
+  html::before {
+    content: '';
+    position: fixed;
+    top: -100vh;
+    left: 0;
+    right: 0;
+    height: 100vh;
+    background-color: #000000;
+    z-index: -1;
+    pointer-events: none;
+  }
+
   @media (max-width: 640px) {
     html {
       -webkit-overflow-scrolling: touch;
       scroll-behavior: auto;
       height: 100%;
       overflow-x: hidden;
-      overscroll-behavior: none;
     }
 
     body {
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
-      overscroll-behavior: none;
       position: relative;
       overflow-x: hidden;
       min-height: -webkit-fill-available;
@@ -29,7 +39,6 @@
     #root {
       min-height: 100vh;
       min-height: -webkit-fill-available;
-      overscroll-behavior: none;
     }
   }
 }
