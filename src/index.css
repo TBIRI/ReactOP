@@ -38,32 +38,23 @@
   .glass-card {
     background: rgba(255, 255, 255, 0.04);
     border: 1px solid rgba(255, 255, 255, 0.08);
-    box-shadow:
-      0 8px 32px 0 rgba(31, 38, 135, 0.15),
-      inset 0 1px 0 0 rgba(255, 255, 255, 0.05);
-    overflow: visible;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
+    contain: layout style paint;
   }
 
   .glass-card-hover {
-    transition: background 0.4s ease,
-                border-color 0.4s ease,
-                box-shadow 0.4s ease;
+    transition: background 0.3s ease, border-color 0.3s ease;
   }
 
   .glass-card-hover:hover {
     background: rgba(255, 255, 255, 0.07);
     border-color: rgba(96, 165, 250, 0.3);
-    box-shadow:
-      0 20px 60px 0 rgba(96, 165, 250, 0.2),
-      inset 0 1px 0 0 rgba(255, 255, 255, 0.1);
   }
 
   .glass-nav {
-    background: rgba(17, 24, 39, 0.85);
+    background: rgba(17, 24, 39, 0.9);
     border: 1px solid rgba(255, 255, 255, 0.08);
-    box-shadow:
-      0 8px 32px 0 rgba(0, 0, 0, 0.37),
-      inset 0 1px 0 0 rgba(255, 255, 255, 0.05);
+    contain: layout style paint;
   }
 
   .font-display {
@@ -105,25 +96,11 @@
   }
 
   .animate-float-delayed {
-    animation: floatDelayed 5s ease-in-out infinite;
-  }
-
-  @keyframes floatDelayed {
-    0%, 100% { transform: translateY(0px); }
-    50% { transform: translateY(-10px); }
+    animation: none;
   }
 
   .animate-pulse-glow {
-    animation: pulseGlow 4s ease-in-out infinite;
-  }
-
-  @keyframes pulseGlow {
-    0%, 100% {
-      box-shadow: 0 0 20px rgba(96, 165, 250, 0.2);
-    }
-    50% {
-      box-shadow: 0 0 40px rgba(96, 165, 250, 0.35), 0 0 60px rgba(96, 165, 250, 0.1);
-    }
+    box-shadow: 0 0 30px rgba(96, 165, 250, 0.25);
   }
 
   /* ───────────────────────────────────────────
@@ -232,18 +209,14 @@
 
   /* ───────────────────────────────────────────
      Background blur overlay - GPU optimized
-     Uses a static radial gradient instead of
-     runtime blur filter for better performance
      ─────────────────────────────────────────── */
   .bg-blur-overlay {
     background: radial-gradient(
       ellipse 80% 60% at 50% 50%,
-      rgba(59, 130, 246, 0.15) 0%,
-      rgba(59, 130, 246, 0.08) 30%,
-      rgba(59, 130, 246, 0.03) 60%,
+      rgba(59, 130, 246, 0.12) 0%,
+      rgba(59, 130, 246, 0.06) 40%,
       transparent 100%
     );
-    will-change: transform;
-    transform: translateZ(0);
+    contain: strict;
   }
 }
