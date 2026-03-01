@@ -11,15 +11,16 @@
   @media (max-width: 640px) {
     html {
       -webkit-overflow-scrolling: touch;
-      scroll-behavior: smooth;
+      scroll-behavior: auto;
       height: 100%;
       overflow-x: hidden;
+      overscroll-behavior: none;
     }
 
     body {
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
-      overscroll-behavior-y: none;
+      overscroll-behavior: none;
       position: relative;
       overflow-x: hidden;
       min-height: -webkit-fill-available;
@@ -28,6 +29,7 @@
     #root {
       min-height: 100vh;
       min-height: -webkit-fill-available;
+      overscroll-behavior: none;
     }
   }
 }
