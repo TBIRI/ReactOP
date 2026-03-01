@@ -229,7 +229,7 @@
   }
 
   /* ───────────────────────────────────────────
-     Mobius background - very subtle
+     Mobius background - blurred version
      ─────────────────────────────────────────── */
   .mobius-bg {
     position: fixed;
@@ -251,7 +251,7 @@
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
-    opacity: 0.025;
-    filter: blur(1px);
+    opacity: 0.08;
+    filter: blur(40px);
   }
 }
