@@ -243,7 +243,6 @@
     pointer-events: none;
     z-index: -1;
     overflow: hidden;
-    background-color: #000000;
   }
 
   .mobius-bg::before {
