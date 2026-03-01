@@ -189,24 +189,30 @@ function Home() {
         </div>
       </div>
 
-      <div
-        className="fixed top-1/2 left-1/2 pointer-events-none z-0"
-        style={{
-          backgroundImage: "url('/mobius_det.png')",
-          backgroundSize: 'contain',
-          backgroundPosition: 'center',
-          backgroundRepeat: 'no-repeat',
-          filter: 'blur(50px)',
-          opacity: 0.3,
-          transform: 'translate(-50%, -50%)',
-          width: '160vw',
-          height: '160vh',
-          willChange: 'auto',
-        }}
-      ></div>
-
       {/* Hero */}
-      <section className="min-h-[100svh] sm:min-h-[100vh] flex flex-col items-center justify-center relative overflow-hidden gpu-accelerated py-24 sm:py-28 md:py-32 lg:py-20 xl:py-24" role="banner" aria-label="Section hero" data-section="hero" itemScope itemType="https://schema.org/WPHeader">
+      <section className="min-h-[100svh] sm:min-h-[100vh] flex flex-col items-center justify-center relative overflow-hidden py-24 sm:py-28 md:py-32 lg:py-20 xl:py-24" role="banner" aria-label="Section hero" data-section="hero" itemScope itemType="https://schema.org/WPHeader">
+        {/* Mobius background — absolute inside hero, scrolls with page = no per-frame repaint */}
+        <div
+          aria-hidden="true"
+          className="absolute inset-0 pointer-events-none overflow-hidden"
+        >
+          <div
+            style={{
+              position: 'absolute',
+              top: '50%',
+              left: '50%',
+              width: '120vw',
+              height: '120vw',
+              backgroundImage: "url('/mobius_det.png')",
+              backgroundSize: 'contain',
+              backgroundPosition: 'center',
+              backgroundRepeat: 'no-repeat',
+              filter: 'blur(60px)',
+              opacity: 0.28,
+              transform: 'translate(-50%, -50%) translateZ(0)',
+            }}
+          />
+        </div>
         <div className="relative z-10 w-full px-6 sm:px-10">
           <div className="max-w-7xl mx-auto">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center">
