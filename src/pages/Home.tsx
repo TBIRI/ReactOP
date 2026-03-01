@@ -8,6 +8,16 @@ function useScrollReveal() {
   const init = useCallback(() => {
     if (observerRef.current) return;
 
+    const targets = document.querySelectorAll('.reveal');
+
+    const isMobile = window.innerWidth <= 640 ||
+      /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+
+    if (isMobile) {
+      targets.forEach((el) => el.classList.add('is-visible'));
+      return;
+    }
+
     observerRef.current = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -23,7 +33,6 @@ function useScrollReveal() {
       }
     );
 
-    const targets = document.querySelectorAll('.reveal');
     targets.forEach((el) => observerRef.current!.observe(el));
   }, []);
 
