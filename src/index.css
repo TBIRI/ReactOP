@@ -5,7 +5,23 @@
 @tailwind utilities;
 
 @layer base {
-  html, body {
+  html {
+    background-color: #000000;
+    min-height: 100%;
+    overflow-x: hidden;
+    overscroll-behavior: none;
+  }
+
+  body {
+    background-color: #000000;
+    min-height: 100vh;
+    overflow-x: hidden;
+    overscroll-behavior: none;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  #root {
     background-color: #000000;
     min-height: 100vh;
   }
@@ -14,21 +30,13 @@
     html {
       -webkit-overflow-scrolling: touch;
       scroll-behavior: smooth;
-      height: 100%;
-      overflow-x: hidden;
     }
 
     body {
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
-      overscroll-behavior-y: none;
-      position: relative;
-      overflow-x: hidden;
       min-height: -webkit-fill-available;
     }
 
     #root {
-      min-height: 100vh;
       min-height: -webkit-fill-available;
     }
   }
