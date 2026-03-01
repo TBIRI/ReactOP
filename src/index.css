@@ -154,68 +154,30 @@
   }
 
   /* ───────────────────────────────────────────
-     Mobile: optimized animations (lighter but fluid)
-     - Shorter distances, faster durations
-     - GPU-friendly transforms only
-     - No infinite animations
+     Mobile: NO animations - instant display
+     Many mobile devices skip/drop frames on
+     transitions, so we show content immediately
      ─────────────────────────────────────────── */
   @media (max-width: 640px) {
-    .gpu-accelerated {
-      -webkit-transform: translate3d(0, 0, 0);
-      transform: translate3d(0, 0, 0);
-      -webkit-backface-visibility: hidden;
-      backface-visibility: hidden;
-      will-change: transform, opacity;
-    }
-
-    .reveal {
-      opacity: 0;
-      transform: translateY(20px);
-      transition:
-        opacity 0.5s ease-out,
-        transform 0.5s ease-out;
-      will-change: transform, opacity;
-    }
-
-    .reveal.is-visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
+    .reveal,
     .reveal.reveal-scale {
-      opacity: 0;
-      transform: translateY(16px);
+      opacity: 1 !important;
+      transform: none !important;
+      transition: none !important;
     }
 
+    .reveal.is-visible,
     .reveal.reveal-scale.is-visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    .reveal[style*="--delay"] {
-      transition-delay: calc(var(--delay) * 0.5);
+      opacity: 1 !important;
+      transform: none !important;
     }
 
     .animate-slide-in-stagger-1,
     .animate-slide-in-stagger-2,
     .animate-slide-in-stagger-3 {
-      animation: mobileHeroFade 0.6s ease-out both;
-      will-change: transform, opacity;
-    }
-
-    .animate-slide-in-stagger-1 { animation-delay: 0.1s; }
-    .animate-slide-in-stagger-2 { animation-delay: 0.2s; }
-    .animate-slide-in-stagger-3 { animation-delay: 0.3s; }
-
-    @keyframes mobileHeroFade {
-      from {
-        opacity: 0;
-        transform: translateY(24px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
+      animation: none !important;
+      opacity: 1 !important;
+      transform: none !important;
     }
 
     .animate-pulse-glow {
@@ -224,11 +186,11 @@
     }
 
     .glass-card-hover {
-      transition: background 0.2s ease;
+      transition: none;
     }
 
     .bg-blur-overlay {
-      opacity: 0.5;
+      display: none;
     }
   }
 
