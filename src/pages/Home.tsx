@@ -190,9 +190,18 @@ function Home() {
       </div>
 
       <div
-        className="fixed inset-0 pointer-events-none z-0"
+        className="fixed top-1/2 left-1/2 pointer-events-none z-0"
         style={{
-          background: 'radial-gradient(ellipse 80% 60% at 50% 40%, rgba(59, 130, 246, 0.08) 0%, rgba(59, 130, 246, 0.03) 40%, transparent 70%)',
+          backgroundImage: "url('/mobius_det.png')",
+          backgroundSize: 'contain',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat',
+          filter: 'blur(50px)',
+          opacity: 0.3,
+          transform: 'translate(-50%, -50%)',
+          width: '160vw',
+          height: '160vh',
+          willChange: 'auto',
         }}
       ></div>
 
