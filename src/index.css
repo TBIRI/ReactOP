@@ -8,18 +8,6 @@
     min-height: 100vh;
   }
 
-  html::before {
-    content: '';
-    position: fixed;
-    top: -100vh;
-    left: 0;
-    right: 0;
-    height: 100vh;
-    background-color: #000000;
-    z-index: -1;
-    pointer-events: none;
-  }
-
   @media (max-width: 640px) {
     html {
       -webkit-overflow-scrolling: touch;
@@ -248,16 +236,20 @@
      ─────────────────────────────────────────── */
   .mobius-bg {
     position: fixed;
-    inset: 0;
+    top: -100vh;
+    left: 0;
+    right: 0;
+    bottom: 0;
     pointer-events: none;
     z-index: 0;
     overflow: hidden;
+    background-color: #000000;
   }
 
   .mobius-bg::before {
     content: '';
     position: absolute;
-    top: 50%;
+    top: calc(50% + 50vh);
     left: 50%;
     width: 140%;
     height: 140%;
