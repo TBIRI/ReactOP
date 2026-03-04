@@ -207,47 +207,108 @@ function Home() {
       ></div>
 
       {/* Hero */}
-      <section className="min-h-[100svh] sm:min-h-[100vh] flex flex-col items-center justify-center relative overflow-hidden gpu-accelerated" role="banner" aria-label="Section hero" data-section="hero" itemScope itemType="https://schema.org/WPHeader">
-        <div className="relative z-10 w-full px-6 sm:px-8 lg:px-12">
-          <div className="max-w-6xl mx-auto text-center">
-            <p className="font-sans text-sm sm:text-base tracking-[0.2em] uppercase text-blue-400/90 mb-6 sm:mb-8 animate-slide-in-stagger-1">
-              Agence Google Ads & CRO
-            </p>
-            <h1 className="font-display text-[2.5rem] leading-[1.1] sm:text-[3.5rem] md:text-[4.5rem] lg:text-[5.5rem] xl:text-[6rem] 2xl:text-[7rem] font-bold mb-6 sm:mb-8 animate-slide-in-stagger-1" itemProp="name headline">
-              <span className="bg-gradient-to-br from-white via-white to-gray-300 bg-clip-text text-transparent">Vos clients vous cherchent</span>
-              <br />
-              <span className="bg-gradient-to-br from-white via-white to-gray-300 bg-clip-text text-transparent">sur Google</span>
-              <br />
-              <span className="font-display italic bg-gradient-to-r from-blue-300 via-blue-400 to-blue-500 bg-clip-text text-transparent">Répondez présent</span>
-            </h1>
-            <p className="font-sans text-base sm:text-lg md:text-xl lg:text-xl text-gray-400 max-w-2xl mx-auto mb-10 sm:mb-12 leading-relaxed animate-slide-in-stagger-2" itemProp="description">
-              Nous aidons les entreprises B2B à capter la demande sur Google et la convertir en leads qualifiés.
-            </p>
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 animate-slide-in-stagger-3">
-              <button
-                onClick={() => navigate('/audit')}
-                className="group relative inline-flex items-center gap-3 px-8 py-4 sm:px-10 sm:py-5 font-sans font-semibold text-base sm:text-lg overflow-hidden rounded-full bg-blue-600 hover:bg-blue-500 shadow-lg shadow-blue-600/30 hover:shadow-blue-500/40 transition-all duration-300"
-                aria-label="Recevoir un audit gratuit avec ReactOP"
-                data-action="cta-primary"
-              >
-                <span className="relative text-white">
-                  Audit gratuit
-                </span>
-                <ArrowRight className="relative w-5 h-5 text-white group-hover:translate-x-1 transition-transform duration-300" aria-hidden="true" />
-              </button>
-              <button
-                onClick={() => scrollToSection('services')}
-                className="group inline-flex items-center gap-2 px-8 py-4 sm:px-10 sm:py-5 font-sans font-medium text-base sm:text-lg text-gray-300 hover:text-white rounded-full border border-gray-700 hover:border-gray-500 transition-all duration-300"
-              >
-                En savoir plus
-                <ChevronDown className="w-4 h-4 group-hover:translate-y-0.5 transition-transform duration-300" />
-              </button>
+      <section className="min-h-[100svh] sm:min-h-[100vh] flex items-center relative overflow-hidden gpu-accelerated pt-24 sm:pt-0" role="banner" aria-label="Section hero" data-section="hero" itemScope itemType="https://schema.org/WPHeader">
+        <div className="relative z-10 w-full px-6 sm:px-8 lg:px-16 xl:px-20">
+          <div className="max-w-7xl mx-auto">
+            <div className="grid lg:grid-cols-2 gap-12 lg:gap-8 items-center">
+              <div className="order-2 lg:order-1">
+                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-500/10 border border-blue-500/20 mb-8 animate-slide-in-stagger-1">
+                  <div className="w-2 h-2 rounded-full bg-blue-400 animate-pulse" />
+                  <span className="font-sans text-sm text-blue-300">Agence Google Ads & CRO</span>
+                </div>
+                <h1 className="font-display text-[2.75rem] leading-[1.05] sm:text-[3.5rem] md:text-[4rem] lg:text-[4.5rem] xl:text-[5rem] font-bold mb-6 sm:mb-8 animate-slide-in-stagger-1" itemProp="name headline">
+                  <span className="text-white">Vos clients vous</span>
+                  <br />
+                  <span className="text-white">cherchent sur </span>
+                  <span className="bg-gradient-to-r from-blue-400 to-blue-500 bg-clip-text text-transparent">Google</span>
+                </h1>
+                <p className="font-sans text-lg sm:text-xl text-gray-400 max-w-xl mb-10 leading-relaxed animate-slide-in-stagger-2" itemProp="description">
+                  Nous aidons les entreprises B2B a capter la demande et la convertir en <span className="text-white font-medium">leads qualifies</span>.
+                </p>
+                <div className="flex flex-col sm:flex-row items-start gap-4 animate-slide-in-stagger-3">
+                  <button
+                    onClick={() => navigate('/audit')}
+                    className="group relative inline-flex items-center gap-3 px-8 py-4 font-sans font-semibold text-base overflow-hidden rounded-xl bg-blue-600 hover:bg-blue-500 shadow-lg shadow-blue-600/25 hover:shadow-blue-500/35 transition-all duration-300"
+                    aria-label="Recevoir un audit gratuit avec ReactOP"
+                    data-action="cta-primary"
+                  >
+                    <span className="relative text-white">Audit gratuit</span>
+                    <ArrowRight className="relative w-5 h-5 text-white group-hover:translate-x-1 transition-transform duration-300" aria-hidden="true" />
+                  </button>
+                  <button
+                    onClick={() => scrollToSection('services')}
+                    className="group inline-flex items-center gap-2 px-8 py-4 font-sans font-medium text-base text-gray-400 hover:text-white transition-colors duration-300"
+                  >
+                    Decouvrir nos services
+                    <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
+                  </button>
+                </div>
+                <div className="mt-14 pt-8 border-t border-gray-800/50 animate-slide-in-stagger-3">
+                  <div className="flex items-center gap-8">
+                    <div>
+                      <div className="font-display text-3xl font-bold text-white">2M+</div>
+                      <div className="font-sans text-sm text-gray-500 mt-1">Budget gere</div>
+                    </div>
+                    <div className="w-px h-12 bg-gray-800" />
+                    <div>
+                      <div className="font-display text-3xl font-bold text-white">50+</div>
+                      <div className="font-sans text-sm text-gray-500 mt-1">Clients</div>
+                    </div>
+                    <div className="w-px h-12 bg-gray-800" />
+                    <div>
+                      <div className="font-display text-3xl font-bold text-white">3.5x</div>
+                      <div className="font-sans text-sm text-gray-500 mt-1">ROAS moyen</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="order-1 lg:order-2 relative animate-slide-in-stagger-2">
+                <div className="relative aspect-square max-w-lg mx-auto lg:ml-auto">
+                  <div className="absolute inset-0 bg-gradient-to-br from-blue-500/20 via-transparent to-blue-600/10 rounded-3xl" />
+                  <div className="absolute inset-4 sm:inset-8 glass-card rounded-2xl overflow-hidden">
+                    <div className="absolute top-0 left-0 right-0 h-10 bg-gray-900/80 flex items-center px-4 gap-2">
+                      <div className="w-3 h-3 rounded-full bg-red-500/80" />
+                      <div className="w-3 h-3 rounded-full bg-yellow-500/80" />
+                      <div className="w-3 h-3 rounded-full bg-green-500/80" />
+                      <span className="ml-4 text-xs text-gray-500 font-mono">google-ads-dashboard</span>
+                    </div>
+                    <div className="pt-14 px-4 pb-4 space-y-3">
+                      <div className="flex items-center justify-between p-3 bg-gray-800/50 rounded-lg">
+                        <span className="text-sm text-gray-400">Conversions</span>
+                        <span className="text-sm font-semibold text-green-400">+147%</span>
+                      </div>
+                      <div className="flex items-center justify-between p-3 bg-gray-800/50 rounded-lg">
+                        <span className="text-sm text-gray-400">CPA</span>
+                        <span className="text-sm font-semibold text-green-400">-32%</span>
+                      </div>
+                      <div className="flex items-center justify-between p-3 bg-gray-800/50 rounded-lg">
+                        <span className="text-sm text-gray-400">CTR</span>
+                        <span className="text-sm font-semibold text-blue-400">4.8%</span>
+                      </div>
+                      <div className="mt-4 h-24 bg-gray-800/30 rounded-lg flex items-end justify-around px-2 pb-2">
+                        <div className="w-6 bg-blue-500/60 rounded-t" style={{ height: '30%' }} />
+                        <div className="w-6 bg-blue-500/60 rounded-t" style={{ height: '45%' }} />
+                        <div className="w-6 bg-blue-500/60 rounded-t" style={{ height: '60%' }} />
+                        <div className="w-6 bg-blue-500/60 rounded-t" style={{ height: '55%' }} />
+                        <div className="w-6 bg-blue-500/80 rounded-t" style={{ height: '75%' }} />
+                        <div className="w-6 bg-blue-400 rounded-t" style={{ height: '90%' }} />
+                      </div>
+                    </div>
+                  </div>
+                  <div className="absolute -bottom-4 -left-4 sm:-bottom-6 sm:-left-6 glass-card rounded-xl p-4 animate-slide-in-stagger-3">
+                    <div className="flex items-center gap-3">
+                      <div className="w-10 h-10 rounded-full bg-green-500/20 flex items-center justify-center">
+                        <TrendingUp className="w-5 h-5 text-green-400" />
+                      </div>
+                      <div>
+                        <div className="text-xs text-gray-500">Ce mois</div>
+                        <div className="text-sm font-semibold text-white">+23 leads</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
-          </div>
-        </div>
-        <div className="absolute bottom-8 sm:bottom-12 left-1/2 -translate-x-1/2 animate-slide-in-stagger-3">
-          <div className="w-6 h-10 rounded-full border-2 border-gray-600 flex items-start justify-center p-2">
-            <div className="w-1 h-2 bg-gray-500 rounded-full animate-bounce" />
           </div>
         </div>
       </section>
