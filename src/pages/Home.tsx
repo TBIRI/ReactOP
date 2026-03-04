@@ -207,67 +207,39 @@ function Home() {
       ></div>
 
       {/* Hero */}
-      <section className="min-h-[100svh] sm:min-h-[100vh] flex flex-col items-center justify-center relative overflow-hidden gpu-accelerated py-24 sm:py-28 lg:py-20" role="banner" aria-label="Section hero" data-section="hero" itemScope itemType="https://schema.org/WPHeader">
+      <section className="min-h-[100svh] sm:min-h-[100vh] flex flex-col items-center justify-center relative overflow-hidden gpu-accelerated py-24 sm:py-28 md:py-32 lg:py-20 xl:py-24" role="banner" aria-label="Section hero" data-section="hero" itemScope itemType="https://schema.org/WPHeader">
         <div className="relative z-10 w-full px-6 sm:px-10">
           <div className="max-w-7xl mx-auto">
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 xl:gap-12 items-center">
-
-              {/* Text column */}
-              <div className="lg:col-span-6 xl:col-span-7 flex flex-col items-start">
-
-                {/* Eyebrow badge */}
-                <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-blue-500/30 bg-blue-500/10 mb-6 sm:mb-8 animate-slide-in-stagger-1">
-                  <span className="w-1.5 h-1.5 rounded-full bg-blue-400 animate-pulse"></span>
-                  <span className="font-sans text-xs sm:text-sm font-medium text-blue-300 tracking-wide uppercase">Agence SEO & SEA</span>
-                </div>
-
-                <h1 className="font-display font-bold animate-slide-in-stagger-1 mb-4 sm:mb-6 pb-1" itemProp="name headline">
-                  <span className="block text-[2.4rem] leading-[1.1] sm:text-[3.5rem] md:text-[4.5rem] lg:text-[3.6rem] xl:text-[4.2rem] 2xl:text-[5rem] bg-gradient-to-br from-white via-blue-50 to-blue-300 bg-clip-text text-transparent">
-                    Vos clients vous cherchent
-                  </span>
-                  <span className="block text-[2.4rem] leading-[1.1] sm:text-[3.5rem] md:text-[4.5rem] lg:text-[3.6rem] xl:text-[4.2rem] 2xl:text-[5rem] bg-gradient-to-br from-white via-blue-50 to-blue-300 bg-clip-text text-transparent">
-                    sur Google —
-                  </span>
-                  <span className="block text-[2.4rem] leading-[1.15] sm:text-[3.5rem] md:text-[4.5rem] lg:text-[3.6rem] xl:text-[4.2rem] 2xl:text-[5rem] font-display italic bg-gradient-to-r from-blue-300 via-blue-400 to-blue-500 bg-clip-text text-transparent mt-1">
-                    Répondez présent.
-                  </span>
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center">
+              <div className="lg:col-span-7 lg:col-start-1">
+                <h1 className="font-display text-[2.75rem] leading-[1.12] sm:text-[5rem] md:text-[6.5rem] lg:text-[5rem] lg:leading-[1.08] xl:text-[5.5rem] 2xl:text-[7.5rem] font-bold bg-gradient-to-br from-white via-blue-100 to-blue-400 bg-clip-text text-transparent mb-4 sm:mb-6 md:mb-8 lg:mb-5 xl:mb-8 pb-2 sm:pb-3 animate-slide-in-stagger-1" itemProp="name headline">
+                  Vos clients vous cherchent sur Google <span className="font-display italic whitespace-nowrap">Répondez présent</span>
                 </h1>
-
-                <p className="font-sans text-sm leading-relaxed sm:text-base md:text-lg lg:text-base xl:text-lg 2xl:text-xl mb-8 sm:mb-10 text-gray-400 max-w-md animate-slide-in-stagger-2" itemProp="description">
-                  Nous aidons les entreprises à capter la demande sur{' '}
-                  <span className="font-semibold text-gray-200">Google</span>{' '}
-                  et la convertir en{' '}
-                  <span className="font-semibold text-blue-300">leads qualifiés</span>.
+                <p className="font-sans text-base leading-relaxed sm:text-xl md:text-2xl lg:text-lg xl:text-xl 2xl:text-[30px] mb-8 sm:mb-10 md:mb-12 lg:mb-8 xl:mb-12 text-gray-300 max-w-xl animate-slide-in-stagger-2" itemProp="description">
+                  Nous aidons les entreprises à capter la demande sur <span className="font-semibold bg-gradient-to-r from-gray-200 to-blue-300 bg-clip-text text-transparent">Google</span> et la convertir en <span className="font-semibold bg-gradient-to-r from-gray-200 to-blue-300 bg-clip-text text-transparent">leads qualifiés</span>
                 </p>
-
                 <button
                   onClick={() => navigate('/audit')}
-                  className="group relative inline-flex items-center gap-3 px-6 py-3.5 sm:px-8 sm:py-4 font-sans font-bold text-sm sm:text-base overflow-hidden rounded-xl bg-blue-600 hover:bg-blue-500 border border-blue-400/60 shadow-lg shadow-blue-500/30 hover:shadow-blue-400/50 transition-all duration-300 animate-slide-in-stagger-3"
+                  className="group relative inline-flex items-center gap-2 sm:gap-3 px-6 py-3 sm:px-10 sm:py-6 md:px-10 md:py-6 lg:px-7 lg:py-4 xl:px-9 xl:py-5 font-sans font-bold text-base sm:text-xl md:text-2xl lg:text-base xl:text-lg 2xl:text-2xl overflow-hidden rounded-2xl bg-blue-600 hover:bg-blue-500 border-2 border-blue-400 shadow-xl shadow-blue-500/40 hover:shadow-blue-400/60 transition-all animate-slide-in-stagger-3"
                   aria-label="Recevoir un audit gratuit avec ReactOP"
                   data-action="cta-primary"
                 >
                   <span className="relative text-white whitespace-nowrap">
                     Recevez votre audit gratuit
                   </span>
-                  <ArrowRight className="relative w-4 h-4 text-white group-hover:translate-x-1 transition-transform duration-300" aria-hidden="true" />
+                  <ArrowRight className="relative w-4 h-4 sm:w-6 sm:h-6 md:w-7 md:h-7 lg:w-5 lg:h-5 xl:w-5 xl:h-5 2xl:w-7 2xl:h-7 text-white group-hover:translate-x-1 transition-transform" aria-hidden="true" />
                 </button>
               </div>
 
-              {/* Visual card column */}
-              <div className="hidden lg:flex lg:col-span-6 xl:col-span-5 items-center justify-center opacity-0 animate-slide-in-stagger-3">
-                <div className="w-full max-w-sm xl:max-w-md glass-card rounded-3xl p-8 xl:p-12 aspect-square flex flex-col items-center justify-center gap-6 animate-pulse-glow">
+              <div className="hidden lg:block lg:col-span-5 lg:col-start-8 opacity-0 animate-slide-in-stagger-3">
+                <div className="glass-card rounded-3xl p-10 lg:p-14 xl:p-16 aspect-square flex items-center justify-center animate-pulse-glow">
                   <div className="text-center">
-                    <div className="font-display text-3xl xl:text-4xl 2xl:text-5xl font-bold bg-gradient-to-br from-blue-200 via-blue-400 to-blue-600 bg-clip-text text-transparent leading-tight mb-3">
+                    <div className="font-display text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl font-bold bg-gradient-to-br from-blue-300 via-blue-400 to-blue-500 bg-clip-text text-transparent leading-tight">
                       Boosté par l'IA
                     </div>
-                    <div className="w-12 h-0.5 bg-gradient-to-r from-blue-500 to-transparent mx-auto"></div>
                   </div>
-                  <p className="font-sans text-sm xl:text-base text-gray-400 text-center max-w-[180px] leading-relaxed">
-                    Optimisation continue, résultats mesurables
-                  </p>
                 </div>
               </div>
-
             </div>
           </div>
         </div>
