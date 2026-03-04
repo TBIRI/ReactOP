@@ -216,7 +216,7 @@ function Home() {
           </div>
         </div>
 
-        <div className="relative z-10 flex-1 flex items-center w-full px-6 sm:px-8 lg:px-16 xl:px-24 pt-28 pb-16 sm:pt-0 sm:pb-0">
+        <div className="relative z-10 flex-1 flex items-start sm:items-center w-full px-6 sm:px-8 lg:px-16 xl:px-24 pt-24 sm:pt-0">
           <div className="max-w-7xl mx-auto w-full">
             <div className="grid lg:grid-cols-12 gap-8 lg:gap-12 items-center">
               <div className="lg:col-span-8 xl:col-span-7">
@@ -291,7 +291,7 @@ function Home() {
           </div>
         </div>
 
-        <div className="relative z-10 flex justify-center pb-8 sm:pb-12 animate-slide-in-stagger-3" aria-hidden="true">
+        <div className="relative z-10 flex justify-center pb-6 sm:pb-12 animate-slide-in-stagger-3" aria-hidden="true">
           <button
             onClick={() => scrollToSection('services')}
             className="flex flex-col items-center gap-2 text-gray-500 hover:text-gray-300 transition-colors duration-300"
