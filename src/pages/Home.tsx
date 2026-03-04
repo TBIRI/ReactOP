@@ -108,9 +108,7 @@ function Home() {
             aria-label="Retour en haut"
           >
             <img src="/mobius_det.png" alt="ReactOP" className="w-10 h-10 md:w-12 md:h-12 cursor-pointer hover:opacity-80 transition-opacity" itemProp="logo" />
-            <span className="font-logo text-xl md:text-2xl font-semibold tracking-tight">
-              <span className="text-white">React</span><span className="text-blue-400">OP</span>
-            </span>
+            <span className="font-logo text-xl md:text-2xl font-semibold tracking-tight text-white">ReactOP</span>
           </button>
 
           <button
@@ -434,9 +432,7 @@ function Home() {
             <div className="text-center md:text-left" itemScope itemType="https://schema.org/Organization">
               <div className="flex items-center justify-center md:justify-start gap-2 sm:gap-3 lg:gap-4 mb-2 sm:mb-3">
                 <img src="/mobius_det.png" alt="ReactOP" className="h-8 w-8 sm:h-10 sm:w-10 lg:h-12 lg:w-12" itemProp="logo" />
-                <div className="font-logo text-xl sm:text-2xl lg:text-3xl font-semibold tracking-tight" itemProp="name">
-                  <span className="text-white">React</span><span className="text-blue-400">OP</span>
-                </div>
+                <div className="font-logo text-xl sm:text-2xl lg:text-3xl font-semibold tracking-tight text-white" itemProp="name">ReactOP</div>
               </div>
               <p className="font-sans text-sm sm:text-base lg:text-lg text-gray-400" itemProp="copyrightNotice">&copy; 2026 ReactOP. Tous droits reserves.</p>
             </div>
