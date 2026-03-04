@@ -234,46 +234,46 @@ function Home() {
                 </div>
               </div>
               <div className="order-1 lg:order-2 relative animate-slide-in-stagger-2">
-                <div className="relative aspect-square max-w-lg mx-auto lg:ml-auto">
-                  <div className="absolute inset-0 bg-gradient-to-br from-blue-500/20 via-transparent to-blue-600/10 rounded-3xl" />
-                  <div className="absolute inset-4 sm:inset-8 glass-card rounded-2xl overflow-hidden">
-                    <div className="absolute top-0 left-0 right-0 h-10 bg-gray-900/80 flex items-center px-4 gap-2">
-                      <div className="w-3 h-3 rounded-full bg-red-500/80" />
-                      <div className="w-3 h-3 rounded-full bg-yellow-500/80" />
-                      <div className="w-3 h-3 rounded-full bg-green-500/80" />
-                      <span className="ml-4 text-xs text-gray-500 font-mono">google-ads-dashboard</span>
-                    </div>
-                    <div className="pt-14 px-4 pb-4 space-y-3">
-                      <div className="flex items-center justify-between p-3 bg-gray-800/50 rounded-lg">
-                        <span className="text-sm text-gray-400">Conversions</span>
-                        <span className="text-sm font-semibold text-green-400">+147%</span>
+                <div className="relative max-w-md mx-auto lg:ml-auto">
+                  <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 via-transparent to-blue-600/5 rounded-3xl blur-2xl" />
+                  <div className="relative flex flex-col items-center gap-6 py-8">
+                    <div className="glass-card rounded-2xl p-5 w-full max-w-xs animate-slide-in-stagger-2">
+                      <div className="flex items-center gap-3 mb-3">
+                        <div className="w-8 h-8 rounded-lg bg-blue-500/20 flex items-center justify-center">
+                          <svg className="w-5 h-5 text-blue-400" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+                            <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+                            <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/>
+                            <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/>
+                          </svg>
+                        </div>
+                        <span className="text-sm text-gray-400">Recherche Google</span>
                       </div>
-                      <div className="flex items-center justify-between p-3 bg-gray-800/50 rounded-lg">
-                        <span className="text-sm text-gray-400">CPA</span>
-                        <span className="text-sm font-semibold text-green-400">-32%</span>
-                      </div>
-                      <div className="flex items-center justify-between p-3 bg-gray-800/50 rounded-lg">
-                        <span className="text-sm text-gray-400">CTR</span>
-                        <span className="text-sm font-semibold text-blue-400">4.8%</span>
-                      </div>
-                      <div className="mt-4 h-24 bg-gray-800/30 rounded-lg flex items-end justify-around px-2 pb-2">
-                        <div className="w-6 bg-blue-500/60 rounded-t" style={{ height: '30%' }} />
-                        <div className="w-6 bg-blue-500/60 rounded-t" style={{ height: '45%' }} />
-                        <div className="w-6 bg-blue-500/60 rounded-t" style={{ height: '60%' }} />
-                        <div className="w-6 bg-blue-500/60 rounded-t" style={{ height: '55%' }} />
-                        <div className="w-6 bg-blue-500/80 rounded-t" style={{ height: '75%' }} />
-                        <div className="w-6 bg-blue-400 rounded-t" style={{ height: '90%' }} />
+                      <div className="bg-gray-800/60 rounded-xl p-3">
+                        <div className="flex items-center gap-2 text-gray-300 text-sm">
+                          <span className="text-gray-500">|</span>
+                          <span className="typing-animation">votre service + ville</span>
+                        </div>
                       </div>
                     </div>
-                  </div>
-                  <div className="absolute -bottom-4 -left-4 sm:-bottom-6 sm:-left-6 glass-card rounded-xl p-4 animate-slide-in-stagger-3">
-                    <div className="flex items-center gap-3">
-                      <div className="w-10 h-10 rounded-full bg-green-500/20 flex items-center justify-center">
-                        <TrendingUp className="w-5 h-5 text-green-400" />
+                    <div className="flex flex-col items-center gap-1">
+                      <div className="w-px h-8 bg-gradient-to-b from-blue-500/50 to-transparent" />
+                      <ArrowRight className="w-5 h-5 text-blue-400 rotate-90" />
+                    </div>
+                    <div className="glass-card rounded-2xl p-5 w-full max-w-xs border border-green-500/20 animate-slide-in-stagger-3">
+                      <div className="flex items-center gap-3 mb-3">
+                        <div className="w-8 h-8 rounded-lg bg-green-500/20 flex items-center justify-center">
+                          <MousePointerClick className="w-5 h-5 text-green-400" />
+                        </div>
+                        <span className="text-sm text-gray-400">Lead qualifie</span>
                       </div>
-                      <div>
-                        <div className="text-xs text-gray-500">Ce mois</div>
-                        <div className="text-sm font-semibold text-white">+23 leads</div>
+                      <div className="bg-gray-800/60 rounded-xl p-3 space-y-2">
+                        <div className="h-2 bg-gray-700 rounded w-3/4" />
+                        <div className="h-2 bg-gray-700 rounded w-1/2" />
+                        <div className="flex items-center gap-2 mt-3">
+                          <div className="w-6 h-6 rounded-full bg-green-500/30" />
+                          <div className="h-2 bg-green-500/40 rounded w-20" />
+                        </div>
                       </div>
                     </div>
                   </div>
