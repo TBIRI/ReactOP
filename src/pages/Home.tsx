@@ -1,4 +1,4 @@
-import { ArrowRight, TrendingUp, MousePointerClick, Menu, X, ChevronDown } from 'lucide-react';
+import { ArrowRight, TrendingUp, MousePointerClick, Menu, X, ChevronDown, Target, Zap, BarChart3, Users } from 'lucide-react';
 import { useState, useEffect, useRef, useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
 
@@ -48,6 +48,7 @@ function useScrollReveal() {
 function Home() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(null);
+  const [isScrolled, setIsScrolled] = useState(false);
   const navigate = useNavigate();
 
   const scrollToSection = (id: string) => {
@@ -57,6 +58,14 @@ function Home() {
       setIsMobileMenuOpen(false);
     }
   };
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 50);
+    };
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   useEffect(() => {
     if (typeof window !== 'undefined' && (window as any).Tally) {
@@ -84,10 +93,10 @@ function Home() {
   ];
 
   const steps = [
-    { num: "01", title: "Analyse", desc: "Audit marketing & identification des points de friction sur le tunnel de conversion" },
-    { num: "02", title: "Stratégie", desc: "Priorisation des leviers à plus fort impact et définition de vos objectifs et indicateurs de succès" },
-    { num: "03", title: "Déploiement", desc: "Conception des campagnes et optimisation de la conversion" },
-    { num: "04", title: "Optimisation continue", desc: "Améliorations régulières et suivi des résultats basés sur le volume et la qualité des demandes" }
+    { num: "01", title: "Analyse", desc: "Audit marketing & identification des points de friction sur le tunnel de conversion", icon: Target },
+    { num: "02", title: "Stratégie", desc: "Priorisation des leviers à plus fort impact et définition de vos objectifs et indicateurs de succès", icon: Zap },
+    { num: "03", title: "Déploiement", desc: "Conception des campagnes et optimisation de la conversion", icon: BarChart3 },
+    { num: "04", title: "Optimisation continue", desc: "Améliorations régulières et suivi des résultats basés sur le volume et la qualité des demandes", icon: Users }
   ];
 
   const faqs = [
@@ -99,86 +108,88 @@ function Home() {
   ];
 
   return (
-    <div className="min-h-screen bg-black text-white overflow-x-hidden" itemScope itemType="https://schema.org/WebPage">
-      <nav className="fixed top-6 md:top-8 left-1/2 -translate-x-1/2 z-50 w-[95%] sm:w-[90%] max-w-6xl px-2 sm:px-4" role="navigation" aria-label="Navigation principale">
-        <div className="flex items-center justify-between px-0 md:px-8 py-2 md:py-3 md:glass-nav md:rounded-full md:shadow-2xl">
-          <button
-            onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-            className="flex items-center gap-2 md:ml-0"
-            aria-label="Retour en haut"
-          >
-            <img src="/mobius_det.png" alt="ReactOP" className="w-10 h-10 md:w-12 md:h-12 cursor-pointer hover:opacity-80 transition-opacity" itemProp="logo" />
-            <span className="text-lg md:text-xl font-semibold bg-gradient-to-r from-white to-blue-400 bg-clip-text text-transparent">ReactOP</span>
-          </button>
+    <div className="min-h-screen bg-[#0a0a0f] text-white overflow-x-hidden" itemScope itemType="https://schema.org/WebPage">
+      <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${isScrolled ? 'py-3 bg-[#0a0a0f]/80 backdrop-blur-xl border-b border-white/5' : 'py-6'}`} role="navigation" aria-label="Navigation principale">
+        <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
+          <div className="flex items-center justify-between">
+            <button
+              onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+              className="flex items-center gap-3"
+              aria-label="Retour en haut"
+            >
+              <img src="/mobius_det.png" alt="ReactOP" className="w-10 h-10 cursor-pointer hover:opacity-80 transition-opacity" itemProp="logo" />
+              <span className="text-xl font-semibold text-white">ReactOP</span>
+            </button>
 
-          <button
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="md:hidden p-2 text-gray-300 hover:text-white transition-colors"
-            aria-label="Menu"
-          >
-            {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-          </button>
+            <button
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              className="md:hidden p-2 text-gray-400 hover:text-white transition-colors"
+              aria-label="Menu"
+            >
+              {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            </button>
 
-          <button
-            onClick={() => scrollToSection('services')}
-            className="hidden md:block px-2 sm:px-3 md:px-8 py-1.5 sm:py-2 md:py-2.5 rounded-full text-[10px] sm:text-xs md:text-base font-sans font-medium text-gray-300 hover:text-white hover:bg-gray-800/50 transition-all duration-200"
-            aria-label="Naviguer vers la section services"
-          >
-            services
-          </button>
+            <div className="hidden md:flex items-center gap-1">
+              <button
+                onClick={() => scrollToSection('services')}
+                className="px-5 py-2.5 text-sm font-medium text-gray-400 hover:text-white transition-colors"
+                aria-label="Naviguer vers la section services"
+              >
+                Services
+              </button>
 
-          <button
-            onClick={() => scrollToSection('processus')}
-            className="hidden md:block px-2 sm:px-3 md:px-8 py-1.5 sm:py-2 md:py-2.5 rounded-full text-[10px] sm:text-xs md:text-base font-sans font-medium text-gray-300 hover:text-white hover:bg-gray-800/50 transition-all duration-200"
-            aria-label="Naviguer vers la section processus"
-          >
-            processus
-          </button>
+              <button
+                onClick={() => scrollToSection('processus')}
+                className="px-5 py-2.5 text-sm font-medium text-gray-400 hover:text-white transition-colors"
+                aria-label="Naviguer vers la section processus"
+              >
+                Processus
+              </button>
 
-          <button
-            onClick={() => scrollToSection('contact')}
-            className="hidden md:block px-2 sm:px-3 md:px-8 py-1.5 sm:py-2 md:py-2.5 rounded-full text-[10px] sm:text-xs md:text-base font-sans font-medium text-gray-300 hover:text-white hover:bg-gray-800/50 transition-all duration-200"
-            aria-label="Naviguer vers la section contact"
-          >
-            contact
-          </button>
+              <button
+                onClick={() => scrollToSection('contact')}
+                className="px-5 py-2.5 text-sm font-medium text-gray-400 hover:text-white transition-colors"
+                aria-label="Naviguer vers la section contact"
+              >
+                Contact
+              </button>
 
-          <button
-            onClick={() => navigate('/audit')}
-            className="group hidden md:inline-flex items-center px-2 sm:px-3 md:px-6 py-1.5 sm:py-2 md:py-2.5 bg-blue-600 hover:bg-blue-500 border-2 border-blue-400 font-sans font-semibold text-[10px] sm:text-xs md:text-base rounded-full whitespace-nowrap relative overflow-hidden shadow-lg shadow-blue-500/30 transition-all"
-          >
-            <span className="relative text-white">
-              Audit gratuit
-            </span>
-          </button>
+              <button
+                onClick={() => navigate('/audit')}
+                className="ml-4 px-6 py-2.5 bg-white text-[#0a0a0f] text-sm font-semibold rounded-full hover:bg-gray-100 transition-all duration-300"
+              >
+                Audit gratuit
+              </button>
+            </div>
+          </div>
         </div>
       </nav>
 
       <div
-        className={`fixed inset-0 bg-black/60 backdrop-blur-sm z-40 md:hidden transition-all duration-300 ${isMobileMenuOpen ? 'opacity-100 visible' : 'opacity-0 invisible pointer-events-none'}`}
+        className={`fixed inset-0 bg-black/80 backdrop-blur-md z-40 md:hidden transition-all duration-300 ${isMobileMenuOpen ? 'opacity-100 visible' : 'opacity-0 invisible pointer-events-none'}`}
         onClick={() => setIsMobileMenuOpen(false)}
       ></div>
 
-      <div className={`fixed top-[88px] left-1/2 -translate-x-1/2 w-[95%] sm:w-[90%] z-50 md:hidden transition-all duration-300 ${isMobileMenuOpen ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-4 pointer-events-none'}`}>
-        <div className="glass-nav rounded-3xl shadow-2xl p-6">
-          <div className="flex flex-col space-y-2">
+      <div className={`fixed top-20 left-4 right-4 z-50 md:hidden transition-all duration-300 ${isMobileMenuOpen ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-4 pointer-events-none'}`}>
+        <div className="bg-[#141419] rounded-2xl border border-white/10 p-6">
+          <div className="flex flex-col space-y-1">
             <button
               onClick={() => scrollToSection('services')}
-              className="font-sans text-2xl font-medium text-white py-3 text-left hover:text-blue-400 transition-colors px-4 rounded-xl hover:bg-gray-800/50"
+              className="text-lg font-medium text-white py-3 text-left hover:text-blue-400 transition-colors px-4 rounded-xl hover:bg-white/5"
             >
               Services
             </button>
 
             <button
               onClick={() => scrollToSection('processus')}
-              className="font-sans text-2xl font-medium text-white py-3 text-left hover:text-blue-400 transition-colors px-4 rounded-xl hover:bg-gray-800/50"
+              className="text-lg font-medium text-white py-3 text-left hover:text-blue-400 transition-colors px-4 rounded-xl hover:bg-white/5"
             >
               Processus
             </button>
 
             <button
               onClick={() => scrollToSection('contact')}
-              className="font-sans text-2xl font-medium text-white py-3 text-left hover:text-blue-400 transition-colors px-4 rounded-xl hover:bg-gray-800/50"
+              className="text-lg font-medium text-white py-3 text-left hover:text-blue-400 transition-colors px-4 rounded-xl hover:bg-white/5"
             >
               Contact
             </button>
@@ -189,93 +200,71 @@ function Home() {
                   navigate('/audit');
                   setIsMobileMenuOpen(false);
                 }}
-                className="group relative w-full flex items-center justify-center px-8 py-3 bg-blue-600 hover:bg-blue-500 border-2 border-blue-400 font-sans font-semibold text-lg rounded-2xl overflow-hidden shadow-lg shadow-blue-500/30 transition-all"
+                className="w-full py-3.5 bg-white text-[#0a0a0f] font-semibold text-base rounded-xl transition-all"
               >
-                <span className="relative text-white">
-                  Audit gratuit
-                </span>
+                Audit gratuit
               </button>
             </div>
           </div>
         </div>
       </div>
 
-      <div className="mobius-bg" aria-hidden="true"></div>
-      <div
-        className="fixed inset-0 pointer-events-none z-0 bg-blur-overlay"
-        aria-hidden="true"
-      ></div>
+      <section className="min-h-[100svh] sm:min-h-[100vh] flex items-center relative overflow-hidden pt-20" role="banner" aria-label="Section hero" data-section="hero" itemScope itemType="https://schema.org/WPHeader">
+        <div className="absolute inset-0 overflow-hidden">
+          <div className="absolute top-1/4 -left-1/4 w-[800px] h-[800px] bg-blue-500/10 rounded-full blur-[120px]" />
+          <div className="absolute bottom-1/4 -right-1/4 w-[600px] h-[600px] bg-emerald-500/8 rounded-full blur-[100px]" />
+          <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:72px_72px]" />
+        </div>
 
-      {/* Hero */}
-      <section className="min-h-[100svh] sm:min-h-[100vh] flex items-center relative overflow-hidden gpu-accelerated pt-24 sm:pt-0" role="banner" aria-label="Section hero" data-section="hero" itemScope itemType="https://schema.org/WPHeader">
-        <div className="relative z-10 w-full px-6 sm:px-8 lg:px-16 xl:px-20">
+        <div className="relative z-10 w-full px-6 sm:px-8 lg:px-12">
           <div className="max-w-7xl mx-auto">
-            <div className="grid lg:grid-cols-2 gap-12 lg:gap-8 items-center">
-              <div className="order-2 lg:order-1">
-                <h1 className="font-display text-[2.75rem] leading-[1.05] sm:text-[3.5rem] md:text-[4rem] lg:text-[4.5rem] xl:text-[5rem] font-bold mb-6 sm:mb-8 animate-slide-in-stagger-1" itemProp="name headline">
+            <div className="max-w-4xl">
+              <div className="animate-slide-in-stagger-1">
+                <h1 className="text-[3rem] leading-[1.1] sm:text-[4rem] md:text-[5rem] lg:text-[6rem] font-bold tracking-tight mb-8" itemProp="name headline">
                   <span className="text-white">Vos clients vous</span>
                   <br />
                   <span className="text-white">cherchent sur </span>
-                  <span className="bg-gradient-to-r from-blue-400 to-blue-500 bg-clip-text text-transparent">Google</span>
+                  <span className="text-blue-400">Google</span>
                 </h1>
-                <p className="font-sans text-lg sm:text-xl text-gray-400 max-w-xl mb-10 leading-relaxed animate-slide-in-stagger-2" itemProp="description">
-                  Nous aidons les entreprises ambitieuses a capter la demande sur <span className="bg-gradient-to-r from-blue-400 via-blue-500 to-blue-400 bg-clip-text text-transparent font-semibold">Google</span> et a la transformer en <span className="bg-gradient-to-r from-emerald-400 via-teal-400 to-emerald-400 bg-clip-text text-transparent font-semibold">leads qualifies</span>.
-                </p>
-                <div className="flex items-start animate-slide-in-stagger-3">
-                  <button
-                    onClick={() => navigate('/audit')}
-                    className="group relative inline-flex items-center gap-3 px-8 py-4 font-sans font-semibold text-base overflow-hidden rounded-xl bg-blue-600 hover:bg-blue-500 shadow-lg shadow-blue-600/25 hover:shadow-blue-500/35 transition-all duration-300"
-                    aria-label="Recevoir un audit gratuit avec ReactOP"
-                    data-action="cta-primary"
-                  >
-                    <span className="relative text-white">Recevez votre audit gratuit</span>
-                    <ArrowRight className="relative w-5 h-5 text-white group-hover:translate-x-1 transition-transform duration-300" aria-hidden="true" />
-                  </button>
-                </div>
               </div>
-              <div className="order-1 lg:order-2 relative animate-slide-in-stagger-2">
-                <div className="relative aspect-square max-w-lg mx-auto lg:ml-auto">
-                  <div className="absolute inset-0 bg-gradient-to-br from-blue-500/20 via-transparent to-blue-600/10 rounded-3xl" />
-                  <div className="absolute inset-4 sm:inset-8 glass-card rounded-2xl overflow-hidden">
-                    <div className="absolute top-0 left-0 right-0 h-10 bg-gray-900/80 flex items-center px-4 gap-2">
-                      <div className="w-3 h-3 rounded-full bg-red-500/80" />
-                      <div className="w-3 h-3 rounded-full bg-yellow-500/80" />
-                      <div className="w-3 h-3 rounded-full bg-green-500/80" />
-                      <span className="ml-4 text-xs text-gray-500 font-mono">google-ads-dashboard</span>
-                    </div>
-                    <div className="pt-14 px-4 pb-4 space-y-3">
-                      <div className="flex items-center justify-between p-3 bg-gray-800/50 rounded-lg">
-                        <span className="text-sm text-gray-400">Conversions</span>
-                        <span className="text-sm font-semibold text-green-400">+147%</span>
-                      </div>
-                      <div className="flex items-center justify-between p-3 bg-gray-800/50 rounded-lg">
-                        <span className="text-sm text-gray-400">CPA</span>
-                        <span className="text-sm font-semibold text-green-400">-32%</span>
-                      </div>
-                      <div className="flex items-center justify-between p-3 bg-gray-800/50 rounded-lg">
-                        <span className="text-sm text-gray-400">CTR</span>
-                        <span className="text-sm font-semibold text-blue-400">4.8%</span>
-                      </div>
-                      <div className="mt-4 h-24 bg-gray-800/30 rounded-lg flex items-end justify-around px-2 pb-2">
-                        <div className="w-6 bg-blue-500/60 rounded-t" style={{ height: '30%' }} />
-                        <div className="w-6 bg-blue-500/60 rounded-t" style={{ height: '45%' }} />
-                        <div className="w-6 bg-blue-500/60 rounded-t" style={{ height: '60%' }} />
-                        <div className="w-6 bg-blue-500/60 rounded-t" style={{ height: '55%' }} />
-                        <div className="w-6 bg-blue-500/80 rounded-t" style={{ height: '75%' }} />
-                        <div className="w-6 bg-blue-400 rounded-t" style={{ height: '90%' }} />
-                      </div>
-                    </div>
+
+              <div className="animate-slide-in-stagger-2">
+                <p className="text-xl sm:text-2xl text-gray-400 max-w-2xl mb-12 leading-relaxed font-light" itemProp="description">
+                  Nous aidons les entreprises ambitieuses a capter la demande sur <span className="text-blue-400 font-medium">Google</span> et a la transformer en <span className="text-emerald-400 font-medium">leads qualifies</span>.
+                </p>
+              </div>
+
+              <div className="animate-slide-in-stagger-3 flex flex-col sm:flex-row items-start gap-4">
+                <button
+                  onClick={() => navigate('/audit')}
+                  className="group inline-flex items-center gap-3 px-8 py-4 bg-white text-[#0a0a0f] font-semibold text-base rounded-full hover:bg-gray-100 transition-all duration-300"
+                  aria-label="Recevoir un audit gratuit avec ReactOP"
+                  data-action="cta-primary"
+                >
+                  <span>Recevez votre audit gratuit</span>
+                  <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" aria-hidden="true" />
+                </button>
+                <button
+                  onClick={() => scrollToSection('services')}
+                  className="inline-flex items-center gap-2 px-8 py-4 text-gray-400 font-medium text-base hover:text-white transition-colors"
+                >
+                  En savoir plus
+                </button>
+              </div>
+
+              <div className="animate-slide-in-stagger-3 mt-20 pt-12 border-t border-white/10">
+                <div className="grid grid-cols-3 gap-8 sm:gap-16">
+                  <div>
+                    <div className="text-3xl sm:text-4xl font-bold text-white mb-1">+147%</div>
+                    <div className="text-sm text-gray-500">Conversions</div>
                   </div>
-                  <div className="absolute -bottom-4 -left-4 sm:-bottom-6 sm:-left-6 glass-card rounded-xl p-4 animate-slide-in-stagger-3">
-                    <div className="flex items-center gap-3">
-                      <div className="w-10 h-10 rounded-full bg-green-500/20 flex items-center justify-center">
-                        <TrendingUp className="w-5 h-5 text-green-400" />
-                      </div>
-                      <div>
-                        <div className="text-xs text-gray-500">Ce mois</div>
-                        <div className="text-sm font-semibold text-white">+23 leads</div>
-                      </div>
-                    </div>
+                  <div>
+                    <div className="text-3xl sm:text-4xl font-bold text-white mb-1">-32%</div>
+                    <div className="text-sm text-gray-500">CPA moyen</div>
+                  </div>
+                  <div>
+                    <div className="text-3xl sm:text-4xl font-bold text-white mb-1">4.8%</div>
+                    <div className="text-sm text-gray-500">CTR moyen</div>
                   </div>
                 </div>
               </div>
@@ -284,60 +273,38 @@ function Home() {
         </div>
       </section>
 
-      {/* Services */}
-      <section id="services" className="pt-20 pb-40 sm:pt-32 sm:pb-56 lg:pt-40 lg:pb-64 px-6 sm:px-10 gpu-accelerated" aria-labelledby="services-title" data-section="services" itemScope itemType="https://schema.org/Service">
-        <div className="max-w-6xl mx-auto">
-          <h2 id="services-title" className="reveal reveal-scale font-display text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-center mb-4 sm:mb-6 lg:mb-8 bg-gradient-to-r from-white to-blue-400 bg-clip-text text-transparent pb-3" itemProp="name">
-            Ce que nous faisons
-          </h2>
-          <p className="reveal font-sans text-center mb-12 sm:mb-20 lg:mb-24 text-base sm:text-xl lg:text-2xl bg-gradient-to-r from-gray-300 to-blue-300 bg-clip-text text-transparent" style={{ '--delay': '0.15s' } as React.CSSProperties} itemProp="description">
-            Nous aidons les entreprises à tirer le maximum de la demande qualifiée présente sur Google
-          </p>
+      <section id="services" className="py-32 sm:py-40 lg:py-48 px-6 sm:px-8 lg:px-12 relative" aria-labelledby="services-title" data-section="services" itemScope itemType="https://schema.org/Service">
+        <div className="max-w-7xl mx-auto">
+          <div className="mb-20 sm:mb-24">
+            <div className="reveal">
+              <span className="text-blue-400 text-sm font-medium tracking-wider uppercase mb-4 block">Services</span>
+            </div>
+            <h2 id="services-title" className="reveal reveal-scale text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-6" itemProp="name">
+              Ce que nous faisons
+            </h2>
+            <p className="reveal text-xl text-gray-400 max-w-2xl" style={{ '--delay': '0.1s' } as React.CSSProperties} itemProp="description">
+              Nous aidons les entreprises à tirer le maximum de la demande qualifiée présente sur Google
+            </p>
+          </div>
 
-          <div className="grid grid-cols-1 gap-6 sm:gap-10 lg:gap-12" role="list">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8" role="list">
             {services.map((service, idx) => (
               <div
                 key={idx}
-                className="reveal group p-6 sm:p-10 lg:p-12 glass-card glass-card-hover rounded-3xl overflow-visible"
-                style={{ '--delay': `${idx * 0.15}s` } as React.CSSProperties}
+                className="reveal group relative p-8 sm:p-10 lg:p-12 bg-[#141419] rounded-3xl border border-white/5 hover:border-white/10 transition-all duration-500"
+                style={{ '--delay': `${idx * 0.1}s` } as React.CSSProperties}
                 role="listitem"
                 data-service-type={service.keywords}
                 itemScope
                 itemType="https://schema.org/Service"
               >
-                <service.icon className="w-10 h-10 sm:w-14 sm:h-14 lg:w-16 lg:h-16 text-blue-400 mb-4 sm:mb-6 group-hover:scale-110 transition-transform duration-500" aria-hidden="true" />
-                <h3 className="font-display text-2xl sm:text-3xl lg:text-4xl font-semibold mb-3 sm:mb-4 bg-gradient-to-r from-white to-blue-300 bg-clip-text text-transparent leading-[1.3] pb-2" itemProp="name">{service.title}</h3>
-                <p className="font-sans text-base sm:text-lg lg:text-xl bg-gradient-to-r from-gray-400 to-gray-300 bg-clip-text text-transparent leading-[1.6] pb-2" itemProp="description">{service.desc}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Processus */}
-      <section id="processus" className="py-24 sm:py-48 lg:py-56 px-6 sm:px-10 gpu-accelerated" aria-labelledby="processus-title" data-section="process" itemScope itemType="https://schema.org/HowTo">
-        <div className="max-w-5xl mx-auto">
-          <h2 id="processus-title" className="reveal reveal-scale font-display text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-center mb-4 sm:mb-6 lg:mb-8 bg-gradient-to-r from-white to-blue-400 bg-clip-text text-transparent pb-3" itemProp="name">
-            Notre processus
-          </h2>
-          <p className="reveal font-sans text-center mb-12 sm:mb-20 lg:mb-24 text-base sm:text-xl lg:text-2xl bg-gradient-to-r from-gray-300 to-blue-300 bg-clip-text text-transparent" style={{ '--delay': '0.15s' } as React.CSSProperties} itemProp="description">
-            Une méthodologie éprouvée en 4 étapes
-          </p>
-
-          <div className="flex flex-col gap-4 sm:gap-6 lg:gap-8" role="list">
-            {steps.map((step, idx) => (
-              <div
-                key={idx}
-                className="reveal relative flex items-center gap-6 sm:gap-10 lg:gap-14 p-6 sm:p-8 lg:p-10 glass-card glass-card-hover rounded-3xl"
-                style={{ '--delay': `${idx * 0.12}s` } as React.CSSProperties}
-                role="listitem"
-                itemScope
-                itemType="https://schema.org/HowToStep"
-              >
-                <div className="font-display text-5xl sm:text-7xl lg:text-8xl font-bold text-blue-500/20 flex-shrink-0 w-16 sm:w-24 lg:w-32 text-right leading-none" aria-hidden="true">{step.num}</div>
-                <div className="flex-1 min-w-0">
-                  <h3 className="font-display text-2xl sm:text-3xl lg:text-4xl font-semibold mb-2 sm:mb-3 bg-gradient-to-r from-white to-blue-300 bg-clip-text text-transparent" itemProp="name">{step.title}</h3>
-                  <p className="font-sans bg-gradient-to-r from-gray-400 to-gray-300 bg-clip-text text-transparent text-base sm:text-lg lg:text-xl leading-relaxed" itemProp="text">{step.desc}</p>
+                <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 to-transparent rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                <div className="relative">
+                  <div className="w-14 h-14 rounded-2xl bg-blue-500/10 flex items-center justify-center mb-8">
+                    <service.icon className="w-7 h-7 text-blue-400" aria-hidden="true" />
+                  </div>
+                  <h3 className="text-2xl sm:text-3xl font-semibold text-white mb-4" itemProp="name">{service.title}</h3>
+                  <p className="text-gray-400 text-lg leading-relaxed" itemProp="description">{service.desc}</p>
                 </div>
               </div>
             ))}
@@ -345,34 +312,85 @@ function Home() {
         </div>
       </section>
 
-      {/* FAQ */}
-      <section id="faq" className="py-24 sm:py-48 lg:py-56 px-6 sm:px-10 gpu-accelerated" aria-labelledby="faq-title" data-section="faq" itemScope itemType="https://schema.org/FAQPage">
+      <section id="processus" className="py-32 sm:py-40 lg:py-48 px-6 sm:px-8 lg:px-12 relative" aria-labelledby="processus-title" data-section="process" itemScope itemType="https://schema.org/HowTo">
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-blue-500/3 to-transparent" />
+        <div className="max-w-7xl mx-auto relative">
+          <div className="mb-20 sm:mb-24">
+            <div className="reveal">
+              <span className="text-blue-400 text-sm font-medium tracking-wider uppercase mb-4 block">Processus</span>
+            </div>
+            <h2 id="processus-title" className="reveal reveal-scale text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-6" itemProp="name">
+              Notre processus
+            </h2>
+            <p className="reveal text-xl text-gray-400 max-w-2xl" style={{ '--delay': '0.1s' } as React.CSSProperties} itemProp="description">
+              Une méthodologie éprouvée en 4 étapes
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6" role="list">
+            {steps.map((step, idx) => (
+              <div
+                key={idx}
+                className="reveal group relative"
+                style={{ '--delay': `${idx * 0.1}s` } as React.CSSProperties}
+                role="listitem"
+                itemScope
+                itemType="https://schema.org/HowToStep"
+              >
+                <div className="p-8 sm:p-10 bg-[#141419] rounded-3xl border border-white/5 hover:border-white/10 transition-all duration-500 h-full">
+                  <div className="flex items-start gap-6">
+                    <div className="flex-shrink-0">
+                      <div className="w-12 h-12 rounded-xl bg-white/5 flex items-center justify-center">
+                        <step.icon className="w-6 h-6 text-blue-400" />
+                      </div>
+                    </div>
+                    <div className="flex-1 min-w-0">
+                      <div className="text-blue-400/50 text-sm font-mono mb-2">{step.num}</div>
+                      <h3 className="text-xl sm:text-2xl font-semibold text-white mb-3" itemProp="name">{step.title}</h3>
+                      <p className="text-gray-400 leading-relaxed" itemProp="text">{step.desc}</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section id="faq" className="py-32 sm:py-40 lg:py-48 px-6 sm:px-8 lg:px-12" aria-labelledby="faq-title" data-section="faq" itemScope itemType="https://schema.org/FAQPage">
         <div className="max-w-3xl mx-auto">
-          <h2 id="faq-title" className="reveal reveal-scale font-display text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-center mb-12 sm:mb-20 lg:mb-24 bg-gradient-to-r from-white to-blue-400 bg-clip-text text-transparent pb-3">
-            Questions fréquentes
-          </h2>
+          <div className="mb-16 sm:mb-20 text-center">
+            <div className="reveal">
+              <span className="text-blue-400 text-sm font-medium tracking-wider uppercase mb-4 block">FAQ</span>
+            </div>
+            <h2 id="faq-title" className="reveal reveal-scale text-4xl sm:text-5xl md:text-6xl font-bold text-white">
+              Questions fréquentes
+            </h2>
+          </div>
 
           <div className="reveal" style={{ '--delay': '0.1s' } as React.CSSProperties}>
             {faqs.map((faq, idx) => (
               <div
                 key={idx}
-                className={`border-t ${idx === faqs.length - 1 ? 'border-b' : ''} border-white/10`}
+                className="border-b border-white/10 last:border-b-0"
                 itemScope
                 itemType="https://schema.org/Question"
               >
                 <button
                   onClick={() => setOpenFaqIndex(openFaqIndex === idx ? null : idx)}
-                  className="w-full flex items-center justify-between gap-6 py-7 sm:py-8 text-left group"
+                  className="w-full flex items-center justify-between gap-6 py-6 sm:py-8 text-left group"
                   aria-expanded={openFaqIndex === idx}
                   aria-controls={`faq-answer-${idx}`}
                 >
-                  <span className={`font-sans text-lg sm:text-xl font-medium transition-colors duration-200 ${openFaqIndex === idx ? 'text-white' : 'text-gray-200 group-hover:text-white'}`} itemProp="name">
+                  <span className={`text-lg sm:text-xl font-medium transition-colors duration-200 ${openFaqIndex === idx ? 'text-white' : 'text-gray-300 group-hover:text-white'}`} itemProp="name">
                     {faq.question}
                   </span>
-                  <ChevronDown
-                    className={`w-5 h-5 sm:w-6 sm:h-6 flex-shrink-0 transition-all duration-300 ${openFaqIndex === idx ? 'rotate-180 text-blue-400' : 'text-gray-500 group-hover:text-gray-300'}`}
-                    aria-hidden="true"
-                  />
+                  <div className={`flex-shrink-0 w-10 h-10 rounded-full flex items-center justify-center transition-all duration-300 ${openFaqIndex === idx ? 'bg-blue-500 rotate-180' : 'bg-white/5 group-hover:bg-white/10'}`}>
+                    <ChevronDown
+                      className={`w-5 h-5 transition-colors duration-300 ${openFaqIndex === idx ? 'text-white' : 'text-gray-400'}`}
+                      aria-hidden="true"
+                    />
+                  </div>
                 </button>
                 <div
                   id={`faq-answer-${idx}`}
@@ -382,7 +400,7 @@ function Home() {
                   itemType="https://schema.org/Answer"
                 >
                   <div className="overflow-hidden">
-                    <p className={`font-sans text-base sm:text-lg text-gray-300 leading-relaxed pb-7 sm:pb-8 pr-12 transition-opacity duration-500 ${openFaqIndex === idx ? 'opacity-100' : 'opacity-0'}`} itemProp="text">
+                    <p className={`text-base sm:text-lg text-gray-400 leading-relaxed pb-6 sm:pb-8 pr-16 transition-opacity duration-500 ${openFaqIndex === idx ? 'opacity-100' : 'opacity-0'}`} itemProp="text">
                       {faq.answer}
                     </p>
                   </div>
@@ -393,24 +411,37 @@ function Home() {
         </div>
       </section>
 
-      {/* Contact */}
-      <section id="contact" className="py-16 sm:py-36 lg:py-44 px-6 sm:px-10 gpu-accelerated" aria-labelledby="contact-title" data-section="contact" itemScope itemType="https://schema.org/ContactPage">
-        <div className="max-w-6xl mx-auto">
-          <div className="grid md:grid-cols-2 gap-12 sm:gap-20 lg:gap-24 items-center">
+      <section id="contact" className="py-32 sm:py-40 lg:py-48 px-6 sm:px-8 lg:px-12 relative" aria-labelledby="contact-title" data-section="contact" itemScope itemType="https://schema.org/ContactPage">
+        <div className="absolute inset-0 overflow-hidden">
+          <div className="absolute bottom-0 left-1/4 w-[600px] h-[600px] bg-blue-500/8 rounded-full blur-[120px]" />
+        </div>
+        <div className="max-w-7xl mx-auto relative">
+          <div className="grid md:grid-cols-2 gap-16 lg:gap-24 items-start">
             <div itemScope itemType="https://schema.org/Organization" className="reveal">
-              <h2 id="contact-title" className="font-display text-[3.5rem] leading-[1.1] sm:text-7xl md:text-8xl lg:text-9xl font-bold mb-8 sm:mb-12 lg:mb-16 pr-8">
-                <span className="text-white">Parlons-</span>
-                <span className="bg-gradient-to-r from-white to-blue-400 bg-clip-text text-transparent italic pr-6">en!</span>
+              <span className="text-blue-400 text-sm font-medium tracking-wider uppercase mb-4 block">Contact</span>
+              <h2 id="contact-title" className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-8">
+                Parlons-<span className="text-blue-400">en!</span>
               </h2>
-              <div className="border-t border-gray-800/50 pt-6 sm:pt-8 lg:pt-10">
-                <p className="font-sans text-gray-400 text-sm sm:text-base lg:text-lg mb-2 sm:mb-3">Email:</p>
-                <a href="mailto:info@reactop.com" className="font-sans text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-light text-white hover:text-blue-400 transition-colors break-words" itemProp="email" aria-label="Envoyer un email à ReactOP">
-                  info@reactop.com
-                </a>
+              <p className="text-xl text-gray-400 mb-12 max-w-md">
+                Discutons de votre projet et voyons comment nous pouvons vous aider a atteindre vos objectifs.
+              </p>
+              <div className="space-y-6">
+                <div>
+                  <p className="text-gray-500 text-sm mb-2">Email</p>
+                  <a href="mailto:info@reactop.com" className="text-2xl sm:text-3xl font-light text-white hover:text-blue-400 transition-colors" itemProp="email" aria-label="Envoyer un email à ReactOP">
+                    info@reactop.com
+                  </a>
+                </div>
+                <div>
+                  <p className="text-gray-500 text-sm mb-2">Telephone</p>
+                  <a href="tel:+41775211998" className="text-2xl sm:text-3xl font-light text-white hover:text-blue-400 transition-colors" itemProp="telephone">
+                    +41 77 521 19 98
+                  </a>
+                </div>
               </div>
             </div>
 
-            <div className="reveal w-full glass-card rounded-3xl p-4 sm:p-6" style={{ '--delay': '0.2s' } as React.CSSProperties}>
+            <div className="reveal bg-[#141419] rounded-3xl border border-white/5 p-6 sm:p-8" style={{ '--delay': '0.15s' } as React.CSSProperties}>
               <iframe
                 data-tally-src="https://tally.so/embed/A7LaDW?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1"
                 loading="lazy"
@@ -426,24 +457,35 @@ function Home() {
         </div>
       </section>
 
-      <footer className="border-t border-gray-800/50 py-12 sm:py-16 lg:py-20 px-6 sm:px-10" role="contentinfo" aria-label="Pied de page" itemScope itemType="https://schema.org/WPFooter">
-        <div className="max-w-6xl mx-auto">
-          <div className="flex flex-col-reverse md:flex-row justify-between items-center gap-8 sm:gap-10 lg:gap-12">
-            <div className="text-center md:text-left" itemScope itemType="https://schema.org/Organization">
-              <div className="flex items-center justify-center md:justify-start gap-2 sm:gap-3 lg:gap-4 mb-2 sm:mb-3">
-                <img src="/mobius_det.png" alt="ReactOP" className="h-8 w-8 sm:h-10 sm:w-10 lg:h-12 lg:w-12" itemProp="logo" />
-                <div className="font-display text-xl sm:text-2xl lg:text-3xl font-semibold bg-gradient-to-r from-white to-blue-400 bg-clip-text text-transparent" itemProp="name">
+      <footer className="border-t border-white/5 py-16 sm:py-20 px-6 sm:px-8 lg:px-12" role="contentinfo" aria-label="Pied de page" itemScope itemType="https://schema.org/WPFooter">
+        <div className="max-w-7xl mx-auto">
+          <div className="flex flex-col md:flex-row justify-between items-start gap-12">
+            <div itemScope itemType="https://schema.org/Organization">
+              <div className="flex items-center gap-3 mb-4">
+                <img src="/mobius_det.png" alt="ReactOP" className="h-10 w-10" itemProp="logo" />
+                <div className="text-xl font-semibold text-white" itemProp="name">
                   ReactOP
                 </div>
               </div>
-              <p className="font-sans text-sm sm:text-base lg:text-lg bg-gradient-to-r from-gray-400 to-blue-300 bg-clip-text text-transparent" itemProp="copyrightNotice">&copy; 2026 ReactOP. Tous droits réservés.</p>
+              <p className="text-sm text-gray-500" itemProp="copyrightNotice">&copy; 2026 ReactOP. Tous droits réservés.</p>
             </div>
 
-            <div className="text-center md:text-right" itemScope itemType="https://schema.org/ContactPoint">
-              <h3 className="font-display text-base sm:text-lg lg:text-xl font-semibold mb-3 sm:mb-5 lg:mb-6 text-gray-400">Contact</h3>
-              <div className="space-y-2 sm:space-y-3 lg:space-y-4">
-                <a href="mailto:info@reactop.com" className="font-sans block text-sm sm:text-base lg:text-lg bg-gradient-to-r from-gray-300 to-blue-200 bg-clip-text text-transparent hover:from-blue-400 hover:to-blue-300 transition-all duration-300" itemProp="email">info@reactop.com</a>
-                <a href="tel:+41775211998" className="font-sans block text-sm sm:text-base lg:text-lg bg-gradient-to-r from-gray-300 to-blue-200 bg-clip-text text-transparent hover:from-blue-400 hover:to-blue-300 transition-all duration-300" itemProp="telephone">+41 77 521 19 98</a>
+            <div className="flex flex-col sm:flex-row gap-12 sm:gap-20">
+              <div>
+                <h3 className="text-sm font-semibold text-white mb-4">Navigation</h3>
+                <div className="space-y-3">
+                  <button onClick={() => scrollToSection('services')} className="block text-sm text-gray-400 hover:text-white transition-colors">Services</button>
+                  <button onClick={() => scrollToSection('processus')} className="block text-sm text-gray-400 hover:text-white transition-colors">Processus</button>
+                  <button onClick={() => scrollToSection('faq')} className="block text-sm text-gray-400 hover:text-white transition-colors">FAQ</button>
+                </div>
+              </div>
+
+              <div itemScope itemType="https://schema.org/ContactPoint">
+                <h3 className="text-sm font-semibold text-white mb-4">Contact</h3>
+                <div className="space-y-3">
+                  <a href="mailto:info@reactop.com" className="block text-sm text-gray-400 hover:text-white transition-colors" itemProp="email">info@reactop.com</a>
+                  <a href="tel:+41775211998" className="block text-sm text-gray-400 hover:text-white transition-colors" itemProp="telephone">+41 77 521 19 98</a>
+                </div>
               </div>
             </div>
           </div>
