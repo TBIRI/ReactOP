@@ -211,7 +211,8 @@ function Home() {
         <div className="relative z-10 w-full px-6 sm:px-10">
           <div className="max-w-5xl mx-auto">
             <h1 className="font-display text-[2.6rem] leading-[1.12] sm:text-[4.5rem] sm:leading-[1.1] md:text-[5.5rem] lg:text-[5.75rem] lg:leading-[1.08] xl:text-[6.5rem] 2xl:text-[7.5rem] font-bold bg-gradient-to-br from-white via-blue-100 to-blue-400 bg-clip-text text-transparent mb-4 sm:mb-6 md:mb-8 pb-2 sm:pb-3 animate-slide-in-stagger-1" itemProp="name headline">
-              Vos clients vous cherchent sur Google{' '}
+              Vos clients vous cherchent sur Google
+              <br />
               <span className="font-display italic">Répondez présent</span>
             </h1>
             <p className="font-sans text-base leading-relaxed sm:text-xl md:text-2xl lg:text-xl xl:text-2xl 2xl:text-[28px] mb-8 sm:mb-10 md:mb-12 text-gray-300 max-w-2xl animate-slide-in-stagger-2" itemProp="description">
