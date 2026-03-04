@@ -301,7 +301,7 @@ function Home() {
       <section id="services" className="pt-20 pb-40 sm:pt-32 sm:pb-56 lg:pt-40 lg:pb-64 px-6 sm:px-10 gpu-accelerated" aria-labelledby="services-title" data-section="services" itemScope itemType="https://schema.org/Service">
         <div className="max-w-6xl mx-auto">
           <h2 id="services-title" className="reveal reveal-scale font-display text-3xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-center mb-3 sm:mb-6 lg:mb-8 text-white pb-3" itemProp="name">
-            Ce que nous faisons
+            Nos Services
           </h2>
           <p className="reveal font-sans text-center mb-12 sm:mb-20 lg:mb-24 text-base sm:text-xl lg:text-2xl text-gray-300" style={{ '--delay': '0.15s' } as React.CSSProperties} itemProp="description">
             Nous aidons les entreprises à tirer le maximum de la demande qualifiée présente sur Google
