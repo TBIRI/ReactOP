@@ -346,46 +346,43 @@ function Home() {
       </section>
 
       {/* FAQ */}
-      <section id="faq" className="py-16 sm:py-24 lg:py-32 px-6 sm:px-10 gpu-accelerated" aria-labelledby="faq-title" data-section="faq" itemScope itemType="https://schema.org/FAQPage">
-        <div className="max-w-4xl mx-auto">
-          <h2 id="faq-title" className="reveal reveal-scale font-display text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-center mb-10 sm:mb-16 lg:mb-20 bg-gradient-to-r from-white to-blue-400 bg-clip-text text-transparent pb-3">
+      <section id="faq" className="py-24 sm:py-48 lg:py-56 px-6 sm:px-10 gpu-accelerated" aria-labelledby="faq-title" data-section="faq" itemScope itemType="https://schema.org/FAQPage">
+        <div className="max-w-3xl mx-auto">
+          <h2 id="faq-title" className="reveal reveal-scale font-display text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-center mb-12 sm:mb-20 lg:mb-24 bg-gradient-to-r from-white to-blue-400 bg-clip-text text-transparent pb-3">
             Questions fréquentes
           </h2>
 
-          <div className="flex flex-col gap-3 sm:gap-4">
+          <div className="reveal" style={{ '--delay': '0.1s' } as React.CSSProperties}>
             {faqs.map((faq, idx) => (
               <div
                 key={idx}
-                className="reveal glass-card rounded-2xl overflow-hidden"
-                style={{ '--delay': `${idx * 0.08}s` } as React.CSSProperties}
+                className={`border-t ${idx === faqs.length - 1 ? 'border-b' : ''} border-white/10`}
                 itemScope
                 itemType="https://schema.org/Question"
               >
                 <button
                   onClick={() => setOpenFaqIndex(openFaqIndex === idx ? null : idx)}
-                  className="w-full flex items-center justify-between gap-4 p-5 sm:p-6 lg:p-8 text-left transition-colors hover:bg-white/[0.02]"
+                  className="w-full flex items-center justify-between gap-6 py-6 sm:py-7 text-left group"
                   aria-expanded={openFaqIndex === idx}
                   aria-controls={`faq-answer-${idx}`}
                 >
-                  <span className="font-sans text-base sm:text-lg lg:text-xl text-white font-medium" itemProp="name">
+                  <span className={`font-sans text-base sm:text-lg font-medium transition-colors duration-200 ${openFaqIndex === idx ? 'text-white' : 'text-gray-300 group-hover:text-white'}`} itemProp="name">
                     {faq.question}
                   </span>
                   <ChevronDown
-                    className={`w-5 h-5 sm:w-6 sm:h-6 text-blue-400 flex-shrink-0 transition-transform duration-300 ${openFaqIndex === idx ? 'rotate-180' : ''}`}
+                    className={`w-4 h-4 sm:w-5 sm:h-5 flex-shrink-0 transition-all duration-300 ${openFaqIndex === idx ? 'rotate-180 text-blue-400' : 'text-gray-500 group-hover:text-gray-300'}`}
                     aria-hidden="true"
                   />
                 </button>
                 <div
                   id={`faq-answer-${idx}`}
-                  className={`overflow-hidden transition-all duration-300 ease-out ${openFaqIndex === idx ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'}`}
+                  className={`overflow-hidden transition-all duration-300 ease-out ${openFaqIndex === idx ? 'max-h-48' : 'max-h-0'}`}
                   itemScope
                   itemType="https://schema.org/Answer"
                 >
-                  <div className="px-5 sm:px-6 lg:px-8 pb-5 sm:pb-6 lg:pb-8">
-                    <p className="font-sans text-sm sm:text-base lg:text-lg text-gray-400 leading-relaxed" itemProp="text">
-                      {faq.answer}
-                    </p>
-                  </div>
+                  <p className="font-sans text-sm sm:text-base text-gray-400 leading-relaxed pb-6 sm:pb-7 pr-10" itemProp="text">
+                    {faq.answer}
+                  </p>
                 </div>
               </div>
             ))}
