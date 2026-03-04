@@ -234,10 +234,11 @@ function Home() {
                 <div className="flex flex-col sm:flex-row items-start gap-3 sm:gap-6 animate-slide-in-stagger-3">
                   <button
                     onClick={() => navigate('/audit')}
-                    className="group relative inline-flex items-center gap-3 px-7 py-4 sm:px-8 sm:py-4 font-sans font-semibold text-base sm:text-base overflow-hidden rounded-xl bg-blue-600 hover:bg-blue-500 shadow-lg shadow-blue-600/25 hover:shadow-blue-500/35 transition-all duration-300"
+                    className="group relative inline-flex items-center gap-3 px-8 py-4 sm:px-10 sm:py-5 font-sans font-semibold text-base sm:text-lg overflow-hidden rounded-xl bg-blue-600 hover:bg-blue-500 shadow-lg shadow-blue-600/30 hover:shadow-blue-500/50 hover:shadow-xl transition-all duration-300"
                     aria-label="Recevoir un audit gratuit avec ReactOP"
                     data-action="cta-primary"
                   >
+                    <div className="absolute inset-0 bg-gradient-to-r from-blue-600 via-blue-500 to-blue-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-[length:200%_100%] group-hover:animate-shimmer" aria-hidden="true" />
                     <span className="relative text-white">Recevez votre audit gratuit</span>
                     <ArrowRight className="relative w-4 h-4 sm:w-5 sm:h-5 text-white group-hover:translate-x-1 transition-transform duration-300" aria-hidden="true" />
                   </button>
