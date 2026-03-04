@@ -48,6 +48,13 @@ function useScrollReveal() {
 function Home() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(null);
+  const [isMobile, setIsMobile] = useState(() => window.innerWidth <= 1024);
+
+  useEffect(() => {
+    const handler = () => setIsMobile(window.innerWidth <= 1024);
+    window.addEventListener('resize', handler, { passive: true });
+    return () => window.removeEventListener('resize', handler);
+  }, []);
   const navigate = useNavigate();
 
   const scrollToSection = (id: string) => {
@@ -379,19 +386,33 @@ function Home() {
                     aria-hidden="true"
                   />
                 </button>
-                <div
-                  id={`faq-answer-${idx}`}
-                  className="grid transition-all duration-500 ease-out"
-                  style={{ gridTemplateRows: openFaqIndex === idx ? '1fr' : '0fr' }}
-                  itemScope
-                  itemType="https://schema.org/Answer"
-                >
-                  <div className="overflow-hidden">
-                    <p className={`font-sans text-sm sm:text-lg text-gray-300 leading-relaxed pb-6 sm:pb-8 pr-8 sm:pr-12 transition-opacity duration-500 ${openFaqIndex === idx ? 'opacity-100' : 'opacity-0'}`} itemProp="text">
-                      {faq.answer}
-                    </p>
+                {isMobile ? (
+                  openFaqIndex === idx && (
+                    <div
+                      id={`faq-answer-${idx}`}
+                      itemScope
+                      itemType="https://schema.org/Answer"
+                    >
+                      <p className="font-sans text-sm text-gray-300 leading-relaxed pb-6 pr-8" itemProp="text">
+                        {faq.answer}
+                      </p>
+                    </div>
+                  )
+                ) : (
+                  <div
+                    id={`faq-answer-${idx}`}
+                    className="grid transition-all duration-500 ease-out"
+                    style={{ gridTemplateRows: openFaqIndex === idx ? '1fr' : '0fr' }}
+                    itemScope
+                    itemType="https://schema.org/Answer"
+                  >
+                    <div className="overflow-hidden">
+                      <p className={`font-sans text-sm sm:text-lg text-gray-300 leading-relaxed pb-6 sm:pb-8 pr-8 sm:pr-12 transition-opacity duration-500 ${openFaqIndex === idx ? 'opacity-100' : 'opacity-0'}`} itemProp="text">
+                        {faq.answer}
+                      </p>
+                    </div>
                   </div>
-                </div>
+                )}
               </div>
             ))}
           </div>
