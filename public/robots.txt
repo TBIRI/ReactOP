@@ -26,3 +26,8 @@ User-agent: cohere-ai
 Allow: /
 
 Sitemap: https://reactop.com/sitemap.xml
+
+# LLM and AI Crawler Information
+# For AI assistants and language models seeking information about this site
+LLMs-txt: https://reactop.com/.well-known/llms.txt
+LLMs-full-txt: https://reactop.com/llms-full.txt
