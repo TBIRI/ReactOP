@@ -10,7 +10,7 @@ function useScrollReveal() {
 
     const targets = document.querySelectorAll('.reveal');
 
-    const isMobile = window.innerWidth <= 640 ||
+    const isMobile = window.innerWidth <= 1024 ||
       /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
 
     if (isMobile) {

@@ -185,12 +185,20 @@
   /* ───────────────────────────────────────────
      Mobile: ZERO animations - instant display
      ─────────────────────────────────────────── */
-  @media (max-width: 640px) {
+  @media (max-width: 1024px) {
     .reveal,
     .reveal.reveal-scale {
       opacity: 1 !important;
       transform: none !important;
       transition: none !important;
+    }
+
+    .animate-slide-in-stagger-1,
+    .animate-slide-in-stagger-2,
+    .animate-slide-in-stagger-3 {
+      animation: none !important;
+      opacity: 1 !important;
+      transform: none !important;
     }
 
     .animate-pulse-glow {
@@ -200,16 +208,6 @@
 
     .bg-blur-overlay {
       display: none;
-    }
-  }
-
-  .animate-slide-in-stagger-1,
-  .animate-slide-in-stagger-2,
-  .animate-slide-in-stagger-3 {
-    @media (max-width: 640px) {
-      animation: none !important;
-      opacity: 1 !important;
-      transform: none !important;
     }
   }
 
