@@ -225,22 +225,15 @@ function Home() {
                 <p className="font-sans text-lg sm:text-xl text-gray-400 max-w-xl mb-10 leading-relaxed animate-slide-in-stagger-2" itemProp="description">
                   Nous aidons les entreprises ambitieuses a capter la demande sur <span className="bg-gradient-to-r from-blue-400 via-blue-500 to-blue-400 bg-clip-text text-transparent font-semibold">Google</span> et a la transformer en <span className="bg-gradient-to-r from-emerald-400 via-teal-400 to-emerald-400 bg-clip-text text-transparent font-semibold">leads qualifies</span>.
                 </p>
-                <div className="flex flex-col sm:flex-row items-start gap-4 animate-slide-in-stagger-3">
+                <div className="flex items-start animate-slide-in-stagger-3">
                   <button
                     onClick={() => navigate('/audit')}
                     className="group relative inline-flex items-center gap-3 px-8 py-4 font-sans font-semibold text-base overflow-hidden rounded-xl bg-blue-600 hover:bg-blue-500 shadow-lg shadow-blue-600/25 hover:shadow-blue-500/35 transition-all duration-300"
                     aria-label="Recevoir un audit gratuit avec ReactOP"
                     data-action="cta-primary"
                   >
-                    <span className="relative text-white">Audit gratuit</span>
+                    <span className="relative text-white">Recevez votre audit gratuit</span>
                     <ArrowRight className="relative w-5 h-5 text-white group-hover:translate-x-1 transition-transform duration-300" aria-hidden="true" />
-                  </button>
-                  <button
-                    onClick={() => scrollToSection('services')}
-                    className="group inline-flex items-center gap-2 px-8 py-4 font-sans font-medium text-base text-gray-400 hover:text-white transition-colors duration-300"
-                  >
-                    Decouvrir nos services
-                    <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
                   </button>
                 </div>
               </div>
