@@ -355,7 +355,7 @@ function Home() {
       </section>
 
       {/* Contact */}
-      <section id="contact" className="py-24 sm:py-48 lg:py-56 px-6 sm:px-10 gpu-accelerated" aria-labelledby="contact-title" data-section="contact" itemScope itemType="https://schema.org/ContactPage">
+      <section id="contact" className="py-16 sm:py-36 lg:py-44 px-6 sm:px-10 gpu-accelerated" aria-labelledby="contact-title" data-section="contact" itemScope itemType="https://schema.org/ContactPage">
         <div className="max-w-6xl mx-auto">
           <div className="grid md:grid-cols-2 gap-12 sm:gap-20 lg:gap-24 items-center">
             <div itemScope itemType="https://schema.org/Organization" className="reveal">
