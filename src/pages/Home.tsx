@@ -211,11 +211,12 @@ function Home() {
         <div className="relative z-10 w-full px-6 sm:px-10">
           <div className="max-w-7xl mx-auto">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center">
-              <div className="lg:col-span-7 lg:col-start-1">
-                <h1 className="font-display text-[2.75rem] leading-[1.12] sm:text-[5rem] md:text-[6.5rem] lg:text-[5rem] lg:leading-[1.08] xl:text-[5.5rem] 2xl:text-[7.5rem] font-bold bg-gradient-to-br from-white via-blue-100 to-blue-400 bg-clip-text text-transparent mb-4 sm:mb-6 md:mb-8 lg:mb-5 xl:mb-8 pb-2 sm:pb-3 animate-slide-in-stagger-1" itemProp="name headline">
-                  Vos clients vous cherchent sur Google <span className="font-display italic whitespace-nowrap">Répondez présent</span>
+              <div className="lg:col-span-8 lg:col-start-1">
+                <h1 className="font-display text-[2.6rem] leading-[1.12] sm:text-[4.5rem] md:text-[5.5rem] lg:text-[4.25rem] lg:leading-[1.1] xl:text-[5rem] 2xl:text-[6.5rem] font-bold bg-gradient-to-br from-white via-blue-100 to-blue-400 bg-clip-text text-transparent mb-4 sm:mb-6 md:mb-8 lg:mb-5 xl:mb-8 pb-2 sm:pb-3 animate-slide-in-stagger-1" itemProp="name headline">
+                  Vos clients vous cherchent sur Google{' '}
+                  <span className="font-display italic">Répondez présent</span>
                 </h1>
-                <p className="font-sans text-base leading-relaxed sm:text-xl md:text-2xl lg:text-lg xl:text-xl 2xl:text-[30px] mb-8 sm:mb-10 md:mb-12 lg:mb-8 xl:mb-12 text-gray-300 max-w-xl animate-slide-in-stagger-2" itemProp="description">
+                <p className="font-sans text-base leading-relaxed sm:text-xl md:text-2xl lg:text-lg xl:text-xl 2xl:text-[28px] mb-8 sm:mb-10 md:mb-12 lg:mb-8 xl:mb-12 text-gray-300 max-w-xl animate-slide-in-stagger-2" itemProp="description">
                   Nous aidons les entreprises à capter la demande sur <span className="font-semibold bg-gradient-to-r from-gray-200 to-blue-300 bg-clip-text text-transparent">Google</span> et la convertir en <span className="font-semibold bg-gradient-to-r from-gray-200 to-blue-300 bg-clip-text text-transparent">leads qualifiés</span>
                 </p>
                 <button
@@ -231,12 +232,10 @@ function Home() {
                 </button>
               </div>
 
-              <div className="hidden lg:block lg:col-span-5 lg:col-start-8 opacity-0 animate-slide-in-stagger-3">
-                <div className="glass-card rounded-3xl p-10 lg:p-14 xl:p-16 aspect-square flex items-center justify-center animate-pulse-glow">
-                  <div className="text-center">
-                    <div className="font-display text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl font-bold bg-gradient-to-br from-blue-300 via-blue-400 to-blue-500 bg-clip-text text-transparent leading-tight">
-                      Boosté par l'IA
-                    </div>
+              <div className="hidden lg:flex lg:col-span-4 lg:col-start-9 opacity-0 animate-slide-in-stagger-3 items-start justify-end pt-4">
+                <div className="glass-card rounded-2xl px-6 py-5 xl:px-8 xl:py-6 animate-pulse-glow max-w-[200px] xl:max-w-[220px]">
+                  <div className="font-display text-xl xl:text-2xl font-bold bg-gradient-to-br from-blue-300 via-blue-400 to-blue-500 bg-clip-text text-transparent leading-snug text-center">
+                    Boosté par l'IA
                   </div>
                 </div>
               </div>
