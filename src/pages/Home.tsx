@@ -210,36 +210,26 @@ function Home() {
       <section className="min-h-[100svh] sm:min-h-[100vh] flex items-center relative overflow-hidden gpu-accelerated pt-24 sm:pt-0" role="banner" aria-label="Section hero" data-section="hero" itemScope itemType="https://schema.org/WPHeader">
         <div className="relative z-10 w-full px-6 sm:px-8 lg:px-16 xl:px-20">
           <div className="max-w-7xl mx-auto">
-            <div className="grid lg:grid-cols-2 gap-12 lg:gap-8 items-center">
-              <div className="order-2 lg:order-1">
-                <h1 className="font-display text-[2.75rem] leading-[1.05] sm:text-[3.5rem] md:text-[4rem] lg:text-[4.5rem] xl:text-[5rem] font-bold mb-6 sm:mb-8 animate-slide-in-stagger-1" itemProp="name headline">
-                  <span className="text-white">Vos clients vous</span>
-                  <br />
-                  <span className="text-white">cherchent sur </span>
-                  <span className="bg-gradient-to-r from-blue-400 to-blue-500 bg-clip-text text-transparent">Google</span>
-                </h1>
-                <p className="font-sans text-lg sm:text-xl text-gray-400 max-w-xl mb-10 leading-relaxed animate-slide-in-stagger-2" itemProp="description">
-                  Nous aidons les entreprises ambitieuses a capter la demande sur <span className="bg-gradient-to-r from-blue-400 via-blue-500 to-blue-400 bg-clip-text text-transparent font-semibold">Google</span> et a la transformer en <span className="bg-gradient-to-r from-emerald-400 via-teal-400 to-emerald-400 bg-clip-text text-transparent font-semibold">leads qualifies</span>.
-                </p>
-                <div className="flex items-start animate-slide-in-stagger-3">
-                  <button
-                    onClick={() => navigate('/audit')}
-                    className="group relative inline-flex items-center gap-3 px-8 py-4 font-sans font-semibold text-base overflow-hidden rounded-xl bg-blue-600 hover:bg-blue-500 shadow-lg shadow-blue-600/25 hover:shadow-blue-500/35 transition-all duration-300"
-                    aria-label="Recevoir un audit gratuit avec ReactOP"
-                    data-action="cta-primary"
-                  >
-                    <span className="relative text-white">Recevez votre audit gratuit</span>
-                    <ArrowRight className="relative w-5 h-5 text-white group-hover:translate-x-1 transition-transform duration-300" aria-hidden="true" />
-                  </button>
-                </div>
-              </div>
-              <div className="order-1 lg:order-2 relative animate-slide-in-stagger-2 hidden lg:block">
-                <div className="flex flex-col gap-6 text-right">
-                  <div className="text-6xl xl:text-7xl font-bold text-white/10">01</div>
-                  <div className="text-gray-500 text-lg">Google Ads</div>
-                  <div className="text-6xl xl:text-7xl font-bold text-white/10">02</div>
-                  <div className="text-gray-500 text-lg">Conversion</div>
-                </div>
+            <div className="max-w-3xl">
+              <h1 className="font-display text-[2.75rem] leading-[1.05] sm:text-[3.5rem] md:text-[4rem] lg:text-[4.5rem] xl:text-[5rem] font-bold mb-6 sm:mb-8 animate-slide-in-stagger-1" itemProp="name headline">
+                <span className="text-white">Vos clients vous</span>
+                <br />
+                <span className="text-white">cherchent sur </span>
+                <span className="bg-gradient-to-r from-blue-400 to-blue-500 bg-clip-text text-transparent">Google</span>
+              </h1>
+              <p className="font-sans text-lg sm:text-xl text-gray-400 max-w-xl mb-10 leading-relaxed animate-slide-in-stagger-2" itemProp="description">
+                Nous aidons les entreprises ambitieuses a capter la demande sur <span className="bg-gradient-to-r from-blue-400 via-blue-500 to-blue-400 bg-clip-text text-transparent font-semibold">Google</span> et a la transformer en <span className="bg-gradient-to-r from-emerald-400 via-teal-400 to-emerald-400 bg-clip-text text-transparent font-semibold">leads qualifies</span>.
+              </p>
+              <div className="flex items-start animate-slide-in-stagger-3">
+                <button
+                  onClick={() => navigate('/audit')}
+                  className="group relative inline-flex items-center gap-3 px-8 py-4 font-sans font-semibold text-base overflow-hidden rounded-xl bg-blue-600 hover:bg-blue-500 shadow-lg shadow-blue-600/25 hover:shadow-blue-500/35 transition-all duration-300"
+                  aria-label="Recevoir un audit gratuit avec ReactOP"
+                  data-action="cta-primary"
+                >
+                  <span className="relative text-white">Recevez votre audit gratuit</span>
+                  <ArrowRight className="relative w-5 h-5 text-white group-hover:translate-x-1 transition-transform duration-300" aria-hidden="true" />
+                </button>
               </div>
             </div>
           </div>
