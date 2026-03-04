@@ -1,4 +1,4 @@
-import { ArrowRight, TrendingUp, MousePointerClick, Menu, X } from 'lucide-react';
+import { ArrowRight, TrendingUp, MousePointerClick, Menu, X, ChevronDown } from 'lucide-react';
 import { useState, useEffect, useRef, useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
 
@@ -47,6 +47,7 @@ function useScrollReveal() {
 
 function Home() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(null);
   const navigate = useNavigate();
 
   const scrollToSection = (id: string) => {
@@ -93,6 +94,14 @@ function Home() {
     { title: "Campagnes mal paramétrées", desc: "demande inexistante ou non qualifiée" },
     { title: "Landing pages peu convaincantes", desc: "clics ne deviennent pas leads" },
     { title: "Tracking des conversions incomplet", desc: "décisions sans visibilité sur ce qui fonctionne" }
+  ];
+
+  const faqs = [
+    { question: "J'ai déjà essayé Google Ads mais ça n'a pas marché.", answer: "C'est souvent un problème de ciblage ou de page de destination, pas de Google Ads en soi. Nous testons toujours les campagnes avant de les scaler. Si votre entreprise n'est pas adaptée, nous vous le dirons." },
+    { question: "Quelle est la durée d'engagement?", answer: "Pas de contrat long terme. Engagement mensuel, résiliable à tout moment." },
+    { question: "Qu'est-ce que nous devons fournir?", answer: "Très peu, simplement un accès à vos outils existants et une idée de ce qu'est un bon lead pour vous." },
+    { question: "Comment savoir si ça fonctionne?", answer: "Nous envoyons un rapport hebdomadaire sur les performances de vos campagnes et les optimisations en cours." },
+    { question: "Vous créez aussi le site ou la landing page?", answer: "Nous optimisons vos pages existantes ou créons des landing pages dédiées si nécessaire." }
   ];
 
   return (
@@ -329,6 +338,54 @@ function Home() {
                 <div className="flex-1 min-w-0">
                   <h3 className="font-display text-2xl sm:text-3xl lg:text-4xl font-semibold mb-2 sm:mb-3 bg-gradient-to-r from-white to-blue-300 bg-clip-text text-transparent" itemProp="name">{step.title}</h3>
                   <p className="font-sans bg-gradient-to-r from-gray-400 to-gray-300 bg-clip-text text-transparent text-base sm:text-lg lg:text-xl leading-relaxed" itemProp="text">{step.desc}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section id="faq" className="py-16 sm:py-24 lg:py-32 px-6 sm:px-10 gpu-accelerated" aria-labelledby="faq-title" data-section="faq" itemScope itemType="https://schema.org/FAQPage">
+        <div className="max-w-4xl mx-auto">
+          <h2 id="faq-title" className="reveal reveal-scale font-display text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-center mb-10 sm:mb-16 lg:mb-20 bg-gradient-to-r from-white to-blue-400 bg-clip-text text-transparent pb-3">
+            Questions fréquentes
+          </h2>
+
+          <div className="flex flex-col gap-3 sm:gap-4">
+            {faqs.map((faq, idx) => (
+              <div
+                key={idx}
+                className="reveal glass-card rounded-2xl overflow-hidden"
+                style={{ '--delay': `${idx * 0.08}s` } as React.CSSProperties}
+                itemScope
+                itemType="https://schema.org/Question"
+              >
+                <button
+                  onClick={() => setOpenFaqIndex(openFaqIndex === idx ? null : idx)}
+                  className="w-full flex items-center justify-between gap-4 p-5 sm:p-6 lg:p-8 text-left transition-colors hover:bg-white/[0.02]"
+                  aria-expanded={openFaqIndex === idx}
+                  aria-controls={`faq-answer-${idx}`}
+                >
+                  <span className="font-sans text-base sm:text-lg lg:text-xl text-white font-medium" itemProp="name">
+                    {faq.question}
+                  </span>
+                  <ChevronDown
+                    className={`w-5 h-5 sm:w-6 sm:h-6 text-blue-400 flex-shrink-0 transition-transform duration-300 ${openFaqIndex === idx ? 'rotate-180' : ''}`}
+                    aria-hidden="true"
+                  />
+                </button>
+                <div
+                  id={`faq-answer-${idx}`}
+                  className={`overflow-hidden transition-all duration-300 ease-out ${openFaqIndex === idx ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'}`}
+                  itemScope
+                  itemType="https://schema.org/Answer"
+                >
+                  <div className="px-5 sm:px-6 lg:px-8 pb-5 sm:pb-6 lg:pb-8">
+                    <p className="font-sans text-sm sm:text-base lg:text-lg text-gray-400 leading-relaxed" itemProp="text">
+                      {faq.answer}
+                    </p>
+                  </div>
                 </div>
               </div>
             ))}
