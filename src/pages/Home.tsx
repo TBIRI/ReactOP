@@ -222,7 +222,7 @@ function Home() {
               <div className="lg:col-span-8 xl:col-span-7">
                 <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/[0.03] border border-white/[0.06] mb-6 sm:mb-8 animate-slide-in-stagger-1">
                   <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-                  <span className="font-sans text-sm text-gray-400">Acquisition & Conversion</span>
+                  <span className="font-sans text-sm text-gray-400">Agence d'acquisition IA-native</span>
                 </div>
 
                 <h1 className="font-display text-[2.5rem] leading-[1.08] sm:text-[3.25rem] md:text-[3.75rem] lg:text-[4.25rem] xl:text-[4.75rem] font-bold mb-6 sm:mb-8 animate-slide-in-stagger-1" itemProp="name headline">
