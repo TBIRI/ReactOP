@@ -249,7 +249,7 @@ function Home() {
             Ce que nous faisons
           </h2>
           <p className="reveal font-sans text-center mb-12 sm:mb-20 lg:mb-24 text-base sm:text-xl lg:text-2xl bg-gradient-to-r from-gray-300 to-blue-300 bg-clip-text text-transparent" style={{ '--delay': '0.15s' } as React.CSSProperties} itemProp="description">
-            Augmentation du volume de leads qualifiés basée sur les données
+            Nous aidons les entreprises à tirer le maximum de la demande qualifiée présente sur Google
           </p>
 
           <div className="grid grid-cols-1 gap-6 sm:gap-10 lg:gap-12" role="list">
