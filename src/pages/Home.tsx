@@ -121,7 +121,7 @@ function Home() {
 
           <button
             onClick={() => scrollToSection('services')}
-            className="hidden md:block px-2 sm:px-3 md:px-8 py-1.5 sm:py-2 md:py-2.5 rounded-full text-[10px] sm:text-xs md:text-base font-sans font-medium text-gray-300 hover:text-white hover:bg-gray-800/50 transition-all duration-200"
+            className="hidden md:block px-2 sm:px-3 md:px-8 py-1.5 sm:py-2 md:py-2.5 rounded-full text-[10px] sm:text-xs md:text-base font-medium tracking-wide text-gray-300 hover:text-white hover:bg-gray-800/50 transition-all duration-200"
             aria-label="Naviguer vers la section services"
           >
             services
@@ -129,7 +129,7 @@ function Home() {
 
           <button
             onClick={() => scrollToSection('processus')}
-            className="hidden md:block px-2 sm:px-3 md:px-8 py-1.5 sm:py-2 md:py-2.5 rounded-full text-[10px] sm:text-xs md:text-base font-sans font-medium text-gray-300 hover:text-white hover:bg-gray-800/50 transition-all duration-200"
+            className="hidden md:block px-2 sm:px-3 md:px-8 py-1.5 sm:py-2 md:py-2.5 rounded-full text-[10px] sm:text-xs md:text-base font-medium tracking-wide text-gray-300 hover:text-white hover:bg-gray-800/50 transition-all duration-200"
             aria-label="Naviguer vers la section processus"
           >
             processus
@@ -137,7 +137,7 @@ function Home() {
 
           <button
             onClick={() => scrollToSection('contact')}
-            className="hidden md:block px-2 sm:px-3 md:px-8 py-1.5 sm:py-2 md:py-2.5 rounded-full text-[10px] sm:text-xs md:text-base font-sans font-medium text-gray-300 hover:text-white hover:bg-gray-800/50 transition-all duration-200"
+            className="hidden md:block px-2 sm:px-3 md:px-8 py-1.5 sm:py-2 md:py-2.5 rounded-full text-[10px] sm:text-xs md:text-base font-medium tracking-wide text-gray-300 hover:text-white hover:bg-gray-800/50 transition-all duration-200"
             aria-label="Naviguer vers la section contact"
           >
             contact
@@ -145,7 +145,7 @@ function Home() {
 
           <button
             onClick={() => navigate('/audit')}
-            className="group hidden md:inline-flex items-center px-2 sm:px-3 md:px-6 py-1.5 sm:py-2 md:py-2.5 bg-blue-600 hover:bg-blue-500 border-2 border-blue-400 font-sans font-semibold text-[10px] sm:text-xs md:text-base rounded-full whitespace-nowrap relative overflow-hidden shadow-lg shadow-blue-500/30 transition-all"
+            className="group hidden md:inline-flex items-center px-2 sm:px-3 md:px-6 py-1.5 sm:py-2 md:py-2.5 bg-blue-600 hover:bg-blue-500 border-2 border-blue-400 font-medium tracking-wide text-[10px] sm:text-xs md:text-base rounded-full whitespace-nowrap relative overflow-hidden shadow-lg shadow-blue-500/30 transition-all"
           >
             <span className="relative text-white">
               Audit gratuit
@@ -164,21 +164,21 @@ function Home() {
           <div className="flex flex-col space-y-2">
             <button
               onClick={() => scrollToSection('services')}
-              className="font-sans text-2xl font-medium text-white py-3 text-left hover:text-blue-400 transition-colors px-4 rounded-xl hover:bg-gray-800/50"
+              className="text-2xl font-medium tracking-wide text-white py-3 text-left hover:text-blue-400 transition-colors px-4 rounded-xl hover:bg-gray-800/50"
             >
               Services
             </button>
 
             <button
               onClick={() => scrollToSection('processus')}
-              className="font-sans text-2xl font-medium text-white py-3 text-left hover:text-blue-400 transition-colors px-4 rounded-xl hover:bg-gray-800/50"
+              className="text-2xl font-medium tracking-wide text-white py-3 text-left hover:text-blue-400 transition-colors px-4 rounded-xl hover:bg-gray-800/50"
             >
               Processus
             </button>
 
             <button
               onClick={() => scrollToSection('contact')}
-              className="font-sans text-2xl font-medium text-white py-3 text-left hover:text-blue-400 transition-colors px-4 rounded-xl hover:bg-gray-800/50"
+              className="text-2xl font-medium tracking-wide text-white py-3 text-left hover:text-blue-400 transition-colors px-4 rounded-xl hover:bg-gray-800/50"
             >
               Contact
             </button>
@@ -189,7 +189,7 @@ function Home() {
                   navigate('/audit');
                   setIsMobileMenuOpen(false);
                 }}
-                className="group relative w-full flex items-center justify-center px-8 py-3 bg-blue-600 hover:bg-blue-500 border-2 border-blue-400 font-sans font-semibold text-lg rounded-2xl overflow-hidden shadow-lg shadow-blue-500/30 transition-all"
+                className="group relative w-full flex items-center justify-center px-8 py-3 bg-blue-600 hover:bg-blue-500 border-2 border-blue-400 font-medium tracking-wide text-lg rounded-2xl overflow-hidden shadow-lg shadow-blue-500/30 transition-all"
               >
                 <span className="relative text-white">
                   Audit gratuit
