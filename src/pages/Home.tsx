@@ -237,59 +237,36 @@ function Home() {
       </section>
 
       {/* Services */}
-      <section id="services" className="pt-20 pb-40 sm:pt-32 sm:pb-56 lg:pt-40 lg:pb-64 px-6 sm:px-10 gpu-accelerated" aria-labelledby="services-title" data-section="services" itemScope itemType="https://schema.org/Service">
+      <section id="services" className="pt-20 pb-32 sm:pt-32 sm:pb-48 lg:pt-40 lg:pb-56 px-6 sm:px-10 gpu-accelerated" aria-labelledby="services-title" data-section="services" itemScope itemType="https://schema.org/Service">
         <div className="max-w-6xl mx-auto">
-          <h2 id="services-title" className="reveal reveal-scale font-display text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-center mb-4 sm:mb-6 lg:mb-8 text-white pb-3" itemProp="name">
-            Ce que nous faisons
-          </h2>
-          <p className="reveal font-sans text-center mb-12 sm:mb-20 lg:mb-24 text-base sm:text-xl lg:text-2xl text-gray-300" style={{ '--delay': '0.15s' } as React.CSSProperties} itemProp="description">
-            Nous aidons les entreprises à tirer le maximum de la demande qualifiée présente sur Google
-          </p>
+          <div className="reveal text-center mb-20 sm:mb-28 lg:mb-36">
+            <p className="font-sans text-blue-400 text-sm sm:text-base tracking-widest uppercase mb-4">Services</p>
+            <h2 id="services-title" className="font-display text-4xl sm:text-6xl md:text-7xl font-bold text-white" itemProp="name">
+              Ce que nous faisons
+            </h2>
+          </div>
 
-          <div className="grid grid-cols-1 gap-6 sm:gap-10 lg:gap-12" role="list">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-px bg-white/5" role="list">
             {services.map((service, idx) => (
               <div
                 key={idx}
-                className="reveal group p-6 sm:p-10 lg:p-12 glass-card glass-card-hover rounded-3xl overflow-visible"
-                style={{ '--delay': `${idx * 0.15}s` } as React.CSSProperties}
+                className="reveal group relative bg-black p-8 sm:p-12 lg:p-16 overflow-hidden"
+                style={{ '--delay': `${idx * 0.1}s` } as React.CSSProperties}
                 role="listitem"
                 data-service-type={service.keywords}
                 itemScope
                 itemType="https://schema.org/Service"
               >
-                <service.icon className="w-10 h-10 sm:w-14 sm:h-14 lg:w-16 lg:h-16 text-blue-400 mb-4 sm:mb-6 group-hover:scale-110 transition-transform duration-500" aria-hidden="true" />
-                <h3 className="font-display text-2xl sm:text-3xl lg:text-4xl font-semibold mb-3 sm:mb-4 text-white leading-[1.3] pb-2" itemProp="name">{service.title}</h3>
-                <p className="font-sans text-base sm:text-lg lg:text-xl text-gray-400 leading-[1.6] pb-2" itemProp="description">{service.desc}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Processus */}
-      <section id="processus" className="py-24 sm:py-48 lg:py-56 px-6 sm:px-10 gpu-accelerated" aria-labelledby="processus-title" data-section="process" itemScope itemType="https://schema.org/HowTo">
-        <div className="max-w-5xl mx-auto">
-          <h2 id="processus-title" className="reveal reveal-scale font-display text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-center mb-4 sm:mb-6 lg:mb-8 text-white pb-3" itemProp="name">
-            Notre processus
-          </h2>
-          <p className="reveal font-sans text-center mb-12 sm:mb-20 lg:mb-24 text-base sm:text-xl lg:text-2xl text-gray-300" style={{ '--delay': '0.15s' } as React.CSSProperties} itemProp="description">
-            Une méthodologie éprouvée en 4 étapes
-          </p>
-
-          <div className="flex flex-col gap-4 sm:gap-6 lg:gap-8" role="list">
-            {steps.map((step, idx) => (
-              <div
-                key={idx}
-                className="reveal relative flex items-center gap-6 sm:gap-10 lg:gap-14 p-6 sm:p-8 lg:p-10 glass-card glass-card-hover rounded-3xl"
-                style={{ '--delay': `${idx * 0.12}s` } as React.CSSProperties}
-                role="listitem"
-                itemScope
-                itemType="https://schema.org/HowToStep"
-              >
-                <div className="font-display text-5xl sm:text-7xl lg:text-8xl font-bold text-blue-500/20 flex-shrink-0 w-16 sm:w-24 lg:w-32 text-right leading-none" aria-hidden="true">{step.num}</div>
-                <div className="flex-1 min-w-0">
-                  <h3 className="font-display text-2xl sm:text-3xl lg:text-4xl font-semibold mb-2 sm:mb-3 text-white" itemProp="name">{step.title}</h3>
-                  <p className="font-sans text-gray-400 text-base sm:text-lg lg:text-xl leading-relaxed" itemProp="text">{step.desc}</p>
+                <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
+                <div className="relative">
+                  <div className="flex items-center gap-4 mb-8">
+                    <div className="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center group-hover:border-blue-500/50 transition-colors duration-500">
+                      <service.icon className="w-5 h-5 text-white/60 group-hover:text-blue-400 transition-colors duration-500" aria-hidden="true" />
+                    </div>
+                    <span className="font-sans text-white/30 text-sm tracking-wider">0{idx + 1}</span>
+                  </div>
+                  <h3 className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 text-white" itemProp="name">{service.title}</h3>
+                  <p className="font-sans text-base sm:text-lg text-gray-500 leading-relaxed max-w-md" itemProp="description">{service.desc}</p>
                 </div>
               </div>
             ))}
@@ -297,34 +274,80 @@ function Home() {
         </div>
       </section>
 
-      {/* FAQ */}
-      <section id="faq" className="py-24 sm:py-48 lg:py-56 px-6 sm:px-10 gpu-accelerated" aria-labelledby="faq-title" data-section="faq" itemScope itemType="https://schema.org/FAQPage">
-        <div className="max-w-3xl mx-auto">
-          <h2 id="faq-title" className="reveal reveal-scale font-display text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-center mb-12 sm:mb-20 lg:mb-24 text-white pb-3">
-            Questions fréquentes
-          </h2>
+      {/* Processus */}
+      <section id="processus" className="py-24 sm:py-40 lg:py-48 px-6 sm:px-10 gpu-accelerated" aria-labelledby="processus-title" data-section="process" itemScope itemType="https://schema.org/HowTo">
+        <div className="max-w-6xl mx-auto">
+          <div className="reveal text-center mb-20 sm:mb-28 lg:mb-36">
+            <p className="font-sans text-blue-400 text-sm sm:text-base tracking-widest uppercase mb-4">Processus</p>
+            <h2 id="processus-title" className="font-display text-4xl sm:text-6xl md:text-7xl font-bold text-white" itemProp="name">
+              Comment ca marche
+            </h2>
+          </div>
 
-          <div className="reveal" style={{ '--delay': '0.1s' } as React.CSSProperties}>
+          <div className="relative" role="list">
+            <div className="absolute left-8 sm:left-12 top-0 bottom-0 w-px bg-gradient-to-b from-blue-500/50 via-white/10 to-transparent hidden sm:block" />
+
+            <div className="space-y-0">
+              {steps.map((step, idx) => (
+                <div
+                  key={idx}
+                  className="reveal group relative"
+                  style={{ '--delay': `${idx * 0.1}s` } as React.CSSProperties}
+                  role="listitem"
+                  itemScope
+                  itemType="https://schema.org/HowToStep"
+                >
+                  <div className="flex items-start gap-6 sm:gap-12 py-10 sm:py-14 border-b border-white/5 last:border-0">
+                    <div className="relative flex-shrink-0">
+                      <div className="w-16 h-16 sm:w-24 sm:h-24 rounded-full border border-white/10 flex items-center justify-center bg-black group-hover:border-blue-500/30 transition-colors duration-500">
+                        <span className="font-display text-2xl sm:text-4xl font-bold text-white/20 group-hover:text-blue-400/60 transition-colors duration-500">{step.num}</span>
+                      </div>
+                    </div>
+                    <div className="flex-1 pt-2 sm:pt-4">
+                      <h3 className="font-display text-2xl sm:text-3xl lg:text-4xl font-bold mb-3 text-white group-hover:text-blue-50 transition-colors duration-300" itemProp="name">{step.title}</h3>
+                      <p className="font-sans text-gray-500 text-base sm:text-lg leading-relaxed max-w-xl" itemProp="text">{step.desc}</p>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section id="faq" className="py-24 sm:py-40 lg:py-48 px-6 sm:px-10 gpu-accelerated" aria-labelledby="faq-title" data-section="faq" itemScope itemType="https://schema.org/FAQPage">
+        <div className="max-w-4xl mx-auto">
+          <div className="reveal text-center mb-20 sm:mb-28 lg:mb-36">
+            <p className="font-sans text-blue-400 text-sm sm:text-base tracking-widest uppercase mb-4">FAQ</p>
+            <h2 id="faq-title" className="font-display text-4xl sm:text-6xl md:text-7xl font-bold text-white">
+              Questions frequentes
+            </h2>
+          </div>
+
+          <div className="reveal space-y-4" style={{ '--delay': '0.1s' } as React.CSSProperties}>
             {faqs.map((faq, idx) => (
               <div
                 key={idx}
-                className={`border-t ${idx === faqs.length - 1 ? 'border-b' : ''} border-white/10`}
+                className={`group border border-white/5 rounded-2xl overflow-hidden transition-colors duration-300 ${openFaqIndex === idx ? 'bg-white/[0.02] border-white/10' : 'hover:border-white/10'}`}
                 itemScope
                 itemType="https://schema.org/Question"
               >
                 <button
                   onClick={() => setOpenFaqIndex(openFaqIndex === idx ? null : idx)}
-                  className="w-full flex items-center justify-between gap-6 py-7 sm:py-8 text-left group"
+                  className="w-full flex items-center justify-between gap-6 p-6 sm:p-8 text-left"
                   aria-expanded={openFaqIndex === idx}
                   aria-controls={`faq-answer-${idx}`}
                 >
-                  <span className={`font-sans text-lg sm:text-xl font-medium transition-colors duration-200 ${openFaqIndex === idx ? 'text-white' : 'text-gray-200 group-hover:text-white'}`} itemProp="name">
+                  <span className={`font-sans text-base sm:text-lg font-medium transition-colors duration-200 ${openFaqIndex === idx ? 'text-white' : 'text-gray-300 group-hover:text-white'}`} itemProp="name">
                     {faq.question}
                   </span>
-                  <ChevronDown
-                    className={`w-5 h-5 sm:w-6 sm:h-6 flex-shrink-0 transition-all duration-300 ${openFaqIndex === idx ? 'rotate-180 text-blue-400' : 'text-gray-500 group-hover:text-gray-300'}`}
-                    aria-hidden="true"
-                  />
+                  <div className={`w-8 h-8 rounded-full border flex items-center justify-center flex-shrink-0 transition-all duration-300 ${openFaqIndex === idx ? 'border-blue-500/50 bg-blue-500/10' : 'border-white/10 group-hover:border-white/20'}`}>
+                    <ChevronDown
+                      className={`w-4 h-4 transition-all duration-300 ${openFaqIndex === idx ? 'rotate-180 text-blue-400' : 'text-gray-500'}`}
+                      aria-hidden="true"
+                    />
+                  </div>
                 </button>
                 <div
                   id={`faq-answer-${idx}`}
@@ -334,7 +357,7 @@ function Home() {
                   itemType="https://schema.org/Answer"
                 >
                   <div className="overflow-hidden">
-                    <p className={`font-sans text-base sm:text-lg text-gray-300 leading-relaxed pb-7 sm:pb-8 pr-12 transition-opacity duration-500 ${openFaqIndex === idx ? 'opacity-100' : 'opacity-0'}`} itemProp="text">
+                    <p className={`font-sans text-base sm:text-lg text-gray-500 leading-relaxed px-6 sm:px-8 pb-6 sm:pb-8 transition-opacity duration-500 ${openFaqIndex === idx ? 'opacity-100' : 'opacity-0'}`} itemProp="text">
                       {faq.answer}
                     </p>
                   </div>
@@ -346,23 +369,37 @@ function Home() {
       </section>
 
       {/* Contact */}
-      <section id="contact" className="py-16 sm:py-36 lg:py-44 px-6 sm:px-10 gpu-accelerated" aria-labelledby="contact-title" data-section="contact" itemScope itemType="https://schema.org/ContactPage">
+      <section id="contact" className="py-24 sm:py-40 lg:py-48 px-6 sm:px-10 gpu-accelerated" aria-labelledby="contact-title" data-section="contact" itemScope itemType="https://schema.org/ContactPage">
         <div className="max-w-6xl mx-auto">
-          <div className="grid md:grid-cols-2 gap-12 sm:gap-20 lg:gap-24 items-center">
-            <div itemScope itemType="https://schema.org/Organization" className="reveal">
-              <h2 id="contact-title" className="font-display text-[3.5rem] leading-[1.1] sm:text-7xl md:text-8xl lg:text-9xl font-bold mb-8 sm:mb-12 lg:mb-16 pr-8 text-white">
-                <span>Parlons-</span>
-                <span className="italic pr-6">en!</span>
-              </h2>
-              <div className="border-t border-gray-800/50 pt-6 sm:pt-8 lg:pt-10">
-                <p className="font-sans text-gray-400 text-sm sm:text-base lg:text-lg mb-2 sm:mb-3">Email:</p>
-                <a href="mailto:info@reactop.com" className="font-sans text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-light text-white hover:text-blue-400 transition-colors break-words" itemProp="email" aria-label="Envoyer un email à ReactOP">
-                  info@reactop.com
-                </a>
+          <div className="reveal text-center mb-16 sm:mb-24">
+            <p className="font-sans text-blue-400 text-sm sm:text-base tracking-widest uppercase mb-4">Contact</p>
+            <h2 id="contact-title" className="font-display text-4xl sm:text-6xl md:text-7xl font-bold text-white mb-6">
+              Parlons de votre projet
+            </h2>
+            <p className="font-sans text-gray-500 text-lg max-w-xl mx-auto">
+              Remplissez le formulaire et nous vous recontactons sous 24h.
+            </p>
+          </div>
+
+          <div className="grid lg:grid-cols-5 gap-12 lg:gap-16 items-start">
+            <div className="reveal lg:col-span-2 space-y-8" style={{ '--delay': '0.1s' } as React.CSSProperties} itemScope itemType="https://schema.org/Organization">
+              <div className="space-y-6">
+                <div className="group">
+                  <p className="font-sans text-white/30 text-xs tracking-widest uppercase mb-2">Email</p>
+                  <a href="mailto:info@reactop.com" className="font-sans text-xl sm:text-2xl text-white hover:text-blue-400 transition-colors" itemProp="email">
+                    info@reactop.com
+                  </a>
+                </div>
+                <div className="group">
+                  <p className="font-sans text-white/30 text-xs tracking-widest uppercase mb-2">Telephone</p>
+                  <a href="tel:+41775211998" className="font-sans text-xl sm:text-2xl text-white hover:text-blue-400 transition-colors" itemProp="telephone">
+                    +41 77 521 19 98
+                  </a>
+                </div>
               </div>
             </div>
 
-            <div className="reveal w-full glass-card rounded-3xl p-4 sm:p-6" style={{ '--delay': '0.2s' } as React.CSSProperties}>
+            <div className="reveal lg:col-span-3 border border-white/5 rounded-2xl p-6 sm:p-8 bg-white/[0.01]" style={{ '--delay': '0.2s' } as React.CSSProperties}>
               <iframe
                 data-tally-src="https://tally.so/embed/A7LaDW?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1"
                 loading="lazy"
@@ -378,24 +415,14 @@ function Home() {
         </div>
       </section>
 
-      <footer className="border-t border-gray-800/50 py-12 sm:py-16 lg:py-20 px-6 sm:px-10" role="contentinfo" aria-label="Pied de page" itemScope itemType="https://schema.org/WPFooter">
+      <footer className="border-t border-white/5 py-12 sm:py-16 px-6 sm:px-10" role="contentinfo" aria-label="Pied de page" itemScope itemType="https://schema.org/WPFooter">
         <div className="max-w-6xl mx-auto">
-          <div className="flex flex-col-reverse md:flex-row justify-between items-center gap-8 sm:gap-10 lg:gap-12">
-            <div className="text-center md:text-left" itemScope itemType="https://schema.org/Organization">
-              <div className="flex items-center justify-center md:justify-start gap-2 sm:gap-3 lg:gap-4 mb-2 sm:mb-3">
-                <img src="/mobius_det.png" alt="ReactOP" className="h-8 w-8 sm:h-10 sm:w-10 lg:h-12 lg:w-12" itemProp="logo" />
-                <div className="text-lg sm:text-xl lg:text-2xl font-medium tracking-wide text-white" itemProp="name">ReactOP</div>
-              </div>
-              <p className="font-sans text-sm sm:text-base lg:text-lg text-gray-400" itemProp="copyrightNotice">&copy; 2026 ReactOP. Tous droits reserves.</p>
+          <div className="flex flex-col sm:flex-row justify-between items-center gap-6">
+            <div className="flex items-center gap-3" itemScope itemType="https://schema.org/Organization">
+              <img src="/mobius_det.png" alt="ReactOP" className="h-8 w-8" itemProp="logo" />
+              <span className="text-lg font-medium text-white" itemProp="name">ReactOP</span>
             </div>
-
-            <div className="text-center md:text-right" itemScope itemType="https://schema.org/ContactPoint">
-              <h3 className="font-display text-base sm:text-lg lg:text-xl font-semibold mb-3 sm:mb-5 lg:mb-6 text-gray-400">Contact</h3>
-              <div className="space-y-2 sm:space-y-3 lg:space-y-4">
-                <a href="mailto:info@reactop.com" className="font-sans block text-sm sm:text-base lg:text-lg text-gray-300 hover:text-blue-400 transition-colors duration-300" itemProp="email">info@reactop.com</a>
-                <a href="tel:+41775211998" className="font-sans block text-sm sm:text-base lg:text-lg text-gray-300 hover:text-blue-400 transition-colors duration-300" itemProp="telephone">+41 77 521 19 98</a>
-              </div>
-            </div>
+            <p className="font-sans text-sm text-gray-600" itemProp="copyrightNotice">&copy; 2026 ReactOP. Tous droits reserves.</p>
           </div>
         </div>
       </footer>
