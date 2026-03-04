@@ -90,12 +90,6 @@ function Home() {
     { num: "04", title: "Optimisation continue", desc: "Améliorations régulières et suivi des résultats basés sur le volume et la qualité des demandes" }
   ];
 
-  const leaks = [
-    { title: "Campagnes mal paramétrées", desc: "demande inexistante ou non qualifiée" },
-    { title: "Landing pages peu convaincantes", desc: "clics ne deviennent pas leads" },
-    { title: "Tracking des conversions incomplet", desc: "décisions sans visibilité sur ce qui fonctionne" }
-  ];
-
   const faqs = [
     { question: "J'ai déjà essayé Google Ads mais ça n'a pas marché.", answer: "C'est souvent un problème de ciblage ou de page de destination, pas de Google Ads en soi. Nous testons toujours les campagnes avant de les scaler. Si votre entreprise n'est pas adaptée, nous vous le dirons." },
     { question: "Quelle est la durée d'engagement?", answer: "Pas de contrat long terme. Engagement mensuel, résiliable à tout moment." },
@@ -281,32 +275,10 @@ function Home() {
         </div>
       </section>
 
-      {/* Fuites */}
-      <section id="pour-qui" className="py-16 sm:py-24 lg:py-32 px-6 sm:px-10 gpu-accelerated" data-section="clients" itemScope itemType="https://schema.org/Audience">
-        <div className="max-w-6xl mx-auto">
-          <p className="reveal reveal-scale font-display text-center mb-8 sm:mb-12 lg:mb-16 text-2xl sm:text-3xl lg:text-4xl bg-gradient-to-r from-gray-300 to-blue-300 bg-clip-text text-transparent">
-            Exemples de fuites fréquentes
-          </p>
-
-          <div className="grid md:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 mb-6 sm:mb-10 lg:mb-12">
-            {leaks.map((leak, idx) => (
-              <div
-                key={idx}
-                className="reveal p-5 sm:p-6 lg:p-8 glass-card rounded-2xl flex flex-col border border-orange-500/20"
-                style={{ '--delay': `${idx * 0.15}s` } as React.CSSProperties}
-              >
-                <div className="md:h-[5rem] mb-4 sm:mb-5">
-                  <div className="font-display font-semibold text-lg sm:text-xl lg:text-2xl text-white leading-tight">{leak.title}</div>
-                </div>
-                <div className="flex items-start gap-2 sm:gap-3">
-                  <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 text-gray-400 flex-shrink-0 mt-1" />
-                  <p className="font-sans text-sm sm:text-base lg:text-lg text-gray-300 leading-snug">{leak.desc}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-
-          <div className="reveal reveal-scale p-6 sm:p-10 lg:p-12 glass-card rounded-3xl text-center border border-green-500/20" data-value-proposition="main">
+      {/* Proposition de valeur */}
+      <section id="proposition" className="py-16 sm:py-24 lg:py-32 px-6 sm:px-10 gpu-accelerated" data-section="value-proposition">
+        <div className="max-w-4xl mx-auto">
+          <div className="reveal reveal-scale p-6 sm:p-10 lg:p-12 glass-card rounded-3xl text-center border border-blue-500/20" data-value-proposition="main">
             <p className="font-sans text-base sm:text-2xl lg:text-3xl bg-gradient-to-r from-gray-200 to-blue-200 bg-clip-text text-transparent font-medium leading-relaxed">
               Nous priorisons les améliorations à plus fort impact afin d'augmenter votre volume de demandes qualifiées.
             </p>
