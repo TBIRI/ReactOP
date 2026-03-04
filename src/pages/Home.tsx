@@ -275,17 +275,6 @@ function Home() {
         </div>
       </section>
 
-      {/* Proposition de valeur */}
-      <section id="proposition" className="py-16 sm:py-24 lg:py-32 px-6 sm:px-10 gpu-accelerated" data-section="value-proposition">
-        <div className="max-w-4xl mx-auto">
-          <div className="reveal reveal-scale p-6 sm:p-10 lg:p-12 glass-card rounded-3xl text-center border border-blue-500/20" data-value-proposition="main">
-            <p className="font-sans text-base sm:text-2xl lg:text-3xl bg-gradient-to-r from-gray-200 to-blue-200 bg-clip-text text-transparent font-medium leading-relaxed">
-              Nous priorisons les améliorations à plus fort impact afin d'augmenter votre volume de demandes qualifiées.
-            </p>
-          </div>
-        </div>
-      </section>
-
       {/* Processus */}
       <section id="processus" className="py-24 sm:py-48 lg:py-56 px-6 sm:px-10 gpu-accelerated" aria-labelledby="processus-title" data-section="process" itemScope itemType="https://schema.org/HowTo">
         <div className="max-w-5xl mx-auto">
@@ -300,7 +289,7 @@ function Home() {
             {steps.map((step, idx) => (
               <div
                 key={idx}
-                className="reveal relative flex items-center gap-6 sm:gap-10 lg:gap-14 p-6 sm:p-8 lg:p-10 glass-card rounded-3xl"
+                className="reveal relative flex items-center gap-6 sm:gap-10 lg:gap-14 p-6 sm:p-8 lg:p-10 glass-card glass-card-hover rounded-3xl"
                 style={{ '--delay': `${idx * 0.12}s` } as React.CSSProperties}
                 role="listitem"
                 itemScope
