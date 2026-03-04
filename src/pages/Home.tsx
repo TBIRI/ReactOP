@@ -213,13 +213,13 @@ function Home() {
             <div className="grid lg:grid-cols-2 gap-12 lg:gap-8 items-center">
               <div className="order-2 lg:order-1">
                 <h1 className="font-display text-[2.75rem] leading-[1.05] sm:text-[3.5rem] md:text-[4rem] lg:text-[4.5rem] xl:text-[5rem] font-bold mb-6 sm:mb-8 animate-slide-in-stagger-1" itemProp="name headline">
-                  <span className="text-white">Vos concurrents</span>
+                  <span className="text-white">Vos clients vous</span>
                   <br />
-                  <span className="text-white">captent </span>
-                  <span className="bg-gradient-to-r from-blue-400 to-blue-500 bg-clip-text text-transparent">vos clients</span>
+                  <span className="text-white">cherchent sur </span>
+                  <span className="bg-gradient-to-r from-blue-400 to-blue-500 bg-clip-text text-transparent">Google</span>
                 </h1>
                 <p className="font-sans text-lg sm:text-xl text-gray-400 max-w-xl mb-10 leading-relaxed animate-slide-in-stagger-2" itemProp="description">
-                  Chaque jour, des prospects prets a acheter tapent vos services sur Google. <span className="text-white font-medium">La question n'est pas s'ils vont trouver une solution</span> - mais si ce sera <span className="bg-gradient-to-r from-blue-400 via-blue-500 to-blue-400 bg-clip-text text-transparent font-semibold">vous</span> ou <span className="text-gray-300">quelqu'un d'autre</span>.
+                  Nous aidons les entreprises ambitieuses a capter la demande sur <span className="bg-gradient-to-r from-blue-400 via-blue-500 to-blue-400 bg-clip-text text-transparent font-semibold">Google</span> et a la transformer en <span className="bg-gradient-to-r from-emerald-400 via-teal-400 to-emerald-400 bg-clip-text text-transparent font-semibold">leads qualifies</span>.
                 </p>
                 <div className="flex items-start animate-slide-in-stagger-3">
                   <button
