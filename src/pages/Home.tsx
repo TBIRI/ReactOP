@@ -252,22 +252,6 @@ function Home() {
                 </button>
               </div>
 
-              <div className="animate-slide-in-stagger-3 mt-20 pt-12 border-t border-white/10">
-                <div className="grid grid-cols-3 gap-8 sm:gap-16">
-                  <div>
-                    <div className="text-3xl sm:text-4xl font-bold text-white mb-1">+147%</div>
-                    <div className="text-sm text-gray-500">Conversions</div>
-                  </div>
-                  <div>
-                    <div className="text-3xl sm:text-4xl font-bold text-white mb-1">-32%</div>
-                    <div className="text-sm text-gray-500">CPA moyen</div>
-                  </div>
-                  <div>
-                    <div className="text-3xl sm:text-4xl font-bold text-white mb-1">4.8%</div>
-                    <div className="text-sm text-gray-500">CTR moyen</div>
-                  </div>
-                </div>
-              </div>
             </div>
           </div>
         </div>
