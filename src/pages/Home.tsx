@@ -216,40 +216,40 @@ function Home() {
           </div>
         </div>
 
-        <div className="relative z-10 flex-1 flex items-start sm:items-center w-full px-6 sm:px-8 lg:px-16 xl:px-24 pt-24 sm:pt-0">
+        <div className="relative z-10 flex-1 flex items-center w-full px-6 sm:px-8 lg:px-16 xl:px-24">
           <div className="max-w-7xl mx-auto w-full">
             <div className="grid lg:grid-cols-12 gap-8 lg:gap-12 items-center">
               <div className="lg:col-span-8 xl:col-span-7">
-                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/[0.03] border border-white/[0.06] mb-7 sm:mb-8 animate-slide-in-stagger-1">
-                  <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-                  <span className="font-sans text-sm text-gray-400">Agence d'acquisition IA-native</span>
+                <div className="inline-flex items-center gap-2 px-3 py-1.5 sm:px-4 sm:py-2 rounded-full bg-white/[0.03] border border-white/[0.06] mb-5 sm:mb-8 animate-slide-in-stagger-1">
+                  <span className="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                  <span className="font-sans text-xs sm:text-sm text-gray-400">Agence d'acquisition IA-native</span>
                 </div>
 
-                <h1 className="font-display text-[3.25rem] leading-[1.06] sm:text-[3.75rem] md:text-[4.25rem] lg:text-[4.5rem] xl:text-[5.25rem] font-bold mb-6 sm:mb-8 animate-slide-in-stagger-1" itemProp="name headline">
+                <h1 className="font-display text-[2.75rem] leading-[1.08] sm:text-[3.5rem] md:text-[4rem] lg:text-[4.5rem] xl:text-[5rem] font-bold mb-5 sm:mb-8 animate-slide-in-stagger-1" itemProp="name headline">
                   <span className="text-white">Vos clients vous</span>
                   <br />
                   <span className="text-white">cherchent sur </span>
                   <span className="bg-gradient-to-r from-blue-400 to-blue-500 bg-clip-text text-transparent">Google</span>
                 </h1>
 
-                <p className="font-sans text-[1.05rem] sm:text-lg lg:text-xl text-gray-400 max-w-2xl mb-10 sm:mb-10 leading-[1.75] animate-slide-in-stagger-2" itemProp="description">
+                <p className="font-sans text-base sm:text-lg lg:text-xl text-gray-400 max-w-2xl mb-8 sm:mb-10 leading-[1.7] animate-slide-in-stagger-2" itemProp="description">
                   Nous aidons les entreprises ambitieuses à capter la demande sur <span className="bg-gradient-to-r from-blue-400 via-blue-500 to-blue-400 bg-clip-text text-transparent font-semibold">Google</span> et à la transformer en <span className="bg-gradient-to-r from-emerald-400 via-teal-400 to-emerald-400 bg-clip-text text-transparent font-semibold">leads qualifiés</span>.
                 </p>
 
-                <div className="flex flex-col sm:flex-row items-start gap-4 sm:gap-6 animate-slide-in-stagger-3">
+                <div className="flex flex-col sm:flex-row items-start gap-3 sm:gap-6 animate-slide-in-stagger-3">
                   <button
                     onClick={() => navigate('/audit')}
-                    className="group relative inline-flex items-center gap-3 px-7 py-4 sm:px-8 sm:py-4 font-sans font-semibold text-base overflow-hidden rounded-xl bg-blue-600 hover:bg-blue-500 shadow-lg shadow-blue-600/25 hover:shadow-blue-500/35 transition-all duration-300 w-full sm:w-auto justify-center sm:justify-start"
+                    className="group relative inline-flex items-center gap-3 px-6 py-3.5 sm:px-8 sm:py-4 font-sans font-semibold text-sm sm:text-base overflow-hidden rounded-xl bg-blue-600 hover:bg-blue-500 shadow-lg shadow-blue-600/25 hover:shadow-blue-500/35 transition-all duration-300"
                     aria-label="Recevoir un audit gratuit avec ReactOP"
                     data-action="cta-primary"
                   >
                     <span className="relative text-white">Recevez votre audit gratuit</span>
-                    <ArrowRight className="relative w-5 h-5 text-white group-hover:translate-x-1 transition-transform duration-300" aria-hidden="true" />
+                    <ArrowRight className="relative w-4 h-4 sm:w-5 sm:h-5 text-white group-hover:translate-x-1 transition-transform duration-300" aria-hidden="true" />
                   </button>
 
                   <button
                     onClick={() => scrollToSection('services')}
-                    className="group inline-flex items-center gap-2 px-1 py-4 font-sans font-medium text-base text-gray-400 hover:text-white transition-colors duration-300"
+                    className="group inline-flex items-center gap-2 px-1 py-3 sm:py-4 font-sans font-medium text-sm sm:text-base text-gray-400 hover:text-white transition-colors duration-300"
                     aria-label="Découvrir nos services"
                   >
                     <span>Découvrir nos services</span>
