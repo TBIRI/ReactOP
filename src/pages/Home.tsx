@@ -223,7 +223,7 @@ function Home() {
                   <span className="bg-gradient-to-r from-blue-400 to-blue-500 bg-clip-text text-transparent">Google</span>
                 </h1>
                 <p className="font-sans text-lg sm:text-xl text-gray-400 max-w-xl mb-10 leading-relaxed animate-slide-in-stagger-2" itemProp="description">
-                  Nous aidons les entreprises B2B a capter la demande et la convertir en <span className="text-white font-medium">leads qualifies</span>.
+                  Nous aidons les entreprises ambitieuses a capter la demande sur Google et a la transformer en <span className="text-white font-medium">leads qualifies</span>.
                 </p>
                 <div className="flex flex-col sm:flex-row items-start gap-4 animate-slide-in-stagger-3">
                   <button
@@ -242,24 +242,6 @@ function Home() {
                     Decouvrir nos services
                     <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
                   </button>
-                </div>
-                <div className="mt-14 pt-8 border-t border-gray-800/50 animate-slide-in-stagger-3">
-                  <div className="flex items-center gap-8">
-                    <div>
-                      <div className="font-display text-3xl font-bold text-white">2M+</div>
-                      <div className="font-sans text-sm text-gray-500 mt-1">Budget gere</div>
-                    </div>
-                    <div className="w-px h-12 bg-gray-800" />
-                    <div>
-                      <div className="font-display text-3xl font-bold text-white">50+</div>
-                      <div className="font-sans text-sm text-gray-500 mt-1">Clients</div>
-                    </div>
-                    <div className="w-px h-12 bg-gray-800" />
-                    <div>
-                      <div className="font-display text-3xl font-bold text-white">3.5x</div>
-                      <div className="font-sans text-sm text-gray-500 mt-1">ROAS moyen</div>
-                    </div>
-                  </div>
                 </div>
               </div>
               <div className="order-1 lg:order-2 relative animate-slide-in-stagger-2">
