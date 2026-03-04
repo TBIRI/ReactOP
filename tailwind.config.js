@@ -5,6 +5,7 @@ export default {
     extend: {
       fontFamily: {
         sans: ['Inter', 'system-ui', 'sans-serif'],
+        logo: ['Poppins', 'system-ui', 'sans-serif'],
       },
     },
   },
