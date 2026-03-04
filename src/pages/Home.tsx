@@ -1,4 +1,4 @@
-import { ArrowRight, TrendingUp, Target, Menu, X, MousePointerClick } from 'lucide-react';
+import { ArrowRight, TrendingUp, MousePointerClick, Menu, X } from 'lucide-react';
 import { useState, useEffect, useRef, useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
 
@@ -78,9 +78,8 @@ function Home() {
   useScrollReveal();
 
   const services = [
-    { icon: TrendingUp, title: "Audit du parcours d'acquisition lead", desc: "Identification des fuites de leads et des leviers correctifs applicables", keywords: "audit CRO, optimisation conversion, funnel vente" },
-    { icon: Target, title: "Pilotage de vos campagnes Google Ads", desc: "Paramétrage, déploiement et optimisation continue de campagnes en ligne", keywords: "workflows IA, automatisation, pipeline vente" },
-    { icon: MousePointerClick, title: "Optimisation du parcours de conversion", desc: "Réduction continue des points de friction de votre tunnel de conversion, du clic au lead", keywords: "landing page, conversion, optimisation CRO" }
+    { icon: TrendingUp, title: "Google Ads", desc: "Vos clients potentiels cherchent déjà vos services sur Google. Nous créons, gérons et optimisons vos campagnes pour les capter.", keywords: "google ads, campagnes publicitaires, acquisition" },
+    { icon: MousePointerClick, title: "Optimisation de la conversion", desc: "Une bonne pub ne sert à rien si la page derrière ne convertit pas. Nous optimisons votre tunnel de conversion pour que les clics deviennent des leads.", keywords: "landing page, conversion, optimisation CRO" }
   ];
 
   const steps = [
