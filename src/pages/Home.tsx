@@ -107,7 +107,7 @@ function Home() {
             className="flex items-center gap-2 md:ml-0"
             aria-label="Retour en haut"
           >
-            <img src="/mobius_det.png" alt="ReactOP Logo - Agence Acquisition Digitale & CRO" className="w-10 h-10 md:w-12 md:h-12 cursor-pointer hover:opacity-80 transition-opacity" itemProp="logo" />
+            <img src="/mobius_det.png" alt="ReactOP" className="w-10 h-10 md:w-12 md:h-12 cursor-pointer hover:opacity-80 transition-opacity" itemProp="logo" />
             <span className="text-lg md:text-xl font-semibold bg-gradient-to-r from-white to-blue-400 bg-clip-text text-transparent">ReactOP</span>
           </button>
 
@@ -212,10 +212,6 @@ function Home() {
           <div className="max-w-7xl mx-auto">
             <div className="grid lg:grid-cols-2 gap-12 lg:gap-8 items-center">
               <div className="order-2 lg:order-1">
-                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-500/10 border border-blue-500/20 mb-8 animate-slide-in-stagger-1">
-                  <div className="w-2 h-2 rounded-full bg-blue-400 animate-pulse" />
-                  <span className="font-sans text-sm text-blue-300">Agence Google Ads & CRO</span>
-                </div>
                 <h1 className="font-display text-[2.75rem] leading-[1.05] sm:text-[3.5rem] md:text-[4rem] lg:text-[4.5rem] xl:text-[5rem] font-bold mb-6 sm:mb-8 animate-slide-in-stagger-1" itemProp="name headline">
                   <span className="text-white">Vos clients vous</span>
                   <br />
@@ -435,7 +431,7 @@ function Home() {
           <div className="flex flex-col-reverse md:flex-row justify-between items-center gap-8 sm:gap-10 lg:gap-12">
             <div className="text-center md:text-left" itemScope itemType="https://schema.org/Organization">
               <div className="flex items-center justify-center md:justify-start gap-2 sm:gap-3 lg:gap-4 mb-2 sm:mb-3">
-                <img src="/mobius_det.png" alt="ReactOP Logo - Agence Acquisition Digitale & CRO" className="h-8 w-8 sm:h-10 sm:w-10 lg:h-12 lg:w-12" itemProp="logo" />
+                <img src="/mobius_det.png" alt="ReactOP" className="h-8 w-8 sm:h-10 sm:w-10 lg:h-12 lg:w-12" itemProp="logo" />
                 <div className="font-display text-xl sm:text-2xl lg:text-3xl font-semibold bg-gradient-to-r from-white to-blue-400 bg-clip-text text-transparent" itemProp="name">
                   ReactOP
                 </div>
