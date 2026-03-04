@@ -241,15 +241,6 @@ function Home() {
                     <span className="relative text-white">Recevez votre audit gratuit</span>
                     <ArrowRight className="relative w-4 h-4 sm:w-5 sm:h-5 text-white group-hover:translate-x-1 transition-transform duration-300" aria-hidden="true" />
                   </button>
-
-                  <button
-                    onClick={() => scrollToSection('services')}
-                    className="group inline-flex items-center gap-2 px-1 py-3 sm:py-4 font-sans font-medium text-[0.9rem] sm:text-base text-gray-400 hover:text-white transition-colors duration-300"
-                    aria-label="Découvrir nos services"
-                  >
-                    <span>Découvrir nos services</span>
-                    <ChevronDown className="w-4 h-4 group-hover:translate-y-0.5 transition-transform duration-300" aria-hidden="true" />
-                  </button>
                 </div>
               </div>
 
