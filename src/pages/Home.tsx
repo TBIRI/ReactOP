@@ -220,11 +220,6 @@ function Home() {
           <div className="max-w-7xl mx-auto w-full">
             <div className="grid lg:grid-cols-12 gap-8 lg:gap-12 items-center">
               <div className="lg:col-span-8 xl:col-span-7">
-                <div className="inline-flex items-center gap-2 px-3 py-1.5 sm:px-4 sm:py-2 rounded-full bg-white/[0.03] border border-white/[0.06] mb-5 sm:mb-8 animate-slide-in-stagger-1">
-                  <span className="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-                  <span className="font-sans text-xs sm:text-sm text-gray-400">Agence d'acquisition IA-native</span>
-                </div>
-
                 <h1 className="font-display text-[2.25rem] leading-[1.1] sm:text-[3.5rem] md:text-[4rem] lg:text-[4.5rem] xl:text-[5rem] font-bold mb-4 sm:mb-8 animate-slide-in-stagger-1" itemProp="name headline">
                   <span className="text-white">Vos clients vous</span>
                   <br />
