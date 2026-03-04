@@ -233,7 +233,7 @@ function Home() {
                 </h1>
 
                 <p className="font-sans text-base sm:text-lg lg:text-xl text-gray-400 max-w-2xl mb-8 sm:mb-10 leading-[1.7] animate-slide-in-stagger-2" itemProp="description">
-                  Nous aidons les entreprises ambitieuses a capter la demande sur <span className="bg-gradient-to-r from-blue-400 via-blue-500 to-blue-400 bg-clip-text text-transparent font-semibold">Google</span> et a la transformer en <span className="bg-gradient-to-r from-emerald-400 via-teal-400 to-emerald-400 bg-clip-text text-transparent font-semibold">leads qualifies</span>.
+                  Nous aidons les entreprises ambitieuses à capter la demande sur <span className="bg-gradient-to-r from-blue-400 via-blue-500 to-blue-400 bg-clip-text text-transparent font-semibold">Google</span> et à la transformer en <span className="bg-gradient-to-r from-emerald-400 via-teal-400 to-emerald-400 bg-clip-text text-transparent font-semibold">leads qualifiés</span>.
                 </p>
 
                 <div className="flex flex-col sm:flex-row items-start gap-4 sm:gap-6 animate-slide-in-stagger-3">
@@ -250,9 +250,9 @@ function Home() {
                   <button
                     onClick={() => scrollToSection('services')}
                     className="group inline-flex items-center gap-2 px-1 py-3.5 sm:py-4 font-sans font-medium text-base text-gray-400 hover:text-white transition-colors duration-300"
-                    aria-label="Decouvrir nos services"
+                    aria-label="Découvrir nos services"
                   >
-                    <span>Decouvrir nos services</span>
+                    <span>Découvrir nos services</span>
                     <ChevronDown className="w-4 h-4 group-hover:translate-y-0.5 transition-transform duration-300" aria-hidden="true" />
                   </button>
                 </div>
@@ -264,25 +264,25 @@ function Home() {
                     <div className="glass-card rounded-2xl p-5 border-l-2 border-l-blue-500/50">
                       <div className="flex items-center gap-3 mb-2">
                         <TrendingUp className="w-5 h-5 text-blue-400" />
-                        <span className="font-sans text-sm font-medium text-white">Trafic qualifie</span>
+                        <span className="font-sans text-sm font-medium text-white">Trafic qualifié</span>
                       </div>
-                      <p className="font-sans text-sm text-gray-500">Ciblage precis des intentions de recherche</p>
+                      <p className="font-sans text-sm text-gray-500">Ciblage précis des intentions de recherche</p>
                     </div>
 
                     <div className="glass-card rounded-2xl p-5 border-l-2 border-l-emerald-500/50 ml-6">
                       <div className="flex items-center gap-3 mb-2">
                         <MousePointerClick className="w-5 h-5 text-emerald-400" />
-                        <span className="font-sans text-sm font-medium text-white">Conversion optimisee</span>
+                        <span className="font-sans text-sm font-medium text-white">Conversion optimisée</span>
                       </div>
-                      <p className="font-sans text-sm text-gray-500">Chaque clic devient une opportunite</p>
+                      <p className="font-sans text-sm text-gray-500">Chaque clic est une opportunité</p>
                     </div>
 
                     <div className="glass-card rounded-2xl p-5 border-l-2 border-l-amber-500/50">
                       <div className="flex items-center gap-3 mb-2">
                         <ArrowRight className="w-5 h-5 text-amber-400" />
-                        <span className="font-sans text-sm font-medium text-white">Leads qualifies</span>
+                        <span className="font-sans text-sm font-medium text-white">Leads qualifiés</span>
                       </div>
-                      <p className="font-sans text-sm text-gray-500">Des prospects prets a passer a l'action</p>
+                      <p className="font-sans text-sm text-gray-500">Des prospects prêts à passer à l'action</p>
                     </div>
                   </div>
                 </div>
