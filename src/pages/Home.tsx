@@ -223,7 +223,7 @@ function Home() {
                   <span className="bg-gradient-to-r from-blue-400 to-blue-500 bg-clip-text text-transparent">Google</span>
                 </h1>
                 <p className="font-sans text-lg sm:text-xl text-gray-400 max-w-xl mb-10 leading-relaxed animate-slide-in-stagger-2" itemProp="description">
-                  Nous aidons les entreprises ambitieuses a capter la demande sur Google et a la transformer en <span className="text-white font-medium">leads qualifies</span>.
+                  Nous aidons les entreprises ambitieuses a capter la demande sur <span className="relative inline-block"><span className="bg-gradient-to-r from-blue-400 via-blue-500 to-blue-400 bg-clip-text text-transparent font-semibold">Google</span><span className="absolute -bottom-1 left-0 w-full h-0.5 bg-gradient-to-r from-blue-400 to-blue-500 rounded-full"></span></span> et a la transformer en <span className="relative inline-block"><span className="bg-gradient-to-r from-emerald-400 via-teal-400 to-emerald-400 bg-clip-text text-transparent font-semibold">leads qualifies</span><span className="absolute -bottom-1 left-0 w-full h-0.5 bg-gradient-to-r from-emerald-400 to-teal-400 rounded-full"></span></span>.
                 </p>
                 <div className="flex flex-col sm:flex-row items-start gap-4 animate-slide-in-stagger-3">
                   <button
