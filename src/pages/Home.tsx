@@ -108,7 +108,7 @@ function Home() {
             aria-label="Retour en haut"
           >
             <img src="/mobius_det.png" alt="ReactOP" className="w-10 h-10 md:w-12 md:h-12 cursor-pointer hover:opacity-80 transition-opacity" itemProp="logo" />
-            <span className="text-lg md:text-xl font-semibold bg-gradient-to-r from-white to-blue-400 bg-clip-text text-transparent">ReactOP</span>
+            <span className="text-lg md:text-xl font-semibold text-white">ReactOP</span>
           </button>
 
           <button
@@ -287,10 +287,10 @@ function Home() {
       {/* Services */}
       <section id="services" className="pt-20 pb-40 sm:pt-32 sm:pb-56 lg:pt-40 lg:pb-64 px-6 sm:px-10 gpu-accelerated" aria-labelledby="services-title" data-section="services" itemScope itemType="https://schema.org/Service">
         <div className="max-w-6xl mx-auto">
-          <h2 id="services-title" className="reveal reveal-scale font-display text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-center mb-4 sm:mb-6 lg:mb-8 bg-gradient-to-r from-white to-blue-400 bg-clip-text text-transparent pb-3" itemProp="name">
+          <h2 id="services-title" className="reveal reveal-scale font-display text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-center mb-4 sm:mb-6 lg:mb-8 text-white pb-3" itemProp="name">
             Ce que nous faisons
           </h2>
-          <p className="reveal font-sans text-center mb-12 sm:mb-20 lg:mb-24 text-base sm:text-xl lg:text-2xl bg-gradient-to-r from-gray-300 to-blue-300 bg-clip-text text-transparent" style={{ '--delay': '0.15s' } as React.CSSProperties} itemProp="description">
+          <p className="reveal font-sans text-center mb-12 sm:mb-20 lg:mb-24 text-base sm:text-xl lg:text-2xl text-gray-300" style={{ '--delay': '0.15s' } as React.CSSProperties} itemProp="description">
             Nous aidons les entreprises à tirer le maximum de la demande qualifiée présente sur Google
           </p>
 
@@ -306,8 +306,8 @@ function Home() {
                 itemType="https://schema.org/Service"
               >
                 <service.icon className="w-10 h-10 sm:w-14 sm:h-14 lg:w-16 lg:h-16 text-blue-400 mb-4 sm:mb-6 group-hover:scale-110 transition-transform duration-500" aria-hidden="true" />
-                <h3 className="font-display text-2xl sm:text-3xl lg:text-4xl font-semibold mb-3 sm:mb-4 bg-gradient-to-r from-white to-blue-300 bg-clip-text text-transparent leading-[1.3] pb-2" itemProp="name">{service.title}</h3>
-                <p className="font-sans text-base sm:text-lg lg:text-xl bg-gradient-to-r from-gray-400 to-gray-300 bg-clip-text text-transparent leading-[1.6] pb-2" itemProp="description">{service.desc}</p>
+                <h3 className="font-display text-2xl sm:text-3xl lg:text-4xl font-semibold mb-3 sm:mb-4 text-white leading-[1.3] pb-2" itemProp="name">{service.title}</h3>
+                <p className="font-sans text-base sm:text-lg lg:text-xl text-gray-400 leading-[1.6] pb-2" itemProp="description">{service.desc}</p>
               </div>
             ))}
           </div>
@@ -317,10 +317,10 @@ function Home() {
       {/* Processus */}
       <section id="processus" className="py-24 sm:py-48 lg:py-56 px-6 sm:px-10 gpu-accelerated" aria-labelledby="processus-title" data-section="process" itemScope itemType="https://schema.org/HowTo">
         <div className="max-w-5xl mx-auto">
-          <h2 id="processus-title" className="reveal reveal-scale font-display text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-center mb-4 sm:mb-6 lg:mb-8 bg-gradient-to-r from-white to-blue-400 bg-clip-text text-transparent pb-3" itemProp="name">
+          <h2 id="processus-title" className="reveal reveal-scale font-display text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-center mb-4 sm:mb-6 lg:mb-8 text-white pb-3" itemProp="name">
             Notre processus
           </h2>
-          <p className="reveal font-sans text-center mb-12 sm:mb-20 lg:mb-24 text-base sm:text-xl lg:text-2xl bg-gradient-to-r from-gray-300 to-blue-300 bg-clip-text text-transparent" style={{ '--delay': '0.15s' } as React.CSSProperties} itemProp="description">
+          <p className="reveal font-sans text-center mb-12 sm:mb-20 lg:mb-24 text-base sm:text-xl lg:text-2xl text-gray-300" style={{ '--delay': '0.15s' } as React.CSSProperties} itemProp="description">
             Une méthodologie éprouvée en 4 étapes
           </p>
 
@@ -336,8 +336,8 @@ function Home() {
               >
                 <div className="font-display text-5xl sm:text-7xl lg:text-8xl font-bold text-blue-500/20 flex-shrink-0 w-16 sm:w-24 lg:w-32 text-right leading-none" aria-hidden="true">{step.num}</div>
                 <div className="flex-1 min-w-0">
-                  <h3 className="font-display text-2xl sm:text-3xl lg:text-4xl font-semibold mb-2 sm:mb-3 bg-gradient-to-r from-white to-blue-300 bg-clip-text text-transparent" itemProp="name">{step.title}</h3>
-                  <p className="font-sans bg-gradient-to-r from-gray-400 to-gray-300 bg-clip-text text-transparent text-base sm:text-lg lg:text-xl leading-relaxed" itemProp="text">{step.desc}</p>
+                  <h3 className="font-display text-2xl sm:text-3xl lg:text-4xl font-semibold mb-2 sm:mb-3 text-white" itemProp="name">{step.title}</h3>
+                  <p className="font-sans text-gray-400 text-base sm:text-lg lg:text-xl leading-relaxed" itemProp="text">{step.desc}</p>
                 </div>
               </div>
             ))}
@@ -348,7 +348,7 @@ function Home() {
       {/* FAQ */}
       <section id="faq" className="py-24 sm:py-48 lg:py-56 px-6 sm:px-10 gpu-accelerated" aria-labelledby="faq-title" data-section="faq" itemScope itemType="https://schema.org/FAQPage">
         <div className="max-w-3xl mx-auto">
-          <h2 id="faq-title" className="reveal reveal-scale font-display text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-center mb-12 sm:mb-20 lg:mb-24 bg-gradient-to-r from-white to-blue-400 bg-clip-text text-transparent pb-3">
+          <h2 id="faq-title" className="reveal reveal-scale font-display text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-center mb-12 sm:mb-20 lg:mb-24 text-white pb-3">
             Questions fréquentes
           </h2>
 
@@ -398,9 +398,9 @@ function Home() {
         <div className="max-w-6xl mx-auto">
           <div className="grid md:grid-cols-2 gap-12 sm:gap-20 lg:gap-24 items-center">
             <div itemScope itemType="https://schema.org/Organization" className="reveal">
-              <h2 id="contact-title" className="font-display text-[3.5rem] leading-[1.1] sm:text-7xl md:text-8xl lg:text-9xl font-bold mb-8 sm:mb-12 lg:mb-16 pr-8">
-                <span className="text-white">Parlons-</span>
-                <span className="bg-gradient-to-r from-white to-blue-400 bg-clip-text text-transparent italic pr-6">en!</span>
+              <h2 id="contact-title" className="font-display text-[3.5rem] leading-[1.1] sm:text-7xl md:text-8xl lg:text-9xl font-bold mb-8 sm:mb-12 lg:mb-16 pr-8 text-white">
+                <span>Parlons-</span>
+                <span className="italic pr-6">en!</span>
               </h2>
               <div className="border-t border-gray-800/50 pt-6 sm:pt-8 lg:pt-10">
                 <p className="font-sans text-gray-400 text-sm sm:text-base lg:text-lg mb-2 sm:mb-3">Email:</p>
@@ -432,18 +432,18 @@ function Home() {
             <div className="text-center md:text-left" itemScope itemType="https://schema.org/Organization">
               <div className="flex items-center justify-center md:justify-start gap-2 sm:gap-3 lg:gap-4 mb-2 sm:mb-3">
                 <img src="/mobius_det.png" alt="ReactOP" className="h-8 w-8 sm:h-10 sm:w-10 lg:h-12 lg:w-12" itemProp="logo" />
-                <div className="font-display text-xl sm:text-2xl lg:text-3xl font-semibold bg-gradient-to-r from-white to-blue-400 bg-clip-text text-transparent" itemProp="name">
+                <div className="font-display text-xl sm:text-2xl lg:text-3xl font-semibold text-white" itemProp="name">
                   ReactOP
                 </div>
               </div>
-              <p className="font-sans text-sm sm:text-base lg:text-lg bg-gradient-to-r from-gray-400 to-blue-300 bg-clip-text text-transparent" itemProp="copyrightNotice">&copy; 2026 ReactOP. Tous droits réservés.</p>
+              <p className="font-sans text-sm sm:text-base lg:text-lg text-gray-400" itemProp="copyrightNotice">&copy; 2026 ReactOP. Tous droits reserves.</p>
             </div>
 
             <div className="text-center md:text-right" itemScope itemType="https://schema.org/ContactPoint">
               <h3 className="font-display text-base sm:text-lg lg:text-xl font-semibold mb-3 sm:mb-5 lg:mb-6 text-gray-400">Contact</h3>
               <div className="space-y-2 sm:space-y-3 lg:space-y-4">
-                <a href="mailto:info@reactop.com" className="font-sans block text-sm sm:text-base lg:text-lg bg-gradient-to-r from-gray-300 to-blue-200 bg-clip-text text-transparent hover:from-blue-400 hover:to-blue-300 transition-all duration-300" itemProp="email">info@reactop.com</a>
-                <a href="tel:+41775211998" className="font-sans block text-sm sm:text-base lg:text-lg bg-gradient-to-r from-gray-300 to-blue-200 bg-clip-text text-transparent hover:from-blue-400 hover:to-blue-300 transition-all duration-300" itemProp="telephone">+41 77 521 19 98</a>
+                <a href="mailto:info@reactop.com" className="font-sans block text-sm sm:text-base lg:text-lg text-gray-300 hover:text-blue-400 transition-colors duration-300" itemProp="email">info@reactop.com</a>
+                <a href="tel:+41775211998" className="font-sans block text-sm sm:text-base lg:text-lg text-gray-300 hover:text-blue-400 transition-colors duration-300" itemProp="telephone">+41 77 521 19 98</a>
               </div>
             </div>
           </div>
