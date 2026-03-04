@@ -208,28 +208,54 @@ function Home() {
 
       {/* Hero */}
       <section className="min-h-[100svh] sm:min-h-[100vh] flex items-center justify-center relative overflow-hidden gpu-accelerated" role="banner" aria-label="Section hero" data-section="hero" itemScope itemType="https://schema.org/WPHeader">
+        <div className="absolute inset-0 overflow-hidden pointer-events-none" aria-hidden="true">
+          <div className="hero-glow hero-glow-1" />
+          <div className="hero-glow hero-glow-2" />
+          <div className="hero-grid" />
+        </div>
         <div className="relative z-10 w-full px-6 sm:px-8 lg:px-16 xl:px-20">
-          <div className="max-w-4xl mx-auto text-center">
-            <h1 className="font-display text-[2.5rem] leading-[1.08] sm:text-[3.5rem] md:text-[4.5rem] lg:text-[5.5rem] xl:text-[6rem] font-bold mb-6 sm:mb-8 animate-slide-in-stagger-1" itemProp="name headline">
+          <div className="max-w-5xl mx-auto text-center">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 mb-8 sm:mb-10 animate-slide-in-stagger-1">
+              <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse-dot" />
+              <span className="font-sans text-sm text-gray-400">Agence Google Ads & CRO</span>
+            </div>
+            <h1 className="font-display text-[2.75rem] leading-[1.05] sm:text-[4rem] md:text-[5rem] lg:text-[6rem] xl:text-[6.5rem] font-bold mb-6 sm:mb-8 animate-slide-in-stagger-2 tracking-tight" itemProp="name headline">
               <span className="text-white">Vos clients vous</span>
-              <br />
+              <br className="hidden sm:block" />
+              <span className="sm:hidden"> </span>
               <span className="text-white">cherchent sur </span>
-              <span className="bg-gradient-to-r from-blue-400 to-blue-500 bg-clip-text text-transparent">Google</span>
+              <span className="relative">
+                <span className="bg-gradient-to-r from-blue-400 via-blue-500 to-cyan-400 bg-clip-text text-transparent">Google</span>
+                <span className="absolute -bottom-1 sm:-bottom-2 left-0 right-0 h-[3px] sm:h-1 bg-gradient-to-r from-blue-400 via-blue-500 to-cyan-400 rounded-full opacity-60" />
+              </span>
             </h1>
-            <p className="font-sans text-lg sm:text-xl lg:text-2xl text-gray-400 max-w-2xl mx-auto mb-10 sm:mb-12 leading-relaxed animate-slide-in-stagger-2" itemProp="description">
-              Nous aidons les entreprises ambitieuses a capter la demande sur <span className="text-blue-400 font-medium">Google</span> et a la transformer en <span className="text-emerald-400 font-medium">leads qualifies</span>.
+            <p className="font-sans text-lg sm:text-xl lg:text-2xl text-gray-400 max-w-2xl mx-auto mb-10 sm:mb-14 leading-relaxed animate-slide-in-stagger-3" itemProp="description">
+              Captez la demande. Convertissez-la en{' '}
+              <span className="text-white font-medium">leads qualifies</span>.
             </p>
-            <div className="flex justify-center animate-slide-in-stagger-3">
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 animate-slide-in-stagger-3">
               <button
                 onClick={() => navigate('/audit')}
-                className="group relative inline-flex items-center gap-3 px-8 sm:px-10 py-4 sm:py-5 font-sans font-semibold text-base sm:text-lg overflow-hidden rounded-xl bg-blue-600 hover:bg-blue-500 shadow-lg shadow-blue-600/25 hover:shadow-blue-500/35 transition-all duration-300"
+                className="group relative inline-flex items-center gap-3 px-8 sm:px-10 py-4 sm:py-5 font-sans font-semibold text-base sm:text-lg overflow-hidden rounded-2xl bg-gradient-to-r from-blue-600 to-blue-500 hover:from-blue-500 hover:to-blue-400 shadow-2xl shadow-blue-600/30 hover:shadow-blue-500/40 transition-all duration-300 hover:-translate-y-0.5"
                 aria-label="Recevoir un audit gratuit avec ReactOP"
                 data-action="cta-primary"
               >
                 <span className="relative text-white">Recevez votre audit gratuit</span>
                 <ArrowRight className="relative w-5 h-5 text-white group-hover:translate-x-1 transition-transform duration-300" aria-hidden="true" />
               </button>
+              <button
+                onClick={() => scrollToSection('services')}
+                className="inline-flex items-center gap-2 px-6 py-4 font-sans font-medium text-base text-gray-400 hover:text-white transition-colors duration-300"
+              >
+                <span>Decouvrir nos services</span>
+                <ChevronDown className="w-4 h-4" />
+              </button>
             </div>
+          </div>
+        </div>
+        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 hidden sm:block animate-slide-in-stagger-3">
+          <div className="w-6 h-10 rounded-full border-2 border-white/20 flex justify-center pt-2">
+            <div className="w-1 h-2 bg-white/40 rounded-full animate-scroll-hint" />
           </div>
         </div>
       </section>
