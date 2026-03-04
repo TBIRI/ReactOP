@@ -233,26 +233,12 @@ function Home() {
                   </button>
                 </div>
               </div>
-              <div className="order-1 lg:order-2 relative animate-slide-in-stagger-2">
-                <div className="relative max-w-sm mx-auto lg:ml-auto">
-                  <div className="flex flex-col gap-8">
-                    <div className="flex items-center gap-4">
-                      <div className="w-3 h-3 rounded-full bg-blue-500" />
-                      <span className="text-gray-400 text-lg">Recherche Google</span>
-                    </div>
-                    <div className="pl-6 border-l border-gray-800">
-                      <div className="text-gray-500 text-base mb-1">Votre prospect tape</div>
-                      <div className="text-white text-xl font-medium">"votre service + ville"</div>
-                    </div>
-                    <div className="flex items-center gap-4">
-                      <div className="w-3 h-3 rounded-full bg-emerald-500" />
-                      <span className="text-gray-400 text-lg">Lead qualifie</span>
-                    </div>
-                    <div className="pl-6 border-l border-gray-800">
-                      <div className="text-gray-500 text-base mb-1">Il devient</div>
-                      <div className="text-white text-xl font-medium">votre nouveau client</div>
-                    </div>
-                  </div>
+              <div className="order-1 lg:order-2 relative animate-slide-in-stagger-2 hidden lg:block">
+                <div className="flex flex-col gap-6 text-right">
+                  <div className="text-6xl xl:text-7xl font-bold text-white/10">01</div>
+                  <div className="text-gray-500 text-lg">Google Ads</div>
+                  <div className="text-6xl xl:text-7xl font-bold text-white/10">02</div>
+                  <div className="text-gray-500 text-lg">Conversion</div>
                 </div>
               </div>
             </div>
