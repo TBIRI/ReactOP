@@ -362,27 +362,30 @@ function Home() {
               >
                 <button
                   onClick={() => setOpenFaqIndex(openFaqIndex === idx ? null : idx)}
-                  className="w-full flex items-center justify-between gap-6 py-6 sm:py-7 text-left group"
+                  className="w-full flex items-center justify-between gap-6 py-7 sm:py-8 text-left group"
                   aria-expanded={openFaqIndex === idx}
                   aria-controls={`faq-answer-${idx}`}
                 >
-                  <span className={`font-sans text-base sm:text-lg font-medium transition-colors duration-200 ${openFaqIndex === idx ? 'text-white' : 'text-gray-300 group-hover:text-white'}`} itemProp="name">
+                  <span className={`font-sans text-lg sm:text-xl font-medium transition-colors duration-200 ${openFaqIndex === idx ? 'text-white' : 'text-gray-200 group-hover:text-white'}`} itemProp="name">
                     {faq.question}
                   </span>
                   <ChevronDown
-                    className={`w-4 h-4 sm:w-5 sm:h-5 flex-shrink-0 transition-all duration-300 ${openFaqIndex === idx ? 'rotate-180 text-blue-400' : 'text-gray-500 group-hover:text-gray-300'}`}
+                    className={`w-5 h-5 sm:w-6 sm:h-6 flex-shrink-0 transition-all duration-300 ${openFaqIndex === idx ? 'rotate-180 text-blue-400' : 'text-gray-500 group-hover:text-gray-300'}`}
                     aria-hidden="true"
                   />
                 </button>
                 <div
                   id={`faq-answer-${idx}`}
-                  className={`overflow-hidden transition-all duration-300 ease-out ${openFaqIndex === idx ? 'max-h-48' : 'max-h-0'}`}
+                  className="grid transition-all duration-500 ease-out"
+                  style={{ gridTemplateRows: openFaqIndex === idx ? '1fr' : '0fr' }}
                   itemScope
                   itemType="https://schema.org/Answer"
                 >
-                  <p className="font-sans text-sm sm:text-base text-gray-400 leading-relaxed pb-6 sm:pb-7 pr-10" itemProp="text">
-                    {faq.answer}
-                  </p>
+                  <div className="overflow-hidden">
+                    <p className={`font-sans text-base sm:text-lg text-gray-300 leading-relaxed pb-7 sm:pb-8 pr-12 transition-opacity duration-500 ${openFaqIndex === idx ? 'opacity-100' : 'opacity-0'}`} itemProp="text">
+                      {faq.answer}
+                    </p>
+                  </div>
                 </div>
               </div>
             ))}
