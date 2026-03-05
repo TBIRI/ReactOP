@@ -2,6 +2,20 @@
 @tailwind components;
 @tailwind utilities;
 
+.mobile-header-fixed {
+  position: fixed !important;
+  top: 1rem !important;
+  left: 1rem !important;
+  right: 1rem !important;
+  z-index: 9999 !important;
+  transform: translate3d(0, 0, 0) !important;
+  -webkit-transform: translate3d(0, 0, 0) !important;
+  backface-visibility: hidden !important;
+  -webkit-backface-visibility: hidden !important;
+  will-change: auto !important;
+  contain: layout !important;
+}
+
 @layer base {
   html, body {
     background-color: #000000;
