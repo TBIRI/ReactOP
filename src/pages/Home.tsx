@@ -116,7 +116,9 @@ function Home() {
           <img src="/mobius_det.png" alt="ReactOP" className="w-8 h-8" itemProp="logo" />
         </button>
 
-        <span className="text-lg font-medium tracking-wide text-white">ReactOP</span>
+        <div className="px-5 py-2.5 rounded-2xl bg-white/5 backdrop-blur-xl border border-white/10 flex items-center justify-center">
+          <span className="text-lg font-medium tracking-wide text-white">ReactOP</span>
+        </div>
 
         <button
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
