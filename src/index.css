@@ -4,16 +4,8 @@
 
 @layer base {
   html, body {
-    min-height: 100vh;
-    transition: background-color 0.3s ease;
-  }
-
-  html.dark, html.dark body {
     background-color: #000000;
-  }
-
-  html.light, html.light body {
-    background-color: #ffffff;
+    min-height: 100vh;
   }
 
   @media (max-width: 640px) {
@@ -40,21 +32,14 @@
 }
 
 @layer utilities {
-  .glass-card-dark {
+  .glass-card {
     background: rgba(255, 255, 255, 0.04);
     border: 1px solid rgba(255, 255, 255, 0.08);
     box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
     contain: layout style paint;
   }
 
-  .glass-card-light {
-    background: rgba(249, 250, 251, 0.9);
-    border: 1px solid rgba(229, 231, 235, 1);
-    box-shadow: 0 4px 24px 0 rgba(0, 0, 0, 0.06);
-    contain: layout style paint;
-  }
-
-  .glass-card-hover-dark {
+  .glass-card-hover {
     transition:
       background 0.5s cubic-bezier(0.4, 0, 0.2, 1),
       border-color 0.5s cubic-bezier(0.4, 0, 0.2, 1),
@@ -62,38 +47,16 @@
       box-shadow 0.5s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
-  .glass-card-hover-dark:hover {
+  .glass-card-hover:hover {
     background: rgba(255, 255, 255, 0.07);
     border-color: rgba(96, 165, 250, 0.3);
     transform: translateY(-4px);
     box-shadow: 0 12px 40px 0 rgba(31, 38, 135, 0.2);
   }
 
-  .glass-card-hover-light {
-    transition:
-      background 0.5s cubic-bezier(0.4, 0, 0.2, 1),
-      border-color 0.5s cubic-bezier(0.4, 0, 0.2, 1),
-      transform 0.5s cubic-bezier(0.4, 0, 0.2, 1),
-      box-shadow 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-  }
-
-  .glass-card-hover-light:hover {
-    background: rgba(255, 255, 255, 1);
-    border-color: rgba(59, 130, 246, 0.4);
-    transform: translateY(-4px);
-    box-shadow: 0 12px 40px 0 rgba(59, 130, 246, 0.12);
-  }
-
-  .glass-nav-dark {
+  .glass-nav {
     background: rgba(17, 24, 39, 0.9);
     border: 1px solid rgba(255, 255, 255, 0.08);
-    contain: layout style paint;
-  }
-
-  .glass-nav-light {
-    background: rgba(255, 255, 255, 0.95);
-    border: 1px solid rgba(229, 231, 235, 1);
-    box-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.06);
     contain: layout style paint;
   }
 
@@ -293,7 +256,7 @@
    Mobius background - blurred version
    Outside @layer for proper pseudo-element support
    ─────────────────────────────────────────── */
-.mobius-bg-dark {
+.mobius-bg {
   position: fixed;
   top: 0;
   left: 0;
@@ -304,7 +267,7 @@
   overflow: hidden;
 }
 
-.mobius-bg-dark::before {
+.mobius-bg::before {
   content: '';
   position: absolute;
   top: 50%;
@@ -318,44 +281,4 @@
   background-repeat: no-repeat;
   opacity: 0.15;
   filter: blur(35px);
-}
-
-.mobius-bg-light {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  pointer-events: none;
-  z-index: 0;
-  overflow: hidden;
-}
-
-.mobius-bg-light::before {
-  content: '';
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 140%;
-  height: 140%;
-  transform: translate(-50%, -50%);
-  background-image: url('/mobius_det.png');
-  background-size: contain;
-  background-position: center;
-  background-repeat: no-repeat;
-  opacity: 0.06;
-  filter: blur(40px) brightness(0.3);
-}
-
-/* ───────────────────────────────────────────
-   Light mode blur overlay
-   ─────────────────────────────────────────── */
-.bg-blur-overlay-light {
-  background: radial-gradient(
-    ellipse 80% 60% at 50% 50%,
-    rgba(59, 130, 246, 0.06) 0%,
-    rgba(59, 130, 246, 0.03) 40%,
-    transparent 100%
-  );
-  contain: strict;
 }
