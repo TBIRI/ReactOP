@@ -107,7 +107,7 @@ function Home() {
 
   return (
     <div className="min-h-screen bg-black text-white overflow-x-hidden" itemScope itemType="https://schema.org/WebPage">
-      <div className="md:hidden fixed top-5 left-5 z-50">
+      <div className="md:hidden fixed top-5 left-5 right-5 z-50 flex items-center justify-between">
         <button
           onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
           className="w-12 h-12 rounded-2xl bg-white/5 backdrop-blur-xl border border-white/10 flex items-center justify-center hover:bg-white/10 transition-all"
@@ -115,9 +115,9 @@ function Home() {
         >
           <img src="/mobius_det.png" alt="ReactOP" className="w-8 h-8" itemProp="logo" />
         </button>
-      </div>
 
-      <div className="md:hidden fixed top-5 right-5 z-50">
+        <span className="text-lg font-medium tracking-wide text-white">ReactOP</span>
+
         <button
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           className="w-12 h-12 rounded-2xl bg-white/5 backdrop-blur-xl border border-white/10 flex items-center justify-center hover:bg-white/10 transition-all"
