@@ -49,38 +49,12 @@ function Home() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(null);
   const [isMobile, setIsMobile] = useState(() => window.innerWidth <= 1024);
-  const [mobileNavY, setMobileNavY] = useState(16);
 
   useEffect(() => {
     const handler = () => setIsMobile(window.innerWidth <= 1024);
     window.addEventListener('resize', handler, { passive: true });
     return () => window.removeEventListener('resize', handler);
   }, []);
-
-  useEffect(() => {
-    if (!isMobile) return;
-
-    let ticking = false;
-    const handleScroll = () => {
-      if (!ticking) {
-        requestAnimationFrame(() => {
-          const scrollY = window.scrollY;
-          const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
-          const viewportHeight = window.innerHeight;
-          const navHeight = 44;
-          const padding = 16;
-          const maxY = viewportHeight - navHeight - padding;
-          const newY = Math.min(padding + scrollY * 0.15, maxY);
-          setMobileNavY(newY);
-          ticking = false;
-        });
-        ticking = true;
-      }
-    };
-
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, [isMobile]);
 
   const navigate = useNavigate();
 
@@ -134,10 +108,7 @@ function Home() {
 
   return (
     <div className="min-h-screen bg-black text-white overflow-x-hidden" itemScope itemType="https://schema.org/WebPage">
-      <div
-        className="md:hidden fixed left-4 right-4 z-50 flex items-center justify-between transition-transform duration-150 ease-out"
-        style={{ top: `${mobileNavY}px` }}
-      >
+      <div className="md:hidden fixed top-4 left-4 right-4 z-50 flex items-center justify-between">
         <button
           onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
           className="flex items-center gap-2 px-3 py-2 bg-white/10 backdrop-blur-xl border border-white/20 rounded-full shadow-lg shadow-black/30 hover:bg-white/15 transition-all duration-300"
@@ -207,10 +178,7 @@ function Home() {
         onClick={() => setIsMobileMenuOpen(false)}
       ></div>
 
-      <div
-        className={`fixed left-4 right-4 z-40 md:hidden transition-all duration-300 ${isMobileMenuOpen ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-4 pointer-events-none'}`}
-        style={{ top: `${mobileNavY + 56}px` }}
-      >
+      <div className={`fixed top-20 left-4 right-4 z-40 md:hidden transition-all duration-300 ${isMobileMenuOpen ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-4 pointer-events-none'}`}>
         <div className="bg-black/80 backdrop-blur-xl border border-white/15 rounded-2xl p-4 shadow-2xl">
           <div className="flex flex-col space-y-1">
             <button
