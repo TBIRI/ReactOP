@@ -107,8 +107,8 @@ function Home() {
 
   return (
     <div className="min-h-screen bg-black text-white overflow-x-hidden" itemScope itemType="https://schema.org/WebPage">
-      <nav className="fixed top-6 md:top-8 left-1/2 -translate-x-1/2 z-50 w-[95%] sm:w-[90%] max-w-6xl px-2 sm:px-4" role="navigation" aria-label="Navigation principale">
-        <div className="flex items-center justify-between px-0 md:px-8 py-2 md:py-3 md:glass-nav md:rounded-full md:shadow-2xl">
+      <nav className="fixed top-0 md:top-8 left-0 md:left-1/2 md:-translate-x-1/2 z-50 w-full md:w-[90%] md:max-w-6xl px-0 md:px-4" role="navigation" aria-label="Navigation principale">
+        <div className="flex items-center justify-between px-5 md:px-8 py-4 md:py-3 bg-black/80 backdrop-blur-xl md:bg-transparent md:backdrop-blur-none md:glass-nav md:rounded-full md:shadow-2xl border-b border-white/5 md:border-0">
           <button
             onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
             className="flex items-center gap-2 md:ml-0"
@@ -166,7 +166,7 @@ function Home() {
         onClick={() => setIsMobileMenuOpen(false)}
       ></div>
 
-      <div className={`fixed top-[88px] left-1/2 -translate-x-1/2 w-[95%] sm:w-[90%] z-50 md:hidden transition-all duration-300 ${isMobileMenuOpen ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-4 pointer-events-none'}`}>
+      <div className={`fixed top-[72px] left-0 w-full px-4 z-50 md:hidden transition-all duration-300 ${isMobileMenuOpen ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-4 pointer-events-none'}`}>
         <div className="glass-nav rounded-3xl shadow-2xl p-6">
           <div className="flex flex-col space-y-2">
             <button
@@ -223,7 +223,7 @@ function Home() {
           </div>
         </div>
 
-        <div className="relative z-10 flex-1 flex items-center w-full px-6 sm:px-8 lg:px-16 xl:px-24 pt-24 sm:pt-0">
+        <div className="relative z-10 flex-1 flex items-center w-full px-6 sm:px-8 lg:px-16 xl:px-24 pt-28 sm:pt-0">
           <div className="max-w-7xl mx-auto w-full">
             <div className="grid lg:grid-cols-12 gap-8 lg:gap-12 items-center">
               <div className="lg:col-span-8 xl:col-span-7">
@@ -235,7 +235,7 @@ function Home() {
                 </h1>
 
                 <p className="font-sans text-[1rem] sm:text-lg lg:text-xl xl:text-2xl text-gray-400 max-w-2xl mb-8 sm:mb-10 leading-[1.6] animate-slide-in-stagger-2" itemProp="description">
-                  Nous aidons les entreprises ambitieuses à capter la demande sur <span className="bg-gradient-to-r from-blue-400 via-blue-500 to-blue-400 bg-clip-text text-transparent font-semibold">Google</span> et à la transformer en <span className="bg-gradient-to-r from-emerald-400 via-teal-400 to-emerald-400 bg-clip-text text-transparent font-semibold">leads qualifiés</span>.
+                  Nous aidons les entreprises ambitieuses à capter la demande sur <span className="bg-gradient-to-r from-blue-400 via-blue-500 to-blue-400 bg-clip-text text-transparent font-semibold">Google</span> et à la transformer en <span className="bg-gradient-to-r from-emerald-400 via-teal-400 to-emerald-400 bg-clip-text text-transparent font-semibold">leads qualifiés</span>
                 </p>
 
                 <div className="flex flex-col sm:flex-row items-start gap-3 sm:gap-6 animate-slide-in-stagger-3">
