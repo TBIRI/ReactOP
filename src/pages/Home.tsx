@@ -108,7 +108,7 @@ function Home() {
 
   return (
     <div className="min-h-screen bg-black text-white overflow-x-hidden" itemScope itemType="https://schema.org/WebPage">
-      <div className="md:hidden fixed top-4 left-4 right-4 z-50 flex items-center justify-between">
+      <div className="md:hidden fixed top-4 left-4 right-4 z-50 flex items-center justify-between" style={{ transform: 'translateZ(0)', willChange: 'transform' }}>
         <button
           onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
           className="flex items-center gap-2 px-3 py-2 bg-white/10 backdrop-blur-xl border border-white/20 rounded-full shadow-lg shadow-black/30 hover:bg-white/15 transition-all duration-300"
@@ -127,7 +127,7 @@ function Home() {
         </button>
       </div>
 
-      <nav className="hidden md:block fixed top-8 left-1/2 -translate-x-1/2 z-50 w-[90%] max-w-6xl px-4" role="navigation" aria-label="Navigation principale">
+      <nav className="hidden md:block fixed top-8 left-1/2 -translate-x-1/2 z-50 w-[90%] max-w-6xl px-4" role="navigation" aria-label="Navigation principale" style={{ transform: 'translateX(-50%) translateZ(0)', willChange: 'transform' }}>
         <div className="flex items-center justify-between px-8 py-3 glass-nav rounded-full shadow-2xl">
           <button
             onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
