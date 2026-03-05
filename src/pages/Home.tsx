@@ -135,12 +135,12 @@ function Home() {
             aria-label="Retour en haut"
           >
             <img src="/mobius_det.png" alt="ReactOP" className="w-12 h-12 cursor-pointer hover:opacity-80 transition-opacity" itemProp="logo" />
-            <span className="text-xl font-medium tracking-wide text-white">ReactOP</span>
+            <span className="text-xl font-medium tracking-wide text-white font-nav">ReactOP</span>
           </button>
 
           <button
             onClick={() => scrollToSection('services')}
-            className="px-8 py-2.5 rounded-full text-base font-medium tracking-wide text-gray-300 hover:text-white hover:bg-gray-800/50 transition-all duration-200"
+            className="px-8 py-2.5 rounded-full text-base font-medium tracking-wide text-gray-300 hover:text-white hover:bg-gray-800/50 transition-all duration-200 font-nav"
             aria-label="Naviguer vers la section services"
           >
             services
@@ -148,7 +148,7 @@ function Home() {
 
           <button
             onClick={() => scrollToSection('processus')}
-            className="px-8 py-2.5 rounded-full text-base font-medium tracking-wide text-gray-300 hover:text-white hover:bg-gray-800/50 transition-all duration-200"
+            className="px-8 py-2.5 rounded-full text-base font-medium tracking-wide text-gray-300 hover:text-white hover:bg-gray-800/50 transition-all duration-200 font-nav"
             aria-label="Naviguer vers la section processus"
           >
             processus
@@ -156,7 +156,7 @@ function Home() {
 
           <button
             onClick={() => scrollToSection('contact')}
-            className="px-8 py-2.5 rounded-full text-base font-medium tracking-wide text-gray-300 hover:text-white hover:bg-gray-800/50 transition-all duration-200"
+            className="px-8 py-2.5 rounded-full text-base font-medium tracking-wide text-gray-300 hover:text-white hover:bg-gray-800/50 transition-all duration-200 font-nav"
             aria-label="Naviguer vers la section contact"
           >
             contact
@@ -164,7 +164,7 @@ function Home() {
 
           <button
             onClick={() => navigate('/audit')}
-            className="group inline-flex items-center px-6 py-2.5 bg-blue-600 hover:bg-blue-500 border-2 border-blue-400 font-medium tracking-wide text-base rounded-full whitespace-nowrap relative overflow-hidden shadow-lg shadow-blue-500/30 transition-all"
+            className="group inline-flex items-center px-6 py-2.5 bg-blue-600 hover:bg-blue-500 border-2 border-blue-400 font-medium tracking-wide text-base rounded-full whitespace-nowrap relative overflow-hidden shadow-lg shadow-blue-500/30 transition-all font-nav"
           >
             <span className="relative text-white">
               Audit gratuit

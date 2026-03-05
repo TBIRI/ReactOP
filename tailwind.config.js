@@ -6,6 +6,7 @@ export default {
       fontFamily: {
         sans: ['Inter', 'system-ui', 'sans-serif'],
         logo: ['Poppins', 'system-ui', 'sans-serif'],
+        nav: ['Syne', 'system-ui', 'sans-serif'],
       },
       animation: {
         shimmer: 'shimmer 2s linear infinite',
