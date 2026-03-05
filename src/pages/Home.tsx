@@ -107,28 +107,40 @@ function Home() {
 
   return (
     <div className="min-h-screen bg-black text-white overflow-x-hidden" itemScope itemType="https://schema.org/WebPage">
-      <nav className="fixed top-0 md:top-8 left-0 md:left-1/2 md:-translate-x-1/2 z-50 w-full md:w-[90%] md:max-w-6xl px-0 md:px-4" role="navigation" aria-label="Navigation principale">
-        <div className="flex items-center justify-between px-5 md:px-8 py-4 md:py-3 bg-black/80 backdrop-blur-xl md:bg-transparent md:backdrop-blur-none md:glass-nav md:rounded-full md:shadow-2xl border-b border-white/5 md:border-0">
+      <div className="md:hidden fixed top-5 left-5 z-50">
+        <button
+          onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+          className="w-12 h-12 rounded-2xl bg-white/5 backdrop-blur-xl border border-white/10 flex items-center justify-center hover:bg-white/10 transition-all"
+          aria-label="Retour en haut"
+        >
+          <img src="/mobius_det.png" alt="ReactOP" className="w-8 h-8" itemProp="logo" />
+        </button>
+      </div>
+
+      <div className="md:hidden fixed top-5 right-5 z-50">
+        <button
+          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          className="w-12 h-12 rounded-2xl bg-white/5 backdrop-blur-xl border border-white/10 flex items-center justify-center hover:bg-white/10 transition-all"
+          aria-label="Menu"
+        >
+          {isMobileMenuOpen ? <X className="w-5 h-5 text-white" /> : <Menu className="w-5 h-5 text-white" />}
+        </button>
+      </div>
+
+      <nav className="hidden md:block fixed top-8 left-1/2 -translate-x-1/2 z-50 w-[90%] max-w-6xl px-4" role="navigation" aria-label="Navigation principale">
+        <div className="flex items-center justify-between px-8 py-3 glass-nav rounded-full shadow-2xl">
           <button
             onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-            className="flex items-center gap-2 md:ml-0"
+            className="flex items-center gap-2"
             aria-label="Retour en haut"
           >
-            <img src="/mobius_det.png" alt="ReactOP" className="w-10 h-10 md:w-12 md:h-12 cursor-pointer hover:opacity-80 transition-opacity" itemProp="logo" />
-            <span className="text-lg md:text-xl font-medium tracking-wide text-white">ReactOP</span>
-          </button>
-
-          <button
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="md:hidden p-2 text-gray-300 hover:text-white transition-colors"
-            aria-label="Menu"
-          >
-            {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            <img src="/mobius_det.png" alt="ReactOP" className="w-12 h-12 cursor-pointer hover:opacity-80 transition-opacity" itemProp="logo" />
+            <span className="text-xl font-medium tracking-wide text-white">ReactOP</span>
           </button>
 
           <button
             onClick={() => scrollToSection('services')}
-            className="hidden md:block px-2 sm:px-3 md:px-8 py-1.5 sm:py-2 md:py-2.5 rounded-full text-[10px] sm:text-xs md:text-base font-medium tracking-wide text-gray-300 hover:text-white hover:bg-gray-800/50 transition-all duration-200"
+            className="px-8 py-2.5 rounded-full text-base font-medium tracking-wide text-gray-300 hover:text-white hover:bg-gray-800/50 transition-all duration-200"
             aria-label="Naviguer vers la section services"
           >
             services
@@ -136,7 +148,7 @@ function Home() {
 
           <button
             onClick={() => scrollToSection('processus')}
-            className="hidden md:block px-2 sm:px-3 md:px-8 py-1.5 sm:py-2 md:py-2.5 rounded-full text-[10px] sm:text-xs md:text-base font-medium tracking-wide text-gray-300 hover:text-white hover:bg-gray-800/50 transition-all duration-200"
+            className="px-8 py-2.5 rounded-full text-base font-medium tracking-wide text-gray-300 hover:text-white hover:bg-gray-800/50 transition-all duration-200"
             aria-label="Naviguer vers la section processus"
           >
             processus
@@ -144,7 +156,7 @@ function Home() {
 
           <button
             onClick={() => scrollToSection('contact')}
-            className="hidden md:block px-2 sm:px-3 md:px-8 py-1.5 sm:py-2 md:py-2.5 rounded-full text-[10px] sm:text-xs md:text-base font-medium tracking-wide text-gray-300 hover:text-white hover:bg-gray-800/50 transition-all duration-200"
+            className="px-8 py-2.5 rounded-full text-base font-medium tracking-wide text-gray-300 hover:text-white hover:bg-gray-800/50 transition-all duration-200"
             aria-label="Naviguer vers la section contact"
           >
             contact
@@ -152,7 +164,7 @@ function Home() {
 
           <button
             onClick={() => navigate('/audit')}
-            className="group hidden md:inline-flex items-center px-2 sm:px-3 md:px-6 py-1.5 sm:py-2 md:py-2.5 bg-blue-600 hover:bg-blue-500 border-2 border-blue-400 font-medium tracking-wide text-[10px] sm:text-xs md:text-base rounded-full whitespace-nowrap relative overflow-hidden shadow-lg shadow-blue-500/30 transition-all"
+            className="group inline-flex items-center px-6 py-2.5 bg-blue-600 hover:bg-blue-500 border-2 border-blue-400 font-medium tracking-wide text-base rounded-full whitespace-nowrap relative overflow-hidden shadow-lg shadow-blue-500/30 transition-all"
           >
             <span className="relative text-white">
               Audit gratuit
@@ -166,8 +178,8 @@ function Home() {
         onClick={() => setIsMobileMenuOpen(false)}
       ></div>
 
-      <div className={`fixed top-[72px] left-0 w-full px-4 z-50 md:hidden transition-all duration-300 ${isMobileMenuOpen ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-4 pointer-events-none'}`}>
-        <div className="glass-nav rounded-3xl shadow-2xl p-6">
+      <div className={`fixed top-20 left-5 right-5 z-50 md:hidden transition-all duration-300 ${isMobileMenuOpen ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-4 pointer-events-none'}`}>
+        <div className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-3xl p-6">
           <div className="flex flex-col space-y-2">
             <button
               onClick={() => scrollToSection('services')}
@@ -223,7 +235,7 @@ function Home() {
           </div>
         </div>
 
-        <div className="relative z-10 flex-1 flex items-center w-full px-6 sm:px-8 lg:px-16 xl:px-24 pt-28 sm:pt-0">
+        <div className="relative z-10 flex-1 flex items-center w-full px-6 sm:px-8 lg:px-16 xl:px-24 pt-20 sm:pt-0">
           <div className="max-w-7xl mx-auto w-full">
             <div className="grid lg:grid-cols-12 gap-8 lg:gap-12 items-center">
               <div className="lg:col-span-8 xl:col-span-7">
