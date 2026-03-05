@@ -1,11 +1,20 @@
+import { useEffect } from 'react';
 import { CheckCircle } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
+import { useTheme } from '../hooks/useTheme';
 
 function ThankYou() {
   const navigate = useNavigate();
+  const theme = useTheme();
+  const isDark = theme === 'dark';
+
+  useEffect(() => {
+    document.documentElement.classList.remove('light', 'dark');
+    document.documentElement.classList.add(theme);
+  }, [theme]);
 
   return (
-    <div className="min-h-screen bg-black text-white flex items-center justify-center px-6 relative overflow-hidden">
+    <div className={`min-h-screen ${isDark ? 'bg-black text-white' : 'bg-white text-gray-900'} flex items-center justify-center px-6 relative overflow-hidden transition-colors duration-300`}>
       <div
         className="fixed top-[50%] left-[50%] pointer-events-none z-0 mobile-bg-fix"
         style={{
@@ -13,8 +22,8 @@ function ThankYou() {
           backgroundSize: 'contain',
           backgroundPosition: 'center',
           backgroundRepeat: 'no-repeat',
-          filter: 'blur(50px)',
-          opacity: 0.3,
+          filter: isDark ? 'blur(50px)' : 'blur(50px) brightness(0.3)',
+          opacity: isDark ? 0.3 : 0.08,
           transform: 'translate(-50%, -50%)',
           width: '100vw',
           height: '100vh',
@@ -27,15 +36,15 @@ function ThankYou() {
         <div className="mb-8 lg:mb-10 flex justify-center">
           <div className="relative">
             <div className="absolute inset-0 bg-blue-500/20 blur-2xl rounded-full animate-pulse"></div>
-            <CheckCircle className="w-20 h-20 lg:w-24 lg:h-24 text-blue-400 relative" strokeWidth={1.5} />
+            <CheckCircle className="w-20 h-20 lg:w-24 lg:h-24 text-blue-500 relative" strokeWidth={1.5} />
           </div>
         </div>
 
-        <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-semibold bg-gradient-to-r from-white to-blue-400 bg-clip-text text-transparent mb-8 lg:mb-10 leading-tight py-4">
+        <h1 className={`text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-semibold bg-gradient-to-r ${isDark ? 'from-white to-blue-400' : 'from-gray-900 to-blue-600'} bg-clip-text text-transparent mb-8 lg:mb-10 leading-tight py-4`}>
           Merci !
         </h1>
 
-        <p className="text-xl sm:text-2xl lg:text-3xl text-gray-300 mb-12 lg:mb-16 max-w-2xl mx-auto leading-relaxed">
+        <p className={`text-xl sm:text-2xl lg:text-3xl ${isDark ? 'text-gray-300' : 'text-gray-600'} mb-12 lg:mb-16 max-w-2xl mx-auto leading-relaxed`}>
           Nous avons bien reçu votre demande et vous répondrons dans les plus brefs délais.
         </p>
 

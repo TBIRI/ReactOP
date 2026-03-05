@@ -1,9 +1,17 @@
 import { useEffect } from 'react';
 import { ArrowLeft } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
+import { useTheme } from '../hooks/useTheme';
 
 function Audit() {
   const navigate = useNavigate();
+  const theme = useTheme();
+  const isDark = theme === 'dark';
+
+  useEffect(() => {
+    document.documentElement.classList.remove('light', 'dark');
+    document.documentElement.classList.add(theme);
+  }, [theme]);
 
   useEffect(() => {
     if (typeof window !== 'undefined' && (window as any).Tally) {
@@ -26,7 +34,7 @@ function Audit() {
   }, []);
 
   return (
-    <div className="bg-black" style={{
+    <div className={`${isDark ? 'bg-black' : 'bg-white'} transition-colors duration-300`} style={{
       position: 'fixed',
       top: 0,
       left: 0,
@@ -38,9 +46,8 @@ function Audit() {
       width: '100%',
       height: '100%'
     }}>
-      <div className="fixed inset-0 pointer-events-none z-0 bg-blur-overlay" aria-hidden="true"></div>
+      <div className={`fixed inset-0 pointer-events-none z-0 ${isDark ? 'bg-blur-overlay' : 'bg-blur-overlay-light'}`} aria-hidden="true"></div>
 
-      {/* Back button */}
       <button
         onClick={() => navigate('/')}
         className="fixed top-4 left-4 md:top-8 md:left-8 lg:top-10 lg:left-10 z-50 w-10 h-10 flex items-center justify-center bg-blue-600 hover:bg-blue-500 rounded-full border-2 border-blue-400 shadow-lg shadow-blue-500/30 transition-all duration-200 group"
