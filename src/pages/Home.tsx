@@ -107,21 +107,19 @@ function Home() {
 
   return (
     <div className="min-h-screen bg-black text-white overflow-x-hidden" itemScope itemType="https://schema.org/WebPage">
-      <div className="md:hidden fixed bottom-6 left-4 z-50">
+      <div className="md:hidden fixed top-4 left-4 right-4 z-50 flex items-center justify-between">
         <button
           onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-          className="flex items-center gap-2.5 px-4 py-2.5 bg-white/10 backdrop-blur-xl border border-white/20 rounded-full shadow-lg shadow-black/20 hover:bg-white/15 transition-all duration-300"
+          className="flex items-center gap-2 px-3 py-2 bg-white/10 backdrop-blur-xl border border-white/20 rounded-full shadow-lg shadow-black/30 hover:bg-white/15 transition-all duration-300"
           aria-label="Retour en haut"
         >
           <img src="/mobius_det.png" alt="ReactOP" className="w-7 h-7" itemProp="logo" />
           <span className="text-sm font-medium tracking-wide text-white">ReactOP</span>
         </button>
-      </div>
 
-      <div className="md:hidden fixed bottom-6 right-4 z-50">
         <button
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          className="w-12 h-12 flex items-center justify-center bg-white/10 backdrop-blur-xl border border-white/20 rounded-full shadow-lg shadow-black/20 hover:bg-white/15 transition-all duration-300"
+          className="w-11 h-11 flex items-center justify-center bg-white/10 backdrop-blur-xl border border-white/20 rounded-full shadow-lg shadow-black/30 hover:bg-white/15 transition-all duration-300"
           aria-label="Menu"
         >
           {isMobileMenuOpen ? <X className="w-5 h-5 text-white" /> : <Menu className="w-5 h-5 text-white" />}
@@ -179,31 +177,31 @@ function Home() {
         onClick={() => setIsMobileMenuOpen(false)}
       ></div>
 
-      <div className={`fixed bottom-24 left-4 right-4 z-40 md:hidden transition-all duration-300 ${isMobileMenuOpen ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4 pointer-events-none'}`}>
-        <div className="bg-black/80 backdrop-blur-xl border border-white/15 rounded-3xl p-5 shadow-2xl">
+      <div className={`fixed top-20 left-4 right-4 z-40 md:hidden transition-all duration-300 ${isMobileMenuOpen ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-4 pointer-events-none'}`}>
+        <div className="bg-black/80 backdrop-blur-xl border border-white/15 rounded-2xl p-4 shadow-2xl">
           <div className="flex flex-col space-y-1">
             <button
               onClick={() => scrollToSection('services')}
-              className="text-lg font-medium tracking-wide text-white py-3 text-left hover:text-blue-400 transition-colors px-4 rounded-xl hover:bg-white/5"
+              className="text-base font-medium tracking-wide text-white py-3 text-left hover:text-blue-400 transition-colors px-4 rounded-xl hover:bg-white/5"
             >
               Services
             </button>
 
             <button
               onClick={() => scrollToSection('processus')}
-              className="text-lg font-medium tracking-wide text-white py-3 text-left hover:text-blue-400 transition-colors px-4 rounded-xl hover:bg-white/5"
+              className="text-base font-medium tracking-wide text-white py-3 text-left hover:text-blue-400 transition-colors px-4 rounded-xl hover:bg-white/5"
             >
               Processus
             </button>
 
             <button
               onClick={() => scrollToSection('contact')}
-              className="text-lg font-medium tracking-wide text-white py-3 text-left hover:text-blue-400 transition-colors px-4 rounded-xl hover:bg-white/5"
+              className="text-base font-medium tracking-wide text-white py-3 text-left hover:text-blue-400 transition-colors px-4 rounded-xl hover:bg-white/5"
             >
               Contact
             </button>
 
-            <div className="pt-3">
+            <div className="pt-2">
               <button
                 onClick={() => {
                   navigate('/audit');
