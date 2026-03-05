@@ -227,14 +227,14 @@ function Home() {
           <div className="max-w-7xl mx-auto w-full">
             <div className="grid lg:grid-cols-12 gap-8 lg:gap-12 items-center">
               <div className="lg:col-span-8 xl:col-span-7">
-                <h1 className="font-display text-[2.9rem] leading-[1.05] sm:text-[3.5rem] md:text-[4rem] lg:text-[4.5rem] xl:text-[5rem] font-bold mb-5 sm:mb-8 animate-slide-in-stagger-1" itemProp="name headline">
+                <h1 className="font-display text-[2.9rem] leading-[1.05] sm:text-[3.5rem] md:text-[4rem] lg:text-[5rem] xl:text-[5.5rem] font-bold mb-5 sm:mb-8 animate-slide-in-stagger-1" itemProp="name headline">
                   <span className="text-white">Vos clients vous</span>
                   <br />
                   <span className="text-white">cherchent sur </span>
                   <span className="bg-gradient-to-r from-blue-400 to-blue-500 bg-clip-text text-transparent">Google</span>
                 </h1>
 
-                <p className="font-sans text-[1rem] sm:text-lg lg:text-xl text-gray-400 max-w-2xl mb-8 sm:mb-10 leading-[1.6] animate-slide-in-stagger-2" itemProp="description">
+                <p className="font-sans text-[1rem] sm:text-lg lg:text-xl xl:text-2xl text-gray-400 max-w-2xl mb-8 sm:mb-10 leading-[1.6] animate-slide-in-stagger-2" itemProp="description">
                   Nous aidons les entreprises ambitieuses à capter la demande sur <span className="bg-gradient-to-r from-blue-400 via-blue-500 to-blue-400 bg-clip-text text-transparent font-semibold">Google</span> et à la transformer en <span className="bg-gradient-to-r from-emerald-400 via-teal-400 to-emerald-400 bg-clip-text text-transparent font-semibold">leads qualifiés</span>.
                 </p>
 
