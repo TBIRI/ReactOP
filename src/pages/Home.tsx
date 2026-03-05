@@ -107,7 +107,7 @@ function Home() {
 
   return (
     <div className="min-h-screen bg-black text-white overflow-x-hidden" itemScope itemType="https://schema.org/WebPage">
-      <div className="md:hidden fixed top-5 left-5 right-5 z-50 flex items-center justify-between">
+      <div className="md:hidden fixed top-5 left-5 right-5 z-50 flex items-center justify-between" style={{ position: 'fixed', transform: 'translateZ(0)' }}>
         <button
           onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
           className="flex items-center gap-2"
