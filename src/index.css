@@ -8,12 +8,16 @@
   left: 1rem !important;
   right: 1rem !important;
   z-index: 9999 !important;
-  transform: translate3d(0, 0, 0) !important;
-  -webkit-transform: translate3d(0, 0, 0) !important;
+  transform: none !important;
+  -webkit-transform: none !important;
   backface-visibility: hidden !important;
   -webkit-backface-visibility: hidden !important;
   will-change: auto !important;
-  contain: layout !important;
+  contain: none !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  pointer-events: auto !important;
+  transition: none !important;
 }
 
 @layer base {
@@ -22,12 +26,13 @@
     min-height: 100vh;
   }
 
-  @media (max-width: 640px) {
+  @media (max-width: 767px) {
     html {
       -webkit-overflow-scrolling: touch;
       scroll-behavior: auto;
       height: 100%;
       overflow-x: hidden;
+      overflow-y: auto;
     }
 
     body {
@@ -35,12 +40,29 @@
       -moz-osx-font-smoothing: grayscale;
       position: relative;
       overflow-x: hidden;
+      overflow-y: auto;
       min-height: -webkit-fill-available;
     }
 
     #root {
       min-height: 100vh;
       min-height: -webkit-fill-available;
+      position: relative;
+      overflow: visible;
+    }
+
+    .mobile-header-fixed {
+      position: fixed !important;
+      top: env(safe-area-inset-top, 1rem) !important;
+      top: max(env(safe-area-inset-top), 1rem) !important;
+      left: 1rem !important;
+      right: 1rem !important;
+      z-index: 9999 !important;
+      transform: none !important;
+      -webkit-transform: none !important;
+      opacity: 1 !important;
+      visibility: visible !important;
+      pointer-events: auto !important;
     }
   }
 }
