@@ -107,22 +107,24 @@ function Home() {
 
   return (
     <div className="min-h-screen bg-black text-white overflow-x-hidden" itemScope itemType="https://schema.org/WebPage">
-      <div className="md:hidden absolute top-5 left-5 right-5 z-40 flex items-center justify-between">
+      <div className="md:hidden fixed bottom-6 left-4 z-50">
         <button
           onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-          className="flex items-center gap-2"
+          className="flex items-center gap-2.5 px-4 py-2.5 bg-white/10 backdrop-blur-xl border border-white/20 rounded-full shadow-lg shadow-black/20 hover:bg-white/15 transition-all duration-300"
           aria-label="Retour en haut"
         >
-          <img src="/mobius_det.png" alt="ReactOP" className="w-10 h-10" itemProp="logo" />
-          <span className="text-lg font-medium tracking-wide text-white">ReactOP</span>
+          <img src="/mobius_det.png" alt="ReactOP" className="w-7 h-7" itemProp="logo" />
+          <span className="text-sm font-medium tracking-wide text-white">ReactOP</span>
         </button>
+      </div>
 
+      <div className="md:hidden fixed bottom-6 right-4 z-50">
         <button
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          className="w-10 h-10 flex items-center justify-center"
+          className="w-12 h-12 flex items-center justify-center bg-white/10 backdrop-blur-xl border border-white/20 rounded-full shadow-lg shadow-black/20 hover:bg-white/15 transition-all duration-300"
           aria-label="Menu"
         >
-          {isMobileMenuOpen ? <X className="w-6 h-6 text-white" /> : <Menu className="w-6 h-6 text-white" />}
+          {isMobileMenuOpen ? <X className="w-5 h-5 text-white" /> : <Menu className="w-5 h-5 text-white" />}
         </button>
       </div>
 
@@ -177,41 +179,39 @@ function Home() {
         onClick={() => setIsMobileMenuOpen(false)}
       ></div>
 
-      <div className={`fixed top-20 left-5 right-5 z-50 md:hidden transition-all duration-300 ${isMobileMenuOpen ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-4 pointer-events-none'}`}>
-        <div className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-3xl p-6">
-          <div className="flex flex-col space-y-2">
+      <div className={`fixed bottom-24 left-4 right-4 z-40 md:hidden transition-all duration-300 ${isMobileMenuOpen ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4 pointer-events-none'}`}>
+        <div className="bg-black/80 backdrop-blur-xl border border-white/15 rounded-3xl p-5 shadow-2xl">
+          <div className="flex flex-col space-y-1">
             <button
               onClick={() => scrollToSection('services')}
-              className="text-2xl font-medium tracking-wide text-white py-3 text-left hover:text-blue-400 transition-colors px-4 rounded-xl hover:bg-gray-800/50"
+              className="text-lg font-medium tracking-wide text-white py-3 text-left hover:text-blue-400 transition-colors px-4 rounded-xl hover:bg-white/5"
             >
               Services
             </button>
 
             <button
               onClick={() => scrollToSection('processus')}
-              className="text-2xl font-medium tracking-wide text-white py-3 text-left hover:text-blue-400 transition-colors px-4 rounded-xl hover:bg-gray-800/50"
+              className="text-lg font-medium tracking-wide text-white py-3 text-left hover:text-blue-400 transition-colors px-4 rounded-xl hover:bg-white/5"
             >
               Processus
             </button>
 
             <button
               onClick={() => scrollToSection('contact')}
-              className="text-2xl font-medium tracking-wide text-white py-3 text-left hover:text-blue-400 transition-colors px-4 rounded-xl hover:bg-gray-800/50"
+              className="text-lg font-medium tracking-wide text-white py-3 text-left hover:text-blue-400 transition-colors px-4 rounded-xl hover:bg-white/5"
             >
               Contact
             </button>
 
-            <div className="pt-4">
+            <div className="pt-3">
               <button
                 onClick={() => {
                   navigate('/audit');
                   setIsMobileMenuOpen(false);
                 }}
-                className="group relative w-full flex items-center justify-center px-8 py-3 bg-blue-600 hover:bg-blue-500 border-2 border-blue-400 font-medium tracking-wide text-lg rounded-2xl overflow-hidden shadow-lg shadow-blue-500/30 transition-all"
+                className="w-full flex items-center justify-center px-6 py-3 bg-blue-600 hover:bg-blue-500 font-medium tracking-wide text-base rounded-xl shadow-lg shadow-blue-500/25 transition-all"
               >
-                <span className="relative text-white">
-                  Audit gratuit
-                </span>
+                <span className="text-white">Audit gratuit</span>
               </button>
             </div>
           </div>
