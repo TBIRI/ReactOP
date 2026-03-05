@@ -55,7 +55,6 @@ function Home() {
     window.addEventListener('resize', handler, { passive: true });
     return () => window.removeEventListener('resize', handler);
   }, []);
-
   const navigate = useNavigate();
 
   const scrollToSection = (id: string) => {
@@ -107,27 +106,28 @@ function Home() {
   ];
 
   return (
-    <div className="min-h-screen bg-black text-white" itemScope itemType="https://schema.org/WebPage">
-      <div className="md:hidden mobile-header-fixed flex items-center justify-between">
+    <div className="min-h-screen bg-black text-white overflow-x-hidden" itemScope itemType="https://schema.org/WebPage">
+      <div className="md:hidden fixed top-5 left-5 right-5 z-50 flex items-center justify-between">
         <button
           onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-          className="flex items-center gap-2 px-3 py-2 bg-white/10 backdrop-blur-xl border border-white/20 rounded-full shadow-lg shadow-black/30 hover:bg-white/15 transition-all duration-300"
+          className="w-12 h-12 rounded-2xl bg-white/5 backdrop-blur-xl border border-white/10 flex items-center justify-center hover:bg-white/10 transition-all"
           aria-label="Retour en haut"
         >
-          <img src="/mobius_det.png" alt="ReactOP" className="w-7 h-7" itemProp="logo" />
-          <span className="text-sm font-medium tracking-wide text-white">ReactOP</span>
+          <img src="/mobius_det.png" alt="ReactOP" className="w-8 h-8" itemProp="logo" />
         </button>
+
+        <span className="text-lg font-medium tracking-wide text-white">ReactOP</span>
 
         <button
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          className="w-11 h-11 flex items-center justify-center bg-white/10 backdrop-blur-xl border border-white/20 rounded-full shadow-lg shadow-black/30 hover:bg-white/15 transition-all duration-300"
+          className="w-12 h-12 rounded-2xl bg-white/5 backdrop-blur-xl border border-white/10 flex items-center justify-center hover:bg-white/10 transition-all"
           aria-label="Menu"
         >
           {isMobileMenuOpen ? <X className="w-5 h-5 text-white" /> : <Menu className="w-5 h-5 text-white" />}
         </button>
       </div>
 
-      <nav className="hidden md:block fixed top-8 left-1/2 -translate-x-1/2 z-50 w-[90%] max-w-6xl px-4" role="navigation" aria-label="Navigation principale" style={{ transform: 'translateX(-50%) translateZ(0)', willChange: 'transform' }}>
+      <nav className="hidden md:block fixed top-8 left-1/2 -translate-x-1/2 z-50 w-[90%] max-w-6xl px-4" role="navigation" aria-label="Navigation principale">
         <div className="flex items-center justify-between px-8 py-3 glass-nav rounded-full shadow-2xl">
           <button
             onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
@@ -178,39 +178,41 @@ function Home() {
         onClick={() => setIsMobileMenuOpen(false)}
       ></div>
 
-      <div className={`fixed top-20 left-4 right-4 z-40 md:hidden transition-all duration-300 ${isMobileMenuOpen ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-4 pointer-events-none'}`}>
-        <div className="bg-black/80 backdrop-blur-xl border border-white/15 rounded-2xl p-4 shadow-2xl">
-          <div className="flex flex-col space-y-1">
+      <div className={`fixed top-20 left-5 right-5 z-50 md:hidden transition-all duration-300 ${isMobileMenuOpen ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-4 pointer-events-none'}`}>
+        <div className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-3xl p-6">
+          <div className="flex flex-col space-y-2">
             <button
               onClick={() => scrollToSection('services')}
-              className="text-base font-medium tracking-wide text-white py-3 text-left hover:text-blue-400 transition-colors px-4 rounded-xl hover:bg-white/5"
+              className="text-2xl font-medium tracking-wide text-white py-3 text-left hover:text-blue-400 transition-colors px-4 rounded-xl hover:bg-gray-800/50"
             >
               Services
             </button>
 
             <button
               onClick={() => scrollToSection('processus')}
-              className="text-base font-medium tracking-wide text-white py-3 text-left hover:text-blue-400 transition-colors px-4 rounded-xl hover:bg-white/5"
+              className="text-2xl font-medium tracking-wide text-white py-3 text-left hover:text-blue-400 transition-colors px-4 rounded-xl hover:bg-gray-800/50"
             >
               Processus
             </button>
 
             <button
               onClick={() => scrollToSection('contact')}
-              className="text-base font-medium tracking-wide text-white py-3 text-left hover:text-blue-400 transition-colors px-4 rounded-xl hover:bg-white/5"
+              className="text-2xl font-medium tracking-wide text-white py-3 text-left hover:text-blue-400 transition-colors px-4 rounded-xl hover:bg-gray-800/50"
             >
               Contact
             </button>
 
-            <div className="pt-2">
+            <div className="pt-4">
               <button
                 onClick={() => {
                   navigate('/audit');
                   setIsMobileMenuOpen(false);
                 }}
-                className="w-full flex items-center justify-center px-6 py-3 bg-blue-600 hover:bg-blue-500 font-medium tracking-wide text-base rounded-xl shadow-lg shadow-blue-500/25 transition-all"
+                className="group relative w-full flex items-center justify-center px-8 py-3 bg-blue-600 hover:bg-blue-500 border-2 border-blue-400 font-medium tracking-wide text-lg rounded-2xl overflow-hidden shadow-lg shadow-blue-500/30 transition-all"
               >
-                <span className="text-white">Audit gratuit</span>
+                <span className="relative text-white">
+                  Audit gratuit
+                </span>
               </button>
             </div>
           </div>
