@@ -104,6 +104,10 @@
     font-family: 'Inter', sans-serif;
   }
 
+  .font-syne {
+    font-family: 'Syne', sans-serif;
+  }
+
   /* ───────────────────────────────────────────
      Hero entrance (page load only)
      Duration: 900ms -- slow enough to appreciate

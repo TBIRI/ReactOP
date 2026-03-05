@@ -115,7 +115,7 @@ function Home() {
           aria-label="Retour en haut"
         >
           <img src="/mobius_det.png" alt="ReactOP" className="w-7 h-7" itemProp="logo" />
-          <span className="text-sm font-medium tracking-wide text-white font-sans">ReactOP</span>
+          <span className="text-sm font-medium tracking-wide text-white font-syne">ReactOP</span>
         </button>
 
         <button
@@ -135,7 +135,7 @@ function Home() {
             aria-label="Retour en haut"
           >
             <img src="/mobius_det.png" alt="ReactOP" className="w-12 h-12 cursor-pointer hover:opacity-80 transition-opacity" itemProp="logo" />
-            <span className="text-xl font-medium tracking-wide text-white font-sans">ReactOP</span>
+            <span className="text-xl font-medium tracking-wide text-white font-syne">ReactOP</span>
           </button>
 
           <button
