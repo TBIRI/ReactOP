@@ -164,7 +164,7 @@ function Home() {
 
           <button
             onClick={() => navigate('/audit')}
-            className="group inline-flex items-center px-6 pt-2.5 pb-3 bg-blue-600 hover:bg-blue-500 border-2 border-blue-400 font-medium tracking-wide text-base rounded-full whitespace-nowrap relative overflow-hidden shadow-lg shadow-blue-500/30 transition-all font-nav"
+            className="group inline-flex items-center px-6 py-2.5 bg-blue-600 hover:bg-blue-500 border-2 border-blue-400 font-medium tracking-wide text-base rounded-full whitespace-nowrap relative shadow-lg shadow-blue-500/30 transition-all font-nav"
           >
             <span className="relative text-white">
               Audit gratuit
