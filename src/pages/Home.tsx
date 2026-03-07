@@ -237,13 +237,15 @@ function Home() {
           <div className="max-w-7xl mx-auto w-full">
             <div className="grid lg:grid-cols-12 gap-8 lg:gap-12 items-center">
               <div className="lg:col-span-8 xl:col-span-7">
-                <h1 className="font-display text-[2.2rem] leading-[1.1] sm:text-[2.5rem] md:text-[3rem] lg:text-[3.5rem] xl:text-[4rem] font-bold mb-5 sm:mb-6 animate-slide-in-stagger-1" itemProp="name headline">
-                  <span className="text-white">Vos clients vous cherchent sur </span>
+                <h1 className="font-display text-[2.9rem] leading-[1.05] sm:text-[3.5rem] md:text-[4rem] lg:text-[5rem] xl:text-[5.5rem] font-bold mb-5 sm:mb-8 animate-slide-in-stagger-1" itemProp="name headline">
+                  <span className="text-white">Vos clients vous</span>
+                  <br />
+                  <span className="text-white">cherchent sur </span>
                   <span className="bg-gradient-to-r from-blue-400 to-blue-500 bg-clip-text text-transparent">Google</span>
                 </h1>
 
-                <p className="font-sans text-base sm:text-lg lg:text-xl text-gray-400 max-w-xl mb-8 sm:mb-10 leading-[1.7] animate-slide-in-stagger-2" itemProp="description">
-                  Nous aidons les entreprises ambitieuses a capter la demande sur <span className="text-blue-400 font-medium">Google</span> et a la transformer en <span className="text-emerald-400 font-medium">leads qualifies</span>.
+                <p className="font-sans text-[1rem] sm:text-lg lg:text-xl xl:text-2xl text-gray-400 max-w-2xl mb-8 sm:mb-10 leading-[1.6] animate-slide-in-stagger-2" itemProp="description">
+                  Nous aidons les entreprises ambitieuses à capter la demande sur <span className="bg-gradient-to-r from-blue-400 via-blue-500 to-blue-400 bg-clip-text text-transparent font-semibold">Google</span> et à la transformer en <span className="bg-gradient-to-r from-emerald-400 via-teal-400 to-emerald-400 bg-clip-text text-transparent font-semibold">leads qualifiés</span>
                 </p>
 
                 <div className="flex flex-col sm:flex-row items-start gap-3 sm:gap-6 animate-slide-in-stagger-3">
@@ -307,11 +309,11 @@ function Home() {
       {/* Services */}
       <section id="services" className="pt-20 pb-40 sm:pt-32 sm:pb-56 lg:pt-40 lg:pb-64 px-6 sm:px-10 gpu-accelerated" aria-labelledby="services-title" data-section="services" itemScope itemType="https://schema.org/Service">
         <div className="max-w-6xl mx-auto">
-          <h2 id="services-title" className="reveal reveal-scale font-display text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-center mb-3 sm:mb-4 text-white" itemProp="name">
+          <h2 id="services-title" className="reveal reveal-scale font-display text-3xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-center mb-3 sm:mb-6 lg:mb-8 text-white pb-3" itemProp="name">
             Nos Services
           </h2>
-          <p className="reveal font-sans text-center mb-10 sm:mb-14 lg:mb-16 text-sm sm:text-base lg:text-lg text-gray-400 max-w-2xl mx-auto" style={{ '--delay': '0.15s' } as React.CSSProperties} itemProp="description">
-            Nous aidons les entreprises a tirer le maximum de la demande qualifiee presente sur Google
+          <p className="reveal font-sans text-center mb-12 sm:mb-20 lg:mb-24 text-base sm:text-xl lg:text-2xl text-gray-300" style={{ '--delay': '0.15s' } as React.CSSProperties} itemProp="description">
+            Nous aidons les entreprises à tirer le maximum de la demande qualifiée présente sur Google
           </p>
 
           <div className="grid grid-cols-1 gap-6 sm:gap-10 lg:gap-12" role="list">
@@ -325,9 +327,9 @@ function Home() {
                 itemScope
                 itemType="https://schema.org/Service"
               >
-                <service.icon className="w-7 h-7 sm:w-10 sm:h-10 lg:w-12 lg:h-12 text-blue-400 mb-3 sm:mb-4 group-hover:scale-110 transition-transform duration-500" aria-hidden="true" />
-                <h3 className="font-display text-lg sm:text-xl lg:text-2xl font-semibold mb-2 sm:mb-3 text-white" itemProp="name">{service.title}</h3>
-                <p className="font-sans text-sm sm:text-base lg:text-lg text-gray-400 leading-relaxed" itemProp="description">{service.desc}</p>
+                <service.icon className="w-8 h-8 sm:w-14 sm:h-14 lg:w-16 lg:h-16 text-blue-400 mb-3 sm:mb-6 group-hover:scale-110 transition-transform duration-500" aria-hidden="true" />
+                <h3 className="font-display text-xl sm:text-3xl lg:text-4xl font-semibold mb-2 sm:mb-4 text-white leading-[1.3] pb-2" itemProp="name">{service.title}</h3>
+                <p className="font-sans text-sm sm:text-lg lg:text-xl text-gray-400 leading-[1.6] pb-2" itemProp="description">{service.desc}</p>
               </div>
             ))}
           </div>
@@ -337,11 +339,11 @@ function Home() {
       {/* Processus */}
       <section id="processus" className="py-24 sm:py-48 lg:py-56 px-6 sm:px-10 gpu-accelerated" aria-labelledby="processus-title" data-section="process" itemScope itemType="https://schema.org/HowTo">
         <div className="max-w-5xl mx-auto">
-          <h2 id="processus-title" className="reveal reveal-scale font-display text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-center mb-3 sm:mb-4 text-white" itemProp="name">
+          <h2 id="processus-title" className="reveal reveal-scale font-display text-3xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-center mb-3 sm:mb-6 lg:mb-8 text-white pb-3" itemProp="name">
             Notre processus
           </h2>
-          <p className="reveal font-sans text-center mb-10 sm:mb-14 lg:mb-16 text-sm sm:text-base lg:text-lg text-gray-400" style={{ '--delay': '0.15s' } as React.CSSProperties} itemProp="description">
-            Une methodologie eprouvee en 4 etapes
+          <p className="reveal font-sans text-center mb-12 sm:mb-20 lg:mb-24 text-base sm:text-xl lg:text-2xl text-gray-300" style={{ '--delay': '0.15s' } as React.CSSProperties} itemProp="description">
+            Une méthodologie éprouvée en 4 étapes
           </p>
 
           <div className="flex flex-col gap-4 sm:gap-6 lg:gap-8" role="list">
@@ -354,10 +356,10 @@ function Home() {
                 itemScope
                 itemType="https://schema.org/HowToStep"
               >
-                <div className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold text-blue-500/20 flex-shrink-0 w-10 sm:w-16 lg:w-20 text-right leading-none" aria-hidden="true">{step.num}</div>
+                <div className="font-display text-4xl sm:text-7xl lg:text-8xl font-bold text-blue-500/20 flex-shrink-0 w-12 sm:w-24 lg:w-32 text-right leading-none" aria-hidden="true">{step.num}</div>
                 <div className="flex-1 min-w-0">
-                  <h3 className="font-display text-lg sm:text-xl lg:text-2xl font-semibold mb-1 sm:mb-2 text-white" itemProp="name">{step.title}</h3>
-                  <p className="font-sans text-gray-400 text-sm sm:text-base lg:text-lg leading-relaxed" itemProp="text">{step.desc}</p>
+                  <h3 className="font-display text-xl sm:text-3xl lg:text-4xl font-semibold mb-1.5 sm:mb-3 text-white" itemProp="name">{step.title}</h3>
+                  <p className="font-sans text-gray-400 text-sm sm:text-lg lg:text-xl leading-relaxed" itemProp="text">{step.desc}</p>
                 </div>
               </div>
             ))}
@@ -368,8 +370,8 @@ function Home() {
       {/* FAQ */}
       <section id="faq" className="py-24 sm:py-48 lg:py-56 px-6 sm:px-10 gpu-accelerated" aria-labelledby="faq-title" data-section="faq" itemScope itemType="https://schema.org/FAQPage">
         <div className="max-w-3xl mx-auto">
-          <h2 id="faq-title" className="reveal reveal-scale font-display text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-center mb-8 sm:mb-12 lg:mb-14 text-white">
-            Questions frequentes
+          <h2 id="faq-title" className="reveal reveal-scale font-display text-3xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-center mb-10 sm:mb-20 lg:mb-24 text-white pb-3">
+            Questions fréquentes
           </h2>
 
           <div className="reveal" style={{ '--delay': '0.1s' } as React.CSSProperties}>
@@ -432,12 +434,13 @@ function Home() {
         <div className="max-w-6xl mx-auto">
           <div className="grid md:grid-cols-2 gap-12 sm:gap-20 lg:gap-24 items-center">
             <div itemScope itemType="https://schema.org/Organization" className="reveal">
-              <h2 id="contact-title" className="font-display text-3xl leading-[1.1] sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 sm:mb-8 text-white">
-                Parlons-en!
+              <h2 id="contact-title" className="font-display text-4xl leading-[1.1] sm:text-7xl md:text-8xl lg:text-9xl font-bold mb-6 sm:mb-12 lg:mb-16 pr-8 text-white">
+                <span>Parlons-</span>
+                <span className="italic pr-6">en!</span>
               </h2>
-              <div className="border-t border-gray-800/50 pt-5 sm:pt-6">
-                <p className="font-sans text-gray-400 text-sm sm:text-base mb-2">Email:</p>
-                <a href="mailto:info@reactop.com" className="font-sans text-lg sm:text-xl md:text-2xl font-light text-white hover:text-blue-400 transition-colors break-words" itemProp="email" aria-label="Envoyer un email a ReactOP">
+              <div className="border-t border-gray-800/50 pt-6 sm:pt-8 lg:pt-10">
+                <p className="font-sans text-gray-400 text-sm sm:text-base lg:text-lg mb-2 sm:mb-3">Email:</p>
+                <a href="mailto:info@reactop.com" className="font-sans text-xl sm:text-3xl md:text-4xl lg:text-5xl font-light text-white hover:text-blue-400 transition-colors break-words" itemProp="email" aria-label="Envoyer un email à ReactOP">
                   info@reactop.com
                 </a>
               </div>
