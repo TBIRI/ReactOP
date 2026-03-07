@@ -99,11 +99,11 @@ function Home() {
   ];
 
   const faqs = [
-    { question: "J'ai déjà essayé Google Ads mais ça n'a pas marché.", answer: "C'est souvent un problème de ciblage ou de page de destination, pas de Google Ads en soi. Nous testons toujours les campagnes avant de les scaler. Si votre entreprise n'est pas adaptée, nous vous le dirons." },
-    { question: "Quelle est la durée d'engagement?", answer: "Pas de contrat long terme. Engagement mensuel, résiliable à tout moment." },
-    { question: "Qu'est-ce que nous devons fournir?", answer: "Très peu, simplement un accès à vos outils existants et une idée de ce qu'est un bon lead pour vous." },
-    { question: "Comment savoir si ça fonctionne?", answer: "Nous envoyons un rapport hebdomadaire sur les performances de vos campagnes et les optimisations en cours." },
-    { question: "Vous créez aussi le site ou la landing page?", answer: "Nous optimisons vos pages existantes ou créons des landing pages dédiées si nécessaire." }
+    { question: "Quels services proposez-vous exactement ?", answer: "Nous aidons les entreprises à capter une demande déjà présente sur Google et à la transformer en leads qualifiés. Concrètement, nous gérons vos campagnes Google Ads et travaillons tout ce qui permet de convertir davantage de clics en vraies opportunités commerciales." },
+    { question: "Comment améliorez-vous la conversion après le clic ?", answer: "Cela dépend de votre activité et de ce qui freine vos résultats. Nous pouvons intervenir sur les pages dédiées, le site, les formulaires, la clarté de l'offre, la rapidité de traitement des demandes et, plus largement, sur l'ensemble du parcours de contact. L'objectif reste le même : faire en sorte que le trafic généré crée davantage de vraies demandes." },
+    { question: "Comment savoir si votre approche est adaptée à mon entreprise ?", answer: "Nous ne partons pas d'une méthode toute faite. Nous prenons en compte votre marché, votre zone, votre offre, vos marges et votre capacité à traiter les demandes. Notre rôle est de construire une approche cohérente pour votre entreprise." },
+    { question: "Qu'est-ce qui vous différencie des autres agences ?", answer: "Nous ne cherchons pas à vous vendre du volume de clics inutiles. Nous cherchons à générer des demandes qualifiées. Là où beaucoup d'agences s'arrêtent au trafic, nous travaillons aussi sur ce qui se passe après le clic, pour transformer davantage de visites en vraies opportunités. Nous avançons avec une logique simple : exécution rapide, proximité client et amélioration continue." },
+    { question: "Comment savoir si cela fonctionne vraiment ?", answer: "Nous faisons un point régulier sur les indicateurs les plus utiles, avec un reporting au minimum toutes les deux semaines. Nous suivons ce qui peut être mesuré de façon fiable dans votre activité afin de piloter les décisions et d'améliorer les résultats. Vous savez ce qui évolue, ce qui bloque et ce que nous mettons en place pour faire progresser votre acquisition." }
   ];
 
   return (
