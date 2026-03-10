@@ -411,38 +411,28 @@ function Home() {
             <span className="font-sans text-sm text-gray-500">Lausanne, Suisse romande</span>
           </div>
 
-          <div className="space-y-10 sm:space-y-14">
+          <div className="space-y-10 sm:space-y-14 max-w-4xl mx-auto">
             <div className="reveal" style={{ '--delay': '0.15s' } as React.CSSProperties}>
-              <p className="font-sans text-xl sm:text-2xl lg:text-3xl text-white font-light leading-[1.5] text-center max-w-4xl mx-auto" itemProp="description">
-                ReactOP aide les entreprises de services romandes à renforcer leur présence sur Google — afin de capter une demande déjà présente et de la transformer en leads qualifiés.
+              <p className="font-sans text-xl sm:text-2xl lg:text-3xl text-white font-light leading-[1.5]" itemProp="description">
+                Basée à Lausanne, ReactOP aide les entreprises de services romandes à renforcer leur présence sur Google afin de capter une demande déjà présente et de transformer ce trafic en leads qualifiés.
               </p>
             </div>
 
-            <div className="reveal h-px bg-white/5" style={{ '--delay': '0.2s' } as React.CSSProperties}></div>
-
-            <div className="reveal grid sm:grid-cols-3 gap-6 sm:gap-8" style={{ '--delay': '0.25s' } as React.CSSProperties}>
-              {[
-                { icon: Zap, label: "Rapidité d'exécution", desc: "Pas de process interminable. On avance vite, on teste, on ajuste." },
-                { icon: Users, label: "Proximité client", desc: "Un interlocuteur direct, des échanges concrets. Pas de compte rendu vide." },
-                { icon: Eye, label: "Clarté et transparence", desc: "Vous savez exactement ce qui est fait, pourquoi, et ce que ça produit." },
-              ].map((val, i) => (
-                <div key={i} className="group">
-                  <val.icon className="w-5 h-5 text-blue-400 mb-4" aria-hidden="true" />
-                  <p className="font-sans text-sm font-semibold text-white mb-2">{val.label}</p>
-                  <p className="font-sans text-sm text-gray-500 leading-relaxed">{val.desc}</p>
-                </div>
-              ))}
+            <div className="reveal" style={{ '--delay': '0.2s' } as React.CSSProperties}>
+              <p className="font-sans text-xl sm:text-2xl lg:text-3xl text-white font-light leading-[1.5]">
+                Chez ReactOP, nous croyons en la rapidité d'exécution, la proximité client et un travail clair, concret et transparent.
+              </p>
             </div>
 
-            <div className="reveal h-px bg-white/5" style={{ '--delay': '0.3s' } as React.CSSProperties}></div>
-
-            <div className="reveal grid sm:grid-cols-2 gap-6 sm:gap-10" style={{ '--delay': '0.35s' } as React.CSSProperties}>
-              <p className="font-sans text-base sm:text-lg text-gray-400 leading-[1.7]">
-                Notre approche combine <span className="text-white">acquisition</span> et <span className="text-white">compréhension des opérations</span> — pour aligner le marketing avec la réalité du terrain, pas seulement avec des métriques.
+            <div className="reveal" style={{ '--delay': '0.25s' } as React.CSSProperties}>
+              <p className="font-sans text-xl sm:text-2xl lg:text-3xl text-white font-light leading-[1.5]">
+                Notre approche combine acquisition et compréhension des opérations, afin d'aligner plus efficacement le marketing avec la réalité du terrain.
               </p>
-              <p className="font-sans text-base sm:text-lg text-gray-400 leading-[1.7]">
-                Grâce à un modèle de facturation orienté performance, nous réduisons au maximum la prise de risque de nos clients.{' '}
-                <span className="text-white font-medium">Nous ne gagnons que lorsque nos clients gagnent aussi.</span>
+            </div>
+
+            <div className="reveal" style={{ '--delay': '0.3s' } as React.CSSProperties}>
+              <p className="font-sans text-xl sm:text-2xl lg:text-3xl text-white font-light leading-[1.5]">
+                Grâce à un modèle de facturation orienté performance, nous réduisons au maximum la prise de risque de nos clients tout en maintenant un niveau d'exigence élevé sur les résultats. En d'autres termes, nous ne gagnons que lorsque nos clients gagnent aussi.
               </p>
             </div>
           </div>
