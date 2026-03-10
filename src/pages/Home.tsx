@@ -1,4 +1,4 @@
-import { ArrowRight, TrendingUp, MousePointerClick, Menu, X, ChevronDown } from 'lucide-react';
+import { ArrowRight, TrendingUp, MousePointerClick, Menu, X, ChevronDown, MapPin } from 'lucide-react';
 import { useState, useEffect, useRef, useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
 
@@ -259,6 +259,15 @@ function Home() {
                     <span className="relative text-white">Recevez votre audit gratuit</span>
                     <ArrowRight className="relative w-4 h-4 sm:w-5 sm:h-5 text-white group-hover:translate-x-1 transition-transform duration-300" aria-hidden="true" />
                   </button>
+                </div>
+
+                <div className="flex items-center gap-2 mt-6 sm:mt-8 animate-slide-in-stagger-3">
+                  <span className="relative flex h-2 w-2">
+                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                    <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+                  </span>
+                  <MapPin className="w-3.5 h-3.5 text-gray-500" aria-hidden="true" />
+                  <span className="font-sans text-sm text-gray-500">Lausanne, Suisse</span>
                 </div>
               </div>
 
