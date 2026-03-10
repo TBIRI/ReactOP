@@ -366,13 +366,9 @@ function Home() {
           <h2 id="processus-title" className="reveal reveal-scale font-display text-3xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-center mb-3 sm:mb-6 lg:mb-8 text-white pb-3" itemProp="name">
             Notre processus
           </h2>
-          <div className="reveal flex items-center justify-center gap-3 sm:gap-4 mb-12 sm:mb-20 lg:mb-24" style={{ '--delay': '0.15s' } as React.CSSProperties}>
-            <span className="h-px w-8 sm:w-12 bg-gradient-to-r from-transparent to-blue-500/50"></span>
-            <p className="font-display text-base sm:text-xl lg:text-2xl text-gray-400 tracking-wide italic" itemProp="description">
-              Une méthodologie éprouvée en 4 étapes
-            </p>
-            <span className="h-px w-8 sm:w-12 bg-gradient-to-l from-transparent to-blue-500/50"></span>
-          </div>
+          <p className="reveal font-sans text-center mb-12 sm:mb-20 lg:mb-24 text-base sm:text-xl lg:text-2xl text-gray-300" style={{ '--delay': '0.15s' } as React.CSSProperties} itemProp="description">
+            Une méthodologie éprouvée en 4 étapes
+          </p>
 
           <div className="flex flex-col gap-4 sm:gap-6 lg:gap-8" role="list">
             {steps.map((step, idx) => (
