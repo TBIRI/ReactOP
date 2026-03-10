@@ -398,61 +398,53 @@ function Home() {
         </div>
 
         <div className="max-w-6xl mx-auto">
-          <div className="grid lg:grid-cols-12 gap-16 lg:gap-24 items-start">
+          <p className="reveal font-sans text-xs tracking-[0.2em] uppercase text-gray-500 text-center mb-5">À propos</p>
+          <h2 id="apropos-title" className="reveal reveal-scale font-display text-3xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-center mb-3 sm:mb-6 lg:mb-8 text-white pb-3">
+            Qui sommes-<span className="italic">nous</span>
+          </h2>
+          <div className="flex items-center justify-center gap-2 mb-12 sm:mb-20 lg:mb-24 reveal" style={{ '--delay': '0.1s' } as React.CSSProperties}>
+            <span className="relative flex h-2 w-2">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+              <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+            </span>
+            <MapPin className="w-3.5 h-3.5 text-gray-500" aria-hidden="true" />
+            <span className="font-sans text-sm text-gray-500">Lausanne, Suisse romande</span>
+          </div>
 
-            <div className="lg:col-span-4 lg:sticky lg:top-32">
-              <div className="reveal">
-                <p className="font-sans text-xs tracking-[0.2em] uppercase text-gray-500 mb-5">À propos</p>
-                <h2 id="apropos-title" className="font-display text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-[1.05] mb-6">
-                  Qui sommes-<span className="italic font-light">nous</span>
-                </h2>
-                <div className="flex items-center gap-2 mt-2">
-                  <span className="relative flex h-2 w-2">
-                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-                    <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
-                  </span>
-                  <MapPin className="w-3.5 h-3.5 text-gray-500" aria-hidden="true" />
-                  <span className="font-sans text-sm text-gray-500">Lausanne, Suisse romande</span>
+          <div className="space-y-10 sm:space-y-14">
+            <div className="reveal" style={{ '--delay': '0.15s' } as React.CSSProperties}>
+              <p className="font-sans text-xl sm:text-2xl lg:text-3xl text-white font-light leading-[1.5] text-center max-w-4xl mx-auto" itemProp="description">
+                ReactOP aide les entreprises de services romandes à renforcer leur présence sur Google — afin de capter une demande déjà présente et de la transformer en leads qualifiés.
+              </p>
+            </div>
+
+            <div className="reveal h-px bg-white/5" style={{ '--delay': '0.2s' } as React.CSSProperties}></div>
+
+            <div className="reveal grid sm:grid-cols-3 gap-6 sm:gap-8" style={{ '--delay': '0.25s' } as React.CSSProperties}>
+              {[
+                { icon: Zap, label: "Rapidité d'exécution", desc: "Pas de process interminable. On avance vite, on teste, on ajuste." },
+                { icon: Users, label: "Proximité client", desc: "Un interlocuteur direct, des échanges concrets. Pas de compte rendu vide." },
+                { icon: Eye, label: "Clarté et transparence", desc: "Vous savez exactement ce qui est fait, pourquoi, et ce que ça produit." },
+              ].map((val, i) => (
+                <div key={i} className="group">
+                  <val.icon className="w-5 h-5 text-blue-400 mb-4" aria-hidden="true" />
+                  <p className="font-sans text-sm font-semibold text-white mb-2">{val.label}</p>
+                  <p className="font-sans text-sm text-gray-500 leading-relaxed">{val.desc}</p>
                 </div>
-              </div>
+              ))}
             </div>
 
-            <div className="lg:col-span-8 space-y-10 sm:space-y-14">
-              <div className="reveal" style={{ '--delay': '0.1s' } as React.CSSProperties}>
-                <p className="font-sans text-xl sm:text-2xl lg:text-3xl text-white font-light leading-[1.5]" itemProp="description">
-                  ReactOP aide les entreprises de services romandes à renforcer leur présence sur Google — afin de capter une demande déjà présente et de la transformer en leads qualifiés.
-                </p>
-              </div>
+            <div className="reveal h-px bg-white/5" style={{ '--delay': '0.3s' } as React.CSSProperties}></div>
 
-              <div className="reveal h-px bg-white/5" style={{ '--delay': '0.15s' } as React.CSSProperties}></div>
-
-              <div className="reveal grid sm:grid-cols-3 gap-6 sm:gap-8" style={{ '--delay': '0.2s' } as React.CSSProperties}>
-                {[
-                  { icon: Zap, label: "Rapidité d'exécution", desc: "Pas de process interminable. On avance vite, on teste, on ajuste." },
-                  { icon: Users, label: "Proximité client", desc: "Un interlocuteur direct, des échanges concrets. Pas de compte rendu vide." },
-                  { icon: Eye, label: "Clarté et transparence", desc: "Vous savez exactement ce qui est fait, pourquoi, et ce que ça produit." },
-                ].map((val, i) => (
-                  <div key={i} className="group">
-                    <val.icon className="w-5 h-5 text-blue-400 mb-4" aria-hidden="true" />
-                    <p className="font-sans text-sm font-semibold text-white mb-2">{val.label}</p>
-                    <p className="font-sans text-sm text-gray-500 leading-relaxed">{val.desc}</p>
-                  </div>
-                ))}
-              </div>
-
-              <div className="reveal h-px bg-white/5" style={{ '--delay': '0.25s' } as React.CSSProperties}></div>
-
-              <div className="reveal space-y-6" style={{ '--delay': '0.3s' } as React.CSSProperties}>
-                <p className="font-sans text-base sm:text-lg text-gray-400 leading-[1.7]">
-                  Notre approche combine <span className="text-white">acquisition</span> et <span className="text-white">compréhension des opérations</span> — pour aligner le marketing avec la réalité du terrain, pas seulement avec des métriques.
-                </p>
-                <p className="font-sans text-base sm:text-lg text-gray-400 leading-[1.7]">
-                  Grâce à un modèle de facturation orienté performance, nous réduisons au maximum la prise de risque de nos clients.{' '}
-                  <span className="text-white font-medium">Nous ne gagnons que lorsque nos clients gagnent aussi.</span>
-                </p>
-              </div>
+            <div className="reveal grid sm:grid-cols-2 gap-6 sm:gap-10" style={{ '--delay': '0.35s' } as React.CSSProperties}>
+              <p className="font-sans text-base sm:text-lg text-gray-400 leading-[1.7]">
+                Notre approche combine <span className="text-white">acquisition</span> et <span className="text-white">compréhension des opérations</span> — pour aligner le marketing avec la réalité du terrain, pas seulement avec des métriques.
+              </p>
+              <p className="font-sans text-base sm:text-lg text-gray-400 leading-[1.7]">
+                Grâce à un modèle de facturation orienté performance, nous réduisons au maximum la prise de risque de nos clients.{' '}
+                <span className="text-white font-medium">Nous ne gagnons que lorsque nos clients gagnent aussi.</span>
+              </p>
             </div>
-
           </div>
         </div>
       </section>
