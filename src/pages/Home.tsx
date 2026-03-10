@@ -336,12 +336,14 @@ function Home() {
           <h2 id="services-title" className="reveal reveal-scale font-display text-3xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-center mb-3 sm:mb-6 lg:mb-8 text-white pb-3" itemProp="name">
             Nos Services
           </h2>
-          <div className="reveal flex items-center justify-center gap-3 sm:gap-4 mb-12 sm:mb-20 lg:mb-24" style={{ '--delay': '0.15s' } as React.CSSProperties}>
-            <span className="h-px w-8 sm:w-12 bg-gradient-to-r from-transparent to-blue-500/50"></span>
-            <p className="font-display text-base sm:text-xl lg:text-2xl text-gray-400 tracking-wide italic" itemProp="description">
-              Nous aidons les entreprises à tirer le maximum de la demande qualifiée présente sur Google
-            </p>
-            <span className="h-px w-8 sm:w-12 bg-gradient-to-l from-transparent to-blue-500/50"></span>
+          <div className="reveal flex flex-col items-center gap-3 mb-12 sm:mb-20 lg:mb-24" style={{ '--delay': '0.15s' } as React.CSSProperties}>
+            <div className="flex items-center gap-3 sm:gap-4">
+              <span className="h-px w-8 sm:w-12 bg-gradient-to-r from-transparent to-blue-500/50"></span>
+              <p className="font-display text-base sm:text-xl lg:text-2xl text-gray-400 tracking-wide italic text-center" itemProp="description">
+                Nous aidons les entreprises à tirer le maximum<br />de la demande qualifiée présente sur Google
+              </p>
+              <span className="h-px w-8 sm:w-12 bg-gradient-to-l from-transparent to-blue-500/50"></span>
+            </div>
           </div>
 
           <div className="grid grid-cols-1 gap-6 sm:gap-10 lg:gap-12" role="list">
