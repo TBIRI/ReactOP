@@ -337,7 +337,7 @@ function Home() {
             Nos Services
           </h2>
           <p className="reveal font-sans text-center mb-12 sm:mb-20 lg:mb-24 text-base sm:text-xl lg:text-2xl text-gray-300" style={{ '--delay': '0.15s' } as React.CSSProperties} itemProp="description">
-            Nous aidons les entreprises à tirer le maximum de la demande qualifiée présente sur Google
+            Nous aidons les entreprises à tirer le maximum de la demande qualifiée présente sur <span className="bg-gradient-to-r from-blue-400 via-blue-500 to-blue-400 bg-clip-text text-transparent font-semibold">Google</span>
           </p>
 
           <div className="grid grid-cols-1 gap-6 sm:gap-10 lg:gap-12" role="list">
