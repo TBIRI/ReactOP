@@ -366,7 +366,7 @@ function Home() {
           </h2>
           <div className="reveal flex items-center justify-center gap-3 sm:gap-4 mb-12 sm:mb-20 lg:mb-24" style={{ '--delay': '0.15s' } as React.CSSProperties}>
             <span className="h-px w-8 sm:w-12 bg-gradient-to-r from-transparent to-blue-500/50"></span>
-            <p className="font-display text-base sm:text-xl lg:text-2xl text-gray-400 tracking-wide italic" itemProp="description">
+            <p className="font-display text-base sm:text-xl lg:text-2xl text-gray-400 tracking-wide italic text-center" itemProp="description">
               Une méthodologie éprouvée en 4 étapes
             </p>
             <span className="h-px w-8 sm:w-12 bg-gradient-to-l from-transparent to-blue-500/50"></span>
