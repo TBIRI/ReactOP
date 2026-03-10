@@ -218,10 +218,6 @@
     transform: scale(1) translateY(0);
   }
 
-  .reveal[style*="--delay"] {
-    transition-delay: var(--delay);
-  }
-
   @media (max-width: 768px) {
     .reveal {
       opacity: 0;

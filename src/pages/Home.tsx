@@ -8,24 +8,28 @@ function useScrollReveal() {
   const init = useCallback(() => {
     if (observerRef.current) return;
 
-    const targets = document.querySelectorAll('.reveal');
+    const sections = document.querySelectorAll('[data-section]');
 
     observerRef.current = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('is-visible');
-            observerRef.current?.unobserve(entry.target);
-          }
+          if (!entry.isIntersecting) return;
+          const section = entry.target;
+          const items = Array.from(section.querySelectorAll('.reveal'));
+          items.forEach((el, i) => {
+            const delay = i * 120;
+            setTimeout(() => el.classList.add('is-visible'), delay);
+          });
+          observerRef.current?.unobserve(section);
         });
       },
       {
-        threshold: 0,
-        rootMargin: '0px 0px -40px 0px',
+        threshold: 0.08,
+        rootMargin: '0px 0px 0px 0px',
       }
     );
 
-    targets.forEach((el) => observerRef.current!.observe(el));
+    sections.forEach((section) => observerRef.current!.observe(section));
   }, []);
 
   useEffect(() => {
@@ -328,7 +332,7 @@ function Home() {
           <h2 id="services-title" className="reveal reveal-scale font-display text-3xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-center mb-3 sm:mb-6 lg:mb-8 text-white pb-3" itemProp="name">
             Nos Services
           </h2>
-          <div className="reveal flex flex-col items-center gap-3 mb-12 sm:mb-20 lg:mb-24" style={{ '--delay': '0.15s' } as React.CSSProperties}>
+          <div className="reveal flex flex-col items-center gap-3 mb-12 sm:mb-20 lg:mb-24">
             <div className="flex items-center gap-3 sm:gap-4">
               <span className="h-px w-8 sm:w-12 bg-gradient-to-r from-transparent to-blue-500/50"></span>
               <p className="font-display text-base sm:text-xl lg:text-2xl text-gray-400 tracking-wide italic text-center" itemProp="description">
@@ -343,7 +347,6 @@ function Home() {
               <div
                 key={idx}
                 className="reveal group p-6 sm:p-10 lg:p-12 glass-card glass-card-hover rounded-3xl overflow-visible"
-                style={{ '--delay': `${idx * 0.15}s` } as React.CSSProperties}
                 role="listitem"
                 data-service-type={service.keywords}
                 itemScope
@@ -364,7 +367,7 @@ function Home() {
           <h2 id="processus-title" className="reveal reveal-scale font-display text-3xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-center mb-3 sm:mb-6 lg:mb-8 text-white pb-3" itemProp="name">
             Notre processus
           </h2>
-          <div className="reveal flex items-center justify-center gap-3 sm:gap-4 mb-12 sm:mb-20 lg:mb-24" style={{ '--delay': '0.15s' } as React.CSSProperties}>
+          <div className="reveal flex items-center justify-center gap-3 sm:gap-4 mb-12 sm:mb-20 lg:mb-24">
             <span className="h-px w-8 sm:w-12 bg-gradient-to-r from-transparent to-blue-500/50"></span>
             <p className="font-display text-base sm:text-xl lg:text-2xl text-gray-400 tracking-wide italic text-center" itemProp="description">
               Une méthodologie éprouvée en 4 étapes
@@ -377,7 +380,6 @@ function Home() {
               <div
                 key={idx}
                 className="reveal relative flex items-center gap-6 sm:gap-10 lg:gap-14 p-6 sm:p-8 lg:p-10 glass-card glass-card-hover rounded-3xl"
-                style={{ '--delay': `${idx * 0.12}s` } as React.CSSProperties}
                 role="listitem"
                 itemScope
                 itemType="https://schema.org/HowToStep"
@@ -404,7 +406,7 @@ function Home() {
           <h2 id="apropos-title" className="reveal reveal-scale font-display text-3xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-center mb-3 sm:mb-6 lg:mb-8 text-white pb-3">
             Qui sommes-<span className="italic">nous</span>
           </h2>
-          <div className="flex items-center justify-center gap-2 mb-12 sm:mb-20 lg:mb-24 reveal" style={{ '--delay': '0.1s' } as React.CSSProperties}>
+          <div className="flex items-center justify-center gap-2 mb-12 sm:mb-20 lg:mb-24 reveal">
             <span className="relative flex h-2 w-2">
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
               <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
@@ -414,25 +416,25 @@ function Home() {
           </div>
 
           <div className="space-y-10 sm:space-y-14 max-w-4xl mx-auto">
-            <div className="reveal" style={{ '--delay': '0.15s' } as React.CSSProperties}>
+            <div className="reveal">
               <p className="font-sans text-xl sm:text-2xl lg:text-3xl text-white font-light leading-[1.5] text-center" itemProp="description">
                 Basée à Lausanne, ReactOP aide les entreprises de services romandes à renforcer leur présence sur Google afin de capter une demande déjà présente et de transformer ce trafic en leads qualifiés.
               </p>
             </div>
 
-            <div className="reveal" style={{ '--delay': '0.2s' } as React.CSSProperties}>
+            <div className="reveal">
               <p className="font-sans text-xl sm:text-2xl lg:text-3xl text-white font-light leading-[1.5] text-center">
                 Chez ReactOP, nous croyons en la rapidité d'exécution, la proximité client et un travail clair, concret et transparent.
               </p>
             </div>
 
-            <div className="reveal" style={{ '--delay': '0.25s' } as React.CSSProperties}>
+            <div className="reveal">
               <p className="font-sans text-xl sm:text-2xl lg:text-3xl text-white font-light leading-[1.5] text-center">
                 Notre approche combine acquisition et compréhension des opérations, afin d'aligner plus efficacement le marketing avec la réalité du terrain.
               </p>
             </div>
 
-            <div className="reveal" style={{ '--delay': '0.3s' } as React.CSSProperties}>
+            <div className="reveal">
               <p className="font-sans text-xl sm:text-2xl lg:text-3xl text-white font-light leading-[1.5] text-center">
                 Grâce à un modèle de facturation orienté performance, nous réduisons au maximum la prise de risque de nos clients tout en maintenant un niveau d'exigence élevé sur les résultats. En d'autres termes, nous ne gagnons que lorsque nos clients gagnent aussi.
               </p>
@@ -448,7 +450,7 @@ function Home() {
             Questions fréquentes
           </h2>
 
-          <div className="reveal" style={{ '--delay': '0.1s' } as React.CSSProperties}>
+          <div className="reveal">
             {faqs.map((faq, idx) => (
               <div
                 key={idx}
@@ -520,7 +522,7 @@ function Home() {
               </div>
             </div>
 
-            <div className="reveal w-full glass-card rounded-3xl p-4 sm:p-6" style={{ '--delay': '0.2s' } as React.CSSProperties}>
+            <div className="reveal w-full glass-card rounded-3xl p-4 sm:p-6">
               <iframe
                 data-tally-src="https://tally.so/embed/A7LaDW?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1"
                 loading="lazy"
