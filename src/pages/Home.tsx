@@ -10,14 +10,6 @@ function useScrollReveal() {
 
     const targets = document.querySelectorAll('.reveal');
 
-    const isMobile = window.innerWidth <= 1024 ||
-      /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
-
-    if (isMobile) {
-      targets.forEach((el) => el.classList.add('is-visible'));
-      return;
-    }
-
     observerRef.current = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -28,8 +20,8 @@ function useScrollReveal() {
         });
       },
       {
-        threshold: 0.1,
-        rootMargin: '0px 0px -5% 0px',
+        threshold: 0,
+        rootMargin: '0px 0px -40px 0px',
       }
     );
 
