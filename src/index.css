@@ -2,6 +2,23 @@
 @tailwind components;
 @tailwind utilities;
 
+@keyframes scroll-trail {
+  0%   { transform: scaleY(0); transform-origin: top; }
+  50%  { transform: scaleY(1); transform-origin: top; }
+  50.1%{ transform: scaleY(1); transform-origin: bottom; }
+  100% { transform: scaleY(0); transform-origin: bottom; }
+}
+
+.animate-scroll-trail {
+  animation: scroll-trail 2s ease infinite;
+}
+
+@media (min-width: 1920px) {
+  .hero-title {
+    font-size: 6.3rem !important;
+  }
+}
+
 .mobile-header-fixed {
   position: fixed !important;
   top: 1rem !important;
@@ -22,7 +39,7 @@
 
 @layer base {
   html, body {
-    background-color: #000000;
+    background-color: #ffffff;
     min-height: 100vh;
   }
 
@@ -69,39 +86,53 @@
 
 @layer utilities {
   .glass-card {
-    background: rgba(255, 255, 255, 0.04);
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
+    background: rgba(255, 255, 255, 0.85);
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    box-shadow:
+      0 1px 3px 0 rgba(0, 0, 0, 0.04),
+      0 8px 28px 0 rgba(0, 0, 0, 0.06);
     contain: layout style paint;
+    backdrop-filter: blur(8px);
   }
 
   .glass-card-hover {
     transition:
-      background 0.5s cubic-bezier(0.4, 0, 0.2, 1),
-      border-color 0.5s cubic-bezier(0.4, 0, 0.2, 1),
-      transform 0.5s cubic-bezier(0.4, 0, 0.2, 1),
-      box-shadow 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+      background 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+      border-color 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+      transform 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+      box-shadow 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
   .glass-card-hover:hover {
-    background: rgba(255, 255, 255, 0.07);
-    border-color: rgba(96, 165, 250, 0.3);
-    transform: translateY(-4px);
-    box-shadow: 0 12px 40px 0 rgba(31, 38, 135, 0.2);
+    background: rgba(255, 255, 255, 1);
+    border-color: rgba(59, 130, 246, 0.2);
+    transform: translateY(-3px);
+    box-shadow:
+      0 1px 3px 0 rgba(0, 0, 0, 0.04),
+      0 16px 48px 0 rgba(59, 130, 246, 0.1);
+  }
+
+  /* Cards on tinted backgrounds */
+  .bg-tint .glass-card {
+    background: rgba(255, 255, 255, 0.95);
+    box-shadow:
+      0 1px 3px 0 rgba(0, 0, 0, 0.03),
+      0 8px 28px 0 rgba(0, 0, 0, 0.05);
   }
 
   .glass-nav {
-    background: rgba(17, 24, 39, 0.9);
-    border: 1px solid rgba(255, 255, 255, 0.08);
+    background: rgba(255, 255, 255, 0.85);
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    backdrop-filter: blur(20px);
     contain: layout style paint;
   }
 
   .font-display {
-    font-family: 'Playfair Display', serif;
+    font-family: 'Oswald', system-ui, sans-serif;
   }
 
   .font-sans {
-    font-family: 'Inter', sans-serif;
+    font-family: 'Manrope', system-ui, sans-serif;
   }
 
   .font-syne {
@@ -278,8 +309,8 @@
   .bg-blur-overlay {
     background: radial-gradient(
       ellipse 80% 60% at 50% 50%,
-      rgba(59, 130, 246, 0.12) 0%,
-      rgba(59, 130, 246, 0.06) 40%,
+      rgba(59, 130, 246, 0.06) 0%,
+      rgba(59, 130, 246, 0.03) 40%,
       transparent 100%
     );
     contain: strict;
@@ -314,6 +345,6 @@
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
-  opacity: 0.15;
+  opacity: 0.25;
   filter: blur(35px);
 }

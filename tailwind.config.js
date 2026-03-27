@@ -4,9 +4,13 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['Inter', 'system-ui', 'sans-serif'],
+        sans: ['Manrope', 'system-ui', 'sans-serif'],
+        display: ['Oswald', 'system-ui', 'sans-serif'],
         logo: ['Poppins', 'system-ui', 'sans-serif'],
         nav: ['Syne', 'system-ui', 'sans-serif'],
+      },
+      screens: {
+        '3xl': '1920px',
       },
       animation: {
         shimmer: 'shimmer 2s linear infinite',

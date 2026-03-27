@@ -26,7 +26,7 @@ function Audit() {
   }, []);
 
   return (
-    <div className="bg-black" style={{
+    <div className="bg-white" style={{
       position: 'fixed',
       top: 0,
       left: 0,
@@ -38,6 +38,7 @@ function Audit() {
       width: '100%',
       height: '100%'
     }}>
+      <div className="mobius-bg" aria-hidden="true" />
       <div className="fixed inset-0 pointer-events-none z-0 bg-blur-overlay" aria-hidden="true"></div>
 
       {/* Back button */}
